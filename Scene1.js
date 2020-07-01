@@ -57,11 +57,11 @@ class Scene1 extends Phaser.Scene {
     this.load.image("hitbox", "assets/hitbox.png");
     this.load.image("hitbox2", "assets/hitbox2.png");
 
-    this.load.image("E", "assets/E.png");
-    this.load.image("B", "assets/B.png");
-    this.load.image("MB", "assets/MB.png");
-    this.load.image("S", "assets/S.png");
-    this.load.image("NS", "assets/NS.png");
+    this.load.image("E", "assets/e.png");
+    this.load.image("B", "assets/b.png");
+    this.load.image("MB", "assets/mb.png");
+    this.load.image("S", "assets/s.png");
+    this.load.image("NS", "assets/ns.png");
   }
 
   create() {
