@@ -213,9 +213,8 @@ class SceneB extends Phaser.Scene {
     });
 
     var flecha = this.add
-      .image(1000, 55, "tilde")
+      .image(1040, 50, "tilde")
       .setAlpha(0)
-      .setScale(2)
       .setInteractive({ cursor: "pointer" });
     flecha.on("pointerdown", () => {
       if (selloPE == 2) {

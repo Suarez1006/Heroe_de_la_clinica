@@ -31,7 +31,7 @@ class Scene3 extends Phaser.Scene {
       .setInteractive();
 
     var boton = this.add
-      .image(800, 200, "hitbox")
+      .image(130, 75, "reload")
       .setAlpha(2)
       .setInteractive({ cursor: "pointer" });
 
@@ -110,12 +110,12 @@ var createTextBox = function (scene, x, y, config) {
         } else {
           blanco = blanco += 1;
           console.log(blanco);
-          if (blanco == 4) {
+          if (blanco == 3) {
             cab = 1;
             dol = 1;
-          } else if (blanco == 5) {
+          } else if (blanco == 4) {
             con = 1;
-          } else if (blanco == 8) {
+          } else if (blanco == 7) {
             sar = 1;
           }
           this.typeNextPage();
