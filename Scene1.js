@@ -37,7 +37,7 @@ class Scene1 extends Phaser.Scene {
     this.load.image("bowl", "assets/bowl.png");
     this.load.image("chupetin", "assets/chupetin.png");
 
-    this.load.image("puerta", "assets/puerta.png");
+    this.load.image("puerta", "assets/Puerta.png");
     this.load.image("tilde", "assets/tilde.png");
     this.load.image("reload", "assets/retry.png");
 
@@ -57,11 +57,11 @@ class Scene1 extends Phaser.Scene {
     this.load.image("hitbox", "assets/hitbox.png");
     this.load.image("hitbox2", "assets/hitbox2.png");
 
-    this.load.image("E", "assets/e.png");
-    this.load.image("B", "assets/b.png");
-    this.load.image("MB", "assets/mb.png");
-    this.load.image("S", "assets/s.png");
-    this.load.image("NS", "assets/ns.png");
+    this.load.image("E", "assets/E.png");
+    this.load.image("B", "assets/B.png");
+    this.load.image("MB", "assets/MB.png");
+    this.load.image("S", "assets/S.png");
+    this.load.image("NS", "assets/NS.png");
   }
 
   create() {
