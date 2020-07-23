@@ -39,7 +39,7 @@ var game = new Phaser.Game(config);
 
 const pac = {
   pac1: {
-    fiebre: "41°",
+    fiebre: "38.9°",
     cabeza: "true",
     congestion: "true",
     inflamacion: "false",
@@ -66,8 +66,7 @@ var help = 0;
 var chat = 0;
 
 var score = 240;
-
-var blanco = 0;
+var salv = 0;
 
 var temp = 0;
 var cab = 0;

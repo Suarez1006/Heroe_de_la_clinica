@@ -18,6 +18,7 @@ class SceneD extends Phaser.Scene {
         if ((this.tiempo = 1)) {
           this.tiempo = 0;
           this.scene.sleep();
+          this.scene.pause("clock");
           this.scene.resume("juego2");
         }
       },

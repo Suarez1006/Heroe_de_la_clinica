@@ -34,6 +34,10 @@ class Scene5_F extends Phaser.Scene {
 
     var NS = this.add.image(550, 250, "NS").setAlpha(0.01);
 
+    var s0 = this.add.image(555, 450, "0").setAlpha(0.01);
+    var s1 = this.add.image(555, 450, "1").setAlpha(0.01);
+    var s2 = this.add.image(555, 450, "2").setAlpha(0.01);
+
     if (score == 1000) {
       E.setAlpha(1);
     } else if (score >= 800) {
@@ -44,6 +48,13 @@ class Scene5_F extends Phaser.Scene {
       S.setAlpha(1);
     } else {
       NS.setAlpha(1);
+    }
+    if (salv == 2) {
+      s2.setAlpha(1);
+    } else if (salv == 1) {
+      s1.setAlpha(1);
+    } else if (salv == 0) {
+      s0.setAlpha(1);
     }
   }
 }

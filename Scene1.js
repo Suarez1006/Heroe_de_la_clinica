@@ -40,6 +40,8 @@ class Scene1 extends Phaser.Scene {
     this.load.image("puerta", "assets/Puerta.png");
     this.load.image("tilde", "assets/tilde.png");
     this.load.image("reload", "assets/retry.png");
+    this.load.image("muñeco", "assets/muñeco.png");
+    this.load.image("muñeco_r", "assets/muñeco_ready.png");
 
     this.load.image("menug1", "assets/menug1.png");
     this.load.image("menug2", "assets/menug2.png");
@@ -49,6 +51,9 @@ class Scene1 extends Phaser.Scene {
     this.load.image("selloD", "assets/selloD.png");
     this.load.image("sano", "assets/sano.png");
     this.load.image("enfermo", "assets/enfermo.png");
+    this.load.image("siP", "assets/si.png");
+    this.load.image("noP", "assets/no.png");
+    this.load.image("circuloP", "assets/circulo.png");
 
     this.load.image("paciente_01", "assets/paciente_01.png");
     this.load.image("paciente_01a", "assets/paciente_01a.png");
@@ -57,11 +62,18 @@ class Scene1 extends Phaser.Scene {
     this.load.image("hitbox", "assets/hitbox.png");
     this.load.image("hitbox2", "assets/hitbox2.png");
 
+    this.load.image("libreta_s", "assets/libreta_s.png");
+    this.load.image("ficha_s", "assets/ficha_s.png");
+    this.load.image("infoB", "assets/info.png");
+
     this.load.image("E", "assets/E.png");
     this.load.image("B", "assets/B.png");
     this.load.image("MB", "assets/MB.png");
     this.load.image("S", "assets/S.png");
     this.load.image("NS", "assets/NS.png");
+    this.load.image("0", "assets/0.png");
+    this.load.image("1", "assets/1.png");
+    this.load.image("2", "assets/2.png");
   }
 
   create() {

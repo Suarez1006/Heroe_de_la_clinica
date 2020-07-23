@@ -10,11 +10,18 @@ class Scene4 extends Phaser.Scene {
     var tvar = 0;
     this.add.image(551, 310, "camilla");
 
+    var back = this.add.image(10, 23, "infoB").setOrigin(0, 0).setAlpha(0.01);
+
+    var info = this.add.text(18, 30, "", {
+      fontSize: "12px",
+      fontColor: "white",
+      fontFamily: "font1",
+    });
+
     var ficha_c = this.add
-      .image(241.5, 492.5, "hitbox2")
+      .image(246, 484, "ficha_s")
       .setOrigin(0, 0)
       .setAlpha(0.01)
-      .setScale(1.05, 1.05)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
@@ -22,12 +29,21 @@ class Scene4 extends Phaser.Scene {
       this.scene.run("Menu3");
       pausa = 4;
     });
+    ficha_c.on("pointerover", () => {
+      info.setText("Ficha de paciente");
+      back.setAlpha(1).setScale(1.5, 1);
+      ficha_c.setAlpha(1);
+    });
+    ficha_c.on("pointerout", () => {
+      info.setText("");
+      back.setAlpha(0.01);
+      ficha_c.setAlpha(0.01);
+    });
 
     var libreta = this.add
-      .image(85.5, 492, "hitbox2")
+      .image(78, 484, "libreta_s")
       .setOrigin(0, 0)
       .setAlpha(0.01)
-      .setScale(1.05, 0.98)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     libreta.on("pointerdown", () => {
@@ -35,6 +51,16 @@ class Scene4 extends Phaser.Scene {
       this.scene.pause("clock");
       this.scene.run("Menu2");
       pausa = 4;
+    });
+    libreta.on("pointerover", () => {
+      libreta.setAlpha(1);
+      info.setText("Menu");
+      back.setAlpha(1).setScale(0.45, 1);
+    });
+    libreta.on("pointerout", () => {
+      libreta.setAlpha(0.03);
+      info.setText("");
+      back.setAlpha(0.01);
     });
 
     var puerta = this.add
@@ -46,6 +72,8 @@ class Scene4 extends Phaser.Scene {
 
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
+      info.setText("Volver a consultorio");
+      back.setAlpha(1).setScale(1.75, 1);
     });
 
     puerta.on("pointerdown", () => {
@@ -55,6 +83,21 @@ class Scene4 extends Phaser.Scene {
 
     puerta.on("pointerout", () => {
       puerta.setAlpha(0.01);
+      info.setText("");
+      back.setAlpha(0.01);
+    });
+
+    var muñeco = this.add.image(1012, 375, "muñeco").setOrigin(0, 1);
+
+    var muñeco_r = this.add
+      .image(1012, 375, "muñeco_r")
+      .setOrigin(0, 1)
+      .setAlpha(0.01)
+      .setInteractive();
+
+    muñeco_r.on("pointerdown", () => {
+      muñeco.setAlpha(0.01);
+      muñeco_r.setAlpha(1);
     });
 
     //////// Herramientas ////////
@@ -83,16 +126,21 @@ class Scene4 extends Phaser.Scene {
         guantes_s.clearTint();
         gvar = 0;
         pac_01.disableInteractive().setAlpha(0.01);
+        back.setAlpha(0.01);
       }
     });
 
     guantes_s.on("pointerover", () => {
       guantes_s.setAlpha(1);
+      info.setText("Guantes");
+      back.setAlpha(1).setScale(0.7, 1);
     });
 
     guantes_s.on("pointerout", () => {
       if (gvar == 0) {
         guantes_s.setAlpha(0.01);
+        info.setText("");
+        back.setAlpha(0.01);
       }
     });
 
@@ -125,11 +173,15 @@ class Scene4 extends Phaser.Scene {
 
     esteto_s.on("pointerover", () => {
       esteto_s.setAlpha(1);
+      info.setText("Estetoscopio");
+      back.setAlpha(1).setScale(1.1, 1);
     });
 
     esteto_s.on("pointerout", () => {
       if (evar == 0) {
         esteto_s.setAlpha(0.01);
+        info.setText("");
+        back.setAlpha(0.01);
       }
     });
 
@@ -162,11 +214,15 @@ class Scene4 extends Phaser.Scene {
 
     linterna_s.on("pointerover", () => {
       linterna_s.setAlpha(1);
+      info.setText("Linterna");
+      back.setAlpha(1).setScale(0.78, 1);
     });
 
     linterna_s.on("pointerout", () => {
       if (lvar == 0) {
         linterna_s.setAlpha(0.01);
+        info.setText("");
+        back.setAlpha(0.01);
       }
     });
 
@@ -199,11 +255,15 @@ class Scene4 extends Phaser.Scene {
 
     termometro_s.on("pointerover", () => {
       termometro_s.setAlpha(1);
+      info.setText("Termometro");
+      back.setAlpha(1).setScale(0.95, 1);
     });
 
     termometro_s.on("pointerout", () => {
       if (tvar == 0) {
         termometro_s.setAlpha(0.01);
+        info.setText("");
+        back.setAlpha(0.01);
       }
     });
     this.add.image(700, 283, "paciente_01a");
