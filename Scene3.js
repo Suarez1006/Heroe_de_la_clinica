@@ -36,7 +36,6 @@ class Scene3 extends Phaser.Scene {
       .setInteractive({ cursor: "pointer" });
 
     boton.on("pointerdown", () => {
-      blanco = 0;
       this.scene.restart("charla_01");
     });
 
@@ -106,18 +105,7 @@ var createTextBox = function (scene, x, y, config) {
         var icon = this.getElement("action").setVisible(false);
         this.resetChildVisibleState(icon);
         if (this.isTyping) {
-          //this.stop(true);
         } else {
-          blanco = blanco += 1;
-          console.log(blanco);
-          if (blanco == 3) {
-            cab = 1;
-            dol = 1;
-          } else if (blanco == 4) {
-            con = 1;
-          } else if (blanco == 7) {
-            sar = 1;
-          }
           this.typeNextPage();
         }
       },

@@ -78,3 +78,5 @@ var dol = 0;
 var far = 0;
 
 var finish = 0;
+
+var tiempo = 400;

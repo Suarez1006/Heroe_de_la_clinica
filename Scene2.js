@@ -92,8 +92,6 @@ class Scene2 extends Phaser.Scene {
     pac_01.on("pointerdown", () => {
       this.scene.pause();
       this.scene.run("charla_01");
-      info.setText("");
-      back.setAlpha(0.01);
     });
 
     pac_01.on("pointerover", () => {
