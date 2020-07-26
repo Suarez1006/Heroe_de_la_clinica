@@ -50,7 +50,8 @@ class SceneA extends Phaser.Scene {
       if (pausa == 2) {
         this.scene.restart("juego");
         this.scene.restart("juego2");
-        tiempo = 400;
+        tiempo = 10000;
+        stepHeight = 0.055;
         this.scene.sleep("juego");
         this.scene.sleep("clock");
         pausa = 0;
@@ -58,7 +59,7 @@ class SceneA extends Phaser.Scene {
       } else if (pausa == 4) {
         this.scene.restart("juego");
         this.scene.restart("juego2");
-        tiempo = 400;
+        tiempo = 10000;
         this.scene.sleep("juego2");
         this.scene.sleep("clock");
         pausa = 0;

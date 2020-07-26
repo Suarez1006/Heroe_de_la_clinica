@@ -1,6 +1,6 @@
-class Scene2 extends Phaser.Scene {
+class Scene7 extends Phaser.Scene {
   constructor() {
-    super("juego");
+    super("juego3");
   }
   create() {
     this.add.image(551, 310, "consultorio").setScale(1.0);
@@ -22,7 +22,7 @@ class Scene2 extends Phaser.Scene {
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
       this.scene.run("Menu3");
-      pausa = 2;
+      pausa = 7;
     });
     ficha_c.on("pointerover", () => {
       info.setText("Ficha de paciente");
@@ -45,7 +45,7 @@ class Scene2 extends Phaser.Scene {
       this.scene.pause();
       this.scene.pause("clock");
       this.scene.run("Menu2");
-      pausa = 2;
+      pausa = 7;
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
@@ -75,7 +75,7 @@ class Scene2 extends Phaser.Scene {
 
     puerta.on("pointerdown", () => {
       this.scene.sleep();
-      this.scene.start("juego2");
+      this.scene.start("juego4");
     });
 
     puerta.on("pointerout", () => {
@@ -84,25 +84,25 @@ class Scene2 extends Phaser.Scene {
       back.setAlpha(0.01);
     });
 
-    var pac_01 = this.add
-      .image(405.6, 342, "paciente_01")
+    var pac_02 = this.add
+      .image(405.6, 342, "paciente_02")
       .setScale(1.1, 1.12)
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
-    pac_01.on("pointerdown", () => {
-      if (pausa == 7) {
+    pac_02.on("pointerdown", () => {
+      if (pausa == 2) {
         this.scene.restart("charla_01");
       }
       this.scene.pause();
-      pausa = 2;
+      pausa = 7;
       this.scene.run("charla_01");
     });
 
-    pac_01.on("pointerover", () => {
+    pac_02.on("pointerover", () => {
       info.setText("Charlar");
       back.setAlpha(1).setScale(0.7, 1);
     });
-    pac_01.on("pointerout", () => {
+    pac_02.on("pointerout", () => {
       info.setText("");
       back.setAlpha(0.01);
     });

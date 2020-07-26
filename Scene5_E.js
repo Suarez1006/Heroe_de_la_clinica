@@ -9,9 +9,8 @@ class Scene5_E extends Phaser.Scene {
     this.add.image(551, 310, "scoreE");
 
     var V = this.add
-      .image(555, 520, "hitbox")
-      .setRotation(80)
-      .setScale(0.2)
+      .image(440, 518.5, "hitbox")
+      .setScale(0.78, 0.07)
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
 
@@ -22,6 +21,19 @@ class Scene5_E extends Phaser.Scene {
       this.scene.sleep("juego2");
       this.scene.sleep("clock");
       this.scene.start("Menu");
+      tiempo = 10000;
+    });
+    var sig = this.add
+      .image(660, 518.5, "hitbox")
+      .setScale(0.78, 0.07)
+      .setAlpha(0.01)
+      .setInteractive({ cursor: "pointer" });
+
+    sig.on("pointerdown", () => {
+      this.scene.sleep("juego");
+      this.scene.sleep("juego2");
+      this.scene.sleep("clock");
+      this.scene.start("juego3");
     });
 
     var E = this.add.image(550, 250, "E").setAlpha(0.01);

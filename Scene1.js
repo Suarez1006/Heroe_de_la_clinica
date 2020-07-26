@@ -41,7 +41,10 @@ class Scene1 extends Phaser.Scene {
     this.load.image("tilde", "assets/tilde.png");
     this.load.image("reload", "assets/retry.png");
     this.load.image("muñeco", "assets/muñeco.png");
-    this.load.image("muñeco_r", "assets/muñeco_ready.png");
+    this.load.spritesheet("muñeco_r", "assets/muñeco_ready.png", {
+      frameWidth: 72,
+      frameHeight: 84,
+    });
 
     this.load.image("menug1", "assets/menug1.png");
     this.load.image("menug2", "assets/menug2.png");
@@ -58,6 +61,10 @@ class Scene1 extends Phaser.Scene {
     this.load.image("paciente_01", "assets/paciente_01.png");
     this.load.image("paciente_01a", "assets/paciente_01a.png");
     this.load.image("paciente_01a_s", "assets/paciente_01a_s.png");
+
+    this.load.image("paciente_02", "assets/paciente_02.png");
+    this.load.image("paciente_02a", "assets/paciente_02a.png");
+    this.load.image("paciente_02a_s", "assets/paciente_02a_s.png");
 
     this.load.image("hitbox", "assets/hitbox.png");
     this.load.image("hitbox2", "assets/hitbox2.png");
@@ -99,7 +106,7 @@ class Scene1 extends Phaser.Scene {
 
     play.on("pointerdown", () => {
       this.scene.start("juego");
-      this.scene.run("clock");
+      this.scene.start("clock");
     });
 
     play.on("pointerover", () => {

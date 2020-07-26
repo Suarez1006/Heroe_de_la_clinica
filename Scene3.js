@@ -1,7 +1,3 @@
-const COLOR_PRIMARY = 0x2e1f18;
-const COLOR_LIGHT = 0x000000;
-const COLOR_DARK = 0xffffff;
-
 class Scene3 extends Phaser.Scene {
   constructor() {
     super("charla_01");
@@ -22,9 +18,6 @@ class Scene3 extends Phaser.Scene {
   }
 
   create() {
-    if ((chat = 1)) {
-      content = content - "Doctor: Hola, buenas tardes. \n";
-    }
     var negro = this.add
       .image(551, 310, "negro")
       .setAlpha(0.3)
@@ -39,24 +32,18 @@ class Scene3 extends Phaser.Scene {
       this.scene.restart("charla_01");
     });
 
-    var content = [
-      "Doctor: Buenos dias, mucho gusto.\n",
-      "Paciente: Buenas, igualmente.\n",
-      "Doctor: Digame, que le anda pasando?.\n",
-      "Paciente: Ando con unos dolores en las articulaciones y un dolor de cabeza insoportable hace unos dias.",
-      "Paciente: Ademas desde que empezaron me siento congestionado.\n",
-      "Doctor: Hmm, algo mas?.\n",
-      "Paciente: Creo que eso es todo.",
-      "Paciente: Ah no, tambien tengo un pequeño sarpullido en el cuerpo.",
-      "Doctor: Bien, pase a la camilla.",
-    ];
-
     createTextBox(this, 200, 10, {
       wrapWidth: 700,
     }).start(content, 25);
 
     negro.on("pointerdown", () => {
-      this.scene.sleep(), this.scene.resume("juego");
+      this.scene.sleep();
+      if (pausa == 2) {
+        this.scene.resume("juego");
+      }
+      if (pausa == 7) {
+        this.scene.resume("juego3");
+      }
     });
   }
 }

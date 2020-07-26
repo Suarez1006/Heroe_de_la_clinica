@@ -1,11 +1,11 @@
 class SceneD extends Phaser.Scene {
   constructor() {
-    super("diagG");
+    super("diagSce");
   }
   create() {
     var tiempo = 0;
     this.add
-      .text(210, 100, "Sin ganglios inflamados", {
+      .text(210, 100, diag, {
         fontFamily: "font1",
         fontSize: "12px",
       })
@@ -13,17 +13,22 @@ class SceneD extends Phaser.Scene {
     this.gameTimer = this.time.addEvent({
       delay: 2000,
       callback: function () {
-        tiempo = tiempo + 1;
-        console.log(tiempo);
-        if ((this.tiempo = 1)) {
-          this.tiempo = 0;
+        tiempo++;
+        if ((tiempo = 1)) {
+          tiempo = 0;
+          diag = "";
           this.scene.sleep();
           this.scene.pause("clock");
-          this.scene.resume("juego2");
+          if (pausa == 4) {
+            this.scene.resume("juego2");
+          } else if (pausa == 8) {
+            this.scene.resume("juego4");
+          }
+          this.scene.restart("diagSce");
+          pausa = 0;
         }
       },
       callbackScope: this,
-      loop: true,
     });
   }
 }

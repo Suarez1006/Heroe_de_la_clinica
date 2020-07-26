@@ -1,7 +1,7 @@
 var muñeco_r;
-class Scene4 extends Phaser.Scene {
+class Scene8 extends Phaser.Scene {
   constructor() {
-    super("juego2");
+    super("juego4");
   }
 
   create() {
@@ -79,7 +79,7 @@ class Scene4 extends Phaser.Scene {
 
     puerta.on("pointerdown", () => {
       this.scene.sleep();
-      this.scene.start("juego");
+      this.scene.start("juego3");
     });
 
     puerta.on("pointerout", () => {
@@ -130,13 +130,13 @@ class Scene4 extends Phaser.Scene {
         esteto_s.clearTint().setAlpha(0.01);
         linterna_s.clearTint().setAlpha(0.01);
         termometro_s.clearTint().setAlpha(0.01);
-        pac_01
+        pac_02
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (gvar == 1) {
         guantes_s.clearTint();
         gvar = 0;
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
         back.setAlpha(0.01);
       }
     });
@@ -172,13 +172,13 @@ class Scene4 extends Phaser.Scene {
         guantes_s.clearTint().setAlpha(0.01);
         linterna_s.clearTint().setAlpha(0.01);
         termometro_s.clearTint().setAlpha(0.01);
-        pac_01
+        pac_02
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (evar == 1) {
         esteto_s.clearTint();
         evar = 0;
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
       }
     });
 
@@ -213,13 +213,13 @@ class Scene4 extends Phaser.Scene {
         guantes_s.clearTint().setAlpha(0.01);
         esteto_s.clearTint().setAlpha(0.01);
         termometro_s.clearTint().setAlpha(0.01);
-        pac_01
+        pac_02
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (lvar == 1) {
         linterna_s.clearTint();
         lvar = 0;
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
       }
     });
 
@@ -254,13 +254,13 @@ class Scene4 extends Phaser.Scene {
         guantes_s.clearTint().setAlpha(0.01);
         esteto_s.clearTint().setAlpha(0.01);
         linterna_s.clearTint().setAlpha(0.01);
-        pac_01
+        pac_02
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (tvar == 1) {
         termometro_s.clearTint();
         tvar = 0;
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
       }
     });
 
@@ -277,46 +277,45 @@ class Scene4 extends Phaser.Scene {
         back.setAlpha(0.01);
       }
     });
-    this.add.image(700, 283, "paciente_01a");
+    this.add.image(700, 283, "paciente_02a");
 
-    var pac_01 = this.add.image(700, 283, "paciente_01a_s").setAlpha(0.01);
+    var pac_02 = this.add.image(700, 283, "paciente_02a_s").setAlpha(0.01);
 
-    pac_01.on("pointerdown", () => {
-      pausa = 4;
+    pac_02.on("pointerdown", () => {
       if (gvar == 1) {
-        diag = "Sin ganglios inflamados.";
         gang = 1;
         guantes_s.clearTint().setAlpha(0.01);
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
         gvar = 0;
         this.scene.pause();
+        diag = "Sin ganglios inflamados";
         this.scene.run("diagSce");
       }
       if (evar == 1) {
-        diag = "Detecto faringitis.";
         far = 1;
         esteto_s.clearTint().setAlpha(0.01);
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
         evar = 0;
         this.scene.pause();
+        diag = "Sin ganglios inflamados";
         this.scene.run("diagSce");
       }
       if (lvar == 1) {
-        diag = "Sus ojos parecen estar bien.";
         inf = 1;
         linterna_s.clearTint().setAlpha(0.01);
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
         lvar = 0;
         this.scene.pause();
+        diag = "Sin ganglios inflamados";
         this.scene.run("diagSce");
       }
       if (tvar == 1) {
-        diag = "38.9, una alta temperatura.";
         temp = 1;
         termometro_s.clearTint().setAlpha(0.01);
-        pac_01.disableInteractive().setAlpha(0.01);
+        pac_02.disableInteractive().setAlpha(0.01);
         tvar = 0;
         this.scene.pause();
+        diag = "Sin ganglios inflamados";
         this.scene.run("diagSce");
       }
     });
