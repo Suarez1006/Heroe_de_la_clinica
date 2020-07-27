@@ -1,6 +1,6 @@
-class SceneC extends Phaser.Scene {
+class SceneC_1 extends Phaser.Scene {
   constructor() {
-    super("clock");
+    super("clock2");
   }
 
   create() {
@@ -13,7 +13,7 @@ class SceneC extends Phaser.Scene {
     var mask = tapaMask.createBitmapMask();
     barraRmask.setMask(mask);
 
-    let gametimer = this.time.addEvent({
+    this.time.addEvent({
       delay: 0,
       callback: event,
       callbackScope: this,

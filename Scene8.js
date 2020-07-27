@@ -28,7 +28,7 @@ class Scene8 extends Phaser.Scene {
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
       this.scene.run("Menu3");
-      pausa = 4;
+      pausa = 8;
     });
     ficha_c.on("pointerover", () => {
       info.setText("Ficha de paciente");
@@ -51,7 +51,7 @@ class Scene8 extends Phaser.Scene {
       this.scene.pause();
       this.scene.pause("clock");
       this.scene.run("Menu2");
-      pausa = 4;
+      pausa = 8;
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);

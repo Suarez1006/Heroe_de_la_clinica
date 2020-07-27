@@ -23,6 +23,9 @@ class Scene2 extends Phaser.Scene {
       this.scene.pause();
       this.scene.run("Menu3");
       pausa = 2;
+      info.setText("");
+      back.setAlpha(0.01);
+      ficha_c.setAlpha(0.01);
     });
     ficha_c.on("pointerover", () => {
       info.setText("Ficha de paciente");
@@ -46,6 +49,9 @@ class Scene2 extends Phaser.Scene {
       this.scene.pause("clock");
       this.scene.run("Menu2");
       pausa = 2;
+      info.setText("");
+      back.setAlpha(0.01);
+      libreta.setAlpha(0.01);
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
@@ -53,7 +59,7 @@ class Scene2 extends Phaser.Scene {
       back.setAlpha(1).setScale(0.45, 1);
     });
     libreta.on("pointerout", () => {
-      libreta.setAlpha(0.03);
+      libreta.setAlpha(0.01);
       info.setText("");
       back.setAlpha(0.01);
     });

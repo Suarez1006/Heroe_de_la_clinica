@@ -4,7 +4,7 @@ class Scene5_E extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(551, 310, "consultorio").setScale(1.0);
+    //this.add.image(551, 310, "consultorio").setScale(1.0);
 
     this.add.image(551, 310, "scoreE");
 
@@ -30,10 +30,14 @@ class Scene5_E extends Phaser.Scene {
       .setInteractive({ cursor: "pointer" });
 
     sig.on("pointerdown", () => {
+      score = 240;
+      tiempo = 10000;
+      this.scene.restart("charla_01");
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
       this.scene.sleep("clock");
       this.scene.start("juego3");
+      this.scene.run("clock2");
     });
 
     var E = this.add.image(550, 250, "E").setAlpha(0.01);

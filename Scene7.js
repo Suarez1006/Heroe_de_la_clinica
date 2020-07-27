@@ -21,7 +21,7 @@ class Scene7 extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      this.scene.run("Menu3");
+      this.scene.run("Menu3_01");
       pausa = 7;
     });
     ficha_c.on("pointerover", () => {
@@ -95,6 +95,7 @@ class Scene7 extends Phaser.Scene {
       }
       this.scene.pause();
       pausa = 7;
+      content = ["Ahora digo esto gg, soy otro"];
       this.scene.run("charla_01");
     });
 

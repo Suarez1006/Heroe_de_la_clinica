@@ -57,6 +57,7 @@ class Scene0_A extends Phaser.Scene {
   
       this.load.image("libreta", "assets/libreta.png");
       this.load.image("ficha", "assets/ficha.png");
+      this.load.image("ficha2", "assets/ficha_02.png");
       this.load.image("guantes", "assets/guantes.png");
       this.load.image("guantes_s", "assets/guantes_s.png");
       this.load.image("reloj", "assets/reloj.png");

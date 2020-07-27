@@ -29,6 +29,9 @@ class Scene4 extends Phaser.Scene {
       this.scene.pause();
       this.scene.run("Menu3");
       pausa = 4;
+      info.setText("");
+      back.setAlpha(0.01);
+      ficha_c.setAlpha(0.01);
     });
     ficha_c.on("pointerover", () => {
       info.setText("Ficha de paciente");
@@ -52,6 +55,9 @@ class Scene4 extends Phaser.Scene {
       this.scene.pause("clock");
       this.scene.run("Menu2");
       pausa = 4;
+      libreta.setAlpha(0.03);
+      info.setText("");
+      back.setAlpha(0.01);
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
@@ -285,7 +291,6 @@ class Scene4 extends Phaser.Scene {
       pausa = 4;
       if (gvar == 1) {
         diag = "Sin ganglios inflamados.";
-        gang = 1;
         guantes_s.clearTint().setAlpha(0.01);
         pac_01.disableInteractive().setAlpha(0.01);
         gvar = 0;
@@ -294,7 +299,6 @@ class Scene4 extends Phaser.Scene {
       }
       if (evar == 1) {
         diag = "Detecto faringitis.";
-        far = 1;
         esteto_s.clearTint().setAlpha(0.01);
         pac_01.disableInteractive().setAlpha(0.01);
         evar = 0;
@@ -303,7 +307,6 @@ class Scene4 extends Phaser.Scene {
       }
       if (lvar == 1) {
         diag = "Sus ojos parecen estar bien.";
-        inf = 1;
         linterna_s.clearTint().setAlpha(0.01);
         pac_01.disableInteractive().setAlpha(0.01);
         lvar = 0;
@@ -312,7 +315,6 @@ class Scene4 extends Phaser.Scene {
       }
       if (tvar == 1) {
         diag = "38.9, una alta temperatura.";
-        temp = 1;
         termometro_s.clearTint().setAlpha(0.01);
         pac_01.disableInteractive().setAlpha(0.01);
         tvar = 0;

@@ -6,35 +6,26 @@ var config = {
     width: 1102,
     height: 620,
   },
-
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 300 },
-      debug: false,
-    },
-  },
   scene: [
-    Scene0_A,
-    Scene1,
-    Scene2,
-    Scene0,
-    Scene4,
-    Scene7,
-    Scene8,
-    SceneA,
-    SceneB,
-    SceneC,
-    SceneD,
-    SceneE,
-    SceneF,
-    SceneG,
-    Scene6_1,
-    Scene6_2,
-    Scene6_3,
-    Scene5_E,
-    Scene5_F,
-    Scene3,
+    Scene0_A, //Pantalla de carga
+    Scene1, //Menu principal
+    Scene2, //Consultorio primer paciente
+    Scene0, //Creditos
+    Scene4, //Camilla primer paciente
+    Scene7, //Consultorio segundo paciente
+    Scene8, //Camilla segundo paciente
+    SceneA, //Libreta (Menu pausa)
+    SceneB, //Ficha de primer paciente
+    SceneB_1, //Ficha de segundo paciente (rubeola)
+    SceneC, //Reloj primer paciente
+    SceneC_1, //Reloj segundo paciente
+    SceneD, //Diagnosticos
+    Scene6_1, //Primer pagina ayuda
+    Scene6_2, //Segunda pagina ayuda
+    Scene6_3, //Tercer pagina ayuda
+    Scene5_E, //Diagnostico Exitoso
+    Scene5_F, //Diagnostico Fallido
+    Scene3, //Charlas
   ],
 };
 
@@ -42,6 +33,7 @@ var game = new Phaser.Game(config);
 
 const pac = {
   pac1: {
+    //solo rubeola
     fiebre: "38.9°",
     cabeza: "true",
     congestion: "true",
@@ -51,17 +43,28 @@ const pac = {
     articulaciones: "true",
     faringitis: "true",
   },
-  /*pac2: {
-    fiebre: "41°",
+  pac2: {
+    //general
+    fiebre: "40°",
     cabeza: "true",
+    //rubeola
     congestion: "true",
     inflamacion: "false",
     ganglios: "false",
-    erupcion: "true",
-    articulaciones: "true",
+    erupcion: "false",
+    articulaciones: "false",
     faringitis: "false",
+    //paperas
+    glandulas: "false",
+    dolorMast: "false",
+    dolMusc: "false",
+    fatiga: "false",
+    perdidaApet: "false",
+    //varicela
+    perdidaApet: "false",
+    cansancio: "true",
   },
-  pac3: {},*/
+  pac3: {},
 };
 
 const COLOR_PRIMARY = 0x2e1f18;
@@ -74,21 +77,11 @@ var chat = 0;
 var mascaraR = 0;
 let barraR;
 var barraRmask;
-let stepHeight;
 
 var score = 240;
-var salv = 0;
+var salv = 0; //puntos de salvacion
 
-var diag;
-
-var temp = 0;
-var cab = 0;
-var con = 0;
-var inf = 0;
-var gang = 0;
-var sar = 0;
-var dol = 0;
-var far = 0;
+var diag; //diagnostico
 
 var finish = 0;
 var content = [
