@@ -98,9 +98,9 @@ class Scene0_A extends Phaser.Scene {
     this.load.image("menug3", "assets/menug3.png");
 
     this.load.image("selloA", "assets/selloA.png");
-    this.load.image("selloA_s", "assets/selloA_S.png");
+    this.load.image("selloA_s", "assets/selloA_s.png");
     this.load.image("selloD", "assets/selloD.png");
-    this.load.image("selloD_s", "assets/selloD_S.png");
+    this.load.image("selloD_s", "assets/selloD_s.png");
     this.load.image("sano", "assets/sano.png");
     this.load.image("enfermo", "assets/enfermo.png");
     this.load.image("siP", "assets/si.png");
