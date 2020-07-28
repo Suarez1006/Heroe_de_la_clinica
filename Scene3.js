@@ -16,6 +16,12 @@ class Scene3 extends Phaser.Scene {
       "https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png"
     );
   }
+  update() {
+    if (chat == 0) {
+      this.scene.restart();
+      chat = 1;
+    }
+  }
 
   create() {
     var negro = this.add
@@ -38,6 +44,7 @@ class Scene3 extends Phaser.Scene {
 
     negro.on("pointerdown", () => {
       this.scene.sleep();
+
       if (pausa == 2) {
         this.scene.resume("juego");
       }
@@ -50,7 +57,6 @@ class Scene3 extends Phaser.Scene {
 
 const GetValue = Phaser.Utils.Objects.GetValue;
 var createTextBox = function (scene, x, y, config) {
-  var termino = 1;
   var wrapWidth = GetValue(config, "wrapWidth", 0);
   var fixedWidth = GetValue(config, "fixedWidth", 0);
   var fixedHeight = GetValue(config, "fixedHeight", 0);

@@ -74,6 +74,7 @@ class Scene7 extends Phaser.Scene {
     });
 
     puerta.on("pointerdown", () => {
+      pausa = 8;
       this.scene.sleep();
       this.scene.start("juego4");
     });
@@ -90,12 +91,8 @@ class Scene7 extends Phaser.Scene {
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
     pac_02.on("pointerdown", () => {
-      if (pausa == 2) {
-        this.scene.restart("charla_01");
-      }
-      this.scene.pause();
       pausa = 7;
-      content = ["Ahora digo esto gg, soy otro"];
+      this.scene.pause();
       this.scene.run("charla_01");
     });
 

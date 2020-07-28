@@ -4,8 +4,8 @@ class Scene5_E extends Phaser.Scene {
   }
 
   create() {
-    //this.add.image(551, 310, "consultorio").setScale(1.0);
-
+    selloPE = 0;
+    selloPS = 0;
     this.add.image(551, 310, "scoreE");
 
     var V = this.add
@@ -21,8 +21,11 @@ class Scene5_E extends Phaser.Scene {
       this.scene.sleep("juego2");
       this.scene.sleep("clock");
       this.scene.start("Menu");
+      score = 240;
+      salv = 0;
       tiempo = 10000;
     });
+    
     var sig = this.add
       .image(660, 518.5, "hitbox")
       .setScale(0.78, 0.07)
@@ -31,13 +34,13 @@ class Scene5_E extends Phaser.Scene {
 
     sig.on("pointerdown", () => {
       score = 240;
+      salv = 0;
       tiempo = 10000;
       this.scene.restart("charla_01");
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
       this.scene.sleep("clock");
-      this.scene.start("juego3");
-      this.scene.run("clock2");
+      this.scene.start("sintomasPick");
     });
 
     var E = this.add.image(550, 250, "E").setAlpha(0.01);
@@ -54,7 +57,7 @@ class Scene5_E extends Phaser.Scene {
     var s1 = this.add.image(555, 450, "1").setAlpha(0.01);
     var s2 = this.add.image(555, 450, "2").setAlpha(0.01);
 
-    if (score == 1000) {
+    if (score >= 1000) {
       E.setAlpha(1);
       salv += 1;
     } else if (score >= 800) {

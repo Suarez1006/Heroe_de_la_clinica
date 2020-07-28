@@ -25,7 +25,6 @@ class SceneD extends Phaser.Scene {
             this.scene.resume("juego4");
           }
           this.scene.restart("diagSce");
-          pausa = 0;
         }
       },
       callbackScope: this,

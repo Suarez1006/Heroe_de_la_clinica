@@ -4,8 +4,8 @@ class Scene5_F extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(551, 310, "consultorio").setScale(1.0);
-
+    selloPE = 0;
+    selloPS = 0;
     this.add.image(551, 310, "scoreF");
 
     var V = this.add
@@ -21,6 +21,9 @@ class Scene5_F extends Phaser.Scene {
       this.scene.sleep("juego2");
       this.scene.sleep("clock");
       this.scene.start("Menu");
+      score = 240;
+      salv = 0;
+      tiempo = 10000;
     });
 
     var sig = this.add
@@ -31,13 +34,13 @@ class Scene5_F extends Phaser.Scene {
 
     sig.on("pointerdown", () => {
       score = 240;
+      salv = 0;
       tiempo = 10000;
       this.scene.restart("charla_01");
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
       this.scene.sleep("clock");
-      this.scene.start("juego3");
-      this.scene.run("clock2");
+      this.scene.start("sintomasPick");
     });
 
     var E = this.add.image(550, 250, "E").setAlpha(0.01);

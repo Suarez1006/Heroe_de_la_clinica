@@ -4,8 +4,8 @@ class SceneB extends Phaser.Scene {
   }
 
   create() {
-    var selloPS = 0;
-    var selloPE = 0;
+    selloPS = 0;
+    selloPE = 0;
     var negro = this.add
       .image(551, 310, "negro")
       .setAlpha(0.4)
@@ -227,72 +227,72 @@ class SceneB extends Phaser.Scene {
       this.scene.sleep();
       if (pausa == 2) {
         this.scene.resume("juego");
-        pausa = 0;
       } else if (pausa == 4) {
         this.scene.resume("juego2");
-        pausa = 0;
-      } else if (pausa == 7) {
-        this.scene.resume("juego3");
-        pausa = 0;
-      } else if (pausa == 8) {
-        this.scene.resume("juego4");
-        pausa = 0;
-      }
+      } 
     });
 
-    var selloE = this.add
-      .image(850, 400, "selloD")
-      .setInteractive({ cursor: "pointer" });
+    var enfermoSello = this.add.image(550, 220, "enfermo").setAlpha(0.01);
 
-    var enfermo = this.add.image(550, 220, "enfermo").setAlpha(0.01);
+    this.add.image(850, 400, "selloD");
+    var selloE = this.add
+      .image(850, 400, "selloD_s")
+      .setAlpha(0.01)
+      .setInteractive({ cursor: "pointer" });
 
     selloE.on("pointerdown", () => {
       if (selloPE == 0) {
         selloPE = 1;
         selloPS = 0;
         selloS.clearTint();
-        selloE.setTint(0x7f7f7f);
+        selloS.setAlpha(0.01);
+        selloE.setTint(0xff0000);
       } else if (selloPE == 1) {
         selloPE = 0;
         selloE.clearTint();
+        selloE.setAlpha(0.01);
       }
     });
     selloE.on("pointerover", () => {
       if (selloPE == 0) {
-        selloE.setTint(0xff0000);
+        selloE.setAlpha(1);
       }
     });
     selloE.on("pointerout", () => {
       if (selloPE === 0) {
-        selloE.clearTint();
+        selloE.setAlpha(0.01);
       }
     });
 
+    this.add.image(850, 200, "selloA").setInteractive({ cursor: "pointer" });
     var selloS = this.add
-      .image(850, 200, "selloA")
+      .image(850, 200, "selloA_s")
+      .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
 
-    var sano = this.add.image(550, 220, "sano").setAlpha(0.01);
+    var sanoSello = this.add.image(550, 220, "sano").setAlpha(0.01);
 
     selloS.on("pointerdown", () => {
       if (selloPS == 0) {
         selloPS = 1;
         selloPE = 0;
         selloE.clearTint();
-        selloS.setTint(0x7f7f7f);
+        selloE.setAlpha(0.01);
+        selloS.setTint(0x00ff00);
       } else if (selloPS == 1) {
         selloPS = 0;
         selloS.clearTint();
+        selloS.setAlpha(0.01);
       }
     });
     selloS.on("pointerover", () => {
       if (selloPS == 0) {
-        selloS.setTint(0x00ff00);
+        selloS.setAlpha(1);
       }
     });
     selloS.on("pointerout", () => {
       if (selloPS === 0) {
-        selloS.clearTint();
+        selloS.setAlpha(0.01);
       }
     });
 
@@ -302,6 +302,7 @@ class SceneB extends Phaser.Scene {
       .setInteractive({ cursor: "pointer" });
     flecha.on("pointerdown", () => {
       this.scene.pause("clock");
+      chat = 0;
       if (circuloA == 1) {
         score += 20;
       }
@@ -340,20 +341,43 @@ class SceneB extends Phaser.Scene {
       if (selloPS === 1) {
         if (finish == 1) {
           selloPS = 2;
-          sano.setAlpha(1);
+          sanoSello.setAlpha(1);
           finish = 2;
           flecha.setAlpha(1);
         }
       } else if (selloPE == 1) {
         if (finish == 1) {
           selloPE = 2;
-          enfermo.setAlpha(1);
+          enfermoSello.setAlpha(1);
           finish = 2;
           flecha.setAlpha(1);
           salv += 1;
           score += 600;
         }
       }
+    });
+    this.add.image(850, 545, "saltar");
+
+    var saltar = this.add
+      .image(850, 545, "saltar_s")
+      .setAlpha(0.01)
+      .setInteractive({ cursor: "pointer" });
+
+    saltar.on("pointerdown", () => {
+      score = 240;
+      salv = 0;
+      chat = 0;
+      this.scene.sleep("juego");
+      this.scene.sleep("juego2");
+      this.scene.sleep("clock");
+      this.scene.start("sintomasPick");
+    });
+
+    saltar.on("pointerover", () => {
+      saltar.setAlpha(1);
+    });
+    saltar.on("pointerout", () => {
+      saltar.setAlpha(0.01);
     });
   }
 }

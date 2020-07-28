@@ -27,7 +27,7 @@ class Scene8 extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      this.scene.run("Menu3");
+      this.scene.run("Menu3_01");
       pausa = 8;
     });
     ficha_c.on("pointerover", () => {
@@ -78,6 +78,7 @@ class Scene8 extends Phaser.Scene {
     });
 
     puerta.on("pointerdown", () => {
+      pausa = 7;
       this.scene.sleep();
       this.scene.start("juego3");
     });
@@ -278,44 +279,76 @@ class Scene8 extends Phaser.Scene {
       }
     });
     this.add.image(700, 283, "paciente_02a");
-
+    var temperaturaFinal;
+    if (temperatura >= 39.5) {
+      temperaturaFinal = 39.5;
+    } else if (temperatura >= 39) {
+      temperaturaFinal = 39;
+    } else if (temperatura >= 38.5) {
+      temperaturaFinal = 38.5;
+    } else if (temperatura >= 38) {
+      temperaturaFinal = 38;
+    } else if (temperatura >= 37.5) {
+      temperaturaFinal = 37.5;
+    } else if (temperatura >= 37) {
+      temperaturaFinal = 37;
+    } else if (temperatura >= 36.5) {
+      temperaturaFinal = 36.5;
+    } else if (temperatura >= 36) {
+      temperaturaFinal = 36;
+    }
     var pac_02 = this.add.image(700, 283, "paciente_02a_s").setAlpha(0.01);
 
     pac_02.on("pointerdown", () => {
       if (gvar == 1) {
-        gang = 1;
         guantes_s.clearTint().setAlpha(0.01);
         pac_02.disableInteractive().setAlpha(0.01);
         gvar = 0;
         this.scene.pause();
-        diag = "Sin ganglios inflamados";
-        this.scene.run("diagSce");
+        pausa = 8;
+        if (gang == "true") {
+          diag = "Sus ganglios están inflamados";
+          this.scene.run("diagSce");
+        } else {
+          diag = "Sin ganglios inflamados";
+          this.scene.run("diagSce");
+        }
       }
       if (evar == 1) {
-        far = 1;
         esteto_s.clearTint().setAlpha(0.01);
         pac_02.disableInteractive().setAlpha(0.01);
         evar = 0;
         this.scene.pause();
-        diag = "Sin ganglios inflamados";
-        this.scene.run("diagSce");
+        pausa = 8;
+        if (far == "true") {
+          diag = "Detecto faringitis";
+          this.scene.run("diagSce");
+        } else {
+          diag = "No detecto faringitis";
+          this.scene.run("diagSce");
+        }
       }
       if (lvar == 1) {
-        inf = 1;
         linterna_s.clearTint().setAlpha(0.01);
         pac_02.disableInteractive().setAlpha(0.01);
         lvar = 0;
         this.scene.pause();
-        diag = "Sin ganglios inflamados";
-        this.scene.run("diagSce");
+        pausa = 8;
+        if (inf == "true") {
+          diag = "Sus ojos estan inflamados";
+          this.scene.run("diagSce");
+        } else {
+          diag = "Sus ojos no estan inflamados";
+          this.scene.run("diagSce");
+        }
       }
       if (tvar == 1) {
-        temp = 1;
         termometro_s.clearTint().setAlpha(0.01);
         pac_02.disableInteractive().setAlpha(0.01);
         tvar = 0;
         this.scene.pause();
-        diag = "Sin ganglios inflamados";
+        pausa = 8;
+        diag = "Su temperatura es de " + temperaturaFinal + "°C";
         this.scene.run("diagSce");
       }
     });

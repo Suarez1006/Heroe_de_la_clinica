@@ -9,6 +9,7 @@ var config = {
   scene: [
     Scene0_A, //Pantalla de carga
     Scene1, //Menu principal
+    SceneS, //Pick de sintomas
     Scene2, //Consultorio primer paciente
     Scene0, //Creditos
     Scene4, //Camilla primer paciente
@@ -17,6 +18,8 @@ var config = {
     SceneA, //Libreta (Menu pausa)
     SceneB, //Ficha de primer paciente
     SceneB_1, //Ficha de segundo paciente (rubeola)
+    SceneB_2, //Ficha de segundo paciente (paperas)
+    SceneB_3, //Ficha de segundo paciente (varicela)
     SceneC, //Reloj primer paciente
     SceneC_1, //Reloj segundo paciente
     SceneD, //Diagnosticos
@@ -31,49 +34,13 @@ var config = {
 
 var game = new Phaser.Game(config);
 
-const pac = {
-  pac1: {
-    //solo rubeola
-    fiebre: "38.9°",
-    cabeza: "true",
-    congestion: "true",
-    inflamacion: "false",
-    ganglios: "false",
-    erupcion: "true",
-    articulaciones: "true",
-    faringitis: "true",
-  },
-  pac2: {
-    //general
-    fiebre: "40°",
-    cabeza: "true",
-    //rubeola
-    congestion: "true",
-    inflamacion: "false",
-    ganglios: "false",
-    erupcion: "false",
-    articulaciones: "false",
-    faringitis: "false",
-    //paperas
-    glandulas: "false",
-    dolorMast: "false",
-    dolMusc: "false",
-    fatiga: "false",
-    perdidaApet: "false",
-    //varicela
-    perdidaApet: "false",
-    cansancio: "true",
-  },
-  pac3: {},
-};
-
 const COLOR_PRIMARY = 0x2e1f18;
 const COLOR_LIGHT = 0x000000;
 const COLOR_DARK = 0xffffff;
 
-var pausa = 0;
+var pausa;
 var help = 0;
-var chat = 0;
+var chat = 1;
 var mascaraR = 0;
 let barraR;
 var barraRmask;
@@ -82,6 +49,9 @@ var score = 240;
 var salv = 0; //puntos de salvacion
 
 var diag; //diagnostico
+
+var selloPE = 0;
+var selloPS = 0;
 
 var finish = 0;
 var content = [
@@ -97,3 +67,50 @@ var content = [
 ];
 
 let tiempo = 10000;
+
+let rubEnf;
+let papEnf;
+let variEnf;
+
+var rub = 0;
+var vari = 0;
+var pap = 0;
+
+var fieb_repe = 0;
+var dolCab_repe = 0;
+var perApet_repe = 0;
+var gang_repe = 0;
+
+let chatInfo = {
+  chat_dolCab: "",
+  chat_fiebre: "",
+  chat_cong: "",
+  chat_inf: "",
+  chat_gang: "",
+  chat_erup: "",
+  chat_art: "",
+  chat_far: "",
+  chat_dolMast: "",
+  chat_dolMusc: "",
+  chat_fatiga: "",
+  chat_perApet: "",
+  chat_cans: "",
+};
+
+var charla;
+
+var dolCab;
+var fiebre;
+var cong;
+var inf;
+var gang;
+var erup;
+var art;
+var far;
+var dolMast;
+var dolMusc;
+var fatiga;
+var perApet;
+var cans;
+
+var temperatura;

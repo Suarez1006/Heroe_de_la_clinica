@@ -96,9 +96,6 @@ class Scene2 extends Phaser.Scene {
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
     pac_01.on("pointerdown", () => {
-      if (pausa == 7) {
-        this.scene.restart("charla_01");
-      }
       this.scene.pause();
       pausa = 2;
       this.scene.run("charla_01");
