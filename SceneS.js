@@ -57,7 +57,7 @@ class SceneS extends Phaser.Scene {
     if (enfermedadPatron <= 0.33) {
       //pick rubeola
       rub = 1;
-      console.log("Rubeola");
+
       enfermedad = sintomasData.enfermedad.rubeola;
       cong = Phaser.Math.RND.pick(sintomasData.enfermedad.rubeola.congestion);
       inf = Phaser.Math.RND.pick(sintomasData.enfermedad.rubeola.inflamacion);
@@ -98,7 +98,7 @@ class SceneS extends Phaser.Scene {
     } else if (enfermedadPatron <= 0.66) {
       //Pick paperas
       pap = 1;
-      console.log("Paperas");
+
       enfermedad = sintomasData.enfermedad.paperas;
       gang = Phaser.Math.RND.pick(sintomasData.enfermedad.paperas.ganglios);
       dolMast = Phaser.Math.RND.pick(sintomasData.enfermedad.paperas.dolorMast);
@@ -144,7 +144,7 @@ class SceneS extends Phaser.Scene {
     } else if (enfermedadPatron <= 1) {
       //Pick varicela
       vari = 1;
-      console.log("Varicela");
+
       enfermedad = sintomasData.enfermedad.varicela;
       perApet = Phaser.Math.RND.pick(
         sintomasData.enfermedad.varicela.perdidaApet
@@ -166,19 +166,6 @@ class SceneS extends Phaser.Scene {
       } else {
         variEnf = 0;
       }
-    }
-
-    console.log(temperatura);
-    console.log(sintPickeados);
-    console.log("enf= " + enf);
-    if (rubEnf == 1) {
-      console.log("enferme de rubeola");
-    } else if (papEnf == 1) {
-      console.log("enferme de paperas");
-    } else if (variEnf == 1) {
-      console.log("enferme de varicela");
-    } else {
-      console.log("sane");
     }
 
     var chatPatron = Phaser.Math.FloatBetween(0, 1);
