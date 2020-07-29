@@ -16,18 +16,6 @@ class Scene6_1 extends Phaser.Scene {
         this.scene.resume("Menu2");
       }
     });
-    this.add.image(551, 310, "ayuda_pag1").setInteractive();
-
-    var next = this.add
-      .image(700, 508, "blanco")
-      .setOrigin(0)
-      .setScale(0.8, 1)
-      .setInteractive({ cursor: "pointer" })
-      .setAlpha(0.01);
-
-    next.on("pointerdown", () => {
-      this.scene.run("ayuda_2");
-      this.scene.sleep();
-    });
+    this.add.image(551, 310, "ayuda_pag1").setInteractive().setScale(1.1);
   }
 }

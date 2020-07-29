@@ -15,6 +15,7 @@ var config = {
     Scene4, //Camilla primer paciente
     Scene7, //Consultorio segundo paciente
     Scene8, //Camilla segundo paciente
+    Scene9, // Puntaje final
     SceneA, //Libreta (Menu pausa)
     SceneB, //Ficha de primer paciente
     SceneB_1, //Ficha de segundo paciente (rubeola)
@@ -23,9 +24,9 @@ var config = {
     SceneC, //Reloj primer paciente
     SceneC_1, //Reloj segundo paciente
     SceneD, //Diagnosticos
+    SceneE, //Poster sintomas
+    SceneF, //Ayuda de los 10 segundos
     Scene6_1, //Primer pagina ayuda
-    Scene6_2, //Segunda pagina ayuda
-    Scene6_3, //Tercer pagina ayuda
     Scene5_E, //Diagnostico Exitoso
     Scene5_F, //Diagnostico Fallido
     Scene3, //Charlas
@@ -40,13 +41,19 @@ const COLOR_DARK = 0xffffff;
 
 var pausa;
 var help = 0;
+var ayu10 = 0;
 var chat = 1;
 var mascaraR = 0;
 let barraR;
 var barraRmask;
+var pacientes = 0;
+var pac_gen;
 
 var score = 240;
+var finalScore = 0;
+var finalSalv = 0;
 var salv = 0; //puntos de salvacion
+var scoreFS = 0;
 
 var diag; //diagnostico
 
@@ -96,8 +103,11 @@ let chatInfo = {
   chat_perApet: "",
   chat_cans: "",
 };
-
 var charla;
+
+var resetFicha = 0;
+var resetFichaA = 0;
+var resetFichaB = 0;
 
 var dolCab;
 var fiebre;

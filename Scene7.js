@@ -35,6 +35,17 @@ class Scene7 extends Phaser.Scene {
       ficha_c.setAlpha(0.01);
     });
 
+    var fichasintomas = this.add
+      .image(815, 185, "hitbox")
+      .setScale(0.7, 0.33)
+      .setInteractive({ cursor: "pointer" })
+      .setAlpha(0.01);
+
+    fichasintomas.on("pointerdown", () => {
+      this.scene.pause("juego3");
+      this.scene.run("postersintomas");
+    });
+
     var libreta = this.add
       .image(78, 484, "libreta_s")
       .setOrigin(0, 0)
@@ -86,21 +97,34 @@ class Scene7 extends Phaser.Scene {
     });
 
     var pac_02 = this.add
-      .image(405.6, 342, "paciente_02")
-      .setScale(1.1, 1.12)
+      .image(405.6, 360, "paciente_02")
+      .setScale(0.9, 1)
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
-    pac_02.on("pointerdown", () => {
+    var pac_03 = this.add
+      .image(390, 350, "paciente_03")
+      .setScale(0.868, 0.83)
+      .setInteractive({ pixelPerfect: "true", cursor: "pointer" })
+      .setAlpha(0);
+
+    pac_gen = pac_02;
+    if (pacientes == 2) {
+      pac_03.setAlpha(1);
+      pac_02.setAlpha(0);
+      pac_gen = pac_03;
+    }
+
+    pac_gen.on("pointerdown", () => {
       pausa = 7;
       this.scene.pause();
       this.scene.run("charla_01");
     });
 
-    pac_02.on("pointerover", () => {
+    pac_gen.on("pointerover", () => {
       info.setText("Charlar");
       back.setAlpha(1).setScale(0.7, 1);
     });
-    pac_02.on("pointerout", () => {
+    pac_gen.on("pointerout", () => {
       info.setText("");
       back.setAlpha(0.01);
     });

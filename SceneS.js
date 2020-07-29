@@ -3,8 +3,25 @@ class SceneS extends Phaser.Scene {
     super("sintomasPick");
   }
   create() {
+    pacientes += 1;
+
     var sintomasData = this.game.cache.json.get("sintomas");
-    charla = 1;
+
+    chatInfo = {
+      chat_dolCab: "",
+      chat_fiebre: "",
+      chat_cong: "",
+      chat_inf: "",
+      chat_gang: "",
+      chat_erup: "",
+      chat_art: "",
+      chat_far: "",
+      chat_dolMast: "",
+      chat_dolMusc: "",
+      chat_fatiga: "",
+      chat_perApet: "",
+      chat_cans: "",
+    };
 
     var enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
     temperatura = Phaser.Math.FloatBetween(36, 40);
@@ -53,7 +70,7 @@ class SceneS extends Phaser.Scene {
       var sintPickeados = { dolCab, fiebre, cong, inf, gang, erup, art, far };
       if (cong == "true") {
         enf++;
-        chatInfo.chat_cong = "Me siento algo congestionado ultimamente.\n";
+        chatInfo.chat_cong = "Tengo algo de congestión ultimamente.\n";
       }
       if (inf == "true") {
         enf++;
@@ -68,7 +85,7 @@ class SceneS extends Phaser.Scene {
       if (art == "true") {
         enf++;
         chatInfo.chat_art =
-          "Las articulaciones me duelen constantemente al moverme.\n";
+          "Las articulaciones me duelen constantemente al moverme.";
       }
       if (far == "true") {
         enf++;
@@ -113,11 +130,11 @@ class SceneS extends Phaser.Scene {
       if (fatiga == "true") {
         enf++;
         chatInfo.chat_fatiga =
-          "Estoy fatigado ultimamente, no tengo ganas de hacer nada.\n";
+          "Estoy con fatiga ultimamente, no tengo ganas de hacer nada.\n";
       }
       if (perApet == "true") {
         enf++;
-        chatInfo.chat_perApet = "Ando sin ganas de comer hace algunos días.\n";
+        chatInfo.chat_perApet = "Ando sin ganas de comer hace algunos días.";
       }
       if (enf >= 3) {
         papEnf = 1;
@@ -141,7 +158,8 @@ class SceneS extends Phaser.Scene {
       }
       if (cans == "true") {
         enf++;
-        chatInfo.chat_cans = "Estoy cansado y me cuesta salir de la cama.\n";
+        chatInfo.chat_cans =
+          "Ultimamente me cuesta salir de la cama, me canso rapido.";
       }
       if (enf >= 2) {
         variEnf = 1;
@@ -154,13 +172,13 @@ class SceneS extends Phaser.Scene {
     console.log(sintPickeados);
     console.log("enf= " + enf);
     if (rubEnf == 1) {
-      console.log("enfermo de rubeola");
+      console.log("enferme de rubeola");
     } else if (papEnf == 1) {
-      console.log("enfermo de paperas");
+      console.log("enferme de paperas");
     } else if (variEnf == 1) {
-      console.log("enfermo de varicela");
+      console.log("enferme de varicela");
     } else {
-      console.log("sano");
+      console.log("sane");
     }
 
     var chatPatron = Phaser.Math.FloatBetween(0, 1);

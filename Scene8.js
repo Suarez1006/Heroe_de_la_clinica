@@ -131,13 +131,13 @@ class Scene8 extends Phaser.Scene {
         esteto_s.clearTint().setAlpha(0.01);
         linterna_s.clearTint().setAlpha(0.01);
         termometro_s.clearTint().setAlpha(0.01);
-        pac_02
+        pac_gen
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (gvar == 1) {
         guantes_s.clearTint();
         gvar = 0;
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
         back.setAlpha(0.01);
       }
     });
@@ -173,13 +173,13 @@ class Scene8 extends Phaser.Scene {
         guantes_s.clearTint().setAlpha(0.01);
         linterna_s.clearTint().setAlpha(0.01);
         termometro_s.clearTint().setAlpha(0.01);
-        pac_02
+        pac_gen
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (evar == 1) {
         esteto_s.clearTint();
         evar = 0;
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
       }
     });
 
@@ -214,13 +214,13 @@ class Scene8 extends Phaser.Scene {
         guantes_s.clearTint().setAlpha(0.01);
         esteto_s.clearTint().setAlpha(0.01);
         termometro_s.clearTint().setAlpha(0.01);
-        pac_02
+        pac_gen
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (lvar == 1) {
         linterna_s.clearTint();
         lvar = 0;
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
       }
     });
 
@@ -255,13 +255,13 @@ class Scene8 extends Phaser.Scene {
         guantes_s.clearTint().setAlpha(0.01);
         esteto_s.clearTint().setAlpha(0.01);
         linterna_s.clearTint().setAlpha(0.01);
-        pac_02
+        pac_gen
           .setInteractive({ cursor: "pointer", pixelPerfect: true })
           .setAlpha(1);
       } else if (tvar == 1) {
         termometro_s.clearTint();
         tvar = 0;
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
       }
     });
 
@@ -278,7 +278,30 @@ class Scene8 extends Phaser.Scene {
         back.setAlpha(0.01);
       }
     });
-    this.add.image(700, 283, "paciente_02a");
+
+    var pac_02_d = this.add.image(600, 310.9, "paciente_02a");
+
+    var pac_02 = this.add.image(600, 310.9, "paciente_02a_s").setAlpha(0.01);
+    pac_gen = pac_02;
+
+    var pac_03_d = this.add
+      .image(700, 300, "paciente_03a")
+      .setAlpha(0)
+      .setScale(0.9);
+
+    var pac_03 = this.add
+      .image(700, 300, "paciente_03a_s")
+      .setAlpha(0)
+      .setScale(0.9);
+
+    if (pacientes == 2) {
+      pac_gen = pac_03;
+
+      pac_03_d.setAlpha(1);
+      pac_02_d.setAlpha(0);
+      pac_02_d.setAlpha(0);
+    }
+
     var temperaturaFinal;
     if (temperatura >= 39.5) {
       temperaturaFinal = 39.5;
@@ -297,12 +320,11 @@ class Scene8 extends Phaser.Scene {
     } else if (temperatura >= 36) {
       temperaturaFinal = 36;
     }
-    var pac_02 = this.add.image(700, 283, "paciente_02a_s").setAlpha(0.01);
 
-    pac_02.on("pointerdown", () => {
+    pac_gen.on("pointerdown", () => {
       if (gvar == 1) {
         guantes_s.clearTint().setAlpha(0.01);
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
         gvar = 0;
         this.scene.pause();
         pausa = 8;
@@ -316,7 +338,7 @@ class Scene8 extends Phaser.Scene {
       }
       if (evar == 1) {
         esteto_s.clearTint().setAlpha(0.01);
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
         evar = 0;
         this.scene.pause();
         pausa = 8;
@@ -330,7 +352,7 @@ class Scene8 extends Phaser.Scene {
       }
       if (lvar == 1) {
         linterna_s.clearTint().setAlpha(0.01);
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
         lvar = 0;
         this.scene.pause();
         pausa = 8;
@@ -344,7 +366,7 @@ class Scene8 extends Phaser.Scene {
       }
       if (tvar == 1) {
         termometro_s.clearTint().setAlpha(0.01);
-        pac_02.disableInteractive().setAlpha(0.01);
+        pac_gen.disableInteractive().setAlpha(0.01);
         tvar = 0;
         this.scene.pause();
         pausa = 8;

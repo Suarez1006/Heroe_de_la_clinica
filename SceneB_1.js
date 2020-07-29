@@ -2,6 +2,12 @@ class SceneB_1 extends Phaser.Scene {
   constructor() {
     super("Menu3_01");
   }
+  update() {
+    if (resetFicha == 1) {
+      this.scene.restart();
+      resetFicha = 0;
+    }
+  }
 
   create() {
     var circuloA2 = 0;
@@ -23,10 +29,22 @@ class SceneB_1 extends Phaser.Scene {
       .image(551, 310, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
-    var ficha = this.add
+
+    var ficha2 = this.add
       .image(481, 310, "ficha2")
       .setScale(0.99)
       .setInteractive();
+    var ficha = ficha2;
+    var ficha3 = this.add
+      .image(481, 310, "ficha3")
+      .setScale(0.99)
+      .setInteractive()
+      .setAlpha(0);
+    if (pacientes == 2) {
+      ficha = ficha3;
+      ficha3.setAlpha(1);
+      ficha2.setAlpha(0);
+    }
 
     var flechaN = this.add
       .image(710, 520, "flechaP")
@@ -389,10 +407,9 @@ class SceneB_1 extends Phaser.Scene {
       .setAlpha(0)
       .setInteractive({ cursor: "pointer" });
     flecha.on("pointerdown", () => {
-      this.scene.restart("Menu3_01");
-      this.scene.restart("Menu3_02");
-      this.scene.restart("Menu3_03");
-
+      resetFicha = 1;
+      resetFichaA = 1;
+      resetFichaB = 1;
       chat = 0;
       if (rub == 0) {
         cong = false;
@@ -489,19 +506,25 @@ class SceneB_1 extends Phaser.Scene {
         if (selloPS == 2) {
           this.scene.pause();
           this.scene.start("score_F");
+          scoreFS++;
         } else if (selloPE == 2) {
           this.scene.pause();
           this.scene.start("score_E");
+          scoreFS++;
         }
       } else {
         if (selloPS == 2) {
           this.scene.pause();
           this.scene.start("score_E");
+          scoreFS++;
         } else if (selloPE == 2) {
           this.scene.pause();
           this.scene.start("score_F");
+          scoreFS++;
         }
       }
+      finalScore += score;
+      
     });
     ficha.on("pointerdown", () => {
       if (sellado == 0) {

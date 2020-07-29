@@ -2,6 +2,12 @@ class SceneB_2 extends Phaser.Scene {
   constructor() {
     super("Menu3_02");
   }
+  update() {
+    if (resetFichaA == 1) {
+      this.scene.restart();
+      resetFichaA = 0;
+    }
+  }
 
   create() {
     var repeF = 0;
@@ -17,10 +23,21 @@ class SceneB_2 extends Phaser.Scene {
       .image(551, 310, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
-    var ficha = this.add
+    var ficha2a = this.add
       .image(481, 310, "ficha2a")
       .setScale(0.99)
       .setInteractive();
+    var ficha = ficha2a;
+    var ficha3a = this.add
+      .image(481, 310, "ficha3a")
+      .setScale(0.99)
+      .setInteractive()
+      .setAlpha(0);
+    if (pacientes == 2) {
+      ficha = ficha3a;
+      ficha3a.setAlpha(1);
+      ficha2a.setAlpha(0);
+    }
 
     var flechaN = this.add
       .image(710, 520, "flechaP")
@@ -374,10 +391,9 @@ class SceneB_2 extends Phaser.Scene {
       .setAlpha(0)
       .setInteractive({ cursor: "pointer" });
     flecha.on("pointerdown", () => {
-      this.scene.restart("Menu3_01");
-      this.scene.restart("Menu3_02");
-      this.scene.restart("Menu3_03");
-
+      resetFicha = 1;
+      resetFichaA = 1;
+      resetFichaB = 1;
       chat = 0;
       if ((pap = 0)) {
         dolMast = false;
@@ -466,21 +482,26 @@ class SceneB_2 extends Phaser.Scene {
       }
       if (papEnf == 1) {
         if (selloPS == 2) {
-          this.scene.pause();
+          this.scene.sleep();
           this.scene.start("score_F");
+          scoreFS++;
         } else if (selloPE == 2) {
-          this.scene.pause();
+          this.scene.sleep();
           this.scene.start("score_E");
+          scoreFS++;
         }
       } else {
         if (selloPS == 2) {
-          this.scene.pause();
+          this.scene.sleep();
           this.scene.start("score_E");
+          scoreFS++;
         } else if (selloPE == 2) {
-          this.scene.pause();
+          this.scene.sleep();
           this.scene.start("score_F");
+          scoreFS++;
         }
       }
+      finalScore += score;
     });
     ficha.on("pointerdown", () => {
       if (sellado == 0) {

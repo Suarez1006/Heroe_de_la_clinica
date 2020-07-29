@@ -3,6 +3,26 @@ class Scene2 extends Phaser.Scene {
     super("juego");
   }
   create() {
+    var time10s = 0;
+
+    this.time.addEvent({
+      delay: 1000,
+      callback: function () {
+        if (ayu10 == 0) {
+          time10s++;
+          console.log(time10s);
+
+          if (time10s == 10) {
+            this.scene.pause();
+            this.scene.run("help10s");
+            ayu10 = 1;
+          }
+        }
+      },
+      callbackScope: this,
+      loop: true,
+    });
+
     this.add.image(551, 310, "consultorio").setScale(1.0);
 
     var back = this.add.image(10, 23, "infoB").setOrigin(0, 0).setAlpha(0.01);
@@ -96,6 +116,7 @@ class Scene2 extends Phaser.Scene {
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
     pac_01.on("pointerdown", () => {
+      ayu10 = 1;
       this.scene.pause();
       pausa = 2;
       this.scene.run("charla_01");

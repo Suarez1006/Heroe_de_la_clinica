@@ -56,11 +56,10 @@ class Scene0_A extends Phaser.Scene {
     this.load.image("saltar_s", "assets/skip_s.png");
 
     this.load.image("ayuda_pag1", "assets/ayuda_pag1.png");
-    this.load.image("ayuda_pag2", "assets/ayuda_pag2.png");
-    this.load.image("ayuda_pag3", "assets/ayuda_pag3.png");
 
     this.load.image("scoreE", "assets/scoreE.png");
     this.load.image("scoreF", "assets/scoreF.png");
+    this.load.image("final", "assets/final.png");
 
     this.load.image("libreta", "assets/libreta.png");
     this.load.image("flechaP", "assets/flechaP.png");
@@ -69,6 +68,9 @@ class Scene0_A extends Phaser.Scene {
     this.load.image("ficha2", "assets/ficha_02.png");
     this.load.image("ficha2a", "assets/ficha_02a.png");
     this.load.image("ficha2b", "assets/ficha_02b.png");
+    this.load.image("ficha3", "assets/ficha_03.png");
+    this.load.image("ficha3a", "assets/ficha_03a.png");
+    this.load.image("ficha3b", "assets/ficha_03b.png");
 
     this.load.image("guantes", "assets/guantes.png");
     this.load.image("guantes_s", "assets/guantes_s.png");
@@ -115,12 +117,17 @@ class Scene0_A extends Phaser.Scene {
     this.load.image("paciente_02a", "assets/paciente_02a.png");
     this.load.image("paciente_02a_s", "assets/paciente_02a_s.png");
 
+    this.load.image("paciente_03", "assets/paciente_03.png");
+    this.load.image("paciente_03a", "assets/paciente_03a.png");
+    this.load.image("paciente_03a_s", "assets/paciente_03a_s.png");
+
     this.load.image("hitbox", "assets/hitbox.png");
     this.load.image("hitbox2", "assets/hitbox2.png");
 
     this.load.image("libreta_s", "assets/libreta_s.png");
     this.load.image("ficha_s", "assets/ficha_s.png");
     this.load.image("infoB", "assets/info.png");
+    this.load.image("poster", "assets/poster.png");
 
     this.load.image("E", "assets/E.png");
     this.load.image("B", "assets/B.png");
@@ -130,6 +137,12 @@ class Scene0_A extends Phaser.Scene {
     this.load.image("0", "assets/0.png");
     this.load.image("1", "assets/1.png");
     this.load.image("2", "assets/2.png");
+
+    this.load.image("excelente", "assets/excelente.png");
+    this.load.image("muyBueno", "assets/muyBueno.png");
+    this.load.image("bueno", "assets/bueno.png");
+    this.load.image("satisfactorio", "assets/satisfactorio.png");
+    this.load.image("noSatisfactorio", "assets/noSatisfactorio.png");
 
     this.load.json("sintomas", "assets/data/sintomas.json");
 

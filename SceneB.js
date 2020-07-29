@@ -227,9 +227,17 @@ class SceneB extends Phaser.Scene {
       this.scene.sleep();
       if (pausa == 2) {
         this.scene.resume("juego");
+        pausa = 0;
       } else if (pausa == 4) {
         this.scene.resume("juego2");
-      } 
+        pausa = 0;
+      } else if (pausa == 7) {
+        this.scene.resume("juego3");
+        pausa = 0;
+      } else if (pausa == 8) {
+        this.scene.resume("juego4");
+        pausa = 0;
+      }
     });
 
     var enfermoSello = this.add.image(550, 220, "enfermo").setAlpha(0.01);
@@ -367,10 +375,11 @@ class SceneB extends Phaser.Scene {
       score = 240;
       salv = 0;
       chat = 0;
-      this.scene.sleep("juego");
-      this.scene.sleep("juego2");
       this.scene.sleep("clock");
       this.scene.start("sintomasPick");
+      if (pacientes == 1) {
+        pacientes = 2;
+      }
     });
 
     saltar.on("pointerover", () => {
