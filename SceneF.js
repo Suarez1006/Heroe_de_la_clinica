@@ -14,7 +14,7 @@ class SceneF extends Phaser.Scene {
         this.scene.resume("juego");
       });
   
-      this.add.image(550, 300, "infoB").setInteractive();
+      this.add.image(550, 300, "cartelAyuda").setInteractive();
     }
   }
   

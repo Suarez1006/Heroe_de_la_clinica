@@ -10,7 +10,6 @@ class Scene2 extends Phaser.Scene {
       callback: function () {
         if (ayu10 == 0) {
           time10s++;
-          console.log(time10s);
 
           if (time10s == 10) {
             this.scene.pause();

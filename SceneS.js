@@ -27,11 +27,11 @@ class SceneS extends Phaser.Scene {
     temperatura = Phaser.Math.FloatBetween(36, 40);
     let enfermedad;
     var enf = 0;
-    if (temperatura <= 37.9) {
-      fiebre = "false";
-    } else {
+    if (temperatura >= 38) {
       fiebre = "true";
       enf += 0.5;
+    } else {
+      fiebre = "false";
     }
     var cabPatron = Phaser.Math.FloatBetween(0, 1);
     if (fiebre == true) {
