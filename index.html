@@ -1,78 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <title>Heroe de la clinica</title>
 
     <script src="//cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
 
-    <script type="text/javascript" src="Scene1.js"></script>
-    <script type="text/javascript" src="Scene0_A.js"></script>
-    <script type="text/javascript" src="Scene2.js"></script>
-    <script type="text/javascript" src="SceneS.js"></script>
-    <script type="text/javascript" src="SceneC.js"></script>
-    <script type="text/javascript" src="SceneC_1.js"></script>
-    <script type="text/javascript" src="SceneA.js"></script>
-    <script type="text/javascript" src="SceneB.js"></script>
-    <script type="text/javascript" src="SceneB_1.js"></script>
-    <script type="text/javascript" src="SceneB_2.js"></script>
-    <script type="text/javascript" src="SceneB_3.js"></script>
-    <script type="text/javascript" src="Scene3.js"></script>
-    <script type="text/javascript" src="Scene4.js"></script>
-    <script type="text/javascript" src="Scene7.js"></script>
-    <script type="text/javascript" src="Scene8.js"></script>
-    <script type="text/javascript" src="Scene9.js"></script>
-    <script type="text/javascript" src="Scene6_1.js"></script>
-    <script type="text/javascript" src="Scene5_E.js"></script>
-    <script type="text/javascript" src="Scene5_F.js"></script>
-    <script type="text/javascript" src="SceneD.js"></script>
-    <script type="text/javascript" src="SceneE.js"></script>
-    <script type="text/javascript" src="SceneF.js"></script>
+    <script type="text/javascript" src="./assets/js/menu/mainMenu.js"></script>
 
-    <script type="text/javascript" src="Scene0.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/loader.js"></script>
+    <script type="text/javascript" src="./assets/js/tutorial/Tuto_01.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/SintScene.js"></script>
+    <script type="text/javascript" src="./assets/js/tutorial/relojTuto.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/reloj.js"></script>
+    <script type="text/javascript" src="./assets/js/menu/menuPausa.js"></script>
+    <script type="text/javascript" src="./assets/js/tutorial/menuTuto.js"></script>
+    <script type="text/javascript" src="./assets/js/menu/rubMenu.js"></script>
+    <script type="text/javascript" src="./assets/js/menu/papMenu.js"></script>
+    <script type="text/javascript" src="./assets/js/menu/varMenu.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/chatScene.js"></script>
+    <script type="text/javascript" src="./assets/js/tutorial/Tuto_02.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/consultorioScene.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/camillaScene.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/scoreScene.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/helpScene.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/Exito.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/Fallo.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/diagnostico.js"></script>
+    <script type="text/javascript" src="./assets/js/menu/infoPoster.js"></script>
+    <script type="text/javascript" src="./assets/js/tutorial/ayuda10s.js"></script>
 
-    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="./assets/js/juego/creditScene.js"></script>
 
-    <style type="text/css">
+    <script type="text/javascript" src="./assets/js/game.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
       body {
         margin: 0;
+        padding: 0;
+        color: #eee;
+        font: caption;
       }
-    </style>
-    <style media="screen" type="text/css">
-      @font-face {
-        font-family: font1;
-        src: url("./assets/fonts/dogica.ttf");
-        font-weight: 20px;
-        font-weight: normal;
-        width: 30px;
-      }
-    </style>
-    <style media="screen" type="text/css">
-      @font-face {
-        font-family: font2;
-        src: url("./assets/fonts/Hyperspace.otf");
-        font-weight: 20px;
-        font-weight: normal;
-        width: 30px;
-      }
-    </style>
-    <div
-      style="
-        font-family: font1;
-        position: absolute;
-        left: -1000px;
-        visibility: hidden;
-      "
-    ></div>
-    <div
-      style="
-        font-family: font2;
-        position: absolute;
-        left: -1000px;
-        visibility: hidden;
-      "
-    ></div>
-  </head>
 
-  <footer><div id="version"></div></footer>
+      @font-face {
+        font-family: font1;
+        src: url("assets/fonts/dogica.ttf");
+        font-weight: 20px;
+        font-weight: normal;
+        width: 30px;
+      }
+      @font-face {
+        font-family: font2;
+        src: url("assets/fonts/Hyperspace.otf");
+        font-weight: 20px;
+        font-weight: normal;
+        width: 30px;
+      }
+
+      #fuente1 {
+        font-family: font1;
+        position: absolute;
+        left: -1000px;
+        visibility: hidden;
+      }
+
+      #fuente2 {
+        font-family: font2;
+        position: absolute;
+        left: -1000px;
+        visibility: hidden;
+      }
+    </style>
+
+    <div id="fuente1"></div>
+    <div id="fuente2"></div>
+  </head>
 </html>
