@@ -216,16 +216,16 @@ class menuTuto extends Phaser.Scene {
       this.scene.pause("clock");
       chat = 0;
       if (circuloA == 1) {
-        score += 20;
+        score += 40;
       }
       if (circuloA2 == 1) {
-        score += 20;
+        score += 40;
       }
       if (circuloA3 == 1) {
-        score += 20;
+        score += 40;
       }
       if (circuloA4 == 1) {
-        score += 20;
+        score += 40;
       }
       
       if (selloPE == 2) {
