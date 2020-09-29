@@ -338,7 +338,7 @@ class camillaScene extends Phaser.Scene {
       pac_02_d.setAlpha(0);
     }
 
-    var temperaturaFinal = Phaser.Math.RoundTo(temperatura,-2);
+    var temperaturaFinal = Phaser.Math.RoundTo(temperatura, -2);
 
     /*if (temperatura >= 39.5) {
       temperaturaFinal = 39.5;

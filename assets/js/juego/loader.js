@@ -96,7 +96,7 @@ class loader extends Phaser.Scene {
     this.load.image("bowl", "assets/imagenes/elementos/bowl.png");
     this.load.image("chupetin", "assets/imagenes/elementos/chupetin.png");
 
-    this.load.image("puerta", "assets/imagenes/elementos/Puerta.png");
+    this.load.image("puerta", "assets/imagenes/elementos/puerta.png");
     this.load.image("tilde", "assets/imagenes/botones/tilde.png");
     this.load.image("reload", "assets/imagenes/botones/retry.png");
     this.load.image("muñeco", "assets/imagenes/complementos/muñeco.png");
