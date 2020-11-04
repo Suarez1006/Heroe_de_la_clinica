@@ -7,123 +7,66 @@ class menuTuto extends Phaser.Scene {
     selloPS = 0;
     selloPE = 0;
     var negro = this.add
-      .image(551, 310, "negro")
+      .image(960, 540, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
-    var ficha = this.add
-      .image(481, 310, "ficha2b")
-      .setScale(0.99)
-      .setInteractive();
+    this.add.image(750, 540, "ficha").setInteractive();
 
-    var siP = this.add
-      .image(570, 290, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP2 = this.add
-      .image(570, 324, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP3 = this.add
-      .image(570, 358, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP4 = this.add
-      .image(570, 390, "siP")
-      .setInteractive({ cursor: "pointer" });
-    
+    this.add.image(752, 355, "fichaFotoTuto");
 
-    var noP = this.add
-      .image(650, 290, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP2 = this.add
-      .image(650, 324, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP3 = this.add
-      .image(650, 358, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP4 = this.add
-      .image(650, 390, "noP")
-      .setInteractive({ cursor: "pointer" });
-    
-    // -----------------------------------------
-    var circulo = this.add.image(siP.x, siP.y, "circuloP").setAlpha(0.01);
-    var circulo2 = this.add.image(noP.x, noP.y, "circuloP").setAlpha(0.01);
-    var circulo3 = this.add.image(siP2.x, siP2.y, "circuloP").setAlpha(0.01);
-    var circulo4 = this.add.image(noP2.x, noP2.y, "circuloP").setAlpha(0.01);
-    var circulo5 = this.add.image(siP3.x, siP3.y, "circuloP").setAlpha(0.01);
-    var circulo6 = this.add.image(noP3.x, noP3.y, "circuloP").setAlpha(0.01);
-    var circulo7 = this.add.image(siP4.x, siP4.y, "circuloP").setAlpha(0.01);
-    var circulo8 = this.add.image(noP4.x, noP4.y, "circuloP").setAlpha(0.01);
-    
-    var circuloA = 0;
-    var circuloA2 = 0;
-    var circuloA3 = 0;
-    var circuloA4 = 0;
-    
+    sep1 = this.add
+      .image(1123, 661, "separador_pac_s")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.45)
+      .setAlpha(1);
+    sep1.on("pointerover", () => {
+      sep1.setAlpha(1);
+    });
+    sep2 = this.add
+      .image(1123, 800.9, "separador_var_s")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.45)
+      .setAlpha(0.001);
 
-    siP.on("pointerdown", () => {
-      circuloA = 1;
-      if (circuloA === 1) {
-        circulo.setAlpha(0.6);
-        circulo2.setAlpha(0.01);
-        finish = 1;
-      }
+    sep2.on("pointerover", () => {
+      sep2.setAlpha(1).setDepth(1);
     });
-    noP.on("pointerdown", () => {
-      circuloA = 2;
-      if (circuloA === 2) {
-        circulo2.setAlpha(0.6);
-        circulo.setAlpha(0.01);
-        finish = 1;
-      }
+    sep2.on("pointerout", () => {
+      sep2.setAlpha(0.001);
     });
-    siP2.on("pointerdown", () => {
-      circuloA2 = 1;
-      if (circuloA2 === 1) {
-        circulo3.setAlpha(0.6);
-        circulo4.setAlpha(0.01);
-        finish = 1;
-      }
+    sep2.on("pointerdown", () => {
+      this.scene.sleep("Menu3");
+      this.scene.run("var_Tuto");
     });
-    noP2.on("pointerdown", () => {
-      circuloA2 = 2;
-      if (circuloA2 === 2) {
-        circulo4.setAlpha(0.6);
-        circulo3.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    siP3.on("pointerdown", () => {
-      circuloA3 = 1;
-      if (circuloA3 === 1) {
-        circulo5.setAlpha(0.6);
-        circulo6.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    noP3.on("pointerdown", () => {
-      circuloA3 = 2;
-      if (circuloA3 === 2) {
-        circulo6.setAlpha(0.6);
-        circulo5.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    siP4.on("pointerdown", () => {
-      circuloA4 = 1;
-      if (circuloA4 === 1) {
-        circulo7.setAlpha(0.6);
-        circulo8.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    noP4.on("pointerdown", () => {
-      circuloA4 = 2;
-      if (circuloA4 === 2) {
-        circulo8.setAlpha(0.6);
-        circulo7.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    
-  
+
+    this.add
+      .text(750, 600, "Nombre: Arnone, Juan", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+    this.add
+      .text(750, 780, "Edad: 32", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+    this.add
+      .text(750, 660, "Grupo Sanguineo: A+", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+    this.add
+      .text(750, 720, "Altura: 1,84", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
 
     // -------------------------------------------------
 
@@ -144,124 +87,20 @@ class menuTuto extends Phaser.Scene {
       }
     });
 
-    var enfermoSello = this.add.image(550, 240, "enfermo").setAlpha(0.01);
-
-    this.add.image(850, 400, "selloD");
-    var selloE = this.add
-      .image(850, 400, "selloD_s")
-      .setAlpha(0.01)
-      .setInteractive({ cursor: "pointer" });
-
-    selloE.on("pointerdown", () => {
-      if (selloPE == 0) {
-        selloPE = 1;
-        selloPS = 0;
-        selloS.clearTint();
-        selloS.setAlpha(0.01);
-        selloE.setTint(0xff0000);
-      } else if (selloPE == 1) {
-        selloPE = 0;
-        selloE.clearTint();
-        selloE.setAlpha(0.01);
-      }
-    });
-    selloE.on("pointerover", () => {
-      if (selloPE == 0) {
-        selloE.setAlpha(1);
-      }
-    });
-    selloE.on("pointerout", () => {
-      if (selloPE === 0) {
-        selloE.setAlpha(0.01);
-      }
-    });
-
-    this.add.image(850, 200, "selloA").setInteractive({ cursor: "pointer" });
-    var selloS = this.add
-      .image(850, 200, "selloA_s")
-      .setAlpha(0.01)
-      .setInteractive({ cursor: "pointer" });
-
-    var sanoSello = this.add.image(550, 240, "sano").setAlpha(0.01);
-
-    selloS.on("pointerdown", () => {
-      if (selloPS == 0) {
-        selloPS = 1;
-        selloPE = 0;
-        selloE.clearTint();
-        selloE.setAlpha(0.01);
-        selloS.setTint(0x00ff00);
-      } else if (selloPS == 1) {
-        selloPS = 0;
-        selloS.clearTint();
-        selloS.setAlpha(0.01);
-      }
-    });
-    selloS.on("pointerover", () => {
-      if (selloPS == 0) {
-        selloS.setAlpha(1);
-      }
-    });
-    selloS.on("pointerout", () => {
-      if (selloPS === 0) {
-        selloS.setAlpha(0.01);
-      }
-    });
-
-    var flecha = this.add
-      .image(1040, 50, "tilde")
-      .setAlpha(0)
-      .setInteractive({ cursor: "pointer" });
-    flecha.on("pointerdown", () => {
-      this.scene.pause("clock");
-      chat = 0;
-      if (circuloA == 1) {
-        score += 40;
-      }
-      if (circuloA2 == 1) {
-        score += 40;
-      }
-      if (circuloA3 == 1) {
-        score += 40;
-      }
-      if (circuloA4 == 1) {
-        score += 40;
-      }
-      
-      if (selloPE == 2) {
-        this.scene.pause();
-        this.scene.start("score_E");
-      } else if (selloPS == 2) {
-        this.scene.pause();
-        this.scene.start("score_F");
-      }
-    });
-
-    ficha.on("pointerdown", () => {
-      if (selloPS === 1) {
-        if (finish == 1) {
-          selloPS = 2;
-          sanoSello.setAlpha(1);
-          finish = 2;
-          flecha.setAlpha(1);
-        }
-      } else if (selloPE == 1) {
-        if (finish == 1) {
-          selloPE = 2;
-          enfermoSello.setAlpha(1);
-          finish = 2;
-          flecha.setAlpha(1);
-          salv += 1;
-          score += 600;
-        }
-      }
-    });
-    this.add.image(850, 545, "saltar");
+    this.add.image(1400, 910, "boton");
 
     var saltar = this.add
-      .image(850, 545, "saltar_s")
+      .image(1400, 910, "boton_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
+
+    var saltarT = this.add
+      .text(saltar.x, saltar.y, "Saltar", {
+        fontFamily: "font1",
+        fontSize: "35px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
 
     saltar.on("pointerdown", () => {
       score = 240;
@@ -276,9 +115,11 @@ class menuTuto extends Phaser.Scene {
 
     saltar.on("pointerover", () => {
       saltar.setAlpha(1);
+      saltarT.setTint(0xffffff);
     });
     saltar.on("pointerout", () => {
       saltar.setAlpha(0.01);
+      saltarT.setTint(0x454545);
     });
   }
 }

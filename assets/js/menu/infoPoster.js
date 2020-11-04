@@ -5,7 +5,7 @@ class infoPoster extends Phaser.Scene {
 
   create() {
     var negro = this.add
-      .image(551, 310, "negro")
+      .image(960, 540, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
 
@@ -14,6 +14,6 @@ class infoPoster extends Phaser.Scene {
       this.scene.resume("juego3");
     });
 
-    this.add.image(550, 300, "poster").setInteractive();
+    this.add.image(960, 540, "poster").setInteractive().setScale(0.8);
   }
 }

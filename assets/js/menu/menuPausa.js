@@ -3,17 +3,48 @@ class menuPausa extends Phaser.Scene {
     super("Menu2");
   }
   create() {
-    this.add.image(551, 310, "negro").setAlpha(0.4);
-    this.add.image(530, 300, "libreta");
+    this.add.image(960, 540, "negro").setAlpha(0.5);
+    this.add.image(960, 540, "libreta").setScale(1.7).setInteractive();
 
-    var volverg = this.add
-      .image(410, 180, "menug1")
-      .setOrigin(0, 0)
-      .setScale(1.95, 1)
-      .setAlpha(0.01)
+    this.add
+      .text(980, 220, "PAUSA", {
+        fontFamily: "font1",
+        fontSize: "70px",
+      })
+      .setOrigin(0.5)
+      .setTint(0x2f4f4f);
+
+    var resumeT = this.add
+      .text(980, 450, "Reanudar", {
+        fontFamily: "font1",
+        fontSize: "50px",
+      })
+      .setOrigin(0.5)
+      .setTint(0x2f4f4f);
+
+    var ayudaT = this.add
+      .text(980, 600, "Ayuda", {
+        fontFamily: "font1",
+        fontSize: "50px",
+      })
+      .setOrigin(0.5)
+      .setTint(0x2f4f4f);
+
+    var backT = this.add
+      .text(980, 750, "Salir", {
+        fontFamily: "font1",
+        fontSize: "50px",
+      })
+      .setOrigin(0.5)
+      .setTint(0x2f4f4f);
+
+    var resume = this.add
+      .image(980, 450, "hitbox3")
+      .setScale(1.95, 1.3)
+      .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" });
 
-    volverg.on("pointerdown", () => {
+    resume.on("pointerdown", () => {
       this.scene.sleep();
       if (pausa == 2) {
         this.scene.resume("juego");
@@ -30,11 +61,18 @@ class menuPausa extends Phaser.Scene {
       }
     });
 
+    resume.on("pointerover", () => {
+      resumeT.setTint(0x168882);
+    });
+
+    resume.on("pointerout", () => {
+      resumeT.setTint(0x2f4f4f);
+    });
+
     var ayuda = this.add
-      .image(452, 275, "menug2")
-      .setOrigin(0, 0)
-      .setScale(1.2, 1)
-      .setAlpha(0.01)
+      .image(980, 600, "hitbox3")
+      .setScale(1.95, 1.3)
+      .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" });
 
     ayuda.on("pointerdown", () => {
@@ -43,14 +81,21 @@ class menuPausa extends Phaser.Scene {
       this.scene.run("ayuda_1");
     });
 
-    var vmenu = this.add
-      .image(460, 370, "menug3")
-      .setOrigin(0, 0)
-      .setScale(1.1, 1)
-      .setAlpha(0.01)
+    ayuda.on("pointerover", () => {
+      ayudaT.setTint(0x168882);
+    });
+
+    ayuda.on("pointerout", () => {
+      ayudaT.setTint(0x2f4f4f);
+    });
+
+    var back = this.add
+      .image(980, 750, "hitbox3")
+      .setScale(1.95, 1.3)
+      .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" });
 
-    vmenu.on("pointerdown", () => {
+    back.on("pointerdown", () => {
       if (pausa == 2) {
         this.scene.sleep("juego");
       } else if (pausa == 4) {
@@ -68,6 +113,14 @@ class menuPausa extends Phaser.Scene {
       this.scene.sleep("clock");
       this.scene.sleep("clock2");
       this.scene.start("Menu");
+    });
+
+    back.on("pointerover", () => {
+      backT.setTint(0x168882);
+    });
+
+    back.on("pointerout", () => {
+      backT.setTint(0x2f4f4f);
     });
   }
 }

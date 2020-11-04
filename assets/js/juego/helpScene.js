@@ -5,7 +5,7 @@ class helpScene extends Phaser.Scene {
 
   create() {
     var negro = this.add
-      .image(551, 310, "negro")
+      .image(960, 540, "negro")
       .setAlpha(0.3)
       .setInteractive({ cursor: "pointer" });
 
@@ -16,6 +16,6 @@ class helpScene extends Phaser.Scene {
         this.scene.resume("Menu2");
       }
     });
-    this.add.image(551, 310, "ayuda_pag1").setInteractive().setScale(1.1);
+    this.add.image(960, 540, "ayuda").setInteractive().setScale(1.7);
   }
 }

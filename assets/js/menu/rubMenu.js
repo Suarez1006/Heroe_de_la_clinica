@@ -10,128 +10,207 @@ class rubMenu extends Phaser.Scene {
   }
 
   create() {
-    var circuloA2 = 0;
-    var circuloA3 = 0;
-    var circuloA4 = 0;
-    var circuloA5 = 0;
-    var circuloA6 = 0;
-    var circuloA7 = 0;
-    var circuloA8 = 0;
-
-    var repeF = 0;
-    var repeC = 0;
-    var repeG = 0;
-    var sellado = 0;
-    selloPE = 0;
     selloPS = 0;
-
+    selloPE = 0;
     var negro = this.add
-      .image(551, 310, "negro")
+      .image(960, 540, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
-
-    var ficha2 = this.add
-      .image(481, 310, "ficha2")
-      .setScale(0.99)
-      .setInteractive();
-    var ficha = ficha2;
-    var ficha3 = this.add
-      .image(481, 310, "ficha3")
-      .setScale(0.99)
-      .setInteractive()
-      .setAlpha(0);
-    if (pacientes == 2) {
-      ficha = ficha3;
-      ficha3.setAlpha(1);
-      ficha2.setAlpha(0);
-    }
-
-    var flechaN = this.add
-      .image(710, 520, "flechaP")
-      .setInteractive({ cursor: "pointer" })
-      .setAlpha(0.75);
-
-    flechaN.on("pointerdown", () => {
-      this.scene.run("Menu3_02");
+    negro.on("pointerdown", () => {
       this.scene.sleep();
+      if (pausa == 2) {
+        this.scene.resume("juego");
+        pausa = 0;
+      } else if (pausa == 4) {
+        this.scene.resume("juego2");
+        pausa = 0;
+      } else if (pausa == 7) {
+        this.scene.resume("juego3");
+        pausa = 0;
+      } else if (pausa == 8) {
+        this.scene.resume("juego4");
+        pausa = 0;
+      }
+    });
+    var ficha = this.add.image(750, 540, "ficha").setInteractive();
+
+    sep1 = this.add
+      .image(1124, 661, "separador_pac_s")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.45)
+      .setAlpha(1);
+    sep1.on("pointerover", () => {
+      sep1.setAlpha(1);
     });
 
+    sep2 = this.add
+      .image(1124, 731, "separador_rub_s")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.45)
+      .setAlpha(1);
+
+    sep2.on("pointerover", () => {
+      sep2.setAlpha(1).setDepth(1);
+    });
+    sep2.on("pointerout", () => {
+      sep2.setAlpha(0.001);
+    });
+    sep2.on("pointerdown", () => {
+      sep1.setAlpha(0.01);
+      sep3.setAlpha(0.01);
+      sep4.setAlpha(0.01);
+      this.scene.sleep("MenuP");
+      this.scene.run("Menu3_01");
+    });
+
+    sep3 = this.add
+      .image(1124, 800.9, "separador_var_s")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.45)
+      .setAlpha(1);
+
+    sep3.on("pointerover", () => {
+      sep3.setAlpha(1).setDepth(1);
+    });
+    sep3.on("pointerout", () => {
+      sep3.setAlpha(0.001);
+    });
+    sep3.on("pointerdown", () => {
+      this.scene.sleep("MenuP");
+      this.scene.run("Menu3_03");
+    });
+
+    sep4 = this.add
+      .image(1124, 874, "separador_pap_s")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.45)
+      .setAlpha(0.001);
+
+    sep4.on("pointerover", () => {
+      sep4.setAlpha(1).setDepth(1);
+    });
+    sep4.on("pointerout", () => {
+      sep4.setAlpha(0.001);
+    });
+    sep4.on("pointerdown", () => {
+      this.scene.sleep("MenuP");
+      this.scene.run("Menu3_03");
+    });
+
+    sep2.setAlpha(0.01);
+    sep4.setAlpha(0.01);
+
+    boton_ayuda = this.add
+      .image(1010, 185, "boton_ayuda")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.6);
+    boton_ayuda_s = this.add
+      .image(boton_ayuda.x, boton_ayuda.y, "boton_ayuda_s")
+      .setAlpha(0.001)
+      .setScale(0.6);
+
+    boton_ayuda.on("pointerover", () => {
+      boton_ayuda_s.setAlpha(1);
+    });
+    boton_ayuda.on("pointerout", () => {
+      boton_ayuda_s.setAlpha(0.001);
+    });
+    boton_ayuda.on("pointerdown", () => {
+      //this.scene.sleep();
+      //this.scene.start()
+    });
+
+    this.add
+      .text(440, 160, "Varicela", {
+        fontFamily: "font1",
+        fontSize: "50px",
+      })
+      .setTint(0x454545);
+
+    this.add
+      .text(420, 430, "Fiebre", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545);
+
+    this.add
+      .text(420, 500, "Dolor de Cabeza", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545);
+
+    this.add
+      .text(420, 570, "Perdida de Apet.", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545);
+
+    this.add
+      .text(420, 640, "Cansancio", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545);
+
+    var textoSi = this.add
+      .text(900, 360, "Si", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+
+    var textoNo = this.add
+      .text(1020, 360, "No", {
+        fontFamily: "font1",
+        fontSize: "25px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+
     var siP = this.add
-      .image(620, 293, "siP")
+      .image(textoSi.x, 430, "casilla")
       .setInteractive({ cursor: "pointer" });
     var siP2 = this.add
-      .image(620, 320.5, "siP")
+      .image(textoSi.x, 500, "casilla")
       .setInteractive({ cursor: "pointer" });
     var siP3 = this.add
-      .image(620, 348, "siP")
+      .image(textoSi.x, 570, "casilla")
       .setInteractive({ cursor: "pointer" });
     var siP4 = this.add
-      .image(620, 375.5, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP5 = this.add
-      .image(620, 403, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP6 = this.add
-      .image(620, 430.5, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP7 = this.add
-      .image(620, 458, "siP")
-      .setInteractive({ cursor: "pointer" });
-    var siP8 = this.add
-      .image(620, 485.5, "siP")
+      .image(textoSi.x, 640, "casilla")
       .setInteractive({ cursor: "pointer" });
 
     var noP = this.add
-      .image(680, 293, "noP")
+      .image(textoNo.x, 430, "casilla")
       .setInteractive({ cursor: "pointer" });
     var noP2 = this.add
-      .image(680, 320.5, "noP")
+      .image(textoNo.x, 500, "casilla")
       .setInteractive({ cursor: "pointer" });
     var noP3 = this.add
-      .image(680, 348, "noP")
+      .image(textoNo.x, 570, "casilla")
       .setInteractive({ cursor: "pointer" });
     var noP4 = this.add
-      .image(680, 375.5, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP5 = this.add
-      .image(680, 403, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP6 = this.add
-      .image(680, 430.5, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP7 = this.add
-      .image(680, 458, "noP")
-      .setInteractive({ cursor: "pointer" });
-    var noP8 = this.add
-      .image(680, 485.5, "noP")
+      .image(textoNo.x, 640, "casilla")
       .setInteractive({ cursor: "pointer" });
 
     // -----------------------------------------
-    var circulo = this.add.image(siP.x, siP.y, "circuloP").setAlpha(0.01);
-    var circulo2 = this.add.image(noP.x, noP.y, "circuloP").setAlpha(0.01);
-    var circulo3 = this.add.image(siP2.x, siP2.y, "circuloP").setAlpha(0.01);
-    var circulo4 = this.add.image(noP2.x, noP2.y, "circuloP").setAlpha(0.01);
-    var circulo5 = this.add.image(siP3.x, siP3.y, "circuloP").setAlpha(0.01);
-    var circulo6 = this.add.image(noP3.x, noP3.y, "circuloP").setAlpha(0.01);
-    var circulo7 = this.add.image(siP4.x, siP4.y, "circuloP").setAlpha(0.01);
-    var circulo8 = this.add.image(noP4.x, noP4.y, "circuloP").setAlpha(0.01);
-    var circulo9 = this.add.image(siP5.x, siP5.y, "circuloP").setAlpha(0.01);
-    var circulo10 = this.add.image(noP5.x, noP5.y, "circuloP").setAlpha(0.01);
-    var circulo11 = this.add.image(siP6.x, siP6.y, "circuloP").setAlpha(0.01);
-    var circulo12 = this.add.image(noP6.x, noP6.y, "circuloP").setAlpha(0.01);
-    var circulo13 = this.add.image(siP7.x, siP7.y, "circuloP").setAlpha(0.01);
-    var circulo14 = this.add.image(noP7.x, noP7.y, "circuloP").setAlpha(0.01);
-    var circulo15 = this.add.image(siP8.x, siP8.y, "circuloP").setAlpha(0.01);
-    var circulo16 = this.add.image(noP8.x, noP8.y, "circuloP").setAlpha(0.01);
+    var circulo = this.add.image(siP.x, siP.y, "tilde").setAlpha(0.01);
+    var circulo2 = this.add.image(noP.x, noP.y, "tilde").setAlpha(0.01);
+    var circulo3 = this.add.image(siP2.x, siP2.y, "tilde").setAlpha(0.01);
+    var circulo4 = this.add.image(noP2.x, noP2.y, "tilde").setAlpha(0.01);
+    var circulo5 = this.add.image(siP3.x, siP3.y, "tilde").setAlpha(0.01);
+    var circulo6 = this.add.image(noP3.x, noP3.y, "tilde").setAlpha(0.01);
+    var circulo7 = this.add.image(siP4.x, siP4.y, "tilde").setAlpha(0.01);
+    var circulo8 = this.add.image(noP4.x, noP4.y, "tilde").setAlpha(0.01);
 
     var circuloA = 0;
     var circuloA2 = 0;
     var circuloA3 = 0;
     var circuloA4 = 0;
-    var circuloA5 = 0;
-    var circuloA6 = 0;
-    var circuloA7 = 0;
-    var circuloA8 = 0;
 
     siP.on("pointerdown", () => {
       circuloA = 1;
@@ -139,15 +218,6 @@ class rubMenu extends Phaser.Scene {
         circulo.setAlpha(0.6);
         circulo2.setAlpha(0.01);
         finish = 1;
-        if (fiebre == "true") {
-          if (repeF == 0) {
-            fieb_repe += 1;
-            repeF = 1;
-          }
-        } else if (repeF == 1) {
-          fieb_repe -= 1;
-          repeF = 0;
-        }
       }
     });
     noP.on("pointerdown", () => {
@@ -156,15 +226,6 @@ class rubMenu extends Phaser.Scene {
         circulo2.setAlpha(0.6);
         circulo.setAlpha(0.01);
         finish = 1;
-        if (fiebre == "false") {
-          if (repeF == 0) {
-            fieb_repe += 1;
-            repeF = 1;
-          }
-        } else if (repeF == 1) {
-          fieb_repe -= 1;
-          repeF = 0;
-        }
       }
     });
     siP2.on("pointerdown", () => {
@@ -173,15 +234,6 @@ class rubMenu extends Phaser.Scene {
         circulo3.setAlpha(0.6);
         circulo4.setAlpha(0.01);
         finish = 1;
-        if (dolCab == "true") {
-          if (repeC == 0) {
-            dolCab_repe += 1;
-            repeC = 1;
-          }
-        } else if (repeC == 1) {
-          dolCab_repe -= 1;
-          repeC = 0;
-        }
       }
     });
     noP2.on("pointerdown", () => {
@@ -190,15 +242,6 @@ class rubMenu extends Phaser.Scene {
         circulo4.setAlpha(0.6);
         circulo3.setAlpha(0.01);
         finish = 1;
-        if (dolCab == "false") {
-          if (repeC == 0) {
-            dolCab_repe += 1;
-            repeC = 1;
-          }
-        } else if (repeC == 1) {
-          dolCab_repe -= 1;
-          repeC = 0;
-        }
       }
     });
     siP3.on("pointerdown", () => {
@@ -233,357 +276,180 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
       }
     });
-    siP5.on("pointerdown", () => {
-      circuloA5 = 1;
-      if (circuloA5 === 1) {
-        circulo9.setAlpha(0.6);
-        circulo10.setAlpha(0.01);
-        finish = 1;
-        if (gang == "true") {
-          if (repeG == 0) {
-            gang_repe += 1;
-            repeG = 1;
-          }
-        } else if (repeG == 1) {
-          gang_repe -= 1;
-          repeG = 0;
-        }
-      }
-    });
-    noP5.on("pointerdown", () => {
-      circuloA5 = 2;
-      if (circuloA5 === 2) {
-        circulo10.setAlpha(0.6);
-        circulo9.setAlpha(0.01);
-        finish = 1;
-        if (gang == "false") {
-          if (repeG == 0) {
-            gang_repe += 1;
-            repeG = 1;
-          }
-        } else if (repeG == 1) {
-          gang_repe -= 1;
-          repeG = 0;
-        }
-      }
-    });
-    siP6.on("pointerdown", () => {
-      circuloA6 = 1;
-      if (circuloA6 === 1) {
-        circulo11.setAlpha(0.6);
-        circulo12.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    noP6.on("pointerdown", () => {
-      circuloA6 = 2;
-      if (circuloA6 === 2) {
-        circulo12.setAlpha(0.6);
-        circulo11.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    siP7.on("pointerdown", () => {
-      circuloA7 = 1;
-      if (circuloA7 === 1) {
-        circulo13.setAlpha(0.6);
-        circulo14.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    noP7.on("pointerdown", () => {
-      circuloA7 = 2;
-      if (circuloA7 === 2) {
-        circulo14.setAlpha(0.6);
-        circulo13.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    siP8.on("pointerdown", () => {
-      circuloA8 = 1;
-      if (circuloA8 === 1) {
-        circulo15.setAlpha(0.6);
-        circulo16.setAlpha(0.01);
-        finish = 1;
-      }
-    });
-    noP8.on("pointerdown", () => {
-      circuloA8 = 2;
-      if (circuloA8 === 2) {
-        circulo16.setAlpha(0.6);
-        circulo15.setAlpha(0.01);
-        finish = 1;
-      }
-    });
 
-    // -------------------------------------------------
+    var enfermoSello = this.add
+      .image(750, 870, "enfermo")
+      .setAlpha(0.001)
+      .setOrigin(0.5);
 
-    negro.on("pointerdown", () => {
-      this.scene.sleep();
-      if (pausa == 7) {
-        this.scene.resume("juego3");
-      } else if (pausa == 8) {
-        this.scene.resume("juego4");
-      }
-    });
-
-    var enfermoSello = this.add.image(550, 240, "enfermo").setAlpha(0.01);
-
-    this.add.image(850, 400, "selloD");
+    this.add.image(1400, 400, "selloD");
     var selloE = this.add
-      .image(850, 400, "selloD_s")
+      .image(1400, 400, "selloD_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
 
     selloE.on("pointerdown", () => {
-      if (sellado == 0) {
-        if (selloPE == 0) {
-          selloPE = 1;
-          selloPS = 0;
-          selloS.clearTint();
-          selloS.setAlpha(0.01);
-          selloE.setTint(0xff0000);
-        } else if (selloPE == 1) {
-          selloPE = 0;
-          selloE.clearTint();
-          selloE.setAlpha(0.01);
-        }
+      if (selloPE == 0) {
+        selloPE = 1;
+        selloPS = 0;
+        selloS.clearTint();
+        selloS.setAlpha(0.01);
+        selloE.setTint(0xff0000);
+      } else if (selloPE == 1) {
+        selloPE = 0;
+        selloE.clearTint();
+        selloE.setAlpha(0.01);
       }
     });
     selloE.on("pointerover", () => {
       if (selloPE == 0) {
-        if (sellado == 0) {
-          selloE.setAlpha(1);
-        }
+        selloE.setAlpha(1);
       }
     });
     selloE.on("pointerout", () => {
       if (selloPE === 0) {
-        if (sellado == 0) {
-          selloE.setAlpha(0.01);
-        }
+        selloE.setAlpha(0.01);
       }
     });
 
-    this.add.image(850, 200, "selloA").setInteractive({ cursor: "pointer" });
+    this.add.image(1400, 200, "selloA").setInteractive({ cursor: "pointer" });
     var selloS = this.add
-      .image(850, 200, "selloA_s")
+      .image(1400, 200, "selloA_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
 
-    var sanoSello = this.add.image(550, 240, "sano").setAlpha(0.01);
+    var sanoSello = this.add
+      .image(750, 870, "sano")
+      .setAlpha(0.001)
+      .setOrigin(0.5);
+
+    this.add
+      .image(750, 870, "sano")
+      .setScale(1.2)
+      .setTint(0x454545)
+      .setOrigin(0.5);
+
+    this.add
+      .text(750, 780, "Estado", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+
+    var selloPuesto = this.add
+      .text(750, 870, "", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
 
     selloS.on("pointerdown", () => {
-      if (sellado == 0) {
-        if (selloPS == 0) {
-          selloPS = 1;
-          selloPE = 0;
-          selloE.clearTint();
-          selloE.setAlpha(0.01);
-          selloS.setTint(0x00ff00);
-        } else if (selloPS == 1) {
-          selloPS = 0;
-          selloS.clearTint();
-          selloS.setAlpha(0.01);
-        }
+      if (selloPS == 0) {
+        selloPS = 1;
+        selloPE = 0;
+        selloE.clearTint();
+        selloE.setAlpha(0.01);
+        selloS.setTint(0x00ff00);
+      } else if (selloPS == 1) {
+        selloPS = 0;
+        selloS.clearTint();
+        selloS.setAlpha(0.01);
       }
     });
     selloS.on("pointerover", () => {
       if (selloPS == 0) {
-        if (sellado == 0) {
-          selloS.setAlpha(1);
-        }
+        selloS.setAlpha(1);
       }
     });
     selloS.on("pointerout", () => {
       if (selloPS === 0) {
-        if (sellado == 0) {
-          selloS.setAlpha(0.01);
-        }
+        selloS.setAlpha(0.01);
       }
     });
+
     var flecha = this.add
-      .image(1040, 50, "tilde")
+      .image(1400, 580, "boton")
       .setAlpha(0)
       .setInteractive({ cursor: "pointer" });
+
+    var flechaS = this.add.image(1400, 580, "boton_s").setAlpha(0.001);
+
+    var FlechaT = this.add
+      .text(flecha.x, flecha.y, "", {
+        fontFamily: "font1",
+        fontSize: "35px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5)
+      .setDepth(1);
+
     flecha.on("pointerdown", () => {
-      resetFicha = 1;
-      resetFichaA = 1;
-      resetFichaB = 1;
+      score = 240;
+      salv = 0;
       chat = 0;
-      if (rub == 0) {
-        cong = false;
-        inf = false;
-        erup = false;
-        art = false;
-        far = false;
+      this.scene.sleep("clock");
+      this.scene.start("sintomasPick");
+      if (pacientes == 1) {
+        pacientes = 2;
       }
-      if (fiebre == "true") {
-        if (circuloA == 1) {
-          if (fieb_repe == 3) {
-            score += 20;
-          }
-        }
-      } else {
-        if (circuloA == 2) {
-          if (fieb_repe == 3) {
-            score += 20;
-          }
-        }
-      }
-      if (dolCab == "true") {
-        if (circuloA2 == 1) {
-          if (dolCab_repe == 3) {
-            score += 20;
-          }
-        }
-      } else {
-        if (circuloA2 == 2) {
-          if (dolCab_repe == 3) {
-            score += 20;
-          }
-        }
-      }
-      if (cong == "true") {
-        if (circuloA3 == 1) {
-          score += 20;
-        }
-      } else {
-        if (circuloA3 == 2) {
-          score += 20;
-        }
-      }
-      if (inf == "true") {
-        if (circuloA4 == 1) {
-          score += 20;
-        }
-      } else {
-        if (circuloA4 == 2) {
-          score += 20;
-        }
-      }
-      if (gang == "true") {
-        if (circuloA5 == 1) {
-          if (gang_repe == 2) {
-            score += 20;
-          }
-        }
-      } else {
-        if (circuloA5 == 2) {
-          if (gang_repe == 2) {
-            score += 20;
-          }
-        }
-      }
-      if (erup == "true") {
-        if (circuloA6 == 1) {
-          score += 20;
-        }
-      } else {
-        if (circuloA6 == 2) {
-          score += 20;
-        }
-      }
-      if (art == "true") {
-        if (circuloA7 == 1) {
-          score += 20;
-        }
-      } else {
-        if (circuloA7 == 2) {
-          score += 20;
-        }
-      }
-      if (far == "true") {
-        if (circuloA8 == 1) {
-          score += 20;
-        }
-      } else {
-        if (circuloA8 == 2) {
-          score += 20;
-        }
-      }
-      if (rubEnf == 1) {
-        if (selloPS == 2) {
-          this.scene.pause();
-          this.scene.start("score_F");
-          scoreFS++;
-        } else if (selloPE == 2) {
-          this.scene.pause();
-          this.scene.start("score_E");
-          scoreFS++;
-        }
-      } else {
-        if (selloPS == 2) {
-          this.scene.pause();
-          this.scene.start("score_E");
-          scoreFS++;
-        } else if (selloPE == 2) {
-          this.scene.pause();
-          this.scene.start("score_F");
-          scoreFS++;
-        }
-      }
-      finalScore += score;
-      
     });
+
+    flecha.on("pointerover", () => {
+      flechaS.setAlpha(1);
+      FlechaT.setTint(0xffffff);
+    });
+    flecha.on("pointerout", () => {
+      flechaS.setAlpha(0.01);
+      FlechaT.setTint(0x454545);
+    });
+
+    flecha.on("pointerdown", () => {
+      this.scene.pause("clock");
+      chat = 0;
+      if (circuloA == 1) {
+        score += 40;
+      }
+      if (circuloA2 == 1) {
+        score += 40;
+      }
+      if (circuloA3 == 1) {
+        score += 40;
+      }
+      if (circuloA4 == 1) {
+        score += 40;
+      }
+
+      if (selloPE == 2) {
+        this.scene.pause();
+        this.scene.start("score_E");
+      } else if (selloPS == 2) {
+        this.scene.pause();
+        this.scene.start("score_F");
+      }
+    });
+
     ficha.on("pointerdown", () => {
-      if (sellado == 0) {
-        if (rubEnf == 1) {
-          if (selloPS === 1) {
-            if (finish == 1) {
-              sellado = 1;
-              selloE.setAlpha(0.01);
-              selloS.setAlpha(0.01);
-              selloPS = 2;
-              sanoSello.setAlpha(1);
-              finish = 2;
-              if (rub == 1) {
-                flecha.setAlpha(1);
-              }
-            }
-          } else if (selloPE == 1) {
-            if (finish == 1) {
-              sellado = 1;
-              selloE.setAlpha(0.01);
-              selloS.setAlpha(0.01);
-              selloPE = 2;
-              enfermoSello.setAlpha(1);
-              finish = 2;
-              if (rub == 1) {
-                flecha.setAlpha(1);
-              }
-              score += 600;
-              salv += 1;
-            }
-          }
-        } else {
-          if (selloPS === 1) {
-            if (finish == 1) {
-              sellado = 1;
-              selloE.setAlpha(0.01);
-              selloS.setAlpha(0.01);
-              selloPS = 2;
-              sanoSello.setAlpha(1);
-              finish = 2;
-              if (rub == 1) {
-                flecha.setAlpha(1);
-              }
-              score += 600;
-              salv += 1;
-            }
-          } else if (selloPE == 1) {
-            if (finish == 1) {
-              sellado = 1;
-              selloE.setAlpha(0.01);
-              selloS.setAlpha(0.01);
-              selloPE = 2;
-              enfermoSello.setAlpha(1);
-              finish = 2;
-              if (rub == 1) {
-                flecha.setAlpha(1);
-              }
-            }
-          }
+      if (selloPS === 1) {
+        if (finish == 1) {
+          selloPS = 2;
+          sanoSello.setAlpha(1);
+          finish = 2;
+          flecha.setAlpha(1);
+          FlechaT.setText("Terminar");
+          selloPuesto.setText("Sano").setTint(0x00ff00);
+        }
+      } else if (selloPE == 1) {
+        if (finish == 1) {
+          selloPE = 2;
+          enfermoSello.setAlpha(1);
+          finish = 2;
+          flecha.setAlpha(1);
+          salv += 1;
+          score += 600;
+          FlechaT.setText("Terminar");
+          selloPuesto.setText("Enfermo").setTint(0xff0000);
         }
       }
     });

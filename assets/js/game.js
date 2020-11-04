@@ -3,8 +3,8 @@ var config = {
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 1102,
-    height: 620,
+    width: 1920,
+    height: 1080,
   },
   scene: [
     loader, //Pantalla de carga
@@ -18,10 +18,11 @@ var config = {
     scoreScene, // Puntaje final
     menuPausa, //Libreta (Menu pausa)
     menuTuto, //Ficha de primer paciente
+    varTuto,
+    pacMenu,
     rubMenu, //Ficha de segundo paciente (rubeola)
     papMenu, //Ficha de segundo paciente (paperas)
     varMenu, //Ficha de segundo paciente (varicela)
-    relojTuto, //Reloj tutorial
     reloj, //Reloj pacientes
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
@@ -134,3 +135,10 @@ var perApet;
 var cans;
 
 var temperatura;
+var sep1;
+var sep2;
+var sep3;
+var sep4;
+
+var boton_ayuda;
+var boton_ayuda_s;

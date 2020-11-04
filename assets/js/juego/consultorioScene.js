@@ -3,7 +3,7 @@ class consultorioScene extends Phaser.Scene {
     super("juego3");
   }
   create() {
-    this.add.image(551, 310, "consultorio").setScale(1.0);
+    this.add.image(960, 540, "consultorio").setScale(1.0);
 
     var back = this.add
       .image(10, 23, "infoB")
@@ -13,7 +13,7 @@ class consultorioScene extends Phaser.Scene {
 
     var info = this.add
       .text(18, 30, "", {
-        fontSize: "12px",
+        fontSize: "20px",
         fontColor: "white",
         fontFamily: "font1",
       })
@@ -21,33 +21,35 @@ class consultorioScene extends Phaser.Scene {
       .setDepth(1);
 
     this.input.on("pointermove", function (pointer) {
-      if (pointer.x > 920) {
-        back.x = -200 + pointer.x;
+      if (pointer.x > 1520) {
+        back.x = -370 + pointer.x;
         back.y = -10 + pointer.y;
-        info.x = -195 + pointer.x;
-        info.y = -14 + pointer.y;
+        info.x = -340 + pointer.x;
+        info.y = -21 + pointer.y;
       } else {
-        back.x = 20 + pointer.x;
-        back.y = -10 + pointer.y;
-        info.x = 25 + pointer.x;
-        info.y = -14 + pointer.y;
+        back.x = 10 + pointer.x;
+        back.y = -5 + pointer.y;
+        info.x = 30 + pointer.x;
+        info.y = -18 + pointer.y;
       }
     });
 
     var ficha_c = this.add
-      .image(246, 484, "ficha_s")
-      .setOrigin(0, 0)
+      .image(400, 958, "ficha_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      this.scene.run("Menu3_01");
+      this.scene.run("MenuP");
       pausa = 7;
+      info.setText("");
+      back.setAlpha(0.01);
+      ficha_c.setAlpha(0.01);
     });
     ficha_c.on("pointerover", () => {
       info.setText("Ficha de paciente");
-      back.setAlpha(1).setScale(1.5, 1);
+      back.setAlpha(1).setScale(1.3, 1);
       ficha_c.setAlpha(1);
     });
     ficha_c.on("pointerout", () => {
@@ -57,19 +59,51 @@ class consultorioScene extends Phaser.Scene {
     });
 
     var fichasintomas = this.add
-      .image(815, 185, "hitbox")
-      .setScale(0.7, 0.33)
+      .image(1153, 153, "hitbox")
+      .setScale(1.7, 0.75)
+      .setOrigin(0)
       .setInteractive({ cursor: "pointer" })
-      .setAlpha(0.01);
+      .setAlpha(0.001);
 
     fichasintomas.on("pointerdown", () => {
       this.scene.pause("juego3");
       this.scene.run("postersintomas");
+      info.setText("");
+      back.setAlpha(0.01);
     });
 
+    fichasintomas.on("pointerover", () => {
+      info.setText("Info enfermedades");
+      back.setAlpha(1).setScale(1.3, 1);
+    });
+    fichasintomas.on("pointerout", () => {
+      info.setText("");
+      back.setAlpha(0.01);
+    });
+
+    this.add
+      .text(1270, 169, "Rubeola", {
+        fontFamily: "font1",
+        fontSize: "20px",
+      })
+      .setTint(0x868686);
+
+    this.add
+      .text(1200, 262, "Varicela", {
+        fontFamily: "font1",
+        fontSize: "20px",
+      })
+      .setTint(0x868686);
+
+    this.add
+      .text(1270, 365, "Paperas", {
+        fontFamily: "font1",
+        fontSize: "20px",
+      })
+      .setTint(0x868686);
+
     var libreta = this.add
-      .image(78, 484, "libreta_s")
-      .setOrigin(0, 0)
+      .image(134, 962, "libreta_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
@@ -78,6 +112,9 @@ class consultorioScene extends Phaser.Scene {
       this.scene.pause("clock");
       this.scene.run("Menu2");
       pausa = 7;
+      info.setText("");
+      back.setAlpha(0.01);
+      libreta.setAlpha(0.01);
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
@@ -90,19 +127,18 @@ class consultorioScene extends Phaser.Scene {
       back.setAlpha(0.01);
     });
 
-    this.add.image(600, 500, "bowl").setOrigin(0.5, 0);
+    this.add.image(860, 900, "bowl").setOrigin(0.5, 0).setScale(1.2);
 
     var puerta = this.add
-      .image(920, 93, "puerta")
-      .setOrigin(0, 0)
+      .image(1528, 140, "puerta_1")
+      .setOrigin(0)
       .setAlpha(0.01)
-      .setScale(0.575, 0.565)
       .setInteractive({ cursor: "pointer" });
 
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
       info.setText("Ir a la camilla");
-      back.setAlpha(1).setScale(1.35, 1);
+      back.setAlpha(1).setScale(1.25, 1);
     });
 
     puerta.on("pointerdown", () => {
@@ -118,8 +154,8 @@ class consultorioScene extends Phaser.Scene {
     });
 
     var pac_02 = this.add
-      .image(405.6, 360, "paciente_02")
-      .setScale(0.9, 1)
+      .image(955, 565, "paciente_02")
+      .setScale(1.5, 1.7)
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
     var pac_03 = this.add

@@ -9,7 +9,7 @@ class camillaScene extends Phaser.Scene {
     var evar = 0;
     var lvar = 0;
     var tvar = 0;
-    this.add.image(551, 310, "camilla");
+    this.add.image(960, 540, "camilla");
 
     var back = this.add
       .image(10, 23, "infoB")
@@ -19,7 +19,7 @@ class camillaScene extends Phaser.Scene {
 
     var info = this.add
       .text(18, 30, "", {
-        fontSize: "12px",
+        fontSize: "20px",
         fontColor: "white",
         fontFamily: "font1",
       })
@@ -27,33 +27,35 @@ class camillaScene extends Phaser.Scene {
       .setDepth(1);
 
     this.input.on("pointermove", function (pointer) {
-      if (pointer.x > 870) {
-        back.x = -150 + pointer.x;
+      if (pointer.x > 1520) {
+        back.x = -370 + pointer.x;
         back.y = -10 + pointer.y;
-        info.x = -145 + pointer.x;
-        info.y = -14 + pointer.y;
+        info.x = -340 + pointer.x;
+        info.y = -21 + pointer.y;
       } else {
-        back.x = 20 + pointer.x;
-        back.y = -10 + pointer.y;
-        info.x = 25 + pointer.x;
-        info.y = -14 + pointer.y;
+        back.x = 10 + pointer.x;
+        back.y = -5 + pointer.y;
+        info.x = 30 + pointer.x;
+        info.y = -18 + pointer.y;
       }
     });
 
     var ficha_c = this.add
-      .image(246, 484, "ficha_s")
-      .setOrigin(0, 0)
+      .image(400, 958, "ficha_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
       this.scene.run("Menu3_01");
-      pausa = 8;
+      pausa = 7;
+      info.setText("");
+      back.setAlpha(0.01);
+      ficha_c.setAlpha(0.01);
     });
     ficha_c.on("pointerover", () => {
       info.setText("Ficha de paciente");
-      back.setAlpha(1).setScale(1.5, 1);
+      back.setAlpha(1).setScale(1.3, 1);
       ficha_c.setAlpha(1);
     });
     ficha_c.on("pointerout", () => {
@@ -63,8 +65,7 @@ class camillaScene extends Phaser.Scene {
     });
 
     var libreta = this.add
-      .image(78, 484, "libreta_s")
-      .setOrigin(0, 0)
+      .image(134, 962, "libreta_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
@@ -86,10 +87,9 @@ class camillaScene extends Phaser.Scene {
     });
 
     var puerta = this.add
-      .image(10, 90, "puerta")
-      .setOrigin(0, 0)
-      .setAlpha(0.01)
-      .setScale(0.575, 0.565)
+      .image(32, 140, "puerta_2")
+      .setOrigin(0)
+      .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" });
 
     puerta.on("pointerover", () => {
@@ -110,10 +110,10 @@ class camillaScene extends Phaser.Scene {
       back.setAlpha(0.01);
     });
 
-    var muñeco = this.add.image(1012, 375, "muñeco").setOrigin(0, 1);
+    var muñeco = this.add.image(1590, 640, "muñeco").setOrigin(0, 1);
 
     muñeco_r = this.add
-      .sprite(1012, 375, "muñeco_r", 0)
+      .sprite(1590, 640, "muñeco_r", 0)
       .setOrigin(0, 1)
       .setAlpha(0.01)
       .setInteractive();
@@ -135,10 +135,8 @@ class camillaScene extends Phaser.Scene {
 
     //////// Herramientas ////////
 
-    this.add.image(450, 545, "guantes");
-
     var guantes_s = this.add
-      .image(450, 545, "guantes_s")
+      .image(1348, 962, "guantes_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
@@ -180,10 +178,10 @@ class camillaScene extends Phaser.Scene {
       }
     });
 
-    this.add.image(600, 550, "estetoscopio");
+    this.add.image(665, 962, "estetoscopio");
 
     var esteto_s = this.add
-      .image(600, 550, "estetoscopio_s")
+      .image(665, 962, "estetoscopio_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
@@ -225,10 +223,10 @@ class camillaScene extends Phaser.Scene {
       }
     });
 
-    this.add.image(750, 550, "linterna");
+    this.add.image(1100, 962, "linterna");
 
     var linterna_s = this.add
-      .image(750, 550, "linterna_s")
+      .image(1100, 962, "linterna_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
@@ -270,10 +268,10 @@ class camillaScene extends Phaser.Scene {
       }
     });
 
-    this.add.image(920, 545, "termometro");
+    this.add.image(885, 962, "termometro");
 
     var termometro_s = this.add
-      .image(920, 545, "termometro_s")
+      .image(885, 962, "termometro_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
@@ -315,9 +313,12 @@ class camillaScene extends Phaser.Scene {
       }
     });
 
-    var pac_02_d = this.add.image(600, 310.9, "paciente_02a");
+    var pac_02_d = this.add.image(1200, 473, "paciente_02a").setScale(1.5);
 
-    var pac_02 = this.add.image(600, 310.9, "paciente_02a_s").setAlpha(0.01);
+    var pac_02 = this.add
+      .image(pac_02_d.x, pac_02_d.y, "paciente_02a_s")
+      .setAlpha(0.01)
+      .setScale(1.5);
     pac_gen = pac_02;
 
     var pac_03_d = this.add
