@@ -341,9 +341,9 @@ class Tuto_02 extends Phaser.Scene {
     });
     this.add.image(1070, 652, "paciente_01a").setOrigin(0, 1);
     var pac_01 = this.add
-      .image(1200, 465, "paciente_01a_s")
+      .image(1062, 660, "paciente_01a_s")
       .setAlpha(0.01)
-      .setScale(1.5);
+      .setOrigin(0, 1);
 
     pac_01.on("pointerdown", () => {
       pausa = 4;

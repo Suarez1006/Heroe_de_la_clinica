@@ -143,6 +143,7 @@ var infoVar;
 
 var photo;
 
+var music;
 var musica = 0;
 var musicaS = 0;
 var musicConfig = {
@@ -160,6 +161,7 @@ var musicConfig2 = {
 var music2;
 var music3;
 var musicaS = 0;
+var muteado = 0;
 
 var fichaVolver = 0;
 var tutoFinish = 0;

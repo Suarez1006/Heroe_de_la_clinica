@@ -10,13 +10,11 @@ class Tuto_01 extends Phaser.Scene {
 
     music2 = this.sound.add("menu_Game1");
 
-    if (musica === 0) {
-      music2.play(musicConfig);
+    if (muteado == 0) {
+      if (musica === 0) {
+        music2.play(musicConfig);
+      }
     }
-
-    var musicConfig2 = {
-      mute: true,
-    };
 
     var time10s = 0;
 

@@ -338,23 +338,22 @@ class camillaScene extends Phaser.Scene {
       }
     });
 
-    var pac_02_d = this.add.image(1200, 473, "paciente_02a").setScale(1.5);
+    var pac_02_d = this.add.image(1070, 656, "paciente_02a").setOrigin(0, 1);
 
     var pac_02 = this.add
       .image(pac_02_d.x, pac_02_d.y, "paciente_02a_s")
       .setAlpha(0.01)
-      .setScale(1.5);
+      .setOrigin(0, 1);
     pac_gen = pac_02;
 
     var pac_03_d = this.add
-      .image(700, 300, "paciente_03a")
+      .image(1070, 648, "paciente_03a")
       .setAlpha(0)
-      .setScale(0.9);
-
+      .setOrigin(0, 1);
     var pac_03 = this.add
-      .image(700, 300, "paciente_03a_s")
+      .image(pac_03_d.x - 8, pac_03_d.y + 8, "paciente_03a_s")
       .setAlpha(0)
-      .setScale(0.9);
+      .setOrigin(0, 1);
 
     if (pacientes == 2) {
       pac_gen = pac_03;

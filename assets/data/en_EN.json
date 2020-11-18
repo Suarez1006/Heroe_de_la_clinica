@@ -6,20 +6,155 @@
       "ayuda": ["Help"]
     },
     "menuPausa": {
-      "PAUSA": ["PAUSA"],
-      "reanudar": ["Reanudar"],
-      "ayuda": ["Ayuda"],
-      "salir": ["Salir"]
+      "pausa": ["PAUSE"],
+      "reanudar": ["Resume"],
+      "ayuda": ["Help"],
+      "salir": ["Exit"]
+    },
+    "infoPoster": {
+      "rubeola": ["Rubéola"],
+      "rubInfo": [
+        "La Rubéola es una infección viral contagiosa  que  se \ndistingue por un sarpullido característico en todo el cuerpo."
+      ],
+      "varicela": ["Varicela"],
+      "varInfo": [
+        "La Varicela es una infección que causa una erupción en la piel \ncon picazón y pequeñas ampollas con líquido."
+      ],
+      "paperas": ["Paperas"],
+      "papInfo": [
+        "La Parotiditis o Paperas es una infección viral que afecta \nprincipalmente a las glándulas salivales que se encuentran \ncerca de los oídos."
+      ]
+    },
+    "pacMenu": {
+      "pac1": {
+        "nombre": ["Nombre:"],
+        "edad": ["Edad:"],
+        "gSanguineo": ["Grupo Sanguíneo:"],
+        "estatura": ["Estatura:"]
+      }
     }
   },
-  "juego": {},
+  "juego": {
+    "consultorioScene": {
+      "ficha": ["Ficha de paciente"],
+      "puerta": ["Ir a la camilla"],
+      "libreta": ["Menú"],
+      "charlar": ["Hablar"],
+      "poster": ["Info enfermedades"]
+    },
+    "camillaScene": {
+      "info": {
+        "ficha": ["Ficha de paciente"],
+        "puerta": ["Ir a la camilla"],
+        "libreta": ["Menú"],
+        "estetoscopio": ["Estetoscopio"],
+        "termometro": ["Termómetro"],
+        "linterna": ["Linterna"],
+        "guantes": ["Guantes"]
+      }
+    },
+    "diagnostico": {
+      "diagGangTrue": ["Sus ganglios están inflamados."],
+      "diagGangFalse": ["Sin ganglios inflamados."],
+      "diagFarTrue": ["Detecto faringitis."],
+      "diagFarFalse": ["No detecto faringitis."],
+      "diagInfTrue": ["Sus ojos estan inflamados."],
+      "diagInfFalse": ["Sus ojos no estan inflamados."],
+      "diagTemp": ["Su temperatura es de "]
+    },
+    "resultados": {
+      "exito": ["Éxito"],
+      "fallo": ["Fracaso"],
+      "menu": ["Menú"],
+      "siguiente": ["Continuar"],
+      "calific": ["Calificación"],
+      "salv": ["Puntos de salvación:"],
+      "exce": ["Excelente"],
+      "mb": ["Muy bueno"],
+      "b": ["Bueno"],
+      "s": ["Satisfactorio"],
+      "ns": ["No satisfactorio"]
+    },
+    "mensajes": {
+      "msgCab1": [
+        "Me medi alta temperatura anoche y hoy me levanté con dolor de cabeza.\n"
+      ],
+      "msgCab2": ["Me siento con dolor de cabeza. "],
+      "msgCong": ["Tengo algo de congestión ultimamente.\n"],
+      "msgErup": ["Tengo un sarpullido leve en todo el cuerpo.\n"],
+      "msgArt": ["Las articulaciones me duelen constantemente al moverme."],
+      "msgDolMast": ["Al masticar me duele la garganta.\n"],
+      "msgDolMusc": ["Siento una molestia en los musculos.\n"],
+      "msgFat": [
+        "Estoy con fatiga ultimamente, no tengo ganas de hacer nada.\n"
+      ],
+      "msgApet": ["Ando sin ganas de comer hace algunos días."],
+      "msgCans": ["Ultimamente me cuesta salir de la cama, me canso rapido."],
+      "msgSaludos": [
+        "Doctor: Hola, buenas tardes ¿Qué te anda sucediendo?\n\n",
+        "Doctor: Mucho gusto, ¿Qué tal se encuentra?\n\n",
+        "Doctor: Buen día, cuénteme ¿Qué le sucede?\n\n",
+        "Doctor: Un gusto, ¿Cuál es el motivo de su visita?\n\n"
+      ],
+      "msgPaciente": ["Paciente: Buenas."]
+    },
+    "ayuda1": [
+      "Síntomas:\nPara descubrir ciertos sintomas\nse necesita hablar con el paciente haciendole\nclick SOLO en el consultorio.\n\nFicha del Paciente:\nContiene datos sobre el paciente\ny 3 pestañas extras utilizadas para marcarlos\nsintomas que usted detecte.\n\nPuerta:\nPermite ir hacia la sala de\nexaminaciones o volver al consultorio.\n\nSala de examinaciones:\nDesde aca se realizan chequeos\nfisicos al paciente utilizando las\nherramientas disponibles."
+    ],
+    "ayuda2": [
+      "Herramientas:\nRevelan informacion sobre los sintomas.\n\nSellos:\nPermiten dar un diagnostico definitivo\nal paciente, ya sea Sano o Infectado.\n\nLibreta:\nDesde aca se puede acceder al menú\nde pausa donde encontrarás esta\npágina de ayuda y podras salir del juego."
+    ]
+  },
   "tutorial": {
+    "chatTuto": [
+      "Doctor: Buenos días, mucho gusto.\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso mas rapido que antes.\nDoctor: Bien, pase a la camilla."
+    ],
     "tuto_01": {
       "info": {
         "ficha": ["Ficha de paciente"],
-        "puerta": ["Go to the stretcher"],
-        "libreta": ["Menú"]
+        "puerta": ["Ir a la camilla"],
+        "libreta": ["Menú"],
+        "charlar": ["Hablar"]
       }
+    },
+    "tuto_02": {
+      "info": {
+        "ficha": ["Ficha de paciente"],
+        "puerta": ["Volver al consultorio"],
+        "libreta": ["Menú"],
+        "estetoscopio": ["Estetoscopio"],
+        "termometro": ["Termómetro"],
+        "linterna": ["Linterna"],
+        "guantes": ["Guantes"]
+      }
+    },
+    "menuTuto": {
+      "nombre": ["Nombre:                              Arnone, Juan"],
+      "edad": ["Edad:                                                 32"],
+      "gSanguineo": ["Grupo Sanguíneo:                                A-"],
+      "estatura": ["Estatura:                                          1,84"]
+    },
+    "varTuto": {
+      "varicela": ["Varicela"],
+      "perApetito": ["Pérdida de apetito"],
+      "cansancio": ["Cansancio"]
+    },
+    "ayuda10s": ["Presiona sobre el paciente \n     para hablar con él."],
+    "diagnostico": {
+      "diagGang": ["Sin ganglios inflamados."],
+      "diagFar": ["Detecto faringitis."],
+      "diagInf": ["Sus ojos parecen estar bien."],
+      "diagTemp": ["38.9, una alta temperatura."]
     }
+  },
+  "fichas": {
+    "fiebre": ["Fiebre"],
+    "dolorCabeza": ["Dolor de cabeza"],
+    "estado": ["Estado"],
+    "si": ["Sí"],
+    "no": ["No"],
+    "sano": ["Sano"],
+    "enfermo": ["Enfermo"],
+    "terminar": ["Terminar"]
   }
 }

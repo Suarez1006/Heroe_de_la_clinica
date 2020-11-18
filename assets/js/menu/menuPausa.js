@@ -117,6 +117,7 @@ class menuPausa extends Phaser.Scene {
       tiempo = 10000;
       this.scene.sleep("clock");
       this.scene.start("Menu");
+      music2.stop();
     });
 
     back.on("pointerover", () => {

@@ -56,12 +56,43 @@ class loader extends Phaser.Scene {
     this.load.image("botonPT", "assets/imagenes/botones/botonPT.png");
 
     this.load.image("boton", "assets/imagenes/botones/boton.png");
+    this.load.image(
+      "boton_fscreen",
+      "assets/imagenes/botones/boton_fscreen.png"
+    );
+    this.load.image(
+      "boton_fscreen_s",
+      "assets/imagenes/botones/boton_fscreen_s.png"
+    );
+    this.load.image(
+      "boton_wscreen",
+      "assets/imagenes/botones/boton_wscreen.png"
+    );
+    this.load.image(
+      "boton_wscreen_s",
+      "assets/imagenes/botones/boton_wscreen_s.png"
+    );
     this.load.image("boton_s", "assets/imagenes/botones/boton_s.png");
     this.load.image("boton_ayuda", "assets/imagenes/botones/boton_ayuda.png");
     this.load.image(
       "boton_ayuda_s",
       "assets/imagenes/botones/boton_ayuda_s.png"
     );
+    this.load.image("boton_musica", "assets/imagenes/botones/boton_musica.png");
+    this.load.image(
+      "boton_musica_s",
+      "assets/imagenes/botones/boton_musica_s.png"
+    );
+    this.load.image("mute", "assets/imagenes/botones/mute.png");
+    this.load.image(
+      "boton_volumen",
+      "assets/imagenes/botones/boton_volumen.png"
+    );
+    this.load.image(
+      "boton_volumen_s",
+      "assets/imagenes/botones/boton_volumen_s.png"
+    );
+
     this.load.image("inicio", "assets/imagenes/fondos/inicio.png");
 
     this.load.audio("menu_Musica", [
@@ -177,6 +208,14 @@ class loader extends Phaser.Scene {
       "fichaFoto2",
       "assets/imagenes/personajes/paciente_03a_ficha.png"
     );
+    this.load.image(
+      "fichaFoto3",
+      "assets/imagenes/personajes/paciente_04a_ficha.png"
+    );
+    this.load.image(
+      "fichaFoto4",
+      "assets/imagenes/personajes/paciente_05a_ficha.png"
+    );
 
     this.load.image(
       "paciente_01",
@@ -215,6 +254,32 @@ class loader extends Phaser.Scene {
     this.load.image(
       "paciente_03a_s",
       "assets/imagenes/personajes/paciente_03a_s.png"
+    );
+
+    this.load.image(
+      "paciente_04",
+      "assets/imagenes/personajes/paciente_04.png"
+    );
+    this.load.image(
+      "paciente_04a",
+      "assets/imagenes/personajes/paciente_04a.png"
+    );
+    this.load.image(
+      "paciente_04a_s",
+      "assets/imagenes/personajes/paciente_04a_s.png"
+    );
+
+    this.load.image(
+      "paciente_05",
+      "assets/imagenes/personajes/paciente_05.png"
+    );
+    this.load.image(
+      "paciente_05a",
+      "assets/imagenes/personajes/paciente_05a.png"
+    );
+    this.load.image(
+      "paciente_05a_s",
+      "assets/imagenes/personajes/paciente_05a_s.png"
     );
 
     this.load.image("hitbox", "assets/imagenes/complementos/hitbox.png");
