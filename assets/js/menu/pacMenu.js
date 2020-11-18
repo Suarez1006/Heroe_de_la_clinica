@@ -1,127 +1,95 @@
+var photo_01;
+var photo_02;
+var photo_03;
+var photo_04;
+var photo_05;
+var infoNombre;
+var name;
+
 class pacMenu extends Phaser.Scene {
   constructor() {
     super("MenuP");
   }
+
   create() {
-    selloPS = 0;
-    selloPE = 0;
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
+
     this.add.image(750, 540, "ficha").setInteractive();
 
-    sep1 = this.add
-      .image(1124, 661, "separador_pac_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-    sep1.on("pointerover", () => {
-      sep1.setAlpha(1);
-    });
+    var Nombre = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.nombre);
+    var Edad = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.edad);
+    var GSanguineo = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.gSanguineo);
+    var Estatura = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.estatura);
 
+    photo_01 = this.add.image(752, 355, "fichaFoto1").setAlpha(0);
+    photo_02 = this.add.image(752, 355, "fichaFoto2").setAlpha(0);
+    photo_03 = this.add.image(752, 355, "fichaFoto3").setAlpha(0);
+    photo_04 = this.add.image(752, 355, "fichaFoto4").setAlpha(0);
+    photo_05 = this.add.image(752, 355, "fichaFoto5").setAlpha(0);
 
+    if (pacientes == 1) {
+      photo = photo_01;
+    } else if (pacientes == 2) {
+      photo = photo_02;
+    } else if (pacientes == 3) {
+      photo = photo_03;
+    } else if (pacientes == 4) {
+      photo = photo_04;
+    } else {
+      photo = photo_05;
+    }
 
-    sep2 = this.add
-      .image(1124, 731, "separador_rub_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(0.001);
+    this.add.image(752, 355, photo).setAlpha(0);
 
-    sep2.on("pointerover", () => {
-      sep2.setAlpha(1).setDepth(1);
-    });
-    sep2.on("pointerout", () => {
-      sep2.setAlpha(0.001);
-    });
-    sep2.on("pointerdown", () => {
-      sep1.setAlpha(0.01);
-      sep3.setAlpha(0.01);
-      sep4.setAlpha(0.01);
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_01");
-    });
-
-
-
-
-
-    sep3 = this.add
-      .image(1124, 800.9, "separador_var_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(0.001);
-
-    sep3.on("pointerover", () => {
-      sep3.setAlpha(1).setDepth(1);
-    });
-    sep3.on("pointerout", () => {
-      sep3.setAlpha(0.001);
-    });
-    sep3.on("pointerdown", () => {
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_03");
-    });
-
-
-
-
-
-    sep4 = this.add
-      .image(1124, 874, "separador_pap_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(0.001);
-
-    sep4.on("pointerover", () => {
-      sep4.setAlpha(1).setDepth(1);
-    });
-    sep4.on("pointerout", () => {
-      sep4.setAlpha(0.001);
-    });
-    sep4.on("pointerdown", () => {
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_02");
-    });
-
-
-
-
-
+    selloPS = 0;
+    selloPE = 0;
 
     this.add
-      .text(750, 600, "Nombre: Rodriguez, Martín", {
+      .text(1000, 600, infoNombre, {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0.5);
+      .setOrigin(1, 0.5);
+
     this.add
-      .text(750, 780, "Edad: 2O", {
+      .text(450, 600, Nombre, {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0.5);
+      .setOrigin(0, 0.5);
+
     this.add
-      .text(750, 660, "Grupo Sanguineo: A-", {
+      .text(450, 780, Edad, {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0.5);
+      .setOrigin(0, 0.5);
     this.add
-      .text(750, 720, "Altura: 1,4O", {
+      .text(450, 660, GSanguineo, {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0.5);
+      .setOrigin(0, 0.5);
+    this.add
+      .text(450, 720, Estatura, {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
 
     // -------------------------------------------------
 
     negro.on("pointerdown", () => {
       this.scene.sleep();
+      this.scene.sleep("sepScene");
       if (pausa == 2) {
         this.scene.resume("juego");
         pausa = 0;

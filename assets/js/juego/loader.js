@@ -45,24 +45,42 @@ class loader extends Phaser.Scene {
     assetText.setOrigin(0.5, 0.5);
 
     this.load.image("negro", "assets/imagenes/fondos/negro.png");
-    this.load.image("blanco", "assets/imagenes/complementos/blanco.png");
     this.load.image("consultorio", "assets/imagenes/fondos/consultorio.png");
     this.load.image("camilla", "assets/imagenes/fondos/camilla.png");
+
+    this.load.image("flechaPD", "assets/imagenes/botones/flechaPD.png");
+    this.load.image("flechaP_s", "assets/imagenes/botones/flechaP_s.png");
+
+    this.load.image("botonES", "assets/imagenes/botones/botonES.png");
+    this.load.image("botonEN", "assets/imagenes/botones/botonEN.png");
+    this.load.image("botonPT", "assets/imagenes/botones/botonPT.png");
 
     this.load.image("boton", "assets/imagenes/botones/boton.png");
     this.load.image("boton_s", "assets/imagenes/botones/boton_s.png");
     this.load.image("boton_ayuda", "assets/imagenes/botones/boton_ayuda.png");
-    this.load.image("boton_ayuda_s", "assets/imagenes/botones/boton_ayuda_s.png");
+    this.load.image(
+      "boton_ayuda_s",
+      "assets/imagenes/botones/boton_ayuda_s.png"
+    );
     this.load.image("inicio", "assets/imagenes/fondos/inicio.png");
+
+    this.load.audio("menu_Musica", [
+      "assets/musicFX/music_menu.mp3",
+      "assets/musicFX/music_menu.ogg",
+    ]);
+    this.load.audio("menu_Game1", [
+      "assets/musicFX/music_game.mp3",
+      "assets/musicFX/music_game.ogg",
+    ]);
 
     this.load.image("ayuda", "assets/imagenes/flotantes/ayuda.png");
     this.load.image("cartelAyuda", "assets/imagenes/flotantes/cartelAyuda.png");
+    this.load.image("chatPNG", "assets/imagenes/complementos/chat.png");
 
     this.load.image("score", "assets/imagenes/flotantes/score.png");
     this.load.image("final", "assets/imagenes/fondos/final.png");
 
     this.load.image("libreta", "assets/imagenes/flotantes/libreta.png");
-    this.load.image("flechaP", "assets/imagenes/botones/flechaP.png");
 
     this.load.image("ficha", "assets/imagenes/personajes/ficha.png");
     this.load.image("ficha2", "assets/imagenes/personajes/ficha_02.png");
@@ -73,49 +91,31 @@ class loader extends Phaser.Scene {
     this.load.image("ficha3b", "assets/imagenes/personajes/ficha_03b.png");
 
     this.load.image(
-      "separador_pac",
-      "assets/imagenes/elementos/separador_pac.png"
-    );
-    this.load.image(
       "separador_pac_s",
       "assets/imagenes/elementos/separador_pac_s.png"
     );
 
-    this.load.image(
-      "separador_pap",
-      "assets/imagenes/elementos/separador_pap.png"
-    );
     this.load.image(
       "separador_pap_s",
       "assets/imagenes/elementos/separador_pap_s.png"
     );
 
     this.load.image(
-      "separador_rub",
-      "assets/imagenes/elementos/separador_rub.png"
-    );
-    this.load.image(
       "separador_rub_s",
       "assets/imagenes/elementos/separador_rub_s.png"
     );
 
     this.load.image(
-      "separador_var",
-      "assets/imagenes/elementos/separador_var.png"
-    );
-    this.load.image(
       "separador_var_s",
       "assets/imagenes/elementos/separador_var_s.png"
     );
 
-    this.load.image("guantes", "assets/imagenes/elementos/guantes.png");
     this.load.image("guantes_s", "assets/imagenes/elementos/guantes_s.png");
     this.load.image("reloj", "assets/imagenes/complementos/reloj.png");
     this.load.image(
       "reloj_brillo",
       "assets/imagenes/complementos/reloj_brillo.png"
     );
-    this.load.image("arena", "assets/imagenes/complementos/arena.png");
     this.load.image("arena2", "assets/imagenes/complementos/arena2.png");
     this.load.image("linterna", "assets/imagenes/elementos/linterna.png");
     this.load.image("linterna_s", "assets/imagenes/elementos/linterna_s.png");
@@ -143,8 +143,8 @@ class loader extends Phaser.Scene {
       "muñeco_r",
       "assets/imagenes/complementos/muñeco_ready.png",
       {
-        frameWidth: 72,
-        frameHeight: 84,
+        frameWidth: 116,
+        frameHeight: 120,
       }
     );
 
@@ -154,10 +154,15 @@ class loader extends Phaser.Scene {
     this.load.image("selloD_s", "assets/imagenes/elementos/selloD_s.png");
     this.load.image("sano", "assets/imagenes/complementos/sano.png");
     this.load.image("enfermo", "assets/imagenes/complementos/enfermo.png");
+    this.load.image(
+      "fondo_sello",
+      "assets/imagenes/complementos/fondo_sello.png"
+    );
+
     this.load.image("casilla", "assets/imagenes/complementos/casilla.png");
     this.load.image("tilde", "assets/imagenes/complementos/tilde.png");
 
-    this.load.image("fichaFoto", "assets/imagenes/personajes/hugo.png");
+    this.load.image("hugo", "assets/imagenes/personajes/hugo.png");
 
     this.load.image(
       "fichaFotoTuto",
@@ -165,11 +170,11 @@ class loader extends Phaser.Scene {
     );
 
     this.load.image(
-      "fichaFoto2",
+      "fichaFoto1",
       "assets/imagenes/personajes/paciente_02a_ficha.png"
     );
     this.load.image(
-      "fichaFoto3",
+      "fichaFoto2",
       "assets/imagenes/personajes/paciente_03a_ficha.png"
     );
 
@@ -246,6 +251,10 @@ class loader extends Phaser.Scene {
     );
 
     this.load.json("sintomas", "assets/data/sintomas.json");
+
+    this.load.json("es_ES", "assets/data/es_ES.json");
+    this.load.json("en_EN", "assets/data/en_EN.json");
+    this.load.json("pt_PT", "assets/data/pt_PT.json");
 
     this.load.on("progress", function (value) {
       progressBar.clear();

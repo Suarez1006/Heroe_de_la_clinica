@@ -5,6 +5,30 @@ class camillaScene extends Phaser.Scene {
   }
 
   create() {
+    var Ficha = Phaser.Math.RND.pick(Idioma.juego.camillaScene.info.ficha);
+    var Puerta = Phaser.Math.RND.pick(Idioma.juego.camillaScene.info.puerta);
+    var Libreta = Phaser.Math.RND.pick(Idioma.juego.camillaScene.info.libreta);
+    var Estetoscopio = Phaser.Math.RND.pick(
+      Idioma.juego.camillaScene.info.estetoscopio
+    );
+    var Termometro = Phaser.Math.RND.pick(
+      Idioma.juego.camillaScene.info.termometro
+    );
+    var Linterna = Phaser.Math.RND.pick(
+      Idioma.juego.camillaScene.info.linterna
+    );
+    var Guantes = Phaser.Math.RND.pick(Idioma.juego.camillaScene.info.guantes);
+
+    var DiagGangT = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagGangTrue);
+    var DiagGangF = Phaser.Math.RND.pick(
+      Idioma.juego.diagnostico.diagGangFalse
+    );
+    var DiagFarT = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagFarTrue);
+    var DiagFarF = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagFarFalse);
+    var DiagInfT = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagInfTrue);
+    var DiagInfF = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagInfFalse);
+    var DiagTemp = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagTemp);
+
     var gvar = 0;
     var evar = 0;
     var lvar = 0;
@@ -18,8 +42,8 @@ class camillaScene extends Phaser.Scene {
       .setDepth(0.9);
 
     var info = this.add
-      .text(18, 30, "", {
-        fontSize: "20px",
+      .text(0, 0, "", {
+        fontSize: "40px",
         fontColor: "white",
         fontFamily: "font1",
       })
@@ -28,18 +52,19 @@ class camillaScene extends Phaser.Scene {
 
     this.input.on("pointermove", function (pointer) {
       if (pointer.x > 1520) {
-        back.x = -370 + pointer.x;
-        back.y = -10 + pointer.y;
-        info.x = -340 + pointer.x;
-        info.y = -21 + pointer.y;
+        back.setOrigin(1);
+        back.x = -10 + pointer.x;
+        back.y = -5 + pointer.y;
+        info.x = -210 + pointer.x;
+        info.y = -13 + pointer.y;
       } else {
+        back.setOrigin(0, 1);
         back.x = 10 + pointer.x;
         back.y = -5 + pointer.y;
         info.x = 30 + pointer.x;
-        info.y = -18 + pointer.y;
+        info.y = -13 + pointer.y;
       }
     });
-
     var ficha_c = this.add
       .image(400, 958, "ficha_s")
       .setAlpha(0.01)
@@ -54,7 +79,7 @@ class camillaScene extends Phaser.Scene {
       ficha_c.setAlpha(0.01);
     });
     ficha_c.on("pointerover", () => {
-      info.setText("Ficha de paciente");
+      info.setText(Ficha);
       back.setAlpha(1).setScale(1.3, 1);
       ficha_c.setAlpha(1);
     });
@@ -77,7 +102,7 @@ class camillaScene extends Phaser.Scene {
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
-      info.setText("Menu");
+      info.setText(Libreta);
       back.setAlpha(1).setScale(0.45, 1);
     });
     libreta.on("pointerout", () => {
@@ -94,7 +119,7 @@ class camillaScene extends Phaser.Scene {
 
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
-      info.setText("Volver a consultorio");
+      info.setText(Puerta);
       back.setAlpha(1).setScale(1.75, 1);
     });
 
@@ -166,7 +191,7 @@ class camillaScene extends Phaser.Scene {
 
     guantes_s.on("pointerover", () => {
       guantes_s.setAlpha(1);
-      info.setText("Guantes");
+      info.setText(Guantes);
       back.setAlpha(1).setScale(0.7, 1);
     });
 
@@ -211,7 +236,7 @@ class camillaScene extends Phaser.Scene {
 
     esteto_s.on("pointerover", () => {
       esteto_s.setAlpha(1);
-      info.setText("Estetoscopio");
+      info.setText(Estetoscopio);
       back.setAlpha(1).setScale(1.1, 1);
     });
 
@@ -256,7 +281,7 @@ class camillaScene extends Phaser.Scene {
 
     linterna_s.on("pointerover", () => {
       linterna_s.setAlpha(1);
-      info.setText("Linterna");
+      info.setText(Linterna);
       back.setAlpha(1).setScale(0.78, 1);
     });
 
@@ -301,7 +326,7 @@ class camillaScene extends Phaser.Scene {
 
     termometro_s.on("pointerover", () => {
       termometro_s.setAlpha(1);
-      info.setText("Termometro");
+      info.setText(Termometro);
       back.setAlpha(1).setScale(0.95, 1);
     });
 
@@ -368,10 +393,10 @@ class camillaScene extends Phaser.Scene {
         this.scene.pause();
         pausa = 8;
         if (gang == "true") {
-          diag = "Sus ganglios están inflamados";
+          diag = DiagGangT;
           this.scene.run("diagSce");
         } else {
-          diag = "Sin ganglios inflamados";
+          diag = DiagGangF;
           this.scene.run("diagSce");
         }
       }
@@ -382,10 +407,10 @@ class camillaScene extends Phaser.Scene {
         this.scene.pause();
         pausa = 8;
         if (far == "true") {
-          diag = "Detecto faringitis";
+          diag = DiagFarT;
           this.scene.run("diagSce");
         } else {
-          diag = "No detecto faringitis";
+          diag = DiagFarF;
           this.scene.run("diagSce");
         }
       }
@@ -396,10 +421,10 @@ class camillaScene extends Phaser.Scene {
         this.scene.pause();
         pausa = 8;
         if (inf == "true") {
-          diag = "Sus ojos estan inflamados";
+          diag = DiagInfT;
           this.scene.run("diagSce");
         } else {
-          diag = "Sus ojos no estan inflamados";
+          diag = DiagInfF;
           this.scene.run("diagSce");
         }
       }
@@ -409,7 +434,7 @@ class camillaScene extends Phaser.Scene {
         tvar = 0;
         this.scene.pause();
         pausa = 8;
-        diag = "Su temperatura es de " + temperaturaFinal + "°C";
+        diag = DiagTemp + temperaturaFinal + "°C";
         this.scene.run("diagSce");
       }
     });

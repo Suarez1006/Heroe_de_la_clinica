@@ -2,9 +2,72 @@ class mainMenu extends Phaser.Scene {
   constructor() {
     super("Menu");
   }
+  //update() {
+  //  if (selecIdioma == "es") {
+  //    Idioma = this.game.cache.json.get("es_ES");
+  //  } else if (selecIdioma == "en") {
+  //    Idioma = this.game.cache.json.get("en_EN");
+  //  }
+  //}
 
   create() {
+    if (selecIdioma == "es") {
+      Idioma = this.game.cache.json.get("es_ES");
+      var IdiomaGen = this.add
+        .image(1850, 75, "botonES")
+        .setDepth(1)
+        .setInteractive({ cursor: "pointer", pixelPerfect: true });
+    } else if (selecIdioma == "en") {
+      var IdiomaGen = this.add
+        .image(1850, 75, "botonEN")
+        .setDepth(1)
+        .setInteractive({ cursor: "pointer", pixelPerfect: true });
+      Idioma = this.game.cache.json.get("en_EN");
+    } else if (selecIdioma == "pt") {
+      var IdiomaGen = this.add
+        .image(1850, 75, "botonPT")
+        .setDepth(1)
+        .setInteractive({ cursor: "pointer", pixelPerfect: true });
+      Idioma = this.game.cache.json.get("pt_PT");
+    }
+    this.music = this.sound.add("menu_Musica");
+
+    var musicConfig = {
+      mute: false,
+      volume: 1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0,
+    };
+    this.music.play(musicConfig);
+
+    var musicConfig2 = {
+      mute: true,
+    };
+
+    var Jugar = Phaser.Math.RND.pick(Idioma.menu.mainMenu.jugar);
+    var Ayuda = Phaser.Math.RND.pick(Idioma.menu.mainMenu.ayuda);
+    var Creditos = Phaser.Math.RND.pick(Idioma.menu.mainMenu.creditos);
+
     this.add.image(960, 540, "inicio");
+
+    IdiomaGen.on("pointerdown", () => {
+      if (selecIdioma == "es") {
+        selecIdioma = "en";
+        IdiomaGen.setTexture("botonEN");
+        this.scene.restart();
+      } else if (selecIdioma == "en") {
+        selecIdioma = "pt";
+        IdiomaGen.setTexture("botonEN");
+        this.scene.restart();
+      } else if (selecIdioma == "pt") {
+        selecIdioma = "es";
+        IdiomaGen.setTexture("botonEN");
+        this.scene.restart();
+      }
+    });
 
     var play = this.add
       .image(960, 954, "boton_s")
@@ -12,9 +75,9 @@ class mainMenu extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: true });
 
     var playT = this.add
-      .text(960, 954, "Jugar", {
+      .text(960, 949, Jugar, {
         fontFamily: "font1",
-        fontSize: "35px",
+        fontSize: "60px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
@@ -25,9 +88,9 @@ class mainMenu extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: true });
 
     var creditsT = this.add
-      .text(1524, 994, "Creditos", {
+      .text(1524, 989, Creditos, {
         fontFamily: "font1",
-        fontSize: "35px",
+        fontSize: "60px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
@@ -37,15 +100,16 @@ class mainMenu extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: true });
 
     var ayudaT = this.add
-      .text(396, 994, "Ayuda", {
+      .text(396, 989, Ayuda, {
         fontFamily: "font1",
-        fontSize: "35px",
+        fontSize: "60px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
     play.on("pointerdown", () => {
       this.scene.start("juego");
       this.scene.start("clock");
+      this.music.play(musicConfig2);
     });
 
     play.on("pointerover", () => {

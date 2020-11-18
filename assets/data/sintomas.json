@@ -1,9 +1,9 @@
 {
-  "general": { "cabeza": ["true", "false"],"fiebre": ["true", "false"] },
+  "general": { "cabeza": ["true", "false"], "fiebre": ["true", "false"] },
 
   "enfermedad": {
     "rubeola": {
-      "congestion": ["true", "false"],
+      "congestion": ["true ", "false"],
       "inflamacion": ["true", "false"],
       "ganglios": ["true", "false"],
       "erupcion": ["true", "false"],

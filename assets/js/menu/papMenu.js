@@ -18,6 +18,7 @@ class papMenu extends Phaser.Scene {
       .setInteractive({ cursor: "pointer" });
     negro.on("pointerdown", () => {
       this.scene.sleep();
+      this.scene.sleep("sepScene");
       if (pausa == 2) {
         this.scene.resume("juego");
         pausa = 0;
@@ -33,72 +34,6 @@ class papMenu extends Phaser.Scene {
       }
     });
     var ficha = this.add.image(750, 540, "ficha").setInteractive();
-
-    sep1 = this.add
-      .image(1124, 661, "separador_pac_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-    sep1.on("pointerover", () => {
-      sep1.setAlpha(1);
-    });
-
-    sep2 = this.add
-      .image(1124, 731, "separador_rub_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-
-    sep2.on("pointerover", () => {
-      sep2.setAlpha(1).setDepth(1);
-    });
-    sep2.on("pointerout", () => {
-      sep2.setAlpha(0.001);
-    });
-    sep2.on("pointerdown", () => {
-      sep1.setAlpha(0.01);
-      sep3.setAlpha(0.01);
-      sep4.setAlpha(0.01);
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_01");
-    });
-
-    sep3 = this.add
-      .image(1124, 800.9, "separador_var_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-
-    sep3.on("pointerover", () => {
-      sep3.setAlpha(1).setDepth(1);
-    });
-    sep3.on("pointerout", () => {
-      sep3.setAlpha(0.001);
-    });
-    sep3.on("pointerdown", () => {
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_03");
-    });
-
-    sep4 = this.add
-      .image(1124, 874, "separador_pap_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(0.001);
-
-    sep4.on("pointerover", () => {
-      sep4.setAlpha(1).setDepth(1);
-    });
-    sep4.on("pointerout", () => {
-      sep4.setAlpha(0.001);
-    });
-    sep4.on("pointerdown", () => {
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_03");
-    });
-
-    sep2.setAlpha(0.01);
-    sep4.setAlpha(0.01);
 
     boton_ayuda = this.add
       .image(1010, 185, "boton_ayuda")
@@ -116,101 +51,218 @@ class papMenu extends Phaser.Scene {
       boton_ayuda_s.setAlpha(0.001);
     });
     boton_ayuda.on("pointerdown", () => {
-      //this.scene.sleep();
-      //this.scene.start()
+      this.scene.run("infoEnfermedad");
+      this.scene.sleep();
+      this.scene.sleep("sepScene");
+      infoE = 2;
     });
 
     this.add
-      .text(440, 160, "Varicela", {
+      .text(440, 140, "Paperas", {
+        fontFamily: "font1",
+        fontSize: "75px",
+      })
+      .setTint(0x454545);
+
+    this.add
+      .text(420, 325, "Fiebre", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);;
+
+    this.add
+      .text(420, 375, "Dolor de Cabeza", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);;
+
+    this.add
+      .text(420, 425, "Ganglios Inflamados", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);;
+
+    this.add
+      .text(420, 475, "Dolor al Masticar", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);;
+
+      this.add
+      .text(420, 525, "Dolor Muscular", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);;
+
+      this.add
+      .text(420, 575, "Fatiga", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);;
+
+      this.add
+      .text(420, 625, "Perdida de Apetito", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
+
+      var textoSi = this.add
+      .text(900, 260, "Sí", {
         fontFamily: "font1",
         fontSize: "50px",
-      })
-      .setTint(0x454545);
-
-    this.add
-      .text(420, 430, "Fiebre", {
-        fontFamily: "font1",
-        fontSize: "25px",
-      })
-      .setTint(0x454545);
-
-    this.add
-      .text(420, 500, "Dolor de Cabeza", {
-        fontFamily: "font1",
-        fontSize: "25px",
-      })
-      .setTint(0x454545);
-
-    this.add
-      .text(420, 570, "Perdida de Apet.", {
-        fontFamily: "font1",
-        fontSize: "25px",
-      })
-      .setTint(0x454545);
-
-    this.add
-      .text(420, 640, "Cansancio", {
-        fontFamily: "font1",
-        fontSize: "25px",
-      })
-      .setTint(0x454545);
-
-    var textoSi = this.add
-      .text(900, 360, "Si", {
-        fontFamily: "font1",
-        fontSize: "25px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
 
     var textoNo = this.add
-      .text(1020, 360, "No", {
+      .text(1020, 260, "No", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "50px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
 
-    var siP = this.add
-      .image(textoSi.x, 430, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      var siP = this.add
+      .image(textoSi.x, 330, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var siP2 = this.add
-      .image(textoSi.x, 500, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 380, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var siP3 = this.add
-      .image(textoSi.x, 570, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 430, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var siP4 = this.add
-      .image(textoSi.x, 640, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 480, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+    var siP5 = this.add
+      .image(textoSi.x, 530, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+    var siP6 = this.add
+      .image(textoSi.x, 580, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+    var siP7 = this.add
+      .image(textoSi.x, 630, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+
 
     var noP = this.add
-      .image(textoNo.x, 430, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var noP2 = this.add
-      .image(textoNo.x, 500, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP2.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var noP3 = this.add
-      .image(textoNo.x, 570, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP3.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var noP4 = this.add
-      .image(textoNo.x, 640, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP4.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+    var noP5 = this.add
+      .image(textoNo.x, siP5.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+    var noP6 = this.add
+      .image(textoNo.x, siP6.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
+    var noP7 = this.add
+      .image(textoNo.x, siP7.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
 
     // -----------------------------------------
-    var circulo = this.add.image(siP.x, siP.y, "tilde").setAlpha(0.01);
-    var circulo2 = this.add.image(noP.x, noP.y, "tilde").setAlpha(0.01);
-    var circulo3 = this.add.image(siP2.x, siP2.y, "tilde").setAlpha(0.01);
-    var circulo4 = this.add.image(noP2.x, noP2.y, "tilde").setAlpha(0.01);
-    var circulo5 = this.add.image(siP3.x, siP3.y, "tilde").setAlpha(0.01);
-    var circulo6 = this.add.image(noP3.x, noP3.y, "tilde").setAlpha(0.01);
-    var circulo7 = this.add.image(siP4.x, siP4.y, "tilde").setAlpha(0.01);
-    var circulo8 = this.add.image(noP4.x, noP4.y, "tilde").setAlpha(0.01);
+    var circulo = this.add
+      .image(siP.x, siP.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo2 = this.add
+      .image(noP.x, noP.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo3 = this.add
+      .image(siP2.x, siP2.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo4 = this.add
+      .image(noP2.x, noP2.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo5 = this.add
+      .image(siP3.x, siP3.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo6 = this.add
+      .image(noP3.x, noP3.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo7 = this.add
+      .image(siP4.x, siP4.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo8 = this.add
+      .image(noP4.x, noP4.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+
+    var circulo9 = this.add
+      .image(siP5.x, siP5.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo10 = this.add
+      .image(noP5.x, noP5.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo11 = this.add
+      .image(siP6.x, siP6.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo12 = this.add
+      .image(noP6.x, noP6.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo13 = this.add
+      .image(siP7.x, siP7.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo14 = this.add
+      .image(noP7.x, noP7.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+  
 
     var circuloA = 0;
     var circuloA2 = 0;
     var circuloA3 = 0;
     var circuloA4 = 0;
+    var circuloA5 = 0;
+    var circuloA6 = 0;
+    var circuloA7 = 0;
+
 
     siP.on("pointerdown", () => {
       circuloA = 1;
@@ -277,6 +329,56 @@ class papMenu extends Phaser.Scene {
       }
     });
 
+    siP5.on("pointerdown", () => {
+      circuloA5 = 1;
+      if (circuloA5 === 1) {
+        circulo9.setAlpha(0.6);
+        circulo10.setAlpha(0.01);
+        finish = 1;
+      }
+    });
+    noP5.on("pointerdown", () => {
+      circuloA5 = 2;
+      if (circuloA5 === 2) {
+        circulo10.setAlpha(0.6);
+        circulo9.setAlpha(0.01);
+        finish = 1;
+      }
+    });
+    siP6.on("pointerdown", () => {
+      circuloA6 = 1;
+      if (circuloA6 === 1) {
+        circulo11.setAlpha(0.6);
+        circulo12.setAlpha(0.01);
+        finish = 1;
+      }
+    });
+    noP6.on("pointerdown", () => {
+      circuloA6 = 2;
+      if (circuloA6 === 2) {
+        circulo12.setAlpha(0.6);
+        circulo11.setAlpha(0.01);
+        finish = 1;
+      }
+    });
+    siP7.on("pointerdown", () => {
+      circuloA7 = 1;
+      if (circuloA7 === 1) {
+        circulo13.setAlpha(0.6);
+        circulo14.setAlpha(0.01);
+        finish = 1;
+      }
+    });
+    noP7.on("pointerdown", () => {
+      circuloA7 = 2;
+      if (circuloA7 === 2) {
+        circulo14.setAlpha(0.6);
+        circulo13.setAlpha(0.01);
+        finish = 1;
+      }
+    });
+ 
+
     var enfermoSello = this.add
       .image(750, 870, "enfermo")
       .setAlpha(0.001)
@@ -323,16 +425,14 @@ class papMenu extends Phaser.Scene {
       .setAlpha(0.001)
       .setOrigin(0.5);
 
-    this.add
-      .image(750, 870, "sano")
-      .setScale(1.2)
-      .setTint(0x454545)
-      .setOrigin(0.5);
+    
+    this.add.image(750, 870, "fondo_sello").setOrigin(0.5);
+
 
     this.add
-      .text(750, 780, "Estado", {
+      .text(750, 750, "Estado", {
         fontFamily: "font1",
-        fontSize: "40px",
+        fontSize: "70px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
@@ -390,10 +490,6 @@ class papMenu extends Phaser.Scene {
       salv = 0;
       chat = 0;
       this.scene.sleep("clock");
-      this.scene.start("sintomasPick");
-      if (pacientes == 1) {
-        pacientes = 2;
-      }
     });
 
     flecha.on("pointerover", () => {

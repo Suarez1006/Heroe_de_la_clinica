@@ -5,9 +5,9 @@ class diagnostico extends Phaser.Scene {
   create() {
     var tiempo = 0;
     this.add
-      .text(210, 100, diag, {
+      .text(450, 150, diag, {
         fontFamily: "font1",
-        fontSize: "12px",
+        fontSize: "40px",
       })
       .setTint(0x000000);
     this.gameTimer = this.time.addEvent({

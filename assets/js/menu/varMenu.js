@@ -18,6 +18,7 @@ class varMenu extends Phaser.Scene {
       .setInteractive({ cursor: "pointer" });
     negro.on("pointerdown", () => {
       this.scene.sleep();
+      this.scene.sleep("sepScene");
       if (pausa == 2) {
         this.scene.resume("juego");
         pausa = 0;
@@ -33,72 +34,6 @@ class varMenu extends Phaser.Scene {
       }
     });
     var ficha = this.add.image(750, 540, "ficha").setInteractive();
-
-    sep1 = this.add
-      .image(1124, 661, "separador_pac_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-    sep1.on("pointerover", () => {
-      sep1.setAlpha(1);
-    });
-
-    sep2 = this.add
-      .image(1124, 731, "separador_rub_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-
-    sep2.on("pointerover", () => {
-      sep2.setAlpha(1).setDepth(1);
-    });
-    sep2.on("pointerout", () => {
-      sep2.setAlpha(0.001);
-    });
-    sep2.on("pointerdown", () => {
-      sep1.setAlpha(0.01);
-      sep3.setAlpha(0.01);
-      sep4.setAlpha(0.01);
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_01");
-    });
-
-    sep3 = this.add
-      .image(1124, 800.9, "separador_var_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(1);
-
-    sep3.on("pointerover", () => {
-      sep3.setAlpha(1).setDepth(1);
-    });
-    sep3.on("pointerout", () => {
-      sep3.setAlpha(0.001);
-    });
-    sep3.on("pointerdown", () => {
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_03");
-    });
-
-    sep4 = this.add
-      .image(1124, 874, "separador_pap_s")
-      .setInteractive({ cursor: "pointer" })
-      .setScale(0.45)
-      .setAlpha(0.001);
-
-    sep4.on("pointerover", () => {
-      sep4.setAlpha(1).setDepth(1);
-    });
-    sep4.on("pointerout", () => {
-      sep4.setAlpha(0.001);
-    });
-    sep4.on("pointerdown", () => {
-      this.scene.sleep("MenuP");
-      this.scene.run("Menu3_03");
-    });
-
-    sep2.setAlpha(0.01);
-    sep4.setAlpha(0.01);
 
     boton_ayuda = this.add
       .image(1010, 185, "boton_ayuda")
@@ -116,96 +51,110 @@ class varMenu extends Phaser.Scene {
       boton_ayuda_s.setAlpha(0.001);
     });
     boton_ayuda.on("pointerdown", () => {
-      //this.scene.sleep();
-      //this.scene.start()
+      this.scene.run("infoEnfermedad");
+      this.scene.sleep();
+      this.scene.sleep("sepScene");
+      infoE = 3;
     });
 
     this.add
-      .text(440, 160, "Varicela", {
+      .text(440, 140, "Varicela", {
         fontFamily: "font1",
-        fontSize: "50px",
+        fontSize: "75px",
       })
       .setTint(0x454545);
 
     this.add
-      .text(420, 430, "Fiebre", {
+      .text(420, 325, "Fiebre", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
-      .setTint(0x454545);
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
 
     this.add
-      .text(420, 500, "Dolor de Cabeza", {
+      .text(420, 375, "Dolor de Cabeza", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
-      .setTint(0x454545);
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
 
     this.add
-      .text(420, 570, "Perdida de Apet.", {
+      .text(420, 425, "Perdida de Apet.", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
-      .setTint(0x454545);
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
 
     this.add
-      .text(420, 640, "Cansancio", {
+      .text(420, 475, "Cansancio", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "40px",
       })
-      .setTint(0x454545);
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
 
     var textoSi = this.add
-      .text(900, 360, "Si", {
+      .text(900, 260, "Sí", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "50px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
 
     var textoNo = this.add
-      .text(1020, 360, "No", {
+      .text(1020, 260, "No", {
         fontFamily: "font1",
-        fontSize: "25px",
+        fontSize: "50px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
 
     var siP = this.add
-      .image(textoSi.x, 430, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 330, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var siP2 = this.add
-      .image(textoSi.x, 500, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 380, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var siP3 = this.add
-      .image(textoSi.x, 570, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 430, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var siP4 = this.add
-      .image(textoSi.x, 640, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoSi.x, 480, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
 
     var noP = this.add
-      .image(textoNo.x, 430, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var noP2 = this.add
-      .image(textoNo.x, 500, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP2.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var noP3 = this.add
-      .image(textoNo.x, 570, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP3.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
     var noP4 = this.add
-      .image(textoNo.x, 640, "casilla")
-      .setInteractive({ cursor: "pointer" });
+      .image(textoNo.x, siP4.y, "casilla")
+      .setInteractive({ cursor: "pointer" })
+      .setScale(0.65);
 
     // -----------------------------------------
-    var circulo = this.add.image(siP.x, siP.y, "tilde").setAlpha(0.01);
-    var circulo2 = this.add.image(noP.x, noP.y, "tilde").setAlpha(0.01);
-    var circulo3 = this.add.image(siP2.x, siP2.y, "tilde").setAlpha(0.01);
-    var circulo4 = this.add.image(noP2.x, noP2.y, "tilde").setAlpha(0.01);
-    var circulo5 = this.add.image(siP3.x, siP3.y, "tilde").setAlpha(0.01);
-    var circulo6 = this.add.image(noP3.x, noP3.y, "tilde").setAlpha(0.01);
-    var circulo7 = this.add.image(siP4.x, siP4.y, "tilde").setAlpha(0.01);
-    var circulo8 = this.add.image(noP4.x, noP4.y, "tilde").setAlpha(0.01);
+    var circulo = this.add.image(siP.x, siP.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo2 = this.add.image(noP.x, noP.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo3 = this.add.image(siP2.x, siP2.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo4 = this.add.image(noP2.x, noP2.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo5 = this.add.image(siP3.x, siP3.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo6 = this.add.image(noP3.x, noP3.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo7 = this.add.image(siP4.x, siP4.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo8 = this.add.image(noP4.x, noP4.y, "tilde").setAlpha(0.01).setScale(0.75);
 
     var circuloA = 0;
     var circuloA2 = 0;
@@ -323,16 +272,12 @@ class varMenu extends Phaser.Scene {
       .setAlpha(0.001)
       .setOrigin(0.5);
 
-    this.add
-      .image(750, 870, "sano")
-      .setScale(1.2)
-      .setTint(0x454545)
-      .setOrigin(0.5);
+    this.add.image(750, 870, "fondo_sello").setOrigin(0.5);
 
     this.add
-      .text(750, 780, "Estado", {
+      .text(750, 750, "Estado", {
         fontFamily: "font1",
-        fontSize: "40px",
+        fontSize: "70px",
       })
       .setTint(0x454545)
       .setOrigin(0.5);
@@ -390,10 +335,6 @@ class varMenu extends Phaser.Scene {
       salv = 0;
       chat = 0;
       this.scene.sleep("clock");
-      this.scene.start("sintomasPick");
-      if (pacientes == 1) {
-        pacientes = 2;
-      }
     });
 
     flecha.on("pointerover", () => {

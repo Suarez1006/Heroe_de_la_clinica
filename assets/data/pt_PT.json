@@ -1,0 +1,17 @@
+{
+  "menu": {
+    "mainMenu": {
+      "jugar": ["Jogar"],
+      "creditos": ["Créditos"],
+      "ayuda": ["Ajuda"]
+    },
+    "menuPausa": {
+      "PAUSA": ["PAUSA"],
+      "reanudar": ["Reanudar"],
+      "ayuda": ["Ayuda"],
+      "salir": ["Salir"]
+    }
+  },
+  "juego": {},
+  "tutorial": {}
+}

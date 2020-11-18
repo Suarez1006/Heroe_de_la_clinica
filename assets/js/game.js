@@ -24,13 +24,17 @@ var config = {
     papMenu, //Ficha de segundo paciente (paperas)
     varMenu, //Ficha de segundo paciente (varicela)
     reloj, //Reloj pacientes
+    separador,
+    separadorTuto,
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
     ayuda10s, //Ayuda de los 10 segundos
     helpScene, //Primer pagina ayuda
+    helpScene2, //Segunda pagina ayuda
     Exito, //Diagnostico Exitoso
     Fallo, //Diagnostico Fallido
     chatScene, //Charlas
+    infoEnfer,
   ],
 };
 
@@ -50,6 +54,7 @@ let barraR;
 var barraRmask;
 var pacientes = 0;
 var pac_gen;
+var photo_gen;
 
 var score = 240;
 var finalScore = 0;
@@ -63,26 +68,7 @@ var selloPE = 0;
 var selloPS = 0;
 
 var finish = 0;
-var content = [
-  (doc = "Doctor: "),
-  "Buenos dias, mucho gusto.",
-  (doc = "Paciente: "),
-  "Buenas, igualmente.",
-  (doc = "Doctor: "),
-  "Digame, que le anda pasando?.",
-  (doc = "Paciente: "),
-  "Ando con dolores de cabeza y no tengo mucha hambre.",
-  (doc = "Paciente: "),
-  "Ademas desde que empezaron me siento con algo de fiebre.",
-  (doc = "Doctor: "),
-  "Hmm, algo mas?.",
-  (doc = "Paciente: "),
-  "Creo que eso es todo.",
-  (doc = "Paciente: "),
-  "Ah no, tambien me canso mas rapido que antes.",
-  (doc = "Doctor: "),
-  "Bien, pase a la camilla.",
-];
+var content;
 
 let tiempo = 10000;
 
@@ -116,6 +102,9 @@ let chatInfo = {
 };
 var charla;
 
+var Idioma;
+var selecIdioma = "es";
+
 var resetFicha = 0;
 var resetFichaA = 0;
 var resetFichaB = 0;
@@ -135,10 +124,43 @@ var perApet;
 var cans;
 
 var temperatura;
+var reseteo = 0;
+var pestaña = 0;
+
 var sep1;
 var sep2;
 var sep3;
 var sep4;
+var sep5;
 
 var boton_ayuda;
 var boton_ayuda_s;
+
+var infoE;
+var infoRub;
+var infoPap;
+var infoVar;
+
+var photo;
+
+var musica = 0;
+var musicaS = 0;
+var musicConfig = {
+  mute: false,
+  volume: 1,
+  rate: 1,
+  detune: 0,
+  seek: 0,
+  loop: true,
+  delay: 0,
+};
+var musicConfig2 = {
+  mute: true,
+};
+var music2;
+var music3;
+var musicaS = 0;
+
+var fichaVolver = 0;
+var tutoFinish = 0;
+var creado = 0;

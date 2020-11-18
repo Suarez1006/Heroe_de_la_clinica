@@ -28,10 +28,17 @@ class chatScene extends Phaser.Scene {
   }
 
   create() {
+    var chatTuto = Phaser.Math.RND.pick(Idioma.tutorial.chatTuto);
+    content = chatTuto;
+    var negro = this.add
+      .image(960, 540, "negro")
+      .setAlpha(0.3)
+      .setInteractive();
+
     fotoFicha = this.add
-      .image(0, 0, "fichaFoto")
+      .image(0, 0, "hugo")
       .setAlpha(0)
-      .setScale(0.8)
+      .setScale(0.4)
       .setDepth(1);
     fotoFichaGen = fotoFicha;
 
@@ -41,14 +48,14 @@ class chatScene extends Phaser.Scene {
       .setDepth(1)
       .setScale(0.8);
 
-    chatB = this.add.image(0, 0, "infoB").setAlpha(0);
-    var negro = this.add
-      .image(551, 310, "negro")
-      .setAlpha(0.3)
-      .setInteractive();
+    //chatB = this.rexUI.add
+    //  .roundRectangle(0, 0, 2, 2, 40, 0xcacaca)
+    //  .setStrokeStyle(2, 0x454545);
+
+    chatB = this.add.image(0, 0, "chatPNG");
 
     var boton = this.add
-      .image(130, 75, "reload")
+      .image(370, 110, "reload")
       .setAlpha(2)
       .setInteractive({ cursor: "pointer" });
 
@@ -56,8 +63,14 @@ class chatScene extends Phaser.Scene {
       this.scene.restart("charla_01");
     });
 
-    createTextBox(this, 200, 10, {
-      wrapWidth: 700,
+    //createTextBox(this, 450, 10, {
+    //  wrapWidth: 700,
+    //}).start(content, 25).setScale(1.4);
+
+    createTextBox(this, 450, 20, {
+      wrapWidth: 900,
+      fixedWidth: 900,
+      fixedHeight: 110,
     }).start(content, 25);
 
     negro.on("pointerdown", () => {
@@ -90,11 +103,11 @@ var createTextBox = function (scene, x, y, config) {
       text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight),
 
       space: {
-        left: 20,
+        left: 40,
         right: 20,
-        top: 20,
-        bottom: 20,
-        icon: 10,
+        top: 40,
+        bottom: 40,
+        icon: 20,
         text: 10,
       },
     })
@@ -136,15 +149,19 @@ var createTextBox = function (scene, x, y, config) {
 };
 
 var getBBcodeText = function (scene, wrapWidth, fixedWidth, fixedHeight) {
-  return scene.rexUI.add.BBCodeText(0, 0, "", {
-    fixedWidth: fixedWidth,
-    fixedHeight: fixedHeight,
+  return scene.rexUI.add
+    .BBCodeText(0, 0, "", {
+      fixedWidth: fixedWidth,
+      fixedHeight: fixedHeight,
+      fontFamily: "font1",
 
-    fontSize: "20px",
-    wrap: {
-      mode: "word",
-      width: wrapWidth,
-    },
-    maxLines: 2,
-  });
+      fontSize: "40px",
+      wrap: {
+        mode: "word",
+        width: wrapWidth,
+      },
+      maxLines: 3,
+    })
+    .setDepth(1)
+    .setTint(0x454545);
 };

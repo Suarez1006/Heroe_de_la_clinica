@@ -3,9 +3,24 @@ class Tuto_01 extends Phaser.Scene {
     super("juego");
   }
   create() {
+    var Ficha = Phaser.Math.RND.pick(Idioma.tutorial.tuto_01.info.ficha);
+    var Puerta = Phaser.Math.RND.pick(Idioma.tutorial.tuto_01.info.puerta);
+    var Libreta = Phaser.Math.RND.pick(Idioma.tutorial.tuto_01.info.libreta);
+    var Charlar = Phaser.Math.RND.pick(Idioma.tutorial.tuto_01.info.charlar);
+
+    music2 = this.sound.add("menu_Game1");
+
+    if (musica === 0) {
+      music2.play(musicConfig);
+    }
+
+    var musicConfig2 = {
+      mute: true,
+    };
+
     var time10s = 0;
 
-    /*this.time.addEvent({
+    this.time.addEvent({
       delay: 1000,
       callback: function () {
         if (ayu10 == 0) {
@@ -20,19 +35,19 @@ class Tuto_01 extends Phaser.Scene {
       },
       callbackScope: this,
       loop: true,
-    });*/
+    });
 
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
     var back = this.add
-      .image(10, 50, "infoB")
+      .image(0, 0, "infoB")
       .setOrigin(0, 1)
       .setAlpha(0.001)
       .setDepth(0.9);
 
     var info = this.add
-      .text(18, 30, "", {
-        fontSize: "20px",
+      .text(0, 0, "", {
+        fontSize: "40px",
         fontColor: "white",
         fontFamily: "font1",
       })
@@ -41,15 +56,17 @@ class Tuto_01 extends Phaser.Scene {
 
     this.input.on("pointermove", function (pointer) {
       if (pointer.x > 1520) {
-        back.x = -370 + pointer.x;
-        back.y = -10 + pointer.y;
-        info.x = -340 + pointer.x;
-        info.y = -21 + pointer.y;
+        back.setOrigin(1);
+        back.x = -10 + pointer.x;
+        back.y = -5 + pointer.y;
+        info.x = -210 + pointer.x;
+        info.y = -13 + pointer.y;
       } else {
+        back.setOrigin(0, 1);
         back.x = 10 + pointer.x;
         back.y = -5 + pointer.y;
         info.x = 30 + pointer.x;
-        info.y = -18 + pointer.y;
+        info.y = -13 + pointer.y;
       }
     });
 
@@ -60,15 +77,21 @@ class Tuto_01 extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      this.scene.run("Menu3");
+      if (fichaVolver === 0) {
+        this.scene.run("Menu3");
+        this.scene.run("sepTuto");
+      } else if (fichaVolver === 1) {
+        this.scene.run("var_Tuto");
+        this.scene.run("sepTuto");
+      }
       pausa = 2;
       info.setText("");
       back.setAlpha(0.01);
       ficha_c.setAlpha(0.01);
     });
     ficha_c.on("pointerover", () => {
-      info.setText("Ficha de paciente");
-      back.setAlpha(1).setScale(1.3, 1);
+      info.setText(Ficha);
+      back.setAlpha(1).setScale(0.9, 1);
       ficha_c.setAlpha(1);
     });
     ficha_c.on("pointerout", () => {
@@ -93,8 +116,8 @@ class Tuto_01 extends Phaser.Scene {
     });
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
-      info.setText("Menu");
-      back.setAlpha(1).setScale(0.42, 1);
+      info.setText(Libreta);
+      back.setAlpha(1).setScale(0.38, 1);
     });
     libreta.on("pointerout", () => {
       libreta.setAlpha(0.01);
@@ -112,8 +135,8 @@ class Tuto_01 extends Phaser.Scene {
 
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
-      info.setText("Ir a la camilla");
-      back.setAlpha(1).setScale(1.25, 1);
+      info.setText(Puerta);
+      back.setAlpha(1).setScale(0.75, 1);
     });
 
     puerta.on("pointerdown", () => {
@@ -128,9 +151,9 @@ class Tuto_01 extends Phaser.Scene {
     });
 
     var pac_01 = this.add
-      .image(955, 549, "paciente_01")
-      .setScale(1.6, 1.62)
-      .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
+      .image(784, 800, "paciente_01")
+      .setInteractive({ pixelPerfect: "true", cursor: "pointer" })
+      .setOrigin(0, 1);
 
     pac_01.on("pointerdown", () => {
       info.setText("");
@@ -142,8 +165,8 @@ class Tuto_01 extends Phaser.Scene {
     });
 
     pac_01.on("pointerover", () => {
-      info.setText("Charlar");
-      back.setAlpha(1).setScale(0.6, 1);
+      info.setText(Charlar);
+      back.setAlpha(1).setScale(0.45, 1);
     });
     pac_01.on("pointerout", () => {
       info.setText("");

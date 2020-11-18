@@ -7,13 +7,11 @@ class Fallo extends Phaser.Scene {
     selloPE = 0;
     selloPS = 0;
     var negro = this.add
-    .image(960, 540, "negro")
-    .setAlpha(0.4)
-    .setInteractive();
-    
-    this.add.image(1000, 520, "score").setScale(1.7);
+      .image(960, 540, "negro")
+      .setAlpha(0.4)
+      .setInteractive();
 
-    
+    this.add.image(1000, 520, "score").setScale(1.7);
 
     this.add.image(200, 990, "boton");
 
@@ -22,53 +20,56 @@ class Fallo extends Phaser.Scene {
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
     var V = this.add
-      .text(menu.x, menu.y, "Menu",{
+      .text(menu.x, menu.y, "Menu", {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0.5,0.5);
+      .setOrigin(0.5, 0.5);
 
-      menu.on("pointerover", () => {
-        menu.setAlpha(1);
-        V.setTint(0xffffff);
-      });
-      menu.on("pointerout", () => {
-        menu.setAlpha(0.01);
-        V.setTint(0x454545);
-      });
-      this.add.image(1600, 910, "boton");
-      var siguente = this.add
+    menu.on("pointerover", () => {
+      menu.setAlpha(1);
+      V.setTint(0xffffff);
+    });
+    menu.on("pointerout", () => {
+      menu.setAlpha(0.01);
+      V.setTint(0x454545);
+    });
+    this.add.image(1600, 910, "boton");
+    var siguente = this.add
       .image(1600, 910, "boton_s")
       .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" });
-      var siguenteT = this.add.text(siguente.x,siguente.y, "Siguente",{
+    var siguenteT = this.add
+      .text(siguente.x, siguente.y, "Siguente", {
         fontFamily: "font1",
         fontSize: "40px",
-      }).setOrigin(0.5,0.5)
+      })
+      .setOrigin(0.5, 0.5)
       .setTint(0x454545);
-      siguente.on("pointerover", () => {
-        siguente.setAlpha(1);
-        siguenteT.setTint(0xffffff);
-      });
-      siguente.on("pointerout", () => {
-        siguente.setAlpha(0.01);
-        siguenteT.setTint(0x454545);
-      });
+    siguente.on("pointerover", () => {
+      siguente.setAlpha(1);
+      siguenteT.setTint(0xffffff);
+    });
+    siguente.on("pointerout", () => {
+      siguente.setAlpha(0.01);
+      siguenteT.setTint(0x454545);
+    });
 
     siguente.on("pointerdown", () => {
       score = 240;
       salv = 0;
       tiempo = 10000;
       this.scene.restart("charla_01");
+      this.scene.restart("MenuP");
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
-      this.scene.sleep("clock");
+      this.scene.restart("clock");
       if (scoreFS == 2) {
         this.scene.sleep("juego3");
         this.scene.sleep("juego4");
         this.scene.sleep("sintomasPick");
-        this.scene.sleep("clock2");
+        this.scene.restart("clock");
         this.scene.start("FinalScore");
       } else {
         this.scene.sleep("juego3");
@@ -77,82 +78,91 @@ class Fallo extends Phaser.Scene {
       }
     });
 
-    
-    this.add.text(890, 140,"Fallo",{
-      fontFamily: "font1",
-      fontSize: "50px",
-    }).setTint(0x000000);
+    this.add
+      .text(890, 140, "Fallo", {
+        fontFamily: "font1",
+        fontSize: "50px",
+      })
+      .setTint(0x000000);
 
-    this.add.text(760, 250,"Calificacion",{
-      fontFamily: "font1",
-      fontSize: "40px",
-    }).setTint(0x000000);
+    this.add
+      .text(760, 250, "Calificacion", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x000000);
 
-    this.add.text(725, 630,"Puntos de Salvacion",{
-      fontFamily: "font1",
-      fontSize: "30px",
-    }).setTint(0x000000);
-    
+    this.add
+      .text(725, 630, "Puntos de Salvacion", {
+        fontFamily: "font1",
+        fontSize: "30px",
+      })
+      .setTint(0x000000);
 
-    var E = this.add.image(1000, 390, "E")
-    .setAlpha(0.01)
-    .setTint(0x000000)
-    .setScale(2);
+    var E = this.add
+      .image(1000, 390, "E")
+      .setAlpha(0.01)
+      .setTint(0x000000)
+      .setScale(2);
     var excelente = this.add
-      .text(815, 500, "excelente",{
+      .text(815, 500, "excelente", {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.01)
       .setTint(0x000000);
 
-    var MB = this.add.image(1000, 390, "MB")
-    .setAlpha(0.01)
-    .setTint(0x000000)
-    .setScale(2);
+    var MB = this.add
+      .image(1000, 390, "MB")
+      .setAlpha(0.01)
+      .setTint(0x000000)
+      .setScale(2);
     var muyBueno = this.add
-      .text(835, 500, "Muy Bueno",{
+      .text(835, 500, "Muy Bueno", {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.01)
       .setTint(0x000000);
 
-    var B = this.add.image(1010, 390, "B")
-    .setAlpha(0.01)
-    .setTint(0x000000)
-    .setScale(2);
+    var B = this.add
+      .image(1010, 390, "B")
+      .setAlpha(0.01)
+      .setTint(0x000000)
+      .setScale(2);
     var bueno = this.add
-      .text(905, 500, "Bueno",{
+      .text(905, 500, "Bueno", {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.01)
       .setTint(0x000000);
 
-    var S = this.add.image(1010, 390, "S")
-    .setAlpha(0.01)
-    .setTint(0x000000)
-    .setScale(2);
+    var S = this.add
+      .image(1010, 390, "S")
+      .setAlpha(0.01)
+      .setTint(0x000000)
+      .setScale(2);
     var satisfactorio = this.add
-    .text(765, 500, "Satifactorio",{
-      fontFamily: "font1",
-      fontSize: "40px",
-    })
+      .text(765, 500, "Satifactorio", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
       .setAlpha(0.01)
       .setTint(0x000000);
 
-    var NS = this.add.image(1005, 390, "NS")
-    .setAlpha(0.001)
-    .setTint(0x000000)
-    .setScale(2);
+    var NS = this.add
+      .image(1005, 390, "NS")
+      .setAlpha(0.001)
+      .setTint(0x000000)
+      .setScale(2);
     var noSatisfactorio = this.add
-    .text(705, 500, "No Satifactorio",{
-      fontFamily: "font1",
-      fontSize: "40px",
-    })
-    .setAlpha(0.001)
-    .setTint(0x000000);
+      .text(705, 500, "No Satifactorio", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setAlpha(0.001)
+      .setTint(0x000000);
 
     var s0 = this.add.image(1005, 830, "0").setScale(0.6).setAlpha(0.01);
     var s1 = this.add.image(1005, 750, "1").setScale(0.6).setAlpha(0.01);

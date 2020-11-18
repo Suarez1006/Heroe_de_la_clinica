@@ -3,6 +3,17 @@ class SintScene extends Phaser.Scene {
     super("sintomasPick");
   }
   create() {
+    var msgCab1 = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgCab1);
+    var msgCab2 = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgCab2);
+    var msgCong = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgCong);
+    var msgErup = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgErup);
+    var msgArt = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgArt);
+    var msgDolMast = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgDolMast);
+    var msgDolMusc = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgDolMusc);
+    var msgFat = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgFat);
+    var msgApet = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgApet);
+    var msgCans = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgCans);
+
     pacientes += 1;
 
     var sintomasData = this.game.cache.json.get("sintomas");
@@ -40,8 +51,7 @@ class SintScene extends Phaser.Scene {
       } else {
         dolCab = "true";
         enf += 0.5;
-        chatInfo.chat_dolCab =
-          "Me medi alta temperatura anoche y hoy me levanté con dolor de cabeza.\n";
+        chatInfo.chat_dolCab = msgCab1;
       }
     } else {
       if (cabPatron > 40) {
@@ -49,7 +59,7 @@ class SintScene extends Phaser.Scene {
       } else {
         dolCab = "true";
         enf += 0.5;
-        chatInfo.chat_dolCab = "Me siento con dolor de cabeza. ";
+        chatInfo.chat_dolCab = msgCab2;
       }
     }
 
@@ -70,7 +80,7 @@ class SintScene extends Phaser.Scene {
       var sintPickeados = { dolCab, fiebre, cong, inf, gang, erup, art, far };
       if (cong == "true") {
         enf++;
-        chatInfo.chat_cong = "Tengo algo de congestión ultimamente.\n";
+        chatInfo.chat_cong = msgCong;
       }
       if (inf == "true") {
         enf++;
@@ -80,12 +90,11 @@ class SintScene extends Phaser.Scene {
       }
       if (erup == "true") {
         enf++;
-        chatInfo.chat_erup = "Tengo un sarpullido leve en todo el cuerpo.\n";
+        chatInfo.chat_erup = msgErup;
       }
       if (art == "true") {
         enf++;
-        chatInfo.chat_art =
-          "Las articulaciones me duelen constantemente al moverme.";
+        chatInfo.chat_art = msgArt;
       }
       if (far == "true") {
         enf++;
@@ -121,20 +130,19 @@ class SintScene extends Phaser.Scene {
       }
       if (dolMast == "true") {
         enf++;
-        chatInfo.chat_dolMast = "Al masticar me duele la garganta.\n";
+        chatInfo.chat_dolMast = msgDolMast;
       }
       if (dolMusc == "true") {
         enf++;
-        chatInfo.chat_dolMusc = "Siento una molestia en los musculos.\n";
+        chatInfo.chat_dolMusc = msgDolMusc;
       }
       if (fatiga == "true") {
         enf++;
-        chatInfo.chat_fatiga =
-          "Estoy con fatiga ultimamente, no tengo ganas de hacer nada.\n";
+        chatInfo.chat_fatiga = msgFat;
       }
       if (perApet == "true") {
         enf++;
-        chatInfo.chat_perApet = "Ando sin ganas de comer hace algunos días.";
+        chatInfo.chat_perApet = msgApet;
       }
       if (enf >= 3) {
         papEnf = 1;
@@ -153,13 +161,11 @@ class SintScene extends Phaser.Scene {
       var sintPickeados = { dolCab, fiebre, perApet, cans };
       if (perApet == "true") {
         enf++;
-        chatInfo.chat_perApet =
-          "Vengo porque hace días que no siento apetito.\n";
+        chatInfo.chat_perApet = msgApet;
       }
       if (cans == "true") {
         enf++;
-        chatInfo.chat_cans =
-          "Ultimamente me cuesta salir de la cama, me canso rapido.";
+        chatInfo.chat_cans = msgCans;
       }
       if (enf >= 2) {
         variEnf = 1;
@@ -168,19 +174,11 @@ class SintScene extends Phaser.Scene {
       }
     }
 
-    var chatPatron = Phaser.Math.FloatBetween(0, 1);
-    if (chatPatron <= 0.25) {
-      content = "Doctor: Hola, buenas tardes ¿Qué te anda sucediendo?\n\n";
-    } else if (chatPatron <= 0.5) {
-      content = "Doctor: Mucho gusto, ¿Qué tal se encuentra?\n\n";
-    } else if (chatPatron <= 0.75) {
-      content = "Doctor: Buen día, cuénteme ¿Qué le sucede?\n\n";
-    } else {
-      content = "Doctor: Un gusto, ¿Cuál es el motivo de su visita?\n\n";
-    }
+    content = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
+    var msgPaciente = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgPaciente);
 
     content +=
-      "Paciente: Buenas. " +
+      msgPaciente +
       chatInfo.chat_dolCab +
       chatInfo.chat_cong +
       chatInfo.chat_erup +
@@ -192,6 +190,13 @@ class SintScene extends Phaser.Scene {
       chatInfo.chat_cans;
 
     this.scene.start("juego3");
-    this.scene.run("clock2");
+    this.scene.run("clock");
+
+    music2.stop();
+    creado = 0;
+
+    if (musicaS === 1) {
+      music3.stop();
+    }
   }
 }
