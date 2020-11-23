@@ -86,15 +86,24 @@ class Exito extends Phaser.Scene {
       if (tutoFinish == 1) {
         musicaS = 1;
       }
-      if (pacientes == 1) {
+      if (pacientes == 0) {
+        console.log("Rodriguez, Martín");
         infoNombre = "Rodriguez, Martín";
-      } else if (pacientes == 2) {
+      } else if (pacientes == 1) {
+        this.scene.restart("MenuP");
+        console.log("Sanchez, Melisa");
         infoNombre = "Sanchez, Melisa";
-      } else if (pacientes == 3) {
+      } else if (pacientes == 2) {
+        this.scene.restart("MenuP");
+        console.log("Gomez, Eduardo");
         infoNombre = "Gomez, Eduardo";
-      } else if (pacientes == 4) {
+      } else if (pacientes == 3) {
+        this.scene.restart("MenuP");
+        console.log("Mendez, Carla");
         infoNombre = "Mendez, Carla";
       } else {
+        this.scene.restart("MenuP");
+        console.log("Algo mas");
         infoNombre = "Algo mas";
       }
       this.scene.restart("charla_01");

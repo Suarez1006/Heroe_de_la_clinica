@@ -60,6 +60,26 @@ class Fallo extends Phaser.Scene {
       score = 240;
       salv = 0;
       tiempo = 10000;
+      if (pacientes == 0) {
+        console.log("Rodriguez, Martín");
+        infoNombre = "Rodriguez, Martín";
+      } else if (pacientes == 1) {
+        this.scene.restart("MenuP");
+        console.log("Sanchez, Melisa");
+        infoNombre = "Sanchez, Melisa";
+      } else if (pacientes == 2) {
+        this.scene.restart("MenuP");
+        console.log("Gomez, Eduardo");
+        infoNombre = "Gomez, Eduardo";
+      } else if (pacientes == 3) {
+        this.scene.restart("MenuP");
+        console.log("Mendez, Carla");
+        infoNombre = "Mendez, Carla";
+      } else {
+        this.scene.restart("MenuP");
+        console.log("Algo mas");
+        infoNombre = "Algo mas";
+      }
       this.scene.restart("charla_01");
       this.scene.restart("MenuP");
       this.scene.sleep("juego");

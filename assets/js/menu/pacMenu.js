@@ -47,6 +47,8 @@ class pacMenu extends Phaser.Scene {
     selloPS = 0;
     selloPE = 0;
 
+    console.log(infoNombre);
+
     this.add
       .text(1000, 600, infoNombre, {
         fontFamily: "font1",
