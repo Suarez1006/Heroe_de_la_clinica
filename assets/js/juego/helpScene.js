@@ -7,14 +7,13 @@ class helpScene extends Phaser.Scene {
     var Ayuda1 = Phaser.Math.RND.pick(Idioma.juego.ayuda1);
     var negro = this.add
       .image(960, 540, "negro")
-      .setAlpha(0.3)
+      .setAlpha(0.5)
       .setInteractive({ cursor: "pointer" });
 
     negro.on("pointerdown", () => {
       this.scene.sleep();
       if (help == 5) {
-        console.log("resumo");
-        this.scene.resume("Menu2");
+        this.scene.run("Menu2");
       }
     });
     this.add.image(960, 540, "ayuda").setInteractive().setScale(1);

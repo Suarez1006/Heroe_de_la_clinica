@@ -3,8 +3,12 @@
     "mainMenu": {
       "jugar": ["Jugar"],
       "creditos": ["Créditos"],
-      "ayuda": ["Ayuda"]
+      "ayuda": ["Ayuda"],
+      "volver": ["Volver"]
     },
+    "roles": [
+      "Programador \nDiseñador de juego \nMúsico \nArtista \nProgramador líder"
+    ],
     "menuPausa": {
       "pausa": ["PAUSA"],
       "reanudar": ["Reanudar"],

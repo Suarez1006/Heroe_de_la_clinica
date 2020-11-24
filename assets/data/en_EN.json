@@ -3,8 +3,12 @@
     "mainMenu": {
       "jugar": ["Play"],
       "creditos": ["Credits"],
-      "ayuda": ["Help"]
+      "ayuda": ["Help"],
+      "volver": ["Back"]
     },
+    "roles": [
+      "Programmer \nGame Designer \nMusician \nArtist \nHead Programmer"
+    ],
     "menuPausa": {
       "pausa": ["PAUSE"],
       "reanudar": ["Resume"],
@@ -12,149 +16,151 @@
       "salir": ["Exit"]
     },
     "infoPoster": {
-      "rubeola": ["Rubéola"],
+      "rubeola": ["Rubella"],
       "rubInfo": [
-        "La Rubéola es una infección viral contagiosa  que  se \ndistingue por un sarpullido característico en todo el cuerpo."
+        "Rubella is a viral contagious disease that's known for the rash it induces all over the body."
       ],
-      "varicela": ["Varicela"],
+      "varicela": ["Chickenpox"],
       "varInfo": [
-        "La Varicela es una infección que causa una erupción en la piel \ncon picazón y pequeñas ampollas con líquido."
+        "Chickenpox is a viral infection that causes a rash on the skin with small blisters all over the body."
       ],
-      "paperas": ["Paperas"],
+      "paperas": ["Parotitis"],
       "papInfo": [
-        "La Parotiditis o Paperas es una infección viral que afecta \nprincipalmente a las glándulas salivales que se encuentran \ncerca de los oídos."
+        "Parotitis or Mumps is a viral infection that affects mainly the salivary glands found near the ears."
       ]
     },
     "pacMenu": {
       "pac1": {
-        "nombre": ["Nombre:"],
-        "edad": ["Edad:"],
-        "gSanguineo": ["Grupo Sanguíneo:"],
-        "estatura": ["Estatura:"]
+        "nombre": ["Name:"],
+        "edad": ["Age:"],
+        "gSanguineo": ["Blood Type:"],
+        "estatura": ["Height:"]
       }
     }
   },
   "juego": {
     "consultorioScene": {
-      "ficha": ["Ficha de paciente"],
-      "puerta": ["Ir a la camilla"],
-      "libreta": ["Menú"],
-      "charlar": ["Hablar"],
-      "poster": ["Info enfermedades"]
+      "ficha": ["Patient Information"],
+      "puerta": ["Examination Room"],
+      "libreta": ["Menu"],
+      "charlar": ["Talk"],
+      "poster": ["Diseases Information"]
     },
     "camillaScene": {
       "info": {
-        "ficha": ["Ficha de paciente"],
-        "puerta": ["Ir a la camilla"],
-        "libreta": ["Menú"],
-        "estetoscopio": ["Estetoscopio"],
-        "termometro": ["Termómetro"],
-        "linterna": ["Linterna"],
-        "guantes": ["Guantes"]
+        "ficha": ["Patient Information"],
+        "puerta": ["Doctor's Office"],
+        "libreta": ["Menu"],
+        "estetoscopio": ["Sthetoscope"],
+        "termometro": ["Termometer"],
+        "linterna": ["Lantern"],
+        "guantes": ["Gloves"]
       }
     },
     "diagnostico": {
-      "diagGangTrue": ["Sus ganglios están inflamados."],
-      "diagGangFalse": ["Sin ganglios inflamados."],
-      "diagFarTrue": ["Detecto faringitis."],
-      "diagFarFalse": ["No detecto faringitis."],
-      "diagInfTrue": ["Sus ojos estan inflamados."],
-      "diagInfFalse": ["Sus ojos no estan inflamados."],
-      "diagTemp": ["Su temperatura es de "]
+      "diagGangTrue": ["I feel swollen ganglia."],
+      "diagGangFalse": ["No swollen ganglia detected."],
+      "diagFarTrue": ["I detect pharyngitis.."],
+      "diagFarFalse": ["I don't detect pharyngitis."],
+      "diagInfTrue": ["Their eyes are swollen."],
+      "diagInfFalse": ["Their eyes seem fine."],
+      "diagTemp": ["Body Temperature "]
     },
     "resultados": {
-      "exito": ["Éxito"],
-      "fallo": ["Fracaso"],
-      "menu": ["Menú"],
-      "siguiente": ["Continuar"],
-      "calific": ["Calificación"],
-      "salv": ["Puntos de salvación:"],
-      "exce": ["Excelente"],
-      "mb": ["Muy bueno"],
-      "b": ["Bueno"],
-      "s": ["Satisfactorio"],
-      "ns": ["No satisfactorio"]
+      "exito": ["Success"],
+      "fallo": ["You Failed"],
+      "menu": ["Menu"],
+      "siguiente": ["Continue"],
+      "calific": ["Calification"],
+      "salv": ["Salvation Points:"],
+      "exce": ["Exccellent!"],
+      "mb": ["Very Good!"],
+      "b": ["Good"],
+      "s": ["Ok"],
+      "ns": ["Failed"]
     },
     "mensajes": {
       "msgCab1": [
-        "Me medi alta temperatura anoche y hoy me levanté con dolor de cabeza.\n"
+        "Last night I measured my temperature and today I woke up with a slight headache. \n"
       ],
-      "msgCab2": ["Me siento con dolor de cabeza. "],
-      "msgCong": ["Tengo algo de congestión ultimamente.\n"],
-      "msgErup": ["Tengo un sarpullido leve en todo el cuerpo.\n"],
-      "msgArt": ["Las articulaciones me duelen constantemente al moverme."],
-      "msgDolMast": ["Al masticar me duele la garganta.\n"],
-      "msgDolMusc": ["Siento una molestia en los musculos.\n"],
+      "msgCab2": ["I have a headache. "],
+      "msgCong": ["I have some congestion.\n"],
+      "msgErup": ["I've got a slight rash all over the body.\n"],
+      "msgArt": ["My joints hurts when I move."],
+      "msgDolMast": ["My throat hurts when i chew.\n"],
+      "msgDolMusc": ["I feel some muscle discomfort.\n"],
       "msgFat": [
-        "Estoy con fatiga ultimamente, no tengo ganas de hacer nada.\n"
+        "Im feeling really tired lately, I don't feel like doing anything.\n"
       ],
-      "msgApet": ["Ando sin ganas de comer hace algunos días."],
-      "msgCans": ["Ultimamente me cuesta salir de la cama, me canso rapido."],
+      "msgApet": ["I haven't feeling like eating these days."],
+      "msgCans": [
+        "Lately it's been harder to get out of bed, I get tired really fast."
+      ],
       "msgSaludos": [
-        "Doctor: Hola, buenas tardes ¿Qué te anda sucediendo?\n\n",
-        "Doctor: Mucho gusto, ¿Qué tal se encuentra?\n\n",
-        "Doctor: Buen día, cuénteme ¿Qué le sucede?\n\n",
-        "Doctor: Un gusto, ¿Cuál es el motivo de su visita?\n\n"
+        "Doctor: Good afternoon, how you've been feeling lately?\n\n",
+        "Doctor: Hello, how are you feeling?\n\n",
+        "Doctor: Morning, so tell me, what's going on?\n\n",
+        "Doctor: G'day, what's the matter?\n\n"
       ],
-      "msgPaciente": ["Paciente: Buenas."]
+      "msgPaciente": ["Paciente: Hello."]
     },
     "ayuda1": [
-      "Síntomas:\nPara descubrir ciertos sintomas\nse necesita hablar con el paciente haciendole\nclick SOLO en el consultorio.\n\nFicha del Paciente:\nContiene datos sobre el paciente\ny 3 pestañas extras utilizadas para marcarlos\nsintomas que usted detecte.\n\nPuerta:\nPermite ir hacia la sala de\nexaminaciones o volver al consultorio.\n\nSala de examinaciones:\nDesde aca se realizan chequeos\nfisicos al paciente utilizando las\nherramientas disponibles."
+      "Symptoms:\nSome symptoms need you to talk to the patient to discover them,\nthis can only happen when you're in the Doctor's Office.\nPatient Information:\nContains information about the patient \nand 3 extra tabs utilized to check the symptoms that you discover.\n\nDoor:\nAllows the entrance to the Examination Room \nor back to the Doctors Office.\n\nExamination Room:\nFrom here you can perform a \nphysical check to the patient with the \nprovided examination tools."
     ],
     "ayuda2": [
-      "Herramientas:\nRevelan informacion sobre los sintomas.\n\nSellos:\nPermiten dar un diagnostico definitivo\nal paciente, ya sea Sano o Infectado.\n\nLibreta:\nDesde aca se puede acceder al menú\nde pausa donde encontrarás esta\npágina de ayuda y podras salir del juego."
+      "Examination Tools:\nThey reveal useful information of the patient's symptoms.\n\nStamps:\nThey allow you to give the final diagnostic \nof the patient, Green = Healthy, Red = Ill.\n\nNotebook:\nFrom here you can access the pause menu, \nhere you'll find this help page and you can \nalso exit the game."
     ]
   },
   "tutorial": {
     "chatTuto": [
-      "Doctor: Buenos días, mucho gusto.\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso mas rapido que antes.\nDoctor: Bien, pase a la camilla."
+      "Doctor: Good Morning, it's a pleasure.\nPatient: Good morning, nice to meet you.\n\nDoctor: So, tell me, how are you feeling?? \nPatient: I've been having some headache lately and I don't feel like eating either.\nPatient: Oh, and also I've been feeling kinda feverish.\nDoctor: Hmm, is there anything else?.\nPatient: I think that's all. \nPaciente: Wait, im getting tired easily lately.\nDoctor: Okay, let's go to the Examination Room please."
     ],
     "tuto_01": {
       "info": {
-        "ficha": ["Ficha de paciente"],
-        "puerta": ["Ir a la camilla"],
-        "libreta": ["Menú"],
-        "charlar": ["Hablar"]
+        "ficha": ["Patient Information"],
+        "puerta": ["Examination Room"],
+        "libreta": ["Menu"],
+        "charlar": ["Talk"]
       }
     },
     "tuto_02": {
       "info": {
-        "ficha": ["Ficha de paciente"],
-        "puerta": ["Volver al consultorio"],
-        "libreta": ["Menú"],
-        "estetoscopio": ["Estetoscopio"],
-        "termometro": ["Termómetro"],
-        "linterna": ["Linterna"],
-        "guantes": ["Guantes"]
+        "ficha": ["Patient Information"],
+        "puerta": ["Doctor's office"],
+        "libreta": ["Menu"],
+        "estetoscopio": ["Sthetoscope"],
+        "termometro": ["Termometer"],
+        "linterna": ["Lantern"],
+        "guantes": ["Gloves"]
       }
     },
     "menuTuto": {
-      "nombre": ["Nombre:                              Arnone, Juan"],
-      "edad": ["Edad:                                                 32"],
-      "gSanguineo": ["Grupo Sanguíneo:                                A-"],
-      "estatura": ["Estatura:                                          1,84"]
+      "nombre": ["Name:                              Arnone, Juan"],
+      "edad": ["Age:                                                 32"],
+      "gSanguineo": ["Blood Type:                                A-"],
+      "estatura": ["Height:                                          1,84"]
     },
     "varTuto": {
-      "varicela": ["Varicela"],
-      "perApetito": ["Pérdida de apetito"],
-      "cansancio": ["Cansancio"]
+      "varicela": ["Chickenpox"],
+      "perApetito": ["Loss of Appetite"],
+      "cansancio": ["Fatigue"]
     },
-    "ayuda10s": ["Presiona sobre el paciente \n     para hablar con él."],
+    "ayuda10s": ["Touch the Patient \n     to talk to him."],
     "diagnostico": {
-      "diagGang": ["Sin ganglios inflamados."],
-      "diagFar": ["Detecto faringitis."],
-      "diagInf": ["Sus ojos parecen estar bien."],
-      "diagTemp": ["38.9, una alta temperatura."]
+      "diagGang": ["No swollen ganglia detected."],
+      "diagFar": ["I detect pharyngitis."],
+      "diagInf": ["His eyes seem fine."],
+      "diagTemp": ["High Fever, 38.9C°."]
     }
   },
   "fichas": {
-    "fiebre": ["Fiebre"],
-    "dolorCabeza": ["Dolor de cabeza"],
-    "estado": ["Estado"],
-    "si": ["Sí"],
+    "fiebre": ["Fever"],
+    "dolorCabeza": ["Headache"],
+    "estado": ["Status"],
+    "si": ["Yes"],
     "no": ["No"],
-    "sano": ["Sano"],
-    "enfermo": ["Enfermo"],
-    "terminar": ["Terminar"]
+    "sano": ["Healty"],
+    "enfermo": ["Ill"],
+    "terminar": ["Finish"]
   }
 }

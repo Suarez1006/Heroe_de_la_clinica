@@ -35,6 +35,72 @@ class papMenu extends Phaser.Scene {
     });
     var ficha = this.add.image(750, 540, "ficha").setInteractive();
 
+    var sep1 = this.add
+      .image(1123, 661, "separador_pac_s")
+      .setScale(0.45)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" })
+      .setAlpha(0.001)
+      .setDepth(1);
+    sep1.on("pointerover", () => {
+      sep1.setAlpha(1);
+    });
+    sep1.on("pointerout", () => {
+      sep1.setAlpha(0.001);
+    });
+    sep1.on("pointerdown", () => {
+      this.scene.sleep("Menu3_02");
+      this.scene.run("MenuP");
+      sep1.setAlpha(0.01);
+      sep2.setAlpha(0.01);
+      sep3.setAlpha(0.01);
+    });
+
+    var sep2 = this.add
+      .image(1124, 732.5, "separador_rub_s")
+      .setScale(0.45)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" })
+      .setAlpha(0.001)
+      .setDepth(1);
+    sep2.on("pointerover", () => {
+      sep2.setAlpha(1);
+    });
+    sep2.on("pointerout", () => {
+      sep2.setAlpha(0.001);
+    });
+    sep2.on("pointerdown", () => {
+      this.scene.sleep("Menu3_02");
+      this.scene.run("Menu3_01");
+      sep1.setAlpha(0.01);
+      sep2.setAlpha(0.01);
+      sep3.setAlpha(0.01);
+    });
+
+    var sep3 = this.add
+      .image(1124, 800.9, "separador_var_s")
+      .setScale(0.45)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" })
+      .setAlpha(0.001)
+      .setDepth(1);
+    sep3.on("pointerover", () => {
+      sep3.setAlpha(1);
+    });
+    sep3.on("pointerout", () => {
+      sep3.setAlpha(0.001);
+    });
+    sep3.on("pointerdown", () => {
+      this.scene.sleep("Menu3_02");
+      this.scene.run("Menu3_03");
+      sep1.setAlpha(0.01);
+      sep2.setAlpha(0.01);
+      sep3.setAlpha(0.01);
+    });
+
+    var sep4 = this.add
+      .image(1124, 873, "separador_pap_s")
+      .setScale(0.45)
+      .setAlpha(1)
+      .setDepth(1);
+
     boton_ayuda = this.add
       .image(1010, 185, "boton_ayuda")
       .setInteractive({ cursor: "pointer" })
@@ -70,7 +136,7 @@ class papMenu extends Phaser.Scene {
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0, 0.5);;
+      .setOrigin(0, 0.5);
 
     this.add
       .text(420, 375, "Dolor de Cabeza", {
@@ -78,7 +144,7 @@ class papMenu extends Phaser.Scene {
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0, 0.5);;
+      .setOrigin(0, 0.5);
 
     this.add
       .text(420, 425, "Ganglios Inflamados", {
@@ -86,7 +152,7 @@ class papMenu extends Phaser.Scene {
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0, 0.5);;
+      .setOrigin(0, 0.5);
 
     this.add
       .text(420, 475, "Dolor al Masticar", {
@@ -94,25 +160,25 @@ class papMenu extends Phaser.Scene {
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0, 0.5);;
+      .setOrigin(0, 0.5);
 
-      this.add
+    this.add
       .text(420, 525, "Dolor Muscular", {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0, 0.5);;
+      .setOrigin(0, 0.5);
 
-      this.add
+    this.add
       .text(420, 575, "Fatiga", {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
-      .setOrigin(0, 0.5);;
+      .setOrigin(0, 0.5);
 
-      this.add
+    this.add
       .text(420, 625, "Perdida de Apetito", {
         fontFamily: "font1",
         fontSize: "40px",
@@ -120,7 +186,7 @@ class papMenu extends Phaser.Scene {
       .setTint(0x454545)
       .setOrigin(0, 0.5);
 
-      var textoSi = this.add
+    var textoSi = this.add
       .text(900, 260, "Sí", {
         fontFamily: "font1",
         fontSize: "50px",
@@ -136,7 +202,7 @@ class papMenu extends Phaser.Scene {
       .setTint(0x454545)
       .setOrigin(0.5);
 
-      var siP = this.add
+    var siP = this.add
       .image(textoSi.x, 330, "casilla")
       .setInteractive({ cursor: "pointer" })
       .setScale(0.65);
@@ -164,7 +230,6 @@ class papMenu extends Phaser.Scene {
       .image(textoSi.x, 630, "casilla")
       .setInteractive({ cursor: "pointer" })
       .setScale(0.65);
-
 
     var noP = this.add
       .image(textoNo.x, siP.y, "casilla")
@@ -253,7 +318,6 @@ class papMenu extends Phaser.Scene {
       .image(noP7.x, noP7.y, "tilde")
       .setAlpha(0.01)
       .setScale(0.75);
-  
 
     var circuloA = 0;
     var circuloA2 = 0;
@@ -262,7 +326,6 @@ class papMenu extends Phaser.Scene {
     var circuloA5 = 0;
     var circuloA6 = 0;
     var circuloA7 = 0;
-
 
     siP.on("pointerdown", () => {
       circuloA = 1;
@@ -377,7 +440,6 @@ class papMenu extends Phaser.Scene {
         finish = 1;
       }
     });
- 
 
     var enfermoSello = this.add
       .image(750, 870, "enfermo")
@@ -425,9 +487,7 @@ class papMenu extends Phaser.Scene {
       .setAlpha(0.001)
       .setOrigin(0.5);
 
-    
     this.add.image(750, 870, "fondo_sello").setOrigin(0.5);
-
 
     this.add
       .text(750, 750, "Estado", {

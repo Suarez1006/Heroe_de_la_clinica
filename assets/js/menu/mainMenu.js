@@ -126,9 +126,8 @@ class mainMenu extends Phaser.Scene {
     play.on("pointerdown", () => {
       this.scene.start("juego");
       this.scene.start("clock");
-      if (muteado == 0) {
-        music.play(musicConfig2);
-      }
+      musicaS = 0;
+      music.stop();
     });
 
     play.on("pointerover", () => {

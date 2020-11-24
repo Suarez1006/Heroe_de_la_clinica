@@ -24,7 +24,6 @@ var config = {
     papMenu, //Ficha de segundo paciente (paperas)
     varMenu, //Ficha de segundo paciente (varicela)
     reloj, //Reloj pacientes
-    separador,
     separadorTuto,
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
@@ -127,12 +126,6 @@ var temperatura;
 var reseteo = 0;
 var pestaña = 0;
 
-var sep1;
-var sep2;
-var sep3;
-var sep4;
-var sep5;
-
 var boton_ayuda;
 var boton_ayuda_s;
 
@@ -162,6 +155,7 @@ var music2;
 var music3;
 var musicaS = 0;
 var muteado = 0;
+var musicaReproducida = 0;
 
 var fichaVolver = 0;
 var tutoFinish = 0;

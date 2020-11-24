@@ -35,6 +35,72 @@ class varMenu extends Phaser.Scene {
     });
     var ficha = this.add.image(750, 540, "ficha").setInteractive();
 
+    var sep1 = this.add
+      .image(1123, 661, "separador_pac_s")
+      .setScale(0.45)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" })
+      .setAlpha(0.001)
+      .setDepth(1);
+    sep1.on("pointerover", () => {
+      sep1.setAlpha(1);
+    });
+    sep1.on("pointerout", () => {
+      sep1.setAlpha(0.001);
+    });
+    sep1.on("pointerdown", () => {
+      this.scene.sleep("Menu3_03");
+      this.scene.run("MenuP");
+      sep1.setAlpha(0.01);
+      sep2.setAlpha(0.01);
+      sep4.setAlpha(0.01);
+    });
+
+    var sep2 = this.add
+      .image(1124, 732.5, "separador_rub_s")
+      .setScale(0.45)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" })
+      .setAlpha(0.001)
+      .setDepth(1);
+    sep2.on("pointerover", () => {
+      sep2.setAlpha(1);
+    });
+    sep2.on("pointerout", () => {
+      sep2.setAlpha(0.001);
+    });
+    sep2.on("pointerdown", () => {
+      this.scene.sleep("Menu3_03");
+      this.scene.run("Menu3_01");
+      sep1.setAlpha(0.01);
+      sep2.setAlpha(0.01);
+      sep4.setAlpha(0.01);
+    });
+
+    var sep3 = this.add
+      .image(1124, 800.9, "separador_var_s")
+      .setScale(0.45)
+      .setAlpha(1)
+      .setDepth(1);
+
+    var sep4 = this.add
+      .image(1124, 873, "separador_pap_s")
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" })
+      .setScale(0.45)
+      .setAlpha(0.001)
+      .setDepth(1);
+    sep4.on("pointerover", () => {
+      sep4.setAlpha(1);
+    });
+    sep4.on("pointerout", () => {
+      sep4.setAlpha(0.001);
+    });
+    sep4.on("pointerdown", () => {
+      this.scene.sleep("Menu3_03");
+      this.scene.run("Menu3_02");
+      sep1.setAlpha(0.01);
+      sep2.setAlpha(0.01);
+      sep4.setAlpha(0.01);
+    });
+
     boton_ayuda = this.add
       .image(1010, 185, "boton_ayuda")
       .setInteractive({ cursor: "pointer" })
@@ -147,14 +213,38 @@ class varMenu extends Phaser.Scene {
       .setScale(0.65);
 
     // -----------------------------------------
-    var circulo = this.add.image(siP.x, siP.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo2 = this.add.image(noP.x, noP.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo3 = this.add.image(siP2.x, siP2.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo4 = this.add.image(noP2.x, noP2.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo5 = this.add.image(siP3.x, siP3.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo6 = this.add.image(noP3.x, noP3.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo7 = this.add.image(siP4.x, siP4.y, "tilde").setAlpha(0.01).setScale(0.75);
-    var circulo8 = this.add.image(noP4.x, noP4.y, "tilde").setAlpha(0.01).setScale(0.75);
+    var circulo = this.add
+      .image(siP.x, siP.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo2 = this.add
+      .image(noP.x, noP.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo3 = this.add
+      .image(siP2.x, siP2.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo4 = this.add
+      .image(noP2.x, noP2.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo5 = this.add
+      .image(siP3.x, siP3.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo6 = this.add
+      .image(noP3.x, noP3.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo7 = this.add
+      .image(siP4.x, siP4.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
+    var circulo8 = this.add
+      .image(noP4.x, noP4.y, "tilde")
+      .setAlpha(0.01)
+      .setScale(0.75);
 
     var circuloA = 0;
     var circuloA2 = 0;

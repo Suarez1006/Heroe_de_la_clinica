@@ -24,14 +24,11 @@ class consultorioScene extends Phaser.Scene {
       loop: true,
       delay: 0,
     };
-
-    if (musica === 0) {
-      music3.play(musicConfig);
+    if (musicaReproducida == 0) {
+      if (musica === 0) {
+        music3.play(musicConfig);
+      }
     }
-
-    var musicConfig4 = {
-      mute: true,
-    };
 
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
@@ -72,11 +69,12 @@ class consultorioScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
-      this.scene.pause();
-
-      this.scene.run("MenuP");
+      this.scene.start("juego3");
+      this.scene.start("MenuP");
       this.scene.restart("sepScene");
       this.scene.run("sepScene");
+
+      musicaReproducida = 1;
       pausa = 7;
       info.setText("");
       back.setAlpha(0.01);
