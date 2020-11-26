@@ -42,10 +42,10 @@ class varTuto extends Phaser.Scene {
         pausa = 0;
       }
     });
-    var ficha = this.add.image(750, 540, "ficha").setInteractive();
+    var ficha = this.add.image(750, 540, "fichaTuto").setInteractive();
 
     sep1 = this.add
-      .image(1123, 661, "separador_pac_s")
+      .image(1124, 732.5, "separador_pac_s")
       .setScale(0.45)
       .setAlpha(0.001)
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
@@ -389,13 +389,8 @@ class varTuto extends Phaser.Scene {
       .setDepth(1);
 
     flecha.on("pointerdown", () => {
-      score = 240;
-      salv = 0;
       chat = 0;
       this.scene.sleep("clock");
-      if (pacientes == 1) {
-        pacientes = 2;
-      }
     });
 
     flecha.on("pointerover", () => {
@@ -441,7 +436,7 @@ class varTuto extends Phaser.Scene {
           finish = 2;
           flecha.setAlpha(1);
           FlechaT.setText(Terminar);
-          selloPuesto.setText(Sano).setTint(0x00ff00);
+          selloPuesto.setText(Sano).setTint(0x42bd41);
         }
       } else if (selloPE == 1) {
         if (finish == 1) {

@@ -18,12 +18,12 @@ class menuTuto extends Phaser.Scene {
       .image(960, 540, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
-    this.add.image(750, 540, "ficha").setInteractive();
+    this.add.image(750, 540, "fichaTuto").setInteractive();
 
     this.add.image(752, 355, "fichaFotoTuto");
 
     this.add
-      .image(1123, 661, "separador_pac_s")
+      .image(1124, 732.5, "separador_pac_s")
       .setScale(0.45)
       .setAlpha(1)
       .setDepth(0.001);
@@ -48,7 +48,7 @@ class menuTuto extends Phaser.Scene {
     });
 
     this.add
-      .text(450, 600, Nombre, {
+      .text(500, 600, Nombre, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -56,26 +56,94 @@ class menuTuto extends Phaser.Scene {
       .setOrigin(0, 0.5);
 
     this.add
-      .text(450, 780, Edad, {
+      .text(1000, 600, "Arnone, Juan", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(1020, 610, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(500, 660, GSanguineo, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(450, 660, GSanguineo, {
+      .text(1000, 660, "A-", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+    this.add
+      .text(1020, 670, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(500, 720, Estatura, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(450, 720, Estatura, {
+      .text(1000, 720, "184cm", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+    this.add
+      .text(1020, 730, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(500, 780, Edad, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
+    this.add
+      .text(1000, 780, "32", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+    this.add
+      .text(1020, 790, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
 
     // -------------------------------------------------
 

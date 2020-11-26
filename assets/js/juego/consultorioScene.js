@@ -113,21 +113,21 @@ class consultorioScene extends Phaser.Scene {
     this.add
       .text(1270, 169, Rubeola, {
         fontFamily: "font1",
-        fontSize: "20px",
+        fontSize: "30px",
       })
       .setTint(0x868686);
 
     this.add
       .text(1200, 262, Varicela, {
         fontFamily: "font1",
-        fontSize: "20px",
+        fontSize: "30px",
       })
       .setTint(0x868686);
 
     this.add
       .text(1270, 365, Paperas, {
         fontFamily: "font1",
-        fontSize: "20px",
+        fontSize: "30px",
       })
       .setTint(0x868686);
 
@@ -182,22 +182,47 @@ class consultorioScene extends Phaser.Scene {
       back.setAlpha(0.01);
     });
 
-    var pac_02 = this.add
+    var pac_01 = this.add
       .image(784, 800, "paciente_02")
       .setOrigin(0, 1)
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" });
 
-    var pac_03 = this.add
+    var pac_02 = this.add
       .image(784, 800, "paciente_03")
       .setOrigin(0, 1)
       .setInteractive({ pixelPerfect: "true", cursor: "pointer" })
       .setAlpha(0);
+    var pac_03 = this.add
+      .image(784, 800, "paciente_04")
+      .setOrigin(0, 1)
+      .setInteractive({ pixelPerfect: "true", cursor: "pointer" })
+      .setAlpha(0);
+    var pac_04 = this.add
+      .image(784, 800, "paciente_05")
+      .setOrigin(0, 1)
+      .setInteractive({ pixelPerfect: "true", cursor: "pointer" })
+      .setAlpha(0);
 
-    pac_gen = pac_02;
+    pac_gen = pac_01;
+
     if (pacientes == 2) {
-      pac_03.setAlpha(1);
-      pac_02.setAlpha(0);
+      pac_gen = pac_02;
+      pac_01.setAlpha(0);
+      pac_02.setAlpha(1);
+      pac_03.setAlpha(0);
+      pac_04.setAlpha(0);
+    } else if (pacientes == 3) {
       pac_gen = pac_03;
+      pac_01.setAlpha(0);
+      pac_02.setAlpha(0);
+      pac_03.setAlpha(1);
+      pac_04.setAlpha(0);
+    } else if (pacientes == 4) {
+      pac_gen = pac_04;
+      pac_01.setAlpha(0);
+      pac_02.setAlpha(0);
+      pac_03.setAlpha(0);
+      pac_04.setAlpha(1);
     }
 
     pac_gen.on("pointerdown", () => {

@@ -13,8 +13,7 @@ class helpScene2 extends Phaser.Scene {
     negro.on("pointerdown", () => {
       this.scene.sleep();
       if (help == 5) {
-        console.log("resumo");
-        this.scene.resume("Menu2");
+        this.scene.run("Menu2");
       }
     });
     this.add.image(960, 540, "ayuda").setInteractive().setScale(1).setFlip(1);
@@ -27,7 +26,7 @@ class helpScene2 extends Phaser.Scene {
       })
       .setTint(0x454545);
 
-    this.add.image(470, 910, "flechaPD").setFlip(1).setScale(0.75);
+    this.add.image(470, 910, "flechaPD").setScale(0.75);
 
     var flecha = this.add
       .image(470, 910, "flechaP_s")

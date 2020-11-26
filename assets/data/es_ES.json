@@ -133,10 +133,10 @@
       }
     },
     "menuTuto": {
-      "nombre": ["Nombre:                              Arnone, Juan"],
-      "edad": ["Edad:                                                 32"],
-      "gSanguineo": ["Grupo Sanguíneo:                                A-"],
-      "estatura": ["Estatura:                                          1,84"]
+      "nombre": ["Nombre:"],
+      "edad": ["Edad:"],
+      "gSanguineo": ["Grupo Sanguíneo:"],
+      "estatura": ["Estatura:"]
     },
     "varTuto": {
       "varicela": ["Varicela"],
@@ -157,8 +157,8 @@
     "estado": ["Estado"],
     "si": ["Sí"],
     "no": ["No"],
-    "sano": ["Sano"],
-    "enfermo": ["Enfermo"],
+    "sano": ["SANO"],
+    "enfermo": ["ENFERMO"],
     "terminar": ["Terminar"]
   }
 }

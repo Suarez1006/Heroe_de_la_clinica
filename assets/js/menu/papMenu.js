@@ -591,7 +591,7 @@ class papMenu extends Phaser.Scene {
           finish = 2;
           flecha.setAlpha(1);
           FlechaT.setText("Terminar");
-          selloPuesto.setText("Sano").setTint(0x00ff00);
+          selloPuesto.setText("Sano").setTint(0x42bd41);
         }
       } else if (selloPE == 1) {
         if (finish == 1) {

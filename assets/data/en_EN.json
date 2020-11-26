@@ -60,7 +60,7 @@
     "diagnostico": {
       "diagGangTrue": ["I feel swollen ganglia."],
       "diagGangFalse": ["No swollen ganglia detected."],
-      "diagFarTrue": ["I detect pharyngitis.."],
+      "diagFarTrue": ["I detect pharyngitis."],
       "diagFarFalse": ["I don't detect pharyngitis."],
       "diagInfTrue": ["Their eyes are swollen."],
       "diagInfFalse": ["Their eyes seem fine."],
@@ -73,8 +73,8 @@
       "siguiente": ["Continue"],
       "calific": ["Calification"],
       "salv": ["Salvation Points:"],
-      "exce": ["Exccellent!"],
-      "mb": ["Very Good!"],
+      "exce": ["Exccellent"],
+      "mb": ["Very Good"],
       "b": ["Good"],
       "s": ["Ok"],
       "ns": ["Failed"]
@@ -135,10 +135,10 @@
       }
     },
     "menuTuto": {
-      "nombre": ["Name:                              Arnone, Juan"],
-      "edad": ["Age:                                                 32"],
-      "gSanguineo": ["Blood Type:                                A-"],
-      "estatura": ["Height:                                          1,84"]
+      "nombre": ["Name:"],
+      "edad": ["Age:"],
+      "gSanguineo": ["Blood Type:"],
+      "estatura": ["Height:"]
     },
     "varTuto": {
       "varicela": ["Chickenpox"],
@@ -159,8 +159,8 @@
     "estado": ["Status"],
     "si": ["Yes"],
     "no": ["No"],
-    "sano": ["Healty"],
-    "enfermo": ["Ill"],
+    "sano": ["HEALTY"],
+    "enfermo": ["ILL"],
     "terminar": ["Finish"]
   }
 }

@@ -107,94 +107,95 @@ class Exito extends Phaser.Scene {
     });
 
     this.add
-      .text(890, 140, ResExito, {
+      .text(1000, 160, ResExito, {
         fontFamily: "font1",
-        fontSize: "50px",
+        fontSize: "75px",
       })
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     this.add
-      .text(760, 250, Calificacion, {
+      .text(1000, 250, Calificacion, {
         fontFamily: "font1",
         fontSize: "40px",
       })
-      .setTint(0x000000);
-
+      .setTint(0x000000)
+      .setOrigin(0.5);
     this.add
-      .text(725, 630, ResSalv, {
+      .text(1000, 640, ResSalv, {
         fontFamily: "font1",
-        fontSize: "30px",
+        fontSize: "50px",
       })
-      .setTint(0x000000);
-
+      .setTint(0x000000)
+      .setOrigin(0.5);
     var E = this.add
       .image(1000, 390, "E")
       .setAlpha(0.01)
       .setTint(0x000000)
       .setScale(2);
     var excelente = this.add
-      .text(815, 500, Exce, {
+      .text(1000, 500, Exce, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
-
+      .setTint(0x000000)
+      .setOrigin(0.5);
     var MB = this.add
       .image(1000, 390, "MB")
       .setAlpha(0.01)
       .setTint(0x000000)
       .setScale(2);
     var muyBueno = this.add
-      .text(835, 500, Mb, {
+      .text(1000, 500, Mb, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
-
+      .setTint(0x000000)
+      .setOrigin(0.5);
     var B = this.add
-      .image(1010, 390, "B")
+      .image(1000, 390, "B")
       .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var bueno = this.add
-      .text(905, 500, ResB, {
+      .text(1000, 500, ResB, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
-
+      .setTint(0x000000)
+      .setOrigin(0.5);
     var S = this.add
-      .image(1010, 390, "S")
+      .image(1000, 390, "S")
       .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var satisfactorio = this.add
-      .text(765, 500, ResS, {
+      .text(1000, 500, ResS, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
-
+      .setTint(0x000000)
+      .setOrigin(0.5);
     var NS = this.add
       .image(1005, 390, "NS")
       .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var noSatisfactorio = this.add
-      .text(705, 500, ResNs, {
+      .text(1000, 500, ResNs, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
-
-    var s0 = this.add.image(1005, 830, "0").setScale(0.6).setAlpha(0.01);
-    var s1 = this.add.image(1005, 750, "1").setScale(0.6).setAlpha(0.01);
-    var s2 = this.add.image(1005, 750, "2").setScale(0.6).setAlpha(0.01);
+      .setTint(0x000000)
+      .setOrigin(0.5);
+    var s0 = this.add.image(1005, 800, "0").setScale(0.5).setAlpha(0.01);
+    var s1 = this.add.image(1005, 800, "1").setScale(0.5).setAlpha(0.01);
+    var s2 = this.add.image(1005, 800, "2").setScale(0.5).setAlpha(0.01);
 
     if (score >= 1000) {
       E.setAlpha(1);
@@ -222,5 +223,6 @@ class Exito extends Phaser.Scene {
       s0.setAlpha(1);
     }
     finalSalv += salv;
+    console.log(finalSalv);
   }
 }

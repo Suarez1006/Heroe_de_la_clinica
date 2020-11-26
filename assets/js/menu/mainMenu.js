@@ -85,13 +85,8 @@ class mainMenu extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: true });
     var fScreen = this.add
       .image(100, 994, "boton_fscreen_s")
-      .setAlpha(0.01)
+      .setAlpha(1)
       .setInteractive({ cursor: "pointer", pixelPerfect: true });
-
-    //this.add
-    //  .image(100, 994, "boton_wscreen")
-    //  .setInteractive({ cursor: "pointer", pixelPerfect: true });
-    //var wScreen = this.add.image(100, 994, "boton_wscreen_s").setAlpha(0.01);
 
     this.add.image(1850, 200, "boton_musica");
     var botonMusic = this.add
@@ -143,19 +138,15 @@ class mainMenu extends Phaser.Scene {
       ayudaT.setTint(0x454545);
     });
     fScreen.on("pointerdown", () => {
-      if (full == 0) {
+      if (this.scale.isFullscreen) {
+        this.scale.stopFullscreen();
+        fScreen.setAlpha(0.001);
+      } else {
         this.scale.startFullscreen();
-        full = 1;
-        wScreen.setAlpha(1);
-        fScreen.setAlpha(0.01);
+        fScreen.setAlpha(1);
       }
     });
-    fScreen.on("pointerover", () => {
-      fScreen.setAlpha(1);
-    });
-    fScreen.on("pointerout", () => {
-      fScreen.setAlpha(0.01);
-    });
+
     botonMusic.on("pointerdown", () => {
       if (muteado == 0) {
         music.stop();

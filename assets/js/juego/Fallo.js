@@ -6,7 +6,7 @@ class Fallo extends Phaser.Scene {
   create() {
     var Menu = Phaser.Math.RND.pick(Idioma.juego.resultados.menu);
     var Siguiente = Phaser.Math.RND.pick(Idioma.juego.resultados.siguiente);
-    var ResExito = Phaser.Math.RND.pick(Idioma.juego.resultados.exito);
+    var ResFallo = Phaser.Math.RND.pick(Idioma.juego.resultados.fallo);
     var Calificacion = Phaser.Math.RND.pick(Idioma.juego.resultados.calific);
     var ResSalv = Phaser.Math.RND.pick(Idioma.juego.resultados.salv);
     var Exce = Phaser.Math.RND.pick(Idioma.juego.resultados.exce);
@@ -14,15 +14,12 @@ class Fallo extends Phaser.Scene {
     var ResB = Phaser.Math.RND.pick(Idioma.juego.resultados.b);
     var ResS = Phaser.Math.RND.pick(Idioma.juego.resultados.s);
     var ResNs = Phaser.Math.RND.pick(Idioma.juego.resultados.ns);
-    
+
     selloPE = 0;
     selloPS = 0;
-    this.add.image(960, 540, "consultorio").setScale(1.0);
+    this.add.image(960, 540, "consultorio");
 
-    var negro = this.add
-      .image(960, 540, "negro")
-      .setAlpha(0.4)
-      .setInteractive();
+    this.add.image(960, 540, "negro").setAlpha(0.4).setInteractive();
 
     this.add.image(1000, 520, "score").setScale(1.7);
 
@@ -33,7 +30,7 @@ class Fallo extends Phaser.Scene {
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
     var V = this.add
-      .text(menu.x, menu.y, "Menu", {
+      .text(menu.x, menu.y, Menu, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -54,7 +51,7 @@ class Fallo extends Phaser.Scene {
       .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" });
     var siguenteT = this.add
-      .text(siguente.x, siguente.y, "Siguente", {
+      .text(siguente.x, siguente.y, Siguiente, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -93,21 +90,21 @@ class Fallo extends Phaser.Scene {
     });
 
     this.add
-      .text(890, 140, "Fallo", {
+      .text(1000, 140, ResFallo, {
         fontFamily: "font1",
         fontSize: "50px",
       })
       .setTint(0x000000);
 
     this.add
-      .text(760, 250, "Calificacion", {
+      .text(760, 250, Calificacion, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x000000);
 
     this.add
-      .text(725, 630, "Puntos de Salvacion", {
+      .text(725, 630, ResSalv, {
         fontFamily: "font1",
         fontSize: "30px",
       })
@@ -115,54 +112,54 @@ class Fallo extends Phaser.Scene {
 
     var E = this.add
       .image(1000, 390, "E")
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var excelente = this.add
-      .text(815, 500, "excelente", {
+      .text(815, 500, Exce, {
         fontFamily: "font1",
         fontSize: "40px",
       })
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000);
 
     var MB = this.add
       .image(1000, 390, "MB")
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var muyBueno = this.add
-      .text(835, 500, "Muy Bueno", {
+      .text(835, 500, Mb, {
         fontFamily: "font1",
         fontSize: "40px",
       })
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000);
 
     var B = this.add
       .image(1010, 390, "B")
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var bueno = this.add
-      .text(905, 500, "Bueno", {
+      .text(905, 500, ResB, {
         fontFamily: "font1",
         fontSize: "40px",
       })
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000);
 
     var S = this.add
       .image(1010, 390, "S")
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var satisfactorio = this.add
-      .text(765, 500, "Satifactorio", {
+      .text(765, 500, ResS, {
         fontFamily: "font1",
         fontSize: "40px",
       })
-      .setAlpha(0.01)
+      .setAlpha(0.001)
       .setTint(0x000000);
 
     var NS = this.add
@@ -171,7 +168,7 @@ class Fallo extends Phaser.Scene {
       .setTint(0x000000)
       .setScale(2);
     var noSatisfactorio = this.add
-      .text(705, 500, "No Satifactorio", {
+      .text(705, 500, ResNs, {
         fontFamily: "font1",
         fontSize: "40px",
       })

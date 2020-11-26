@@ -68,14 +68,7 @@ class loader extends Phaser.Scene {
       "boton_fscreen_s",
       "assets/imagenes/botones/boton_fscreen_s.png"
     );
-    this.load.image(
-      "boton_wscreen",
-      "assets/imagenes/botones/boton_wscreen.png"
-    );
-    this.load.image(
-      "boton_wscreen_s",
-      "assets/imagenes/botones/boton_wscreen_s.png"
-    );
+
     this.load.image("boton_s", "assets/imagenes/botones/boton_s.png");
     this.load.image("boton_ayuda", "assets/imagenes/botones/boton_ayuda.png");
     this.load.image(
@@ -118,12 +111,7 @@ class loader extends Phaser.Scene {
     this.load.image("libreta", "assets/imagenes/flotantes/libreta.png");
 
     this.load.image("ficha", "assets/imagenes/personajes/ficha.png");
-    this.load.image("ficha2", "assets/imagenes/personajes/ficha_02.png");
-    this.load.image("ficha2a", "assets/imagenes/personajes/ficha_02a.png");
-    this.load.image("ficha2b", "assets/imagenes/personajes/ficha_02b.png");
-    this.load.image("ficha3", "assets/imagenes/personajes/ficha_03.png");
-    this.load.image("ficha3a", "assets/imagenes/personajes/ficha_03a.png");
-    this.load.image("ficha3b", "assets/imagenes/personajes/ficha_03b.png");
+    this.load.image("fichaTuto", "assets/imagenes/personajes/fichaTuto.png");
 
     this.load.image(
       "separador_pac_s",

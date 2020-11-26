@@ -135,10 +135,10 @@
       }
     },
     "menuTuto": {
-      "nombre": ["Nome:                              Arnone, Juan"],
-      "edad": ["Era:                                                32"],
-      "gSanguineo": ["Tipo Sanguíneo:                                A-"],
-      "estatura": ["Altura:                                          1,84"]
+      "nombre": ["Nome:"],
+      "edad": ["Era:"],
+      "gSanguineo": ["Tipo Sanguíneo:"],
+      "estatura": ["Altura:"]
     },
     "varTuto": {
       "varicela": ["Catapora"],
@@ -159,8 +159,8 @@
     "estado": ["Estado"],
     "si": ["Sim"],
     "no": ["Não"],
-    "sano": ["Saudável"],
-    "enfermo": ["Doente"],
+    "sano": ["SAUDÁVEL"],
+    "enfermo": ["DOENTE"],
     "terminar": ["Terminar"]
   }
 }

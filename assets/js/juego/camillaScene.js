@@ -135,10 +135,10 @@ class camillaScene extends Phaser.Scene {
       back.setAlpha(0.01);
     });
 
-    var muñeco = this.add.image(1590, 640, "muñeco").setOrigin(0, 1);
+    var muñeco = this.add.image(1560, 636.5, "muñeco").setOrigin(0, 1);
 
     muñeco_r = this.add
-      .sprite(1590, 640, "muñeco_r", 0)
+      .sprite(1560, 636.5, "muñeco_r", 0)
       .setOrigin(0, 1)
       .setAlpha(0.01)
       .setInteractive();
@@ -338,50 +338,63 @@ class camillaScene extends Phaser.Scene {
       }
     });
 
-    var pac_02_d = this.add.image(1070, 656, "paciente_02a").setOrigin(0, 1);
+    var pac_01_d = this.add.image(1070, 656, "paciente_02a").setOrigin(0, 1);
 
-    var pac_02 = this.add
-      .image(pac_02_d.x, pac_02_d.y, "paciente_02a_s")
+    var pac_01 = this.add
+      .image(pac_01_d.x, pac_01_d.y, "paciente_02a_s")
       .setAlpha(0.01)
       .setOrigin(0, 1);
-    pac_gen = pac_02;
+    pac_gen = pac_01;
 
-    var pac_03_d = this.add
+    var pac_02_d = this.add
       .image(1070, 648, "paciente_03a")
       .setAlpha(0)
       .setOrigin(0, 1);
+    var pac_02 = this.add
+      .image(pac_02_d.x - 8, pac_02_d.y + 8, "paciente_03a_s")
+      .setAlpha(0)
+      .setOrigin(0, 1);
+
+    var pac_03_d = this.add
+      .image(1070, 648, "paciente_04a")
+      .setAlpha(0)
+      .setOrigin(0, 1);
     var pac_03 = this.add
-      .image(pac_03_d.x - 8, pac_03_d.y + 8, "paciente_03a_s")
+      .image(pac_03_d.x - 8, pac_03_d.y + 8, "paciente_04a_s")
+      .setAlpha(0)
+      .setOrigin(0, 1);
+
+    var pac_04_d = this.add
+      .image(1070, 652, "paciente_05a")
+      .setAlpha(0)
+      .setOrigin(0, 1);
+    var pac_04 = this.add
+      .image(pac_04_d.x - 8, pac_04_d.y + 8, "paciente_05a_s")
       .setAlpha(0)
       .setOrigin(0, 1);
 
     if (pacientes == 2) {
+      pac_gen = pac_02;
+      pac_01_d.setAlpha(0);
+      pac_02_d.setAlpha(1);
+      pac_03_d.setAlpha(0);
+      pac_04_d.setAlpha(0);
+    } else if (pacientes == 3) {
       pac_gen = pac_03;
-
+      pac_01_d.setAlpha(0);
+      pac_02_d.setAlpha(0);
       pac_03_d.setAlpha(1);
+      pac_04_d.setAlpha(0);
+    } else if (pacientes == 4) {
+      pac_gen = pac_04;
+      pac_01_d.setAlpha(0);
       pac_02_d.setAlpha(0);
-      pac_02_d.setAlpha(0);
+      pac_03_d.setAlpha(0);
+      pac_04_d.setAlpha(1);
     }
 
     var temperaturaFinal = Phaser.Math.RoundTo(temperatura, -2);
 
-    /*if (temperatura >= 39.5) {
-      temperaturaFinal = 39.5;
-    } else if (temperatura >= 39) {
-      temperaturaFinal = 39;
-    } else if (temperatura >= 38.5) {
-      temperaturaFinal = 38.5;
-    } else if (temperatura >= 38) {
-      temperaturaFinal = 38;
-    } else if (temperatura >= 37.5) {
-      temperaturaFinal = 37.5;
-    } else if (temperatura >= 37) {
-      temperaturaFinal = 37;
-    } else if (temperatura >= 36.5) {
-      temperaturaFinal = 36.5;
-    } else if (temperatura >= 36) {
-      temperaturaFinal = 36;
-    }*/
     pac_gen.on("pointerdown", () => {
       info.setText("");
       back.setAlpha(0.01);

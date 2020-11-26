@@ -26,13 +26,13 @@ class helpScene extends Phaser.Scene {
       })
       .setTint(0x454545);
 
-    this.add.image(1450, 910, "flechaPD").setScale(0.75);
+    this.add.image(1275, 935, "flechaPD").setScale(0.5);
 
     var flecha = this.add
-      .image(1450, 910, "flechaP_s")
+      .image(1275, 935, "flechaP_s")
       .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" })
-      .setScale(0.75);
+      .setScale(0.5);
 
     flecha.on("pointerover", () => {
       flecha.setAlpha(1);

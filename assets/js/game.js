@@ -141,7 +141,7 @@ var musica = 0;
 var musicaS = 0;
 var musicConfig = {
   mute: false,
-  volume: 1,
+  volume: 0.15,
   rate: 1,
   detune: 0,
   seek: 0,

@@ -1,5 +1,7 @@
 var infoNombre;
-var name;
+var infoEdad;
+var infoGSanguineo;
+var infoEstatura;
 
 class pacMenu extends Phaser.Scene {
   constructor() {
@@ -7,8 +9,6 @@ class pacMenu extends Phaser.Scene {
   }
 
   create() {
-    var photo;
-
     var sep1;
     var sep2;
     var sep3;
@@ -29,53 +29,50 @@ class pacMenu extends Phaser.Scene {
 
     var photo_01 = this.add
       .image(752, 355, "fichaFoto1")
-      .setAlpha(0)
+      .setAlpha(0.01)
       .setDepth(1);
     var photo_02 = this.add
       .image(752, 355, "fichaFoto2")
-      .setAlpha(0)
+      .setAlpha(0.01)
       .setDepth(1);
     var photo_03 = this.add
       .image(752, 355, "fichaFoto3")
-      .setAlpha(0)
+      .setAlpha(0.01)
       .setDepth(1);
     var photo_04 = this.add
       .image(752, 355, "fichaFoto4")
-      .setAlpha(0)
+      .setAlpha(0.01)
       .setDepth(1);
     var photo_05 = this.add
       .image(752, 355, "fichaFoto5")
-      .setAlpha(0)
+      .setAlpha(0.01)
       .setDepth(1);
 
     if (pacientes == 1) {
-      console.log("Rodriguez, Martín");
       infoNombre = "Rodriguez, Martín";
-      console.log("foto 1");
-      photo = photo_01;
+      infoGSanguineo = "O+";
+      infoEstatura = "185cm";
+      infoEdad = "32";
+      photo_01.setAlpha(1);
     } else if (pacientes == 2) {
-      console.log("Sanchez, Melisa");
       infoNombre = "Sanchez, Melisa";
-      console.log("foto 2");
-      photo = photo_02;
+      infoGSanguineo = "A-";
+      infoEstatura = "173cm";
+      infoEdad = "29";
+      photo_02.setAlpha(1);
     } else if (pacientes == 3) {
-      console.log("Gomez, Eduardo");
-      infoNombre = "Gomez, Eduardo";
-      console.log("foto 3");
-      photo = photo_03;
-    } else if (pacientes == 4) {
-      console.log("Mendez, Carla");
       infoNombre = "Mendez, Carla";
-      console.log("foto 4");
-      photo = photo_04;
-    } else {
-      console.log("Algo mas");
-      infoNombre = "Algo mas";
-      console.log("foto 5");
-      photo = photo_05;
+      infoGSanguineo = "A+";
+      infoEstatura = "179cm";
+      infoEdad = "36";
+      photo_03.setAlpha(1);
+    } else if (pacientes == 4) {
+      infoNombre = "Gomez, Eduardo";
+      infoGSanguineo = "B+";
+      infoEstatura = "172cm";
+      infoEdad = "25";
+      photo_04.setAlpha(1);
     }
-
-    this.add.image(752, 355, photo);
 
     selloPS = 0;
     selloPE = 0;
@@ -145,18 +142,18 @@ class pacMenu extends Phaser.Scene {
       sep3.setAlpha(0.01);
       sep4.setAlpha(0.01);
     });
-    console.log(infoNombre);
 
     this.add
       .text(1000, 600, infoNombre, {
         fontFamily: "font1",
         fontSize: "40px",
+        align: "right",
       })
       .setTint(0x454545)
       .setOrigin(1, 0.5);
 
     this.add
-      .text(450, 600, Nombre, {
+      .text(500, 600, Nombre, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -164,26 +161,86 @@ class pacMenu extends Phaser.Scene {
       .setOrigin(0, 0.5);
 
     this.add
-      .text(450, 780, Edad, {
+      .text(1020, 610, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(1000, 660, infoGSanguineo, {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+    this.add
+      .text(500, 660, GSanguineo, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(450, 660, GSanguineo, {
+      .text(1020, 670, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(1000, 720, infoEstatura, {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(500, 720, Estatura, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(450, 720, Estatura, {
+      .text(1020, 730, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+    this.add
+      .text(1000, 780, infoEdad, {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
+
+    this.add
+      .text(500, 780, Edad, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
+    this.add
+      .text(1020, 790, "___________________________________", {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "right",
+      })
+      .setTint(0x454545)
+      .setOrigin(1, 0.5);
 
     // -------------------------------------------------
 
