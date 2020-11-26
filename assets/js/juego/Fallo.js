@@ -4,8 +4,21 @@ class Fallo extends Phaser.Scene {
   }
 
   create() {
+    var Menu = Phaser.Math.RND.pick(Idioma.juego.resultados.menu);
+    var Siguiente = Phaser.Math.RND.pick(Idioma.juego.resultados.siguiente);
+    var ResExito = Phaser.Math.RND.pick(Idioma.juego.resultados.exito);
+    var Calificacion = Phaser.Math.RND.pick(Idioma.juego.resultados.calific);
+    var ResSalv = Phaser.Math.RND.pick(Idioma.juego.resultados.salv);
+    var Exce = Phaser.Math.RND.pick(Idioma.juego.resultados.exce);
+    var Mb = Phaser.Math.RND.pick(Idioma.juego.resultados.mb);
+    var ResB = Phaser.Math.RND.pick(Idioma.juego.resultados.b);
+    var ResS = Phaser.Math.RND.pick(Idioma.juego.resultados.s);
+    var ResNs = Phaser.Math.RND.pick(Idioma.juego.resultados.ns);
+    
     selloPE = 0;
     selloPS = 0;
+    this.add.image(960, 540, "consultorio").setScale(1.0);
+
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.4)
@@ -60,26 +73,7 @@ class Fallo extends Phaser.Scene {
       score = 240;
       salv = 0;
       tiempo = 10000;
-      if (pacientes == 0) {
-        console.log("Rodriguez, Martín");
-        infoNombre = "Rodriguez, Martín";
-      } else if (pacientes == 1) {
-        this.scene.restart("MenuP");
-        console.log("Sanchez, Melisa");
-        infoNombre = "Sanchez, Melisa";
-      } else if (pacientes == 2) {
-        this.scene.restart("MenuP");
-        console.log("Gomez, Eduardo");
-        infoNombre = "Gomez, Eduardo";
-      } else if (pacientes == 3) {
-        this.scene.restart("MenuP");
-        console.log("Mendez, Carla");
-        infoNombre = "Mendez, Carla";
-      } else {
-        this.scene.restart("MenuP");
-        console.log("Algo mas");
-        infoNombre = "Algo mas";
-      }
+
       this.scene.restart("charla_01");
       this.scene.restart("MenuP");
       this.scene.sleep("juego");

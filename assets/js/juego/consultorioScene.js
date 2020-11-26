@@ -69,12 +69,8 @@ class consultorioScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
-      this.scene.start("juego3");
-      this.scene.start("MenuP");
-      this.scene.restart("sepScene");
-      this.scene.run("sepScene");
-
       musicaReproducida = 1;
+      this.scene.start("MenuP");
       pausa = 7;
       info.setText("");
       back.setAlpha(0.01);

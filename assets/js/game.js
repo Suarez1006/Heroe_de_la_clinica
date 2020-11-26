@@ -8,6 +8,7 @@ var config = {
   },
   scene: [
     loader, //Pantalla de carga
+    sceneIdioma,
     mainMenu, //Menu principal
     SintScene, //Pick de sintomas
     Tuto_01, //Consultorio primer paciente
@@ -24,7 +25,6 @@ var config = {
     papMenu, //Ficha de segundo paciente (paperas)
     varMenu, //Ficha de segundo paciente (varicela)
     reloj, //Reloj pacientes
-    separadorTuto,
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
     ayuda10s, //Ayuda de los 10 segundos

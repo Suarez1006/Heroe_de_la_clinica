@@ -1,8 +1,3 @@
-var photo_01;
-var photo_02;
-var photo_03;
-var photo_04;
-var photo_05;
 var infoNombre;
 var name;
 
@@ -12,10 +7,14 @@ class pacMenu extends Phaser.Scene {
   }
 
   create() {
+    var photo;
+
     var sep1;
     var sep2;
     var sep3;
     var sep4;
+    this.add.image(960, 540, "consultorio").setScale(1.0);
+
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.4)
@@ -28,25 +27,55 @@ class pacMenu extends Phaser.Scene {
     var GSanguineo = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.gSanguineo);
     var Estatura = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.estatura);
 
-    photo_01 = this.add.image(752, 355, "fichaFoto1").setAlpha(0);
-    photo_02 = this.add.image(752, 355, "fichaFoto2").setAlpha(0);
-    photo_03 = this.add.image(752, 355, "fichaFoto3").setAlpha(0);
-    photo_04 = this.add.image(752, 355, "fichaFoto4").setAlpha(0);
-    photo_05 = this.add.image(752, 355, "fichaFoto5").setAlpha(0);
+    var photo_01 = this.add
+      .image(752, 355, "fichaFoto1")
+      .setAlpha(0)
+      .setDepth(1);
+    var photo_02 = this.add
+      .image(752, 355, "fichaFoto2")
+      .setAlpha(0)
+      .setDepth(1);
+    var photo_03 = this.add
+      .image(752, 355, "fichaFoto3")
+      .setAlpha(0)
+      .setDepth(1);
+    var photo_04 = this.add
+      .image(752, 355, "fichaFoto4")
+      .setAlpha(0)
+      .setDepth(1);
+    var photo_05 = this.add
+      .image(752, 355, "fichaFoto5")
+      .setAlpha(0)
+      .setDepth(1);
 
     if (pacientes == 1) {
+      console.log("Rodriguez, Martín");
+      infoNombre = "Rodriguez, Martín";
+      console.log("foto 1");
       photo = photo_01;
     } else if (pacientes == 2) {
+      console.log("Sanchez, Melisa");
+      infoNombre = "Sanchez, Melisa";
+      console.log("foto 2");
       photo = photo_02;
     } else if (pacientes == 3) {
+      console.log("Gomez, Eduardo");
+      infoNombre = "Gomez, Eduardo";
+      console.log("foto 3");
       photo = photo_03;
     } else if (pacientes == 4) {
+      console.log("Mendez, Carla");
+      infoNombre = "Mendez, Carla";
+      console.log("foto 4");
       photo = photo_04;
     } else {
+      console.log("Algo mas");
+      infoNombre = "Algo mas";
+      console.log("foto 5");
       photo = photo_05;
     }
 
-    this.add.image(752, 355, photo).setAlpha(0);
+    this.add.image(752, 355, photo);
 
     selloPS = 0;
     selloPE = 0;
@@ -159,14 +188,9 @@ class pacMenu extends Phaser.Scene {
     // -------------------------------------------------
 
     negro.on("pointerdown", () => {
+      this.scene.sleep("MenuP");
       this.scene.sleep();
-      if (pausa == 2) {
-        this.scene.start("juego");
-        pausa = 0;
-      } else if (pausa == 4) {
-        this.scene.start("juego2");
-        pausa = 0;
-      } else if (pausa == 7) {
+      if (pausa == 7) {
         this.scene.start("juego3");
         pausa = 0;
       } else if (pausa == 8) {

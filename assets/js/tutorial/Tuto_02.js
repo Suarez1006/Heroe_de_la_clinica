@@ -67,10 +67,8 @@ class Tuto_02 extends Phaser.Scene {
       this.scene.pause();
       if (fichaVolver === 0) {
         this.scene.run("Menu3");
-        this.scene.run("sepTuto");
       } else if (fichaVolver === 1) {
         this.scene.run("var_Tuto");
-        this.scene.run("sepTuto");
       }
       pausa = 4;
       info.setText("");

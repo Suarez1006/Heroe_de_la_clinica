@@ -51,9 +51,13 @@ class loader extends Phaser.Scene {
     this.load.image("flechaPD", "assets/imagenes/botones/flechaPD.png");
     this.load.image("flechaP_s", "assets/imagenes/botones/flechaP_s.png");
 
+    this.load.image("botonIdioma", "assets/imagenes/botones/botonIdioma.png");
     this.load.image("botonES", "assets/imagenes/botones/botonES.png");
     this.load.image("botonEN", "assets/imagenes/botones/botonEN.png");
     this.load.image("botonPT", "assets/imagenes/botones/botonPT.png");
+    this.load.image("botonES_s", "assets/imagenes/botones/botonES_s.png");
+    this.load.image("botonEN_s", "assets/imagenes/botones/botonEN_s.png");
+    this.load.image("botonPT_s", "assets/imagenes/botones/botonPT_s.png");
 
     this.load.image("boton", "assets/imagenes/botones/boton.png");
     this.load.image(
@@ -338,7 +342,7 @@ class loader extends Phaser.Scene {
   }
   update() {
     if (carga == 1) {
-      this.scene.start("Menu");
+      this.scene.start("scene_Idioma");
       this.scene.sleep();
     }
   }

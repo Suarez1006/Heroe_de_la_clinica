@@ -15,6 +15,8 @@ class Exito extends Phaser.Scene {
     var ResS = Phaser.Math.RND.pick(Idioma.juego.resultados.s);
     var ResNs = Phaser.Math.RND.pick(Idioma.juego.resultados.ns);
 
+    this.add.image(960, 540, "consultorio").setScale(1.0);
+
     selloPE = 0;
     selloPS = 0;
     var negro = this.add
@@ -85,26 +87,6 @@ class Exito extends Phaser.Scene {
       tiempo = 10000;
       if (tutoFinish == 1) {
         musicaS = 1;
-      }
-      if (pacientes == 0) {
-        console.log("Rodriguez, Martín");
-        infoNombre = "Rodriguez, Martín";
-      } else if (pacientes == 1) {
-        this.scene.restart("MenuP");
-        console.log("Sanchez, Melisa");
-        infoNombre = "Sanchez, Melisa";
-      } else if (pacientes == 2) {
-        this.scene.restart("MenuP");
-        console.log("Gomez, Eduardo");
-        infoNombre = "Gomez, Eduardo";
-      } else if (pacientes == 3) {
-        this.scene.restart("MenuP");
-        console.log("Mendez, Carla");
-        infoNombre = "Mendez, Carla";
-      } else {
-        this.scene.restart("MenuP");
-        console.log("Algo mas");
-        infoNombre = "Algo mas";
       }
       this.scene.restart("charla_01");
       this.scene.restart("MenuP");

@@ -2,34 +2,25 @@ class mainMenu extends Phaser.Scene {
   constructor() {
     super("Menu");
   }
-  //update() {
-  //  if (selecIdioma == "es") {
-  //    Idioma = this.game.cache.json.get("es_ES");
-  //  } else if (selecIdioma == "en") {
-  //    Idioma = this.game.cache.json.get("en_EN");
-  //  }
-  //}
 
   create() {
     if (selecIdioma == "es") {
-      Idioma = this.game.cache.json.get("es_ES");
       var IdiomaGen = this.add
-        .image(1850, 75, "botonES")
+        .image(1850, 75, "botonES_s")
         .setDepth(1)
         .setInteractive({ cursor: "pointer", pixelPerfect: true });
     } else if (selecIdioma == "en") {
       var IdiomaGen = this.add
-        .image(1850, 75, "botonEN")
+        .image(1850, 75, "botonEN_s")
         .setDepth(1)
         .setInteractive({ cursor: "pointer", pixelPerfect: true });
-      Idioma = this.game.cache.json.get("en_EN");
     } else if (selecIdioma == "pt") {
       var IdiomaGen = this.add
-        .image(1850, 75, "botonPT")
+        .image(1850, 75, "botonPT_s")
         .setDepth(1)
         .setInteractive({ cursor: "pointer", pixelPerfect: true });
-      Idioma = this.game.cache.json.get("pt_PT");
     }
+
     music = this.sound.add("menu_Musica");
 
     if (muteado == 0) {
@@ -47,22 +38,7 @@ class mainMenu extends Phaser.Scene {
     this.add.image(960, 540, "inicio");
 
     IdiomaGen.on("pointerdown", () => {
-      if (selecIdioma == "es") {
-        selecIdioma = "en";
-        IdiomaGen.setTexture("botonEN");
-        musicaS = 1;
-        this.scene.restart();
-      } else if (selecIdioma == "en") {
-        selecIdioma = "pt";
-        IdiomaGen.setTexture("botonEN");
-        musicaS = 1;
-        this.scene.restart();
-      } else if (selecIdioma == "pt") {
-        selecIdioma = "es";
-        IdiomaGen.setTexture("botonEN");
-        musicaS = 1;
-        this.scene.restart();
-      }
+      this.scene.start("scene_Idioma");
     });
 
     var play = this.add

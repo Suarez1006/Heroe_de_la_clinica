@@ -12,24 +12,21 @@ class papMenu extends Phaser.Scene {
   create() {
     selloPS = 0;
     selloPE = 0;
+
+    this.add.image(960, 540, "consultorio").setScale(1.0);
+
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.4)
       .setInteractive({ cursor: "pointer" });
     negro.on("pointerdown", () => {
+      this.scene.sleep("MenuP");
       this.scene.sleep();
-      this.scene.sleep("sepScene");
-      if (pausa == 2) {
-        this.scene.resume("juego");
-        pausa = 0;
-      } else if (pausa == 4) {
-        this.scene.resume("juego2");
-        pausa = 0;
-      } else if (pausa == 7) {
-        this.scene.resume("juego3");
+      if (pausa == 7) {
+        this.scene.run("juego3");
         pausa = 0;
       } else if (pausa == 8) {
-        this.scene.resume("juego4");
+        this.scene.run("juego4");
         pausa = 0;
       }
     });

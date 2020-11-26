@@ -15,6 +15,9 @@ class varTuto extends Phaser.Scene {
     var fichaSi = Phaser.Math.RND.pick(Idioma.fichas.si);
     var fichaNo = Phaser.Math.RND.pick(Idioma.fichas.no);
 
+    var sep1;
+    var sep2;
+
     selloPS = 0;
     selloPE = 0;
     var negro = this.add
@@ -40,6 +43,31 @@ class varTuto extends Phaser.Scene {
       }
     });
     var ficha = this.add.image(750, 540, "ficha").setInteractive();
+
+    sep1 = this.add
+      .image(1123, 661, "separador_pac_s")
+      .setScale(0.45)
+      .setAlpha(0.001)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
+
+    sep1.on("pointerover", () => {
+      sep1.setAlpha(1);
+    });
+    sep1.on("pointerout", () => {
+      sep1.setAlpha(0.001);
+    });
+    sep1.on("pointerdown", () => {
+      sep1.setAlpha(0.001);
+      this.scene.sleep("var_Tuto");
+      this.scene.run("Menu3");
+      fichaVolver = 0;
+    });
+
+    this.add
+      .image(1123, 800.9, "separador_var_s")
+      .setScale(0.45)
+      .setAlpha(1)
+      .setDepth(1);
 
     boton_ayuda = this.add
       .image(1010, 185, "boton_ayuda")

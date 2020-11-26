@@ -9,6 +9,9 @@ class menuTuto extends Phaser.Scene {
     var GSanguineo = Phaser.Math.RND.pick(Idioma.tutorial.menuTuto.gSanguineo);
     var Estatura = Phaser.Math.RND.pick(Idioma.tutorial.menuTuto.estatura);
 
+    var sep1;
+    var sep2;
+
     selloPS = 0;
     selloPE = 0;
     var negro = this.add
@@ -18,6 +21,31 @@ class menuTuto extends Phaser.Scene {
     this.add.image(750, 540, "ficha").setInteractive();
 
     this.add.image(752, 355, "fichaFotoTuto");
+
+    this.add
+      .image(1123, 661, "separador_pac_s")
+      .setScale(0.45)
+      .setAlpha(1)
+      .setDepth(0.001);
+
+    sep2 = this.add
+      .image(1123, 800.9, "separador_var_s")
+      .setScale(0.45)
+      .setAlpha(0.001)
+      .setDepth(1)
+      .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
+    sep2.on("pointerover", () => {
+      sep2.setAlpha(1);
+    });
+    sep2.on("pointerout", () => {
+      sep2.setAlpha(0.001);
+    });
+
+    sep2.on("pointerdown", () => {
+      this.scene.sleep("Menu3");
+      this.scene.run("var_Tuto");
+      fichaVolver = 1;
+    });
 
     this.add
       .text(450, 600, Nombre, {
