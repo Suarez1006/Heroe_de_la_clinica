@@ -87,10 +87,10 @@ class mainMenu extends Phaser.Scene {
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer", pixelPerfect: true });
 
-    this.add
-      .image(100, 994, "boton_wscreen")
-      .setInteractive({ cursor: "pointer", pixelPerfect: true });
-    var wScreen = this.add.image(100, 994, "boton_wscreen_s").setAlpha(0.01);
+    //this.add
+    //  .image(100, 994, "boton_wscreen")
+    //  .setInteractive({ cursor: "pointer", pixelPerfect: true });
+    //var wScreen = this.add.image(100, 994, "boton_wscreen_s").setAlpha(0.01);
 
     this.add.image(1850, 200, "boton_musica");
     var botonMusic = this.add
