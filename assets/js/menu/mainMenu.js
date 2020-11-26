@@ -38,6 +38,7 @@ class mainMenu extends Phaser.Scene {
     this.add.image(960, 540, "inicio");
 
     IdiomaGen.on("pointerdown", () => {
+      music.stop();
       this.scene.start("scene_Idioma");
     });
 
