@@ -223,6 +223,5 @@ class Exito extends Phaser.Scene {
       s0.setAlpha(1);
     }
     finalSalv += salv;
-    console.log(finalSalv);
   }
 }

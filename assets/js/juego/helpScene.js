@@ -29,7 +29,7 @@ class helpScene extends Phaser.Scene {
     this.add.image(1275, 935, "flechaPD").setScale(0.5);
 
     var flecha = this.add
-      .image(1275, 935, "flechaP_s")
+      .image(1275, 935, "flechaPD_s")
       .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" })
       .setScale(0.5);

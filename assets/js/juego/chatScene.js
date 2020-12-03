@@ -38,7 +38,7 @@ class chatScene extends Phaser.Scene {
     fotoFicha = this.add
       .image(0, 0, "hugo")
       .setAlpha(0)
-      .setScale(0.4)
+      .setScale(0.5)
       .setDepth(1);
     fotoFichaGen = fotoFicha;
 
@@ -70,8 +70,8 @@ class chatScene extends Phaser.Scene {
     createTextBox(this, 450, 20, {
       wrapWidth: 900,
       fixedWidth: 900,
-      fixedHeight: 110,
-    }).start(content, 25);
+      fixedHeight: 140,
+    }).start(content, 20);
 
     negro.on("pointerdown", () => {
       this.scene.sleep();
@@ -103,12 +103,12 @@ var createTextBox = function (scene, x, y, config) {
       text: getBBcodeText(scene, wrapWidth, fixedWidth, fixedHeight),
 
       space: {
-        left: 40,
+        left: 50,
         right: 20,
-        top: 40,
+        top: 50,
         bottom: 40,
         icon: 20,
-        text: 10,
+        text: 20,
       },
     })
     .setOrigin(0)
@@ -120,13 +120,9 @@ var createTextBox = function (scene, x, y, config) {
       "pointerdown",
       function () {
         if (doc != "Doctor: ") {
-          console.log(doc);
-
-          fotoFichaGen = cambioFicha.setAlpha(1);
-          fotoFicha.setAlpha(0);
+          fotoFichaGen.setTexture("fichaFotoTuto");
         } else {
-          fotoFichaGen = fotoFicha.setAlpha(1);
-          cambioFicha.setAlpha(0);
+          fotoFichaGen.setTexture("fichaFotoTuto");
         }
         if (this.isTyping) {
         } else {
@@ -155,12 +151,12 @@ var getBBcodeText = function (scene, wrapWidth, fixedWidth, fixedHeight) {
       fixedHeight: fixedHeight,
       fontFamily: "font1",
 
-      fontSize: "40px",
+      fontSize: "55px",
       wrap: {
         mode: "word",
         width: wrapWidth,
       },
-      maxLines: 3,
+      maxLines: 2,
     })
     .setDepth(1)
     .setTint(0x454545);

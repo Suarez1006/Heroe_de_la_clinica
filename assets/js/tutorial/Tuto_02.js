@@ -43,19 +43,11 @@ class Tuto_02 extends Phaser.Scene {
       .setDepth(1);
 
     this.input.on("pointermove", function (pointer) {
-      if (pointer.x > 1520) {
-        back.setOrigin(1);
-        back.x = -10 + pointer.x;
-        back.y = -5 + pointer.y;
-        info.x = -210 + pointer.x;
-        info.y = -13 + pointer.y;
-      } else {
-        back.setOrigin(0, 1);
-        back.x = 10 + pointer.x;
-        back.y = -5 + pointer.y;
-        info.x = 30 + pointer.x;
-        info.y = -13 + pointer.y;
-      }
+      back.setOrigin(0, 1);
+      back.x = 10 + pointer.x;
+      back.y = -5 + pointer.y;
+      info.x = 30 + pointer.x;
+      info.y = -13 + pointer.y;
     });
 
     var ficha_c = this.add
@@ -77,8 +69,14 @@ class Tuto_02 extends Phaser.Scene {
     });
     ficha_c.on("pointerover", () => {
       info.setText(Ficha);
-      back.setAlpha(1).setScale(0.9, 1);
       ficha_c.setAlpha(1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.9, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(1);
+      }
     });
     ficha_c.on("pointerout", () => {
       info.setText("");
@@ -103,7 +101,13 @@ class Tuto_02 extends Phaser.Scene {
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
       info.setText(Libreta);
-      back.setAlpha(1).setScale(0.38, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.38, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.38, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.53, 1);
+      }
     });
     libreta.on("pointerout", () => {
       libreta.setAlpha(0.03);
@@ -120,7 +124,13 @@ class Tuto_02 extends Phaser.Scene {
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
       info.setText(Puerta);
-      back.setAlpha(1).setScale(1.05, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(1.05, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.8, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(1.07, 1);
+      }
     });
 
     puerta.on("pointerdown", () => {
@@ -192,7 +202,13 @@ class Tuto_02 extends Phaser.Scene {
     guantes_s.on("pointerover", () => {
       guantes_s.setAlpha(1);
       info.setText(Guantes);
-      back.setAlpha(1).setScale(0.5, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.5, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.43, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.4, 1);
+      }
     });
 
     guantes_s.on("pointerout", () => {
@@ -237,7 +253,13 @@ class Tuto_02 extends Phaser.Scene {
     esteto_s.on("pointerover", () => {
       esteto_s.setAlpha(1);
       info.setText(Estetoscopio);
-      back.setAlpha(1).setScale(0.7, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.7, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.67, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.7, 1);
+      }
     });
 
     esteto_s.on("pointerout", () => {
@@ -282,7 +304,13 @@ class Tuto_02 extends Phaser.Scene {
     linterna_s.on("pointerover", () => {
       linterna_s.setAlpha(1);
       info.setText(Linterna);
-      back.setAlpha(1).setScale(0.5, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.5, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.5, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.53, 1);
+      }
     });
 
     linterna_s.on("pointerout", () => {
@@ -327,7 +355,13 @@ class Tuto_02 extends Phaser.Scene {
     termometro_s.on("pointerover", () => {
       termometro_s.setAlpha(1);
       info.setText(Termometro);
-      back.setAlpha(1).setScale(0.75, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.72, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.7, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.73, 1);
+      }
     });
 
     termometro_s.on("pointerout", () => {

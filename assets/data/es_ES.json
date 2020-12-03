@@ -111,7 +111,7 @@
   },
   "tutorial": {
     "chatTuto": [
-      "Doctor: Buenos días, mucho gusto.\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso mas rapido que antes.\nDoctor: Bien, pase a la camilla."
+      "Doctor: Buenos días, mucho gusto.\n\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \n\nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\n\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso mas rapido que antes.\nDoctor: Bien, pase a la camilla."
     ],
     "tuto_01": {
       "info": {
@@ -143,7 +143,7 @@
       "perApetito": ["Pérdida de apetito"],
       "cansancio": ["Cansancio"]
     },
-    "ayuda10s": ["Presiona sobre el paciente \n     para hablar con él."],
+    "ayuda10s": ["Presiona sobre el paciente \npara hablar con él."],
     "diagnostico": {
       "diagGang": ["Sin ganglios inflamados."],
       "diagFar": ["Detecto faringitis."],
@@ -154,6 +154,18 @@
   "fichas": {
     "fiebre": ["Fiebre"],
     "dolorCabeza": ["Dolor de cabeza"],
+    "perApet": ["Pérdida de apetito"],
+    "cans": ["Cansancio"],
+    "cong": ["Congestión"],
+    "infOjos": ["Inflamación de ojos"],
+    "infGang": ["Ganglios inflamados"],
+    "sarp": ["Erupción en la piel"],
+    "dolorArt": ["Dolor de articulaciones"],
+    "far": ["Faringitis"],
+    "dolorMast": ["Dolor al masticar"],
+    "dolorMusc": ["Dolor muscular"],
+    "fatiga": ["Fatiga"],
+
     "estado": ["Estado"],
     "si": ["Sí"],
     "no": ["No"],

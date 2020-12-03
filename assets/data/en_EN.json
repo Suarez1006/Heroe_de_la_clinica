@@ -145,7 +145,7 @@
       "perApetito": ["Loss of Appetite"],
       "cansancio": ["Fatigue"]
     },
-    "ayuda10s": ["Touch the Patient \n     to talk to him."],
+    "ayuda10s": ["Touch the Patient to talk to him."],
     "diagnostico": {
       "diagGang": ["No swollen ganglia detected."],
       "diagFar": ["I detect pharyngitis."],
@@ -156,6 +156,18 @@
   "fichas": {
     "fiebre": ["Fever"],
     "dolorCabeza": ["Headache"],
+    "perApet": ["Loss of appetite"],
+    "cans": ["Exhausted"],
+    "cong": ["Congestion"],
+    "infOjos": ["Eye inflammation"],
+    "infGang": ["Swollen glands"],
+    "sarp": ["Rash on the skin"],
+    "dolorArt": ["Joint pain"],
+    "far": ["pharyngitis"],
+    "dolorMast": ["Pain when chewing"],
+    "dolorMusc": ["Muscle pain"],
+    "fatiga": ["Fatigue"],
+    
     "estado": ["Status"],
     "si": ["Yes"],
     "no": ["No"],

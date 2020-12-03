@@ -2,12 +2,12 @@ class helpScene2 extends Phaser.Scene {
   constructor() {
     super("ayuda_2");
   }
+
   create() {
     var Ayuda2 = Phaser.Math.RND.pick(Idioma.juego.ayuda2);
-
     var negro = this.add
       .image(960, 540, "negro")
-      .setAlpha(0.3)
+      .setAlpha(0.5)
       .setInteractive({ cursor: "pointer" });
 
     negro.on("pointerdown", () => {
@@ -26,14 +26,13 @@ class helpScene2 extends Phaser.Scene {
       })
       .setTint(0x454545);
 
-    this.add.image(470, 910, "flechaPD").setScale(0.75);
+    this.add.image(645, 935, "flechaPI").setScale(0.5);
 
     var flecha = this.add
-      .image(470, 910, "flechaP_s")
+      .image(645, 935, "flechaPI_s")
       .setAlpha(0.001)
       .setInteractive({ cursor: "pointer" })
-      .setFlip(1)
-      .setScale(0.75);
+      .setScale(0.5);
 
     flecha.on("pointerover", () => {
       flecha.setAlpha(1);

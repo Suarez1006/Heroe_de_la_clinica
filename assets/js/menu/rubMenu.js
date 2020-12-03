@@ -10,6 +10,23 @@ class rubMenu extends Phaser.Scene {
   }
 
   create() {
+    var Rubeola = Phaser.Math.RND.pick(Idioma.menu.infoPoster.rubeola);
+    var Fiebre = Phaser.Math.RND.pick(Idioma.fichas.fiebre);
+    var DolorCabeza = Phaser.Math.RND.pick(Idioma.fichas.dolorCabeza);
+    var Congestion = Phaser.Math.RND.pick(Idioma.fichas.cong);
+    var InfOjos = Phaser.Math.RND.pick(Idioma.fichas.infOjos);
+    var InfGang = Phaser.Math.RND.pick(Idioma.fichas.infGang);
+    var Sarp = Phaser.Math.RND.pick(Idioma.fichas.sarp);
+    var DolorArt = Phaser.Math.RND.pick(Idioma.fichas.dolorArt);
+    var Far = Phaser.Math.RND.pick(Idioma.fichas.far);
+
+    var Si = Phaser.Math.RND.pick(Idioma.fichas.si);
+    var No = Phaser.Math.RND.pick(Idioma.fichas.no);
+    var Estado = Phaser.Math.RND.pick(Idioma.fichas.estado);
+
+    var Enfermo = Phaser.Math.RND.pick(Idioma.fichas.enfermo);
+    var Sano = Phaser.Math.RND.pick(Idioma.fichas.sano);
+    var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
     selloPS = 0;
     selloPE = 0;
 
@@ -121,14 +138,14 @@ class rubMenu extends Phaser.Scene {
     });
 
     this.add
-      .text(440, 140, "Rubéola", {
+      .text(440, 140, Rubeola, {
         fontFamily: "font1",
         fontSize: "75px",
       })
       .setTint(0x454545);
 
     this.add
-      .text(420, 325, "Fiebre", {
+      .text(420, 325, Fiebre, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -136,7 +153,7 @@ class rubMenu extends Phaser.Scene {
       .setOrigin(0, 0.5);
 
     this.add
-      .text(420, 375, "Dolor de Cabeza", {
+      .text(420, 375, DolorCabeza, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -144,7 +161,7 @@ class rubMenu extends Phaser.Scene {
       .setOrigin(0, 0.5);
 
     this.add
-      .text(420, 425, "Congestión", {
+      .text(420, 425, Congestion, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -152,35 +169,35 @@ class rubMenu extends Phaser.Scene {
       .setOrigin(0, 0.5);
 
     this.add
-      .text(420, 475, "Inflamación de ojos", {
+      .text(420, 475, InfOjos, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(420, 525, "Ganglios inflamados", {
+      .text(420, 525, InfGang, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(420, 575, "Erupción en la piel", {
+      .text(420, 575, Sarp, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(420, 625, "Dolor de articulaciones", {
+      .text(420, 625, DolorArt, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setTint(0x454545)
       .setOrigin(0, 0.5);
     this.add
-      .text(420, 675, "Faringitis", {
+      .text(420, 675, Far, {
         fontFamily: "font1",
         fontSize: "40px",
       })
@@ -188,7 +205,7 @@ class rubMenu extends Phaser.Scene {
       .setOrigin(0, 0.5);
 
     var textoSi = this.add
-      .text(900, 260, "Sí", {
+      .text(900, 260, Si, {
         fontFamily: "font1",
         fontSize: "50px",
       })
@@ -196,7 +213,7 @@ class rubMenu extends Phaser.Scene {
       .setOrigin(0.5);
 
     var textoNo = this.add
-      .text(1020, 260, "No", {
+      .text(1020, 260, No, {
         fontFamily: "font1",
         fontSize: "50px",
       })
@@ -524,7 +541,7 @@ class rubMenu extends Phaser.Scene {
     this.add.image(750, 870, "fondo_sello").setOrigin(0.5);
 
     this.add
-      .text(750, 750, "Estado", {
+      .text(750, 750, Estado, {
         fontFamily: "font1",
         fontSize: "70px",
       })
@@ -630,8 +647,8 @@ class rubMenu extends Phaser.Scene {
           sanoSello.setAlpha(1);
           finish = 2;
           flecha.setAlpha(1);
-          FlechaT.setText("Terminar");
-          selloPuesto.setText("Sano").setTint(0x42bd41);
+          FlechaT.setText(Terminar);
+          selloPuesto.setText(Sano).setTint(0x42bd41);
         }
       } else if (selloPE == 1) {
         if (finish == 1) {
@@ -641,8 +658,8 @@ class rubMenu extends Phaser.Scene {
           flecha.setAlpha(1);
           salv += 1;
           score += 600;
-          FlechaT.setText("Terminar");
-          selloPuesto.setText("Enfermo").setTint(0xff0000);
+          FlechaT.setText(Terminar);
+          selloPuesto.setText(Enfermo).setTint(0xff0000);
         }
       }
     });

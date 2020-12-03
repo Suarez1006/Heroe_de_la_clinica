@@ -49,7 +49,9 @@ class loader extends Phaser.Scene {
     this.load.image("camilla", "assets/imagenes/fondos/camilla.png");
 
     this.load.image("flechaPD", "assets/imagenes/botones/flechaPD.png");
-    this.load.image("flechaP_s", "assets/imagenes/botones/flechaP_s.png");
+    this.load.image("flechaPD_s", "assets/imagenes/botones/flechaPD_s.png");
+    this.load.image("flechaPI", "assets/imagenes/botones/flechaPI.png");
+    this.load.image("flechaPI_s", "assets/imagenes/botones/flechaPI_s.png");
 
     this.load.image("botonIdioma", "assets/imagenes/botones/botonIdioma.png");
     this.load.image("botonES", "assets/imagenes/botones/botonES.png");

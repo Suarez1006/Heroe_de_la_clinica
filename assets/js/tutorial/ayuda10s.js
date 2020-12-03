@@ -22,6 +22,7 @@ class ayuda10s extends Phaser.Scene {
       .text(960, 470, Info, {
         fontFamily: "font1",
         fontSize: "100px",
+        align: "center",
       })
       .setTint(0x454545)
       .setOrigin(0.5);

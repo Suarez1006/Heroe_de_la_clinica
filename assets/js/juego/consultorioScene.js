@@ -15,6 +15,9 @@ class consultorioScene extends Phaser.Scene {
 
     music3 = this.sound.add("menu_Game1");
 
+    if (pacientes == 1) {
+      finalSalv = 0;
+    }
     var musicConfig = {
       mute: false,
       volume: 1,
@@ -51,9 +54,19 @@ class consultorioScene extends Phaser.Scene {
       if (pointer.x > 1520) {
         back.setOrigin(1);
         back.x = -10 + pointer.x;
-        back.y = -5 + pointer.y;
-        info.x = -210 + pointer.x;
-        info.y = -13 + pointer.y;
+        if (selecIdioma == "es") {
+          back.y = -5 + pointer.y;
+          info.x = -210 + pointer.x;
+          info.y = -13 + pointer.y;
+        } else if (selecIdioma == "en") {
+          back.y = -5 + pointer.y;
+          info.x = -265 + pointer.x;
+          info.y = -13 + pointer.y;
+        } else if (selecIdioma == "pt") {
+          back.y = -5 + pointer.y;
+          info.x = -237 + pointer.x;
+          info.y = -13 + pointer.y;
+        }
       } else {
         back.setOrigin(0, 1);
         back.x = 10 + pointer.x;
@@ -78,8 +91,14 @@ class consultorioScene extends Phaser.Scene {
     });
     ficha_c.on("pointerover", () => {
       info.setText(Ficha);
-      back.setAlpha(1).setScale(0.9, 1);
       ficha_c.setAlpha(1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.9, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(1);
+      }
     });
     ficha_c.on("pointerout", () => {
       info.setText("");
@@ -103,7 +122,13 @@ class consultorioScene extends Phaser.Scene {
 
     fichasintomas.on("pointerover", () => {
       info.setText(Poster);
-      back.setAlpha(1).setScale(1.05, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(1.03, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(1.1, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(1.45, 1);
+      }
     });
     fichasintomas.on("pointerout", () => {
       info.setText("");
@@ -148,7 +173,13 @@ class consultorioScene extends Phaser.Scene {
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
       info.setText(Libreta);
-      back.setAlpha(1).setScale(0.45, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.38, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.38, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.53, 1);
+      }
     });
     libreta.on("pointerout", () => {
       libreta.setAlpha(0.03);
@@ -167,7 +198,13 @@ class consultorioScene extends Phaser.Scene {
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
       info.setText(Puerta);
-      back.setAlpha(1).setScale(0.75, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.75, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.95, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.85, 1);
+      }
     });
 
     puerta.on("pointerdown", () => {
@@ -235,7 +272,13 @@ class consultorioScene extends Phaser.Scene {
 
     pac_gen.on("pointerover", () => {
       info.setText(Charlar);
-      back.setAlpha(1).setScale(0.45, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.4, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.35, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.35, 1);
+      }
     });
     pac_gen.on("pointerout", () => {
       info.setText("");

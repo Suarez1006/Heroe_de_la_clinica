@@ -53,19 +53,11 @@ class Tuto_01 extends Phaser.Scene {
       .setDepth(1);
 
     this.input.on("pointermove", function (pointer) {
-      if (pointer.x > 1520) {
-        back.setOrigin(1);
-        back.x = -10 + pointer.x;
-        back.y = -5 + pointer.y;
-        info.x = -210 + pointer.x;
-        info.y = -13 + pointer.y;
-      } else {
-        back.setOrigin(0, 1);
-        back.x = 10 + pointer.x;
-        back.y = -5 + pointer.y;
-        info.x = 30 + pointer.x;
-        info.y = -13 + pointer.y;
-      }
+      back.setOrigin(0, 1);
+      back.x = 10 + pointer.x;
+      back.y = -5 + pointer.y;
+      info.x = 30 + pointer.x;
+      info.y = -13 + pointer.y;
     });
 
     var ficha_c = this.add
@@ -87,8 +79,14 @@ class Tuto_01 extends Phaser.Scene {
     });
     ficha_c.on("pointerover", () => {
       info.setText(Ficha);
-      back.setAlpha(1).setScale(0.9, 1);
       ficha_c.setAlpha(1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.9, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(1);
+      }
     });
     ficha_c.on("pointerout", () => {
       info.setText("");
@@ -113,7 +111,13 @@ class Tuto_01 extends Phaser.Scene {
     libreta.on("pointerover", () => {
       libreta.setAlpha(1);
       info.setText(Libreta);
-      back.setAlpha(1).setScale(0.38, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.38, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.38, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.53, 1);
+      }
     });
     libreta.on("pointerout", () => {
       libreta.setAlpha(0.01);
@@ -132,7 +136,13 @@ class Tuto_01 extends Phaser.Scene {
     puerta.on("pointerover", () => {
       puerta.setAlpha(1);
       info.setText(Puerta);
-      back.setAlpha(1).setScale(0.75, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.75, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.95, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.85, 1);
+      }
     });
 
     puerta.on("pointerdown", () => {
@@ -162,7 +172,13 @@ class Tuto_01 extends Phaser.Scene {
 
     pac_01.on("pointerover", () => {
       info.setText(Charlar);
-      back.setAlpha(1).setScale(0.45, 1);
+      if (selecIdioma == "es") {
+        back.setAlpha(1).setScale(0.4, 1);
+      } else if (selecIdioma == "en") {
+        back.setAlpha(1).setScale(0.35, 1);
+      } else if (selecIdioma == "pt") {
+        back.setAlpha(1).setScale(0.35, 1);
+      }
     });
     pac_01.on("pointerout", () => {
       info.setText("");

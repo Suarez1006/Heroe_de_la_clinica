@@ -145,7 +145,7 @@
       "perApetito": ["Perda de apetite"],
       "cansancio": ["Fadiga"]
     },
-    "ayuda10s": ["Pressione o paciente para falar com ele."],
+    "ayuda10s": ["Pressione o paciente \npara falar com ele."],
     "diagnostico": {
       "diagGang": ["Sem glândulas inchadas."],
       "diagFar": ["Eu detecto faringite."],
@@ -156,6 +156,18 @@
   "fichas": {
     "fiebre": ["Febre"],
     "dolorCabeza": ["Dor de cabeça"],
+    "perApet": ["Perda de apetite"],
+    "cans": ["Cansaço"],
+    "cong": ["Congestionamento"],
+    "infOjos": ["Olhos inchados"],
+    "infGang": ["Glândulas inchadas"],
+    "sarp": ["Erupção na pele"],
+    "dolorArt": ["Dor nas articulações"],
+    "far": ["Faringite"],
+    "dolorMast": ["Dor ao mastigar"],
+    "dolorMusc": ["Dor muscular"],
+    "fatiga": ["Fadiga"],
+
     "estado": ["Estado"],
     "si": ["Sim"],
     "no": ["Não"],
