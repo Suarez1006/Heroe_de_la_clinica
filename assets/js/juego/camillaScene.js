@@ -64,8 +64,9 @@ class camillaScene extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      this.scene.run("Menu3_01");
-      pausa = 7;
+      conectar = "pac";
+      this.scene.run("conectorScene");
+      pausa = 8;
       info.setText("");
       back.setAlpha(0.01);
       ficha_c.setAlpha(0.01);

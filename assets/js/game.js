@@ -8,22 +8,23 @@ var config = {
   },
   scene: [
     loader, //Pantalla de carga
-    sceneIdioma,
+    sceneIdioma, //Eleccion de idioma
     mainMenu, //Menu principal
     SintScene, //Pick de sintomas
     Tuto_01, //Consultorio primer paciente
     creditScene, //Creditos
     Tuto_02, //Camilla primer paciente
     consultorioScene, //Consultorio segundo paciente
+    conector,
     camillaScene, //Camilla segundo paciente
     scoreScene, // Puntaje final
     menuPausa, //Libreta (Menu pausa)
-    menuTuto, //Ficha de primer paciente
-    varTuto,
-    pacMenu,
-    rubMenu, //Ficha de segundo paciente (rubeola)
-    papMenu, //Ficha de segundo paciente (paperas)
-    varMenu, //Ficha de segundo paciente (varicela)
+    menuTuto, //Ficha de paciente tutorial
+    varTuto, //Ficha de varicela tutorial
+    pacMenu, //Ficha de paciente
+    rubMenu, //Ficha de paciente (rubeola)
+    papMenu, //Ficha de paciente (paperas)
+    varMenu, //Ficha de paciente (varicela)
     reloj, //Reloj pacientes
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
@@ -108,6 +109,11 @@ var resetFicha = 0;
 var resetFichaA = 0;
 var resetFichaB = 0;
 
+var varPuesto = 0;
+var rubPuesto = 0;
+var papPuesto = 0;
+var conectar;
+
 var dolCab;
 var fiebre;
 var cong;
@@ -121,6 +127,20 @@ var dolMusc;
 var fatiga;
 var perApet;
 var cans;
+
+var dolCabPuesto = 0;
+var fiebrePuesto = 0;
+var congPuesto = 0;
+var infPuesto = 0;
+var gangPuesto = 0;
+var erupPuesto = 0;
+var artPuesto = 0;
+var farPuesto = 0;
+var dolMastPuesto = 0;
+var dolMuscPuesto = 0;
+var fatigaPuesto = 0;
+var perApetPuesto = 0;
+var cansPuesto = 0;
 
 var temperatura;
 var reseteo = 0;

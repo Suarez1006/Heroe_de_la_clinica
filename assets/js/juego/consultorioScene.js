@@ -83,7 +83,8 @@ class consultorioScene extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       musicaReproducida = 1;
-      this.scene.start("MenuP");
+      conectar = "pac";
+      this.scene.run("conectorScene");
       pausa = 7;
       info.setText("");
       back.setAlpha(0.01);

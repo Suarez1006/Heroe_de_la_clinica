@@ -59,8 +59,9 @@ class varMenu extends Phaser.Scene {
       sep1.setAlpha(0.001);
     });
     sep1.on("pointerdown", () => {
-      this.scene.sleep("Menu3_03");
-      this.scene.run("MenuP");
+      this.scene.stop();
+      conectar = "pac";
+      this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
       sep2.setAlpha(0.01);
       sep4.setAlpha(0.01);
@@ -79,8 +80,9 @@ class varMenu extends Phaser.Scene {
       sep2.setAlpha(0.001);
     });
     sep2.on("pointerdown", () => {
-      this.scene.sleep("Menu3_03");
-      this.scene.run("Menu3_01");
+      this.scene.stop();
+      conectar = "rub";
+      this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
       sep2.setAlpha(0.01);
       sep4.setAlpha(0.01);
@@ -105,8 +107,9 @@ class varMenu extends Phaser.Scene {
       sep4.setAlpha(0.001);
     });
     sep4.on("pointerdown", () => {
-      this.scene.sleep("Menu3_03");
-      this.scene.run("Menu3_02");
+      this.scene.stop();
+      conectar = "pap";
+      this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
       sep2.setAlpha(0.01);
       sep4.setAlpha(0.01);
@@ -257,10 +260,31 @@ class varMenu extends Phaser.Scene {
       .setAlpha(0.01)
       .setScale(0.75);
 
-    var circuloA = 0;
-    var circuloA2 = 0;
-    var circuloA3 = 0;
-    var circuloA4 = 0;
+    if (fiebrePuesto == 1) {
+      circulo.setAlpha(0.6);
+    } else if (fiebrePuesto == 2) {
+      circulo2.setAlpha(0.6);
+    }
+    if (dolCabPuesto == 1) {
+      circulo3.setAlpha(0.6);
+    } else if (dolCabPuesto == 2) {
+      circulo4.setAlpha(0.6);
+    }
+    if (perApetPuesto == 1) {
+      circulo5.setAlpha(0.6);
+    } else if (perApetPuesto == 2) {
+      circulo6.setAlpha(0.6);
+    }
+    if (cansPuesto == 1) {
+      circulo7.setAlpha(0.6);
+    } else if (cansPuesto == 2) {
+      circulo8.setAlpha(0.6);
+    }
+
+    var circuloA;
+    var circuloA2;
+    var circuloA3;
+    var circuloA4;
 
     siP.on("pointerdown", () => {
       circuloA = 1;
@@ -268,6 +292,7 @@ class varMenu extends Phaser.Scene {
         circulo.setAlpha(0.6);
         circulo2.setAlpha(0.01);
         finish = 1;
+        fiebrePuesto = 1;
       }
     });
     noP.on("pointerdown", () => {
@@ -276,6 +301,7 @@ class varMenu extends Phaser.Scene {
         circulo2.setAlpha(0.6);
         circulo.setAlpha(0.01);
         finish = 1;
+        fiebrePuesto = 2;
       }
     });
     siP2.on("pointerdown", () => {
@@ -284,6 +310,7 @@ class varMenu extends Phaser.Scene {
         circulo3.setAlpha(0.6);
         circulo4.setAlpha(0.01);
         finish = 1;
+        dolCabPuesto = 1;
       }
     });
     noP2.on("pointerdown", () => {
@@ -292,6 +319,7 @@ class varMenu extends Phaser.Scene {
         circulo4.setAlpha(0.6);
         circulo3.setAlpha(0.01);
         finish = 1;
+        dolCabPuesto = 2;
       }
     });
     siP3.on("pointerdown", () => {
@@ -300,6 +328,7 @@ class varMenu extends Phaser.Scene {
         circulo5.setAlpha(0.6);
         circulo6.setAlpha(0.01);
         finish = 1;
+        perApetPuesto = 1;
       }
     });
     noP3.on("pointerdown", () => {
@@ -308,6 +337,7 @@ class varMenu extends Phaser.Scene {
         circulo6.setAlpha(0.6);
         circulo5.setAlpha(0.01);
         finish = 1;
+        perApetPuesto = 2;
       }
     });
     siP4.on("pointerdown", () => {
@@ -316,6 +346,7 @@ class varMenu extends Phaser.Scene {
         circulo7.setAlpha(0.6);
         circulo8.setAlpha(0.01);
         finish = 1;
+        cansPuesto = 1;
       }
     });
     noP4.on("pointerdown", () => {
@@ -324,13 +355,25 @@ class varMenu extends Phaser.Scene {
         circulo8.setAlpha(0.6);
         circulo7.setAlpha(0.01);
         finish = 1;
+        cansPuesto = 2;
       }
     });
-
     var enfermoSello = this.add
       .image(750, 870, "enfermo")
-      .setAlpha(0.001)
-      .setOrigin(0.5);
+      .setOrigin(0.5)
+      .setAlpha(0.001);
+    var sanoSello = this.add
+      .image(750, 870, "sano")
+      .setOrigin(0.5)
+      .setAlpha(0.001);
+
+    if (varPuesto == 1) {
+      enfermoSello.setAlpha(0.001);
+      sanoSello.setAlpha(1);
+    } else if (varPuesto == 2) {
+      sanoSello.setAlpha(0.001);
+      enfermoSello.setAlpha(1);
+    }
 
     this.add.image(1400, 400, "selloD");
     var selloE = this.add
@@ -367,11 +410,6 @@ class varMenu extends Phaser.Scene {
       .image(1400, 200, "selloA_s")
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
-
-    var sanoSello = this.add
-      .image(750, 870, "sano")
-      .setAlpha(0.001)
-      .setOrigin(0.5);
 
     this.add.image(750, 870, "fondo_sello").setOrigin(0.5);
 
@@ -481,6 +519,7 @@ class varMenu extends Phaser.Scene {
           flecha.setAlpha(1);
           FlechaT.setText(Terminar);
           selloPuesto.setText(Sano).setTint(0x42bd41);
+          varPuesto = 1;
         }
       } else if (selloPE == 1) {
         if (finish == 1) {
@@ -492,6 +531,7 @@ class varMenu extends Phaser.Scene {
           score += 600;
           FlechaT.setText(Terminar);
           selloPuesto.setText(Enfermo).setTint(0xff0000);
+          varPuesto = 2;
         }
       }
     });

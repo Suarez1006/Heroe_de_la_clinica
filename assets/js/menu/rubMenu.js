@@ -62,8 +62,9 @@ class rubMenu extends Phaser.Scene {
       sep1.setAlpha(0.001);
     });
     sep1.on("pointerdown", () => {
-      this.scene.sleep("Menu3_01");
-      this.scene.run("MenuP");
+      this.scene.stop();
+      conectar = "pac";
+      this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
       sep3.setAlpha(0.01);
       sep4.setAlpha(0.01);
@@ -88,8 +89,9 @@ class rubMenu extends Phaser.Scene {
       sep3.setAlpha(0.001);
     });
     sep3.on("pointerdown", () => {
-      this.scene.sleep("Menu3_01");
-      this.scene.run("Menu3_03");
+      this.scene.stop();
+      conectar = "var";
+      this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
       sep3.setAlpha(0.01);
       sep4.setAlpha(0.01);
@@ -108,8 +110,9 @@ class rubMenu extends Phaser.Scene {
       sep4.setAlpha(0.001);
     });
     sep4.on("pointerdown", () => {
-      this.scene.sleep("Menu3_01");
-      this.scene.run("Menu3_02");
+      this.scene.stop();
+      conectar = "pap";
+      this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
       sep3.setAlpha(0.01);
       sep4.setAlpha(0.01);
@@ -353,14 +356,55 @@ class rubMenu extends Phaser.Scene {
       .setAlpha(0.01)
       .setScale(0.75);
 
-    var circuloA = 0;
-    var circuloA2 = 0;
-    var circuloA3 = 0;
-    var circuloA4 = 0;
-    var circuloA5 = 0;
-    var circuloA6 = 0;
-    var circuloA7 = 0;
-    var circuloA8 = 0;
+    if (fiebrePuesto == 1) {
+      circulo.setAlpha(0.6);
+    } else if (fiebrePuesto == 2) {
+      circulo2.setAlpha(0.6);
+    }
+    if (dolCabPuesto == 1) {
+      circulo3.setAlpha(0.6);
+    } else if (dolCabPuesto == 2) {
+      circulo4.setAlpha(0.6);
+    }
+    if (congPuesto == 1) {
+      circulo5.setAlpha(0.6);
+    } else if (congPuesto == 2) {
+      circulo6.setAlpha(0.6);
+    }
+    if (infPuesto == 1) {
+      circulo7.setAlpha(0.6);
+    } else if (infPuesto == 2) {
+      circulo8.setAlpha(0.6);
+    }
+    if (gangPuesto == 1) {
+      circulo9.setAlpha(0.6);
+    } else if (gangPuesto == 2) {
+      circulo10.setAlpha(0.6);
+    }
+    if (erupPuesto == 1) {
+      circulo11.setAlpha(0.6);
+    } else if (erupPuesto == 2) {
+      circulo12.setAlpha(0.6);
+    }
+    if (artPuesto == 1) {
+      circulo13.setAlpha(0.6);
+    } else if (artPuesto == 2) {
+      circulo14.setAlpha(0.6);
+    }
+    if (farPuesto == 1) {
+      circulo15.setAlpha(0.6);
+    } else if (farPuesto == 2) {
+      circulo16.setAlpha(0.6);
+    }
+
+    var circuloA;
+    var circuloA2;
+    var circuloA3;
+    var circuloA4;
+    var circuloA5;
+    var circuloA6;
+    var circuloA7;
+    var circuloA8;
 
     siP.on("pointerdown", () => {
       circuloA = 1;
@@ -368,6 +412,7 @@ class rubMenu extends Phaser.Scene {
         circulo.setAlpha(0.6);
         circulo2.setAlpha(0.01);
         finish = 1;
+        fiebrePuesto = 1;
       }
     });
     noP.on("pointerdown", () => {
@@ -376,6 +421,7 @@ class rubMenu extends Phaser.Scene {
         circulo2.setAlpha(0.6);
         circulo.setAlpha(0.01);
         finish = 1;
+        fiebrePuesto = 2;
       }
     });
     siP2.on("pointerdown", () => {
@@ -384,6 +430,7 @@ class rubMenu extends Phaser.Scene {
         circulo3.setAlpha(0.6);
         circulo4.setAlpha(0.01);
         finish = 1;
+        dolCabPuesto = 1;
       }
     });
     noP2.on("pointerdown", () => {
@@ -392,6 +439,7 @@ class rubMenu extends Phaser.Scene {
         circulo4.setAlpha(0.6);
         circulo3.setAlpha(0.01);
         finish = 1;
+        dolCabPuesto = 2;
       }
     });
     siP3.on("pointerdown", () => {
@@ -400,6 +448,7 @@ class rubMenu extends Phaser.Scene {
         circulo5.setAlpha(0.6);
         circulo6.setAlpha(0.01);
         finish = 1;
+        congPuesto = 1;
       }
     });
     noP3.on("pointerdown", () => {
@@ -408,6 +457,7 @@ class rubMenu extends Phaser.Scene {
         circulo6.setAlpha(0.6);
         circulo5.setAlpha(0.01);
         finish = 1;
+        congPuesto = 2;
       }
     });
     siP4.on("pointerdown", () => {
@@ -416,6 +466,7 @@ class rubMenu extends Phaser.Scene {
         circulo7.setAlpha(0.6);
         circulo8.setAlpha(0.01);
         finish = 1;
+        infPuesto = 1;
       }
     });
     noP4.on("pointerdown", () => {
@@ -424,6 +475,7 @@ class rubMenu extends Phaser.Scene {
         circulo8.setAlpha(0.6);
         circulo7.setAlpha(0.01);
         finish = 1;
+        infPuesto = 2;
       }
     });
 
@@ -433,6 +485,7 @@ class rubMenu extends Phaser.Scene {
         circulo9.setAlpha(0.6);
         circulo10.setAlpha(0.01);
         finish = 1;
+        gangPuesto = 1;
       }
     });
     noP5.on("pointerdown", () => {
@@ -441,6 +494,7 @@ class rubMenu extends Phaser.Scene {
         circulo10.setAlpha(0.6);
         circulo9.setAlpha(0.01);
         finish = 1;
+        gangPuesto = 2;
       }
     });
     siP6.on("pointerdown", () => {
@@ -449,6 +503,7 @@ class rubMenu extends Phaser.Scene {
         circulo11.setAlpha(0.6);
         circulo12.setAlpha(0.01);
         finish = 1;
+        erupPuesto = 1;
       }
     });
     noP6.on("pointerdown", () => {
@@ -457,6 +512,7 @@ class rubMenu extends Phaser.Scene {
         circulo12.setAlpha(0.6);
         circulo11.setAlpha(0.01);
         finish = 1;
+        erupPuesto = 2;
       }
     });
     siP7.on("pointerdown", () => {
@@ -465,6 +521,7 @@ class rubMenu extends Phaser.Scene {
         circulo13.setAlpha(0.6);
         circulo14.setAlpha(0.01);
         finish = 1;
+        artPuesto = 1;
       }
     });
     noP7.on("pointerdown", () => {
@@ -473,6 +530,7 @@ class rubMenu extends Phaser.Scene {
         circulo14.setAlpha(0.6);
         circulo13.setAlpha(0.01);
         finish = 1;
+        artPuesto = 2;
       }
     });
     siP8.on("pointerdown", () => {
@@ -481,6 +539,7 @@ class rubMenu extends Phaser.Scene {
         circulo15.setAlpha(0.6);
         circulo16.setAlpha(0.01);
         finish = 1;
+        farPuesto = 1;
       }
     });
     noP8.on("pointerdown", () => {
@@ -489,6 +548,7 @@ class rubMenu extends Phaser.Scene {
         circulo16.setAlpha(0.6);
         circulo15.setAlpha(0.01);
         finish = 1;
+        farPuesto = 2;
       }
     });
 
@@ -649,6 +709,7 @@ class rubMenu extends Phaser.Scene {
           flecha.setAlpha(1);
           FlechaT.setText(Terminar);
           selloPuesto.setText(Sano).setTint(0x42bd41);
+          rubPuesto = 1;
         }
       } else if (selloPE == 1) {
         if (finish == 1) {
@@ -660,6 +721,7 @@ class rubMenu extends Phaser.Scene {
           score += 600;
           FlechaT.setText(Terminar);
           selloPuesto.setText(Enfermo).setTint(0xff0000);
+          rubPuesto = 2;
         }
       }
     });
