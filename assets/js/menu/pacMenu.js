@@ -342,26 +342,26 @@ class pacMenu extends Phaser.Scene {
     flecha.on("pointerdown", () => {
       this.scene.pause("clock");
       chat = 0;
-      if (circuloA == 1) {
-        score += 40;
-      }
-      if (circuloA2 == 1) {
-        score += 40;
-      }
-      if (circuloA3 == 1) {
-        score += 40;
-      }
-      if (circuloA4 == 1) {
-        score += 40;
-      }
+      //if (circuloA == 1) {
+      //  score += 40;
+      //}
+      //if (circuloA2 == 1) {
+      //  score += 40;
+      //}
+      //if (circuloA3 == 1) {
+      //  score += 40;
+      //}
+      //if (circuloA4 == 1) {
+      //  score += 40;
+      //}
 
-      if (selloPE == 2) {
-        this.scene.pause();
-        this.scene.start("score_E");
-      } else if (selloPS == 2) {
-        this.scene.pause();
-        this.scene.start("score_F");
-      }
+      //if (selloPE == 2) {
+      //  this.scene.pause();
+      this.scene.start("score_E");
+      //} else if (selloPS == 2) {
+      //  this.scene.pause();
+      //  this.scene.start("score_F");
+      //}
     });
 
     if (varPuesto == 1) {
