@@ -45,7 +45,7 @@ const COLOR_LIGHT = 0x000000;
 const COLOR_DARK = 0xffffff;
 
 var pausa;
-var doc;
+var doc = 0;
 var help = 0;
 var ayu10 = 0;
 var chat = 1;
@@ -55,6 +55,9 @@ var barraRmask;
 var pacientes = 0;
 var pac_gen;
 var photo_gen;
+
+var flecha;
+var flechaT;
 
 var score = 240;
 var finalScore = 0;
@@ -68,7 +71,7 @@ var selloPE = 0;
 var selloPS = 0;
 
 var finish = 0;
-var content;
+var ChatTuto = "error";
 
 let tiempo = 10000;
 

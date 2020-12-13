@@ -34,6 +34,23 @@ class SintScene extends Phaser.Scene {
       chat_cans: "",
     };
 
+    rubPuesto = 0;
+    varPuesto = 0;
+    papPuesto = 0;
+    dolCabPuesto = 0;
+    fiebrePuesto = 0;
+    congPuesto = 0;
+    infPuesto = 0;
+    gangPuesto = 0;
+    erupPuesto = 0;
+    artPuesto = 0;
+    farPuesto = 0;
+    dolMastPuesto = 0;
+    dolMuscPuesto = 0;
+    fatigaPuesto = 0;
+    perApetPuesto = 0;
+    cansPuesto = 0;
+
     var enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
     temperatura = Phaser.Math.FloatBetween(36, 40);
     let enfermedad;
@@ -173,11 +190,10 @@ class SintScene extends Phaser.Scene {
         variEnf = 0;
       }
     }
-
-    content = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
+    ChatTuto = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
     var msgPaciente = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgPaciente);
 
-    content +=
+    ChatTuto +=
       msgPaciente +
       chatInfo.chat_dolCab +
       chatInfo.chat_cong +

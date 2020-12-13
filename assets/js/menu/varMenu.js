@@ -22,7 +22,6 @@ class varMenu extends Phaser.Scene {
 
     var Enfermo = Phaser.Math.RND.pick(Idioma.fichas.enfermo);
     var Sano = Phaser.Math.RND.pick(Idioma.fichas.sano);
-    var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
 
     selloPS = 0;
     selloPE = 0;
@@ -131,9 +130,8 @@ class varMenu extends Phaser.Scene {
       boton_ayuda_s.setAlpha(0.001);
     });
     boton_ayuda.on("pointerdown", () => {
-      this.scene.run("infoEnfermedad");
-      this.scene.sleep();
-      this.scene.sleep("sepScene");
+      this.scene.start("infoEnfermedad");
+      this.scene.stop();
       infoE = 3;
     });
 
@@ -366,13 +364,22 @@ class varMenu extends Phaser.Scene {
       .image(750, 870, "sano")
       .setOrigin(0.5)
       .setAlpha(0.001);
+    var selloPuesto = this.add
+      .text(750, 870, "", {
+        fontFamily: "font1",
+        fontSize: "40px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
 
     if (varPuesto == 1) {
       enfermoSello.setAlpha(0.001);
       sanoSello.setAlpha(1);
+      selloPuesto.setText(Sano).setTint(0x42bd41);
     } else if (varPuesto == 2) {
       sanoSello.setAlpha(0.001);
       enfermoSello.setAlpha(1);
+      selloPuesto.setText(Enfermo).setTint(0xff0000);
     }
 
     this.add.image(1400, 400, "selloD");
@@ -421,14 +428,6 @@ class varMenu extends Phaser.Scene {
       .setTint(0x454545)
       .setOrigin(0.5);
 
-    var selloPuesto = this.add
-      .text(750, 870, "", {
-        fontFamily: "font1",
-        fontSize: "40px",
-      })
-      .setTint(0x454545)
-      .setOrigin(0.5);
-
     selloS.on("pointerdown", () => {
       if (selloPS == 0) {
         selloPS = 1;
@@ -453,83 +452,24 @@ class varMenu extends Phaser.Scene {
       }
     });
 
-    var flecha = this.add
-      .image(1400, 580, "boton")
-      .setAlpha(0)
-      .setInteractive({ cursor: "pointer" });
-
-    var flechaS = this.add.image(1400, 580, "boton_s").setAlpha(0.001);
-
-    var FlechaT = this.add
-      .text(flecha.x, flecha.y, "", {
-        fontFamily: "font1",
-        fontSize: "35px",
-      })
-      .setTint(0x454545)
-      .setOrigin(0.5)
-      .setDepth(1);
-
-    flecha.on("pointerdown", () => {
-      score = 240;
-      salv = 0;
-      chat = 0;
-      this.scene.sleep("clock");
-    });
-
-    flecha.on("pointerover", () => {
-      flechaS.setAlpha(1);
-      FlechaT.setTint(0xffffff);
-    });
-    flecha.on("pointerout", () => {
-      flechaS.setAlpha(0.01);
-      FlechaT.setTint(0x454545);
-    });
-
-    flecha.on("pointerdown", () => {
-      this.scene.pause("clock");
-      chat = 0;
-      if (circuloA == 1) {
-        score += 40;
-      }
-      if (circuloA2 == 1) {
-        score += 40;
-      }
-      if (circuloA3 == 1) {
-        score += 40;
-      }
-      if (circuloA4 == 1) {
-        score += 40;
-      }
-
-      if (selloPE == 2) {
-        this.scene.pause();
-        this.scene.start("score_E");
-      } else if (selloPS == 2) {
-        this.scene.pause();
-        this.scene.start("score_F");
-      }
-    });
-
     ficha.on("pointerdown", () => {
       if (selloPS === 1) {
         if (finish == 1) {
           selloPS = 2;
           sanoSello.setAlpha(1);
+          enfermoSello.setAlpha(0.01);
           finish = 2;
-          flecha.setAlpha(1);
-          FlechaT.setText(Terminar);
           selloPuesto.setText(Sano).setTint(0x42bd41);
           varPuesto = 1;
         }
       } else if (selloPE == 1) {
         if (finish == 1) {
           selloPE = 2;
+          sanoSello.setAlpha(0.01);
           enfermoSello.setAlpha(1);
           finish = 2;
-          flecha.setAlpha(1);
           salv += 1;
           score += 600;
-          FlechaT.setText(Terminar);
           selloPuesto.setText(Enfermo).setTint(0xff0000);
           varPuesto = 2;
         }

@@ -30,6 +30,8 @@ class pacMenu extends Phaser.Scene {
     var Rubeola = Phaser.Math.RND.pick(Idioma.menu.infoPoster.rubeola);
     var Paperas = Phaser.Math.RND.pick(Idioma.menu.infoPoster.paperas);
 
+    var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
+
     var photo_01 = this.add
       .image(752, 355, "fichaFoto1")
       .setAlpha(0.01)
@@ -305,20 +307,89 @@ class pacMenu extends Phaser.Scene {
       .setScale(0.5)
       .setAlpha(0.001);
 
+    flecha = this.add
+      .image(1400, 950, "boton")
+      .setAlpha(0)
+      .setInteractive({ cursor: "pointer" });
+
+    var flechaS = this.add.image(flecha.x, flecha.y, "boton_s").setAlpha(0.001);
+
+    flechaT = this.add
+      .text(flecha.x, flecha.y, "", {
+        fontFamily: "font1",
+        fontSize: "35px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5)
+      .setDepth(1);
+
+    flecha.on("pointerdown", () => {
+      score = 240;
+      salv = 0;
+      chat = 0;
+      this.scene.sleep("clock");
+    });
+
+    flecha.on("pointerover", () => {
+      flechaS.setAlpha(1);
+      flechaT.setTint(0xffffff);
+    });
+    flecha.on("pointerout", () => {
+      flechaS.setAlpha(0.01);
+      flechaT.setTint(0x454545);
+    });
+
+    flecha.on("pointerdown", () => {
+      this.scene.pause("clock");
+      chat = 0;
+      if (circuloA == 1) {
+        score += 40;
+      }
+      if (circuloA2 == 1) {
+        score += 40;
+      }
+      if (circuloA3 == 1) {
+        score += 40;
+      }
+      if (circuloA4 == 1) {
+        score += 40;
+      }
+
+      if (selloPE == 2) {
+        this.scene.pause();
+        this.scene.start("score_E");
+      } else if (selloPS == 2) {
+        this.scene.pause();
+        this.scene.start("score_F");
+      }
+    });
+
     if (varPuesto == 1) {
       varSano.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
     } else if (varPuesto == 2) {
       varEnfermo.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
     }
     if (rubPuesto == 1) {
       rubSano.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
     } else if (rubPuesto == 2) {
       rubEnfermo.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
     }
     if (papPuesto == 1) {
       papSano.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
     } else if (papPuesto == 2) {
       papEnfermo.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
     }
     // -------------------------------------------------
 

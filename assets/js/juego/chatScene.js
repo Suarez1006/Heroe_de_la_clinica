@@ -14,11 +14,6 @@ class chatScene extends Phaser.Scene {
         "https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js",
       sceneKey: "rexUI",
     });
-
-    this.load.image(
-      "nextPage",
-      "https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/assets/images/arrow-down-left.png"
-    );
   }
   update() {
     if (chat == 0) {
@@ -28,8 +23,10 @@ class chatScene extends Phaser.Scene {
   }
 
   create() {
-    var chatTuto = Phaser.Math.RND.pick(Idioma.tutorial.chatTuto);
-    content = chatTuto;
+    doc = 0;
+    if (pacientes == 0) {
+      ChatTuto = Phaser.Math.RND.pick(Idioma.tutorial.chatTuto);
+    }
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.3)
@@ -48,10 +45,6 @@ class chatScene extends Phaser.Scene {
       .setDepth(1)
       .setScale(0.8);
 
-    //chatB = this.rexUI.add
-    //  .roundRectangle(0, 0, 2, 2, 40, 0xcacaca)
-    //  .setStrokeStyle(2, 0x454545);
-
     chatB = this.add.image(0, 0, "chatPNG");
 
     var boton = this.add
@@ -63,15 +56,11 @@ class chatScene extends Phaser.Scene {
       this.scene.restart("charla_01");
     });
 
-    //createTextBox(this, 450, 10, {
-    //  wrapWidth: 700,
-    //}).start(content, 25).setScale(1.4);
-
     createTextBox(this, 450, 20, {
       wrapWidth: 900,
       fixedWidth: 900,
       fixedHeight: 140,
-    }).start(content, 20);
+    }).start(ChatTuto, 20);
 
     negro.on("pointerdown", () => {
       this.scene.sleep();
@@ -119,13 +108,24 @@ var createTextBox = function (scene, x, y, config) {
     .on(
       "pointerdown",
       function () {
-        if (doc != "Doctor: ") {
-          fotoFichaGen.setTexture("fichaFotoTuto");
-        } else {
-          fotoFichaGen.setTexture("fichaFotoTuto");
-        }
         if (this.isTyping) {
         } else {
+          if (pacientes == 0) {
+            if (doc == 1 || doc == 4 || doc >= 6) {
+              fotoFichaGen.setTexture("hugo");
+            } else {
+              fotoFichaGen.setTexture("fichaFotoTuto");
+            }
+          } else if (pacientes == 1) {
+            fotoFichaGen.setTexture("fichaFoto1");
+          } else if (pacientes == 2) {
+            fotoFichaGen.setTexture("fichaFoto2");
+          } else if (pacientes == 3) {
+            fotoFichaGen.setTexture("fichaFoto3");
+          } else if (pacientes == 4) {
+            fotoFichaGen.setTexture("fichaFoto4");
+          }
+          doc++;
           this.typeNextPage();
         }
       },

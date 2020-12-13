@@ -95,23 +95,34 @@
       "msgApet": ["Ando sin ganas de comer hace algunos días."],
       "msgCans": ["Ultimamente me cuesta salir de la cama, me canso rapido."],
       "msgSaludos": [
-        "Doctor: Hola, buenas tardes ¿Qué te anda sucediendo?\n\n",
+        "Doctor: Hola, buenas tardes ¿Qué te anda sucediendo?\n",
         "Doctor: Mucho gusto, ¿Qué tal se encuentra?\n\n",
         "Doctor: Buen día, cuénteme ¿Qué le sucede?\n\n",
         "Doctor: Un gusto, ¿Cuál es el motivo de su visita?\n\n"
       ],
-      "msgPaciente": ["Paciente: Buenas."]
+      "msgPaciente": ["Paciente: Buenas. ", "Paciente: Hola Doctor, "]
     },
     "ayuda1": [
       "Síntomas:\nPara descubrir ciertos sintomas\nse necesita hablar con el paciente haciendole\nclick SOLO en el consultorio.\n\nFicha del Paciente:\nContiene datos sobre el paciente\ny 3 pestañas extras utilizadas para marcarlos\nsintomas que usted detecte.\n\nPuerta:\nPermite ir hacia la sala de\nexaminaciones o volver al consultorio.\n\nSala de examinaciones:\nDesde aca se realizan chequeos\nfisicos al paciente utilizando las\nherramientas disponibles."
     ],
     "ayuda2": [
       "Herramientas:\nRevelan informacion sobre los sintomas.\n\nSellos:\nPermiten dar un diagnostico definitivo\nal paciente, ya sea Sano o Infectado.\n\nLibreta:\nDesde aca se puede acceder al menú\nde pausa donde encontrarás esta\npágina de ayuda y podras salir del juego."
-    ]
+    ],
+    "infoEnfermedad": {
+      "rubeola": [
+        "Sintomas Rubéola\n-Fiebre leve de 38,9 °C\n-Dolores de cabeza\n-Congestión nasal o con secreciones liquidas\n-Inflamacion y enrojecimiento de los ojos\n-Dolores en las articulaciones, especialmente en mujeres jovenes\n-Sarpullido fino y rosado, comienza en la cara y se disemina rapidamente\n hacia el torso y los brazos y las piernas, para despues desaparecer\n de la misma manera"
+      ],
+      "varicela": [
+        "Sintomas Varicela\n-Fiebre\n-Pérdida del apetito\n-Cansancio y sensación de malestar general\n-Erupción cutanea, o sarpullido, característico en todo el cuerpo"
+      ],
+      "paperas": [
+        "Sintomas Paperas\n-Pueden provocar inflamacion de una o ambas glandulas salivales\n cerca de los oidos\n-Dolor al masticar o tragar\n-Puede provocar fiebres leves entre 38-39 °C\n-Debilidad o Fatiga\n-Pérdida del Apetito\n-Dolores Musculares"
+      ]
+    }
   },
   "tutorial": {
     "chatTuto": [
-      "Doctor: Buenos días, mucho gusto.\n\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \n\nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\n\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso mas rapido que antes.\nDoctor: Bien, pase a la camilla."
+      "Doctor: Buenos días, mucho gusto.\n\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \n\nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\n\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso rapido.\nDoctor: Bien, pase a la camilla."
     ],
     "tuto_01": {
       "info": {

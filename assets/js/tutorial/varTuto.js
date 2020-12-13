@@ -85,9 +85,8 @@ class varTuto extends Phaser.Scene {
       boton_ayuda_s.setAlpha(0.001);
     });
     boton_ayuda.on("pointerdown", () => {
-      this.scene.run("infoEnfermedad");
-      this.scene.sleep();
-      this.scene.stop("sepTuto");
+      this.scene.start("infoEnfermedad");
+      this.scene.stop();
       infoE = 4;
     });
 

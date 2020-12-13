@@ -18,15 +18,15 @@
     "infoPoster": {
       "rubeola": ["Rubella"],
       "rubInfo": [
-        "Rubella is a viral contagious disease that's known for the rash it induces all over the body."
+        "Rubella is a viral contagious disease that's known\nfor the rash it induces all over the body."
       ],
       "varicela": ["Chickenpox"],
       "varInfo": [
-        "Chickenpox is a viral infection that causes a rash on the skin with small blisters all over the body."
+        "Chickenpox is a viral infection that causes a rash\non the skin with small blisters all over the body."
       ],
       "paperas": ["Parotitis"],
       "papInfo": [
-        "Parotitis or Mumps is a viral infection that affects mainly the salivary glands found near the ears."
+        "Parotitis or Mumps is a viral infection that affects mainly\nthe salivary glands found near the ears."
       ]
     },
     "pacMenu": {
@@ -86,13 +86,13 @@
       "msgCab2": ["I have a headache. "],
       "msgCong": ["I have some congestion.\n"],
       "msgErup": ["I've got a slight rash all over the body.\n"],
-      "msgArt": ["My joints hurts when I move."],
+      "msgArt": ["My joints hurts when I move. "],
       "msgDolMast": ["My throat hurts when i chew.\n"],
       "msgDolMusc": ["I feel some muscle discomfort.\n"],
       "msgFat": [
         "Im feeling really tired lately, I don't feel like doing anything.\n"
       ],
-      "msgApet": ["I haven't feeling like eating these days."],
+      "msgApet": ["I haven't feeling like eating these days. "],
       "msgCans": [
         "Lately it's been harder to get out of bed, I get tired really fast."
       ],
@@ -102,7 +102,7 @@
         "Doctor: Morning, so tell me, what's going on?\n\n",
         "Doctor: G'day, what's the matter?\n\n"
       ],
-      "msgPaciente": ["Paciente: Hello."]
+      "msgPaciente": ["Patient: Hello. "]
     },
     "ayuda1": [
       "Symptoms:\nSome symptoms need you to talk to the patient to discover them,\nthis can only happen when you're in the Doctor's Office.\nPatient Information:\nContains information about the patient \nand 3 extra tabs utilized to check the symptoms that you discover.\n\nDoor:\nAllows the entrance to the Examination Room \nor back to the Doctors Office.\n\nExamination Room:\nFrom here you can perform a \nphysical check to the patient with the \nprovided examination tools."
@@ -113,7 +113,7 @@
   },
   "tutorial": {
     "chatTuto": [
-      "Doctor: Good Morning, it's a pleasure.\nPatient: Good morning, nice to meet you.\n\nDoctor: So, tell me, how are you feeling?? \nPatient: I've been having some headache lately and I don't feel like eating either.\nPatient: Oh, and also I've been feeling kinda feverish.\nDoctor: Hmm, is there anything else?.\nPatient: I think that's all. \nPaciente: Wait, im getting tired easily lately.\nDoctor: Okay, let's go to the Examination Room please."
+      "Doctor: Good Morning, it's a pleasure.\n\nPatient: Good morning, nice to meet you.\n\nDoctor: So, tell me, how are you feeling?\n\nPatient: I've been having some headache lately and I don't feel like eating either.\nPatient: Oh, and also I've been feeling kinda feverish.\nDoctor: Hmm, is there anything else?.\n\nPatient: I think that's all. \nWait, im getting tired easily lately.\nDoctor: Okay, let's go to the Examination Room please."
     ],
     "tuto_01": {
       "info": {
@@ -167,7 +167,7 @@
     "dolorMast": ["Pain when chewing"],
     "dolorMusc": ["Muscle pain"],
     "fatiga": ["Fatigue"],
-    
+
     "estado": ["Status"],
     "si": ["Yes"],
     "no": ["No"],
