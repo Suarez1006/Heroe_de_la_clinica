@@ -109,7 +109,18 @@
     ],
     "ayuda2": [
       "Ferramentas:\nEles revelam informações sobre os sintomas.\n\nSelos: permitem dar um diagnóstico definitivo ao paciente, saudável ou infectado.\n\n Caderno: A partir daqui, você pode acessar o menu de pausa, onde encontrará esta página de ajuda e poderá sair do jogo."
-    ]
+    ],
+    "infoEnfermedad": {
+      "rubeola": [
+        "Sintomas de Rubéola\n-Febre ligeira de 38,9 °C\n-Dores de cabeça\n-Congestão nasal ou secreções escorrendo\n-Inflamação e vermelhidão dos olhos\n-Dores nas articulações, especialmente em mulheres jovens\n-Uma erupção cutânea fina e rosada que começa no rosto e se espalha rapidamente\n em direção ao tronco e braços e pernas, em seguida, desaparece\n da mesma maneira"
+      ],
+      "varicela": [
+        "Sintomas de Varicela\n-Febre\n-Perda de apetite\n-Cansaço e mal-estar geral\n-Erupção cutânea, ou erupção cutânea, característica em todo o corpo"
+      ],
+      "paperas": [
+        "Sintomas de Caxumba\n-Eles podem causar inflamação de uma ou ambas as glândulas salivares\n perto das orelhas\n-Dor ao mastigar ou engolir\n-Pode causar febres leves entre 38-39 ° C\n-Fraqueza ou fadiga\n-Perda de apetite\n-Dores musculares"
+      ]
+    }
   },
   "tutorial": {
     "chatTuto": [

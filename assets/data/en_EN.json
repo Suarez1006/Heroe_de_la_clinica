@@ -109,7 +109,18 @@
     ],
     "ayuda2": [
       "Examination Tools:\nThey reveal useful information of the patient's symptoms.\n\nStamps:\nThey allow you to give the final diagnostic \nof the patient, Green = Healthy, Red = Ill.\n\nNotebook:\nFrom here you can access the pause menu, \nhere you'll find this help page and you can \nalso exit the game."
-    ]
+    ],
+    "infoEnfermedad": {
+      "rubeola": [
+        "Rubella symptoms\n-Mild fever of 38.9 ° C\n-Headaches\n-Nasal congestion or runny secretions\n-Inflammation and redness of the eyes\n-Joint pains, especially in young women\n-A fine, pink rash that begins on the face and spreads quickly\n towards the torso and arms and legs, then disappear\n in the same way"
+      ],
+      "varicela": [
+        "Chickenpox Symptoms\n-Fever\n-Loss of appetite\n-Tiredness and feeling generally unwell\n-Skin rash, or rash, characteristic all over the body"
+      ],
+      "paperas": [
+        "Mumps symptoms\n-They can cause inflammation of one or both salivary glands\n close to the ears\n-Pain when chewing or swallowing\n-May cause mild fevers between 38-39 ° C\n-Weakness or fatigue\n-Loss of appetite\n-Muscle pains"
+      ]
+    }
   },
   "tutorial": {
     "chatTuto": [

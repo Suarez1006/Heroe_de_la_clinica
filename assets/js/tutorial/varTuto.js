@@ -10,13 +10,11 @@ class varTuto extends Phaser.Scene {
     var Cansancio = Phaser.Math.RND.pick(Idioma.tutorial.varTuto.cansancio);
     var Sano = Phaser.Math.RND.pick(Idioma.fichas.sano);
     var Estado = Phaser.Math.RND.pick(Idioma.fichas.estado);
-    var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
     var Enfermo = Phaser.Math.RND.pick(Idioma.fichas.enfermo);
     var fichaSi = Phaser.Math.RND.pick(Idioma.fichas.si);
     var fichaNo = Phaser.Math.RND.pick(Idioma.fichas.no);
 
     var sep1;
-    var sep2;
 
     var sellopuestoPS = 0;
     var sellopuestoPE = 0;
@@ -24,17 +22,16 @@ class varTuto extends Phaser.Scene {
     var sellosound = this.sound.add("Sellar");
 
     var selloConfig = {
-      volume: 0.15
-    }
+      volume: 0.15,
+    };
 
     var hojasound = this.sound.add("Cambiarhoja");
 
     var hojaConfig = {
-      volume:0.25
-    } 
+      volume: 0.25,
+    };
 
     var escribirSonido = this.sound.add("escribir");
-
 
     selloPS = 0;
     selloPE = 0;
@@ -267,7 +264,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 1) {
         escribirSonido.play();
-        sonidoPlay = 1
+        sonidoPlay = 1;
       }
     });
     noP.on("pointerdown", () => {
@@ -280,7 +277,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 2) {
         escribirSonido.play();
-        sonidoPlay = 2
+        sonidoPlay = 2;
       }
     });
     siP2.on("pointerdown", () => {
@@ -293,7 +290,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 3) {
         escribirSonido.play();
-        sonidoPlay = 3
+        sonidoPlay = 3;
       }
     });
     noP2.on("pointerdown", () => {
@@ -306,7 +303,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 4) {
         escribirSonido.play();
-        sonidoPlay = 4
+        sonidoPlay = 4;
       }
     });
     siP3.on("pointerdown", () => {
@@ -319,7 +316,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 5) {
         escribirSonido.play();
-        sonidoPlay = 5
+        sonidoPlay = 5;
       }
     });
     noP3.on("pointerdown", () => {
@@ -332,7 +329,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 6) {
         escribirSonido.play();
-        sonidoPlay = 6
+        sonidoPlay = 6;
       }
     });
     siP4.on("pointerdown", () => {
@@ -345,7 +342,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 7) {
         escribirSonido.play();
-        sonidoPlay = 7
+        sonidoPlay = 7;
       }
     });
     noP4.on("pointerdown", () => {
@@ -358,7 +355,7 @@ class varTuto extends Phaser.Scene {
       }
       if (sonidoPlay != 8) {
         escribirSonido.play();
-        sonidoPlay = 8
+        sonidoPlay = 8;
       }
     });
 

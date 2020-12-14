@@ -317,7 +317,7 @@ class pacMenu extends Phaser.Scene {
       .setAlpha(0.001);
 
     flecha = this.add
-      .image(1400, 580, "boton")
+      .image(1400, 950, "boton")
       .setAlpha(0)
       .setInteractive({ cursor: "pointer" });
 
