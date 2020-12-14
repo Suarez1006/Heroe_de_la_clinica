@@ -9,8 +9,11 @@ class menuTuto extends Phaser.Scene {
     var GSanguineo = Phaser.Math.RND.pick(Idioma.tutorial.menuTuto.gSanguineo);
     var Estatura = Phaser.Math.RND.pick(Idioma.tutorial.menuTuto.estatura);
 
-    var sep1;
-    var sep2;
+    var Varicela = Phaser.Math.RND.pick(Idioma.menu.infoPoster.varicela);
+    var Rubeola = Phaser.Math.RND.pick(Idioma.menu.infoPoster.rubeola);
+    var Paperas = Phaser.Math.RND.pick(Idioma.menu.infoPoster.paperas);
+
+    var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
 
     selloPS = 0;
     selloPE = 0;
@@ -28,7 +31,7 @@ class menuTuto extends Phaser.Scene {
       .setAlpha(1)
       .setDepth(0.001);
 
-    sep2 = this.add
+    var sep2 = this.add
       .image(1123, 800.9, "separador_var_s")
       .setScale(0.45)
       .setAlpha(0.001)
@@ -42,8 +45,8 @@ class menuTuto extends Phaser.Scene {
     });
 
     sep2.on("pointerdown", () => {
-      this.scene.sleep("Menu3");
-      this.scene.run("var_Tuto");
+      this.scene.stop();
+      this.scene.start("var_Tuto");
       fichaVolver = 1;
     });
 
@@ -145,7 +148,110 @@ class menuTuto extends Phaser.Scene {
       .setTint(0x454545)
       .setOrigin(1, 0.5);
 
-    // -------------------------------------------------
+    this.add
+      .text(500, 875, Rubeola, {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "center",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5)
+      .setAlpha(0.3);
+    this.add
+      .text(750, 875, Varicela, {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "center",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5);
+    this.add
+      .text(1000, 875, Paperas, {
+        fontFamily: "font1",
+        fontSize: "40px",
+        align: "center",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5)
+      .setAlpha(0.3);
+
+    var varSano = this.add
+      .image(750, 877, "sano")
+      .setOrigin(0.5)
+      .setScale(0.5)
+      .setAlpha(0.001);
+
+    var varEnfermo = this.add
+      .image(750, 877, "enfermo")
+      .setOrigin(0.5)
+      .setScale(0.5)
+      .setAlpha(0.001);
+
+    flecha = this.add
+      .image(1400, 580, "boton")
+      .setAlpha(0)
+      .setInteractive({ cursor: "pointer" });
+
+    var flechaS = this.add.image(flecha.x, flecha.y, "boton_s").setAlpha(0.001);
+
+    flechaT = this.add
+      .text(flecha.x, flecha.y, "", {
+        fontFamily: "font1",
+        fontSize: "45px",
+      })
+      .setTint(0x454545)
+      .setOrigin(0.5)
+      .setDepth(1);
+
+    flecha.on("pointerdown", () => {
+      chat = 0;
+      this.scene.sleep("clock");
+    });
+
+    flecha.on("pointerover", () => {
+      flechaS.setAlpha(1);
+      flechaT.setTint(0xffffff);
+    });
+    flecha.on("pointerout", () => {
+      flechaS.setAlpha(0.01);
+      flechaT.setTint(0x454545);
+    });
+
+    flecha.on("pointerdown", () => {
+      this.scene.sleep("clock");
+      chat = 0;
+
+      if (dolCabPuesto == 1) {
+        score += 65;
+      }
+      if (fiebrePuesto == 1) {
+        score += 65;
+      }
+      if (perApetPuesto == 1) {
+        score += 65;
+      }
+      if (cansPuesto == 1) {
+        score += 65;
+      }
+
+      if (varPuesto == 2) {
+        this.scene.start("score_E");
+        score += 600;
+        salv += 1;
+      } else if (varPuesto == 1) {
+        this.scene.start("score_F");
+      }
+    });
+
+    if (varPuesto == 1) {
+      varSano.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
+    } else if (varPuesto == 2) {
+      varEnfermo.setAlpha(1);
+      flecha.setAlpha(1);
+      flechaT.setText(Terminar);
+    }
 
     negro.on("pointerdown", () => {
       this.scene.sleep("sepTuto");

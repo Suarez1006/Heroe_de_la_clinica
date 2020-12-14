@@ -145,6 +145,20 @@ var fatigaPuesto = 0;
 var perApetPuesto = 0;
 var cansPuesto = 0;
 
+var dolCabSint = 0;
+var fiebreSint = 0;
+var congSint = 0;
+var infSint = 0;
+var gangSint = 0;
+var erupSint = 0;
+var artSint = 0;
+var farSint = 0;
+var dolMastSint = 0;
+var dolMuscSint = 0;
+var fatigaSint = 0;
+var perApetSint = 0;
+var cansSint = 0;
+
 var temperatura;
 var reseteo = 0;
 var pestaña = 0;

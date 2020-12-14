@@ -14,13 +14,6 @@ class pacMenu extends Phaser.Scene {
     var sep3;
     var sep4;
 
-    var negro = this.add
-      .image(960, 540, "negro")
-      .setAlpha(0.4)
-      .setInteractive({ cursor: "pointer" });
-
-    this.add.image(750, 540, "ficha").setInteractive();
-
     var Nombre = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.nombre);
     var Edad = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.edad);
     var GSanguineo = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.gSanguineo);
@@ -31,6 +24,13 @@ class pacMenu extends Phaser.Scene {
     var Paperas = Phaser.Math.RND.pick(Idioma.menu.infoPoster.paperas);
 
     var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
+
+    var negro = this.add
+      .image(960, 540, "negro")
+      .setAlpha(0.4)
+      .setInteractive({ cursor: "pointer" });
+
+    this.add.image(750, 540, "ficha").setInteractive();
 
     var photo_01 = this.add
       .image(752, 355, "fichaFoto1")
@@ -308,7 +308,7 @@ class pacMenu extends Phaser.Scene {
       .setAlpha(0.001);
 
     flecha = this.add
-      .image(1400, 950, "boton")
+      .image(1400, 580, "boton")
       .setAlpha(0)
       .setInteractive({ cursor: "pointer" });
 
@@ -342,26 +342,197 @@ class pacMenu extends Phaser.Scene {
     flecha.on("pointerdown", () => {
       this.scene.pause("clock");
       chat = 0;
-      //if (circuloA == 1) {
-      //  score += 40;
-      //}
-      //if (circuloA2 == 1) {
-      //  score += 40;
-      //}
-      //if (circuloA3 == 1) {
-      //  score += 40;
-      //}
-      //if (circuloA4 == 1) {
-      //  score += 40;
-      //}
+      // --------------------------
+      if (dolCabSint == 1) {
+        if (dolCabPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (dolCabPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (fiebreSint == 1) {
+        if (fiebrePuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (fiebrePuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (congSint == 1) {
+        if (congPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (congPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (infSint == 1) {
+        if (infPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (infPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (gangSint == 1) {
+        if (gangPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (gangPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (erupSint == 1) {
+        if (erupPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (erupPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (artSint == 1) {
+        if (artPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (artPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (farSint == 1) {
+        if (farPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (farPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (dolMastSint == 1) {
+        if (dolMastPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (dolMastPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (dolMuscSint == 1) {
+        if (dolMuscPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (dolMuscPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (fatigaSint == 1) {
+        if (fatigaPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (fatigaPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (perApetSint == 1) {
+        if (perApetPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (perApetPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      if (cansSint == 1) {
+        if (cansPuesto == 1) {
+          score += 20;
+        }
+      } else {
+        if (cansPuesto == 2) {
+          score += 20;
+        }
+      }
+      // --------------------------
+      // --------------------------
+      // --------------------------
 
-      //if (selloPE == 2) {
-      //  this.scene.pause();
-      this.scene.start("score_E");
-      //} else if (selloPS == 2) {
-      //  this.scene.pause();
-      //  this.scene.start("score_F");
-      //}
+      if (rub == 1) {
+        if (rubPuesto == 2) {
+          score += 200;
+          salv += 1;
+          this.scene.start("score_E");
+        } else {
+          this.scene.start("score_F");
+        }
+        if (varPuesto == 1) {
+          score += 200;
+        }
+        if (papPuesto == 1) {
+          score += 200;
+        }
+      }
+      // --------------------------
+      else if (vari == 1) {
+        if (rubPuesto == 1) {
+          score += 200;
+        }
+        if (varPuesto == 2) {
+          score += 200;
+          salv += 1;
+          this.scene.start("score_E");
+        } else {
+          this.scene.start("score_F");
+        }
+        if (papPuesto == 1) {
+          score += 200;
+        }
+      }
+      // --------------------------
+      else if (pap == 1) {
+        if (rubPuesto == 1) {
+          score += 200;
+        }
+        if (varPuesto == 1) {
+          score += 200;
+        }
+        if (papPuesto == 2) {
+          score += 200;
+          salv += 1;
+          this.scene.start("score_E");
+        } else {
+          this.scene.start("score_F");
+        }
+      }
+      // --------------------------
+      else {
+        if (rubPuesto == 1 && varPuesto == 1 && papPuesto == 1) {
+          score += 600;
+          salv += 1;
+          this.scene.start("score_E");
+        } else {
+          this.scene.start("score_F");
+        }
+      }
     });
 
     if (varPuesto == 1) {

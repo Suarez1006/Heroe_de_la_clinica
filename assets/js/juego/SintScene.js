@@ -51,6 +51,20 @@ class SintScene extends Phaser.Scene {
     perApetPuesto = 0;
     cansPuesto = 0;
 
+    dolCabSint = 0;
+    fiebreSint = 0;
+    congSint = 0;
+    infSint = 0;
+    gangSint = 0;
+    erupSint = 0;
+    artSint = 0;
+    farSint = 0;
+    dolMastSint = 0;
+    dolMuscSint = 0;
+    fatigaSint = 0;
+    perApetSint = 0;
+    cansSint = 0;
+
     var enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
     temperatura = Phaser.Math.FloatBetween(36, 40);
     let enfermedad;
@@ -58,6 +72,7 @@ class SintScene extends Phaser.Scene {
     if (temperatura >= 38) {
       fiebre = "true";
       enf += 0.5;
+      fiebreSint = 1;
     } else {
       fiebre = "false";
     }
@@ -69,6 +84,7 @@ class SintScene extends Phaser.Scene {
         dolCab = "true";
         enf += 0.5;
         chatInfo.chat_dolCab = msgCab1;
+        dolCabSint = 1;
       }
     } else {
       if (cabPatron > 40) {
@@ -77,6 +93,7 @@ class SintScene extends Phaser.Scene {
         dolCab = "true";
         enf += 0.5;
         chatInfo.chat_dolCab = msgCab2;
+        dolCabSint = 1;
       }
     }
 
@@ -98,23 +115,29 @@ class SintScene extends Phaser.Scene {
       if (cong == "true") {
         enf++;
         chatInfo.chat_cong = msgCong;
+        congSint = 1;
       }
       if (inf == "true") {
         enf++;
+        infSint = 1;
       }
       if (gang == "true") {
         enf++;
+        gangSint = 1;
       }
       if (erup == "true") {
         enf++;
         chatInfo.chat_erup = msgErup;
+        erupSint = 1;
       }
       if (art == "true") {
         enf++;
         chatInfo.chat_art = msgArt;
+        artSint = 1;
       }
       if (far == "true") {
         enf++;
+        farSint = 1;
       }
       if (enf >= 4) {
         rubEnf = 1;
@@ -144,22 +167,27 @@ class SintScene extends Phaser.Scene {
       };
       if (gang == "true") {
         enf++;
+        gangSint = 1;
       }
       if (dolMast == "true") {
         enf++;
         chatInfo.chat_dolMast = msgDolMast;
+        dolMastSint = 1;
       }
       if (dolMusc == "true") {
         enf++;
         chatInfo.chat_dolMusc = msgDolMusc;
+        dolMuscSint = 1;
       }
       if (fatiga == "true") {
         enf++;
         chatInfo.chat_fatiga = msgFat;
+        fatigaSint = 1;
       }
       if (perApet == "true") {
         enf++;
         chatInfo.chat_perApet = msgApet;
+        perApetSint = 1;
       }
       if (enf >= 3) {
         papEnf = 1;
@@ -179,10 +207,12 @@ class SintScene extends Phaser.Scene {
       if (perApet == "true") {
         enf++;
         chatInfo.chat_perApet = msgApet;
+        perApetSint = 1;
       }
       if (cans == "true") {
         enf++;
         chatInfo.chat_cans = msgCans;
+        cansSint = 1;
       }
       if (enf >= 2) {
         variEnf = 1;
@@ -192,6 +222,11 @@ class SintScene extends Phaser.Scene {
     }
     ChatTuto = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
     var msgPaciente = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgPaciente);
+
+    console.log("rubeola= " + rub);
+    console.log("varicela= " + vari);
+    console.log("paperas= " + pap);
+    console.log(sintPickeados);
 
     ChatTuto +=
       msgPaciente +

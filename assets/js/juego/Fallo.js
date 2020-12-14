@@ -30,9 +30,9 @@ class Fallo extends Phaser.Scene {
       .setAlpha(0.01)
       .setInteractive({ cursor: "pointer" });
     var V = this.add
-      .text(menu.x, menu.y, Menu, {
+      .text(menu.x, menu.y - 5, Menu, {
         fontFamily: "font1",
-        fontSize: "40px",
+        fontSize: "60px",
       })
       .setTint(0x454545)
       .setOrigin(0.5, 0.5);
@@ -45,6 +45,7 @@ class Fallo extends Phaser.Scene {
       menu.setAlpha(0.01);
       V.setTint(0x454545);
     });
+
     this.add.image(1600, 910, "boton");
     var siguente = this.add
       .image(1600, 910, "boton_s")
@@ -66,16 +67,47 @@ class Fallo extends Phaser.Scene {
       siguenteT.setTint(0x454545);
     });
 
-    siguente.on("pointerdown", () => {
+    menu.on("pointerdown", () => {
+      this.scene.restart("juego");
+      this.scene.restart("juego2");
+      this.scene.sleep("juego");
+      this.scene.sleep("juego2");
+      this.scene.sleep("clock");
+      this.scene.start("Menu");
       score = 240;
       salv = 0;
       tiempo = 10000;
 
+      rubPuesto = 0;
+      varPuesto = 0;
+      papPuesto = 0;
+      dolCabPuesto = 0;
+      fiebrePuesto = 0;
+      congPuesto = 0;
+      infPuesto = 0;
+      gangPuesto = 0;
+      erupPuesto = 0;
+      artPuesto = 0;
+      farPuesto = 0;
+      dolMastPuesto = 0;
+      dolMuscPuesto = 0;
+      fatigaPuesto = 0;
+      perApetPuesto = 0;
+      cansPuesto = 0;
+    });
+
+    siguente.on("pointerdown", () => {
+      score = 240;
+      salv = 0;
+      tiempo = 10000;
+      if (tutoFinish == 1) {
+        musicaS = 1;
+      }
       this.scene.restart("charla_01");
       this.scene.restart("MenuP");
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
-      this.scene.restart("clock");
+      this.scene.start("clock");
       if (scoreFS == 2) {
         this.scene.sleep("juego3");
         this.scene.sleep("juego4");
@@ -90,25 +122,28 @@ class Fallo extends Phaser.Scene {
     });
 
     this.add
-      .text(1000, 140, ResFallo, {
+      .text(1000, 160, ResFallo, {
         fontFamily: "font1",
-        fontSize: "50px",
+        fontSize: "75px",
       })
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     this.add
-      .text(760, 250, Calificacion, {
+      .text(1000, 250, Calificacion, {
         fontFamily: "font1",
         fontSize: "40px",
       })
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     this.add
-      .text(725, 630, ResSalv, {
+      .text(1000, 640, ResSalv, {
         fontFamily: "font1",
         fontSize: "30px",
       })
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     var E = this.add
       .image(1000, 390, "E")
@@ -116,12 +151,13 @@ class Fallo extends Phaser.Scene {
       .setTint(0x000000)
       .setScale(2);
     var excelente = this.add
-      .text(815, 500, Exce, {
+      .text(1000, 500, Exce, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     var MB = this.add
       .image(1000, 390, "MB")
@@ -129,38 +165,41 @@ class Fallo extends Phaser.Scene {
       .setTint(0x000000)
       .setScale(2);
     var muyBueno = this.add
-      .text(835, 500, Mb, {
+      .text(1000, 500, Mb, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     var B = this.add
-      .image(1010, 390, "B")
+      .image(1000, 390, "B")
       .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var bueno = this.add
-      .text(905, 500, ResB, {
+      .text(1000, 500, ResB, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     var S = this.add
-      .image(1010, 390, "S")
+      .image(1000, 390, "S")
       .setAlpha(0.001)
       .setTint(0x000000)
       .setScale(2);
     var satisfactorio = this.add
-      .text(765, 500, ResS, {
+      .text(1000, 500, ResS, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
     var NS = this.add
       .image(1005, 390, "NS")
@@ -168,16 +207,17 @@ class Fallo extends Phaser.Scene {
       .setTint(0x000000)
       .setScale(2);
     var noSatisfactorio = this.add
-      .text(705, 500, ResNs, {
+      .text(1000, 500, ResNs, {
         fontFamily: "font1",
         fontSize: "40px",
       })
       .setAlpha(0.001)
-      .setTint(0x000000);
+      .setTint(0x000000)
+      .setOrigin(0.5);
 
-    var s0 = this.add.image(1005, 830, "0").setScale(0.6).setAlpha(0.01);
-    var s1 = this.add.image(1005, 750, "1").setScale(0.6).setAlpha(0.01);
-    var s2 = this.add.image(1005, 750, "2").setScale(0.6).setAlpha(0.01);
+    var s0 = this.add.image(1005, 800, "0").setScale(0.6).setAlpha(0.01);
+    var s1 = this.add.image(1005, 800, "1").setScale(0.6).setAlpha(0.01);
+    var s2 = this.add.image(1005, 800, "2").setScale(0.6).setAlpha(0.01);
     if (score >= 1000) {
       E.setAlpha(1);
       excelente.setAlpha(1);

@@ -15,14 +15,11 @@ class Exito extends Phaser.Scene {
     var ResS = Phaser.Math.RND.pick(Idioma.juego.resultados.s);
     var ResNs = Phaser.Math.RND.pick(Idioma.juego.resultados.ns);
 
-    this.add.image(960, 540, "consultorio").setScale(1.0);
-
     selloPE = 0;
     selloPS = 0;
-    var negro = this.add
-      .image(960, 540, "negro")
-      .setAlpha(0.4)
-      .setInteractive();
+    this.add.image(960, 540, "consultorio");
+
+    this.add.image(960, 540, "negro").setAlpha(0.4).setInteractive();
 
     this.add.image(1000, 520, "score").setScale(1.7);
 
@@ -48,6 +45,7 @@ class Exito extends Phaser.Scene {
       menu.setAlpha(0.01);
       V.setTint(0x454545);
     });
+
     this.add.image(1600, 910, "boton");
     var siguente = this.add
       .image(1600, 910, "boton_s")
@@ -79,6 +77,23 @@ class Exito extends Phaser.Scene {
       score = 240;
       salv = 0;
       tiempo = 10000;
+
+      rubPuesto = 0;
+      varPuesto = 0;
+      papPuesto = 0;
+      dolCabPuesto = 0;
+      fiebrePuesto = 0;
+      congPuesto = 0;
+      infPuesto = 0;
+      gangPuesto = 0;
+      erupPuesto = 0;
+      artPuesto = 0;
+      farPuesto = 0;
+      dolMastPuesto = 0;
+      dolMuscPuesto = 0;
+      fatigaPuesto = 0;
+      perApetPuesto = 0;
+      cansPuesto = 0;
     });
 
     siguente.on("pointerdown", () => {
@@ -196,7 +211,6 @@ class Exito extends Phaser.Scene {
     var s0 = this.add.image(1005, 800, "0").setScale(0.5).setAlpha(0.01);
     var s1 = this.add.image(1005, 800, "1").setScale(0.5).setAlpha(0.01);
     var s2 = this.add.image(1005, 800, "2").setScale(0.5).setAlpha(0.01);
-
     if (score >= 1000) {
       E.setAlpha(1);
       excelente.setAlpha(1);

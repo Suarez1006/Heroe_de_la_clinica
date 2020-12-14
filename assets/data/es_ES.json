@@ -67,8 +67,8 @@
       "diagTemp": ["Su temperatura es de "]
     },
     "resultados": {
-      "exito": ["Éxito"],
-      "fallo": ["Fracaso"],
+      "exito": ["Diagnóstico exitoso"],
+      "fallo": ["Diagnóstico fallido"],
       "menu": ["Menú"],
       "siguiente": ["Continuar"],
       "calific": ["Calificación"],
