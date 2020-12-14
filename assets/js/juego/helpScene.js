@@ -11,9 +11,9 @@ class helpScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer" });
 
     negro.on("pointerdown", () => {
-      this.scene.sleep();
+      this.scene.stop();
       if (help == 5) {
-        this.scene.run("Menu2");
+        this.scene.start("Menu2");
       }
     });
     this.add.image(960, 540, "ayuda").setInteractive().setScale(1);

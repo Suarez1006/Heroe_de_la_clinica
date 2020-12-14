@@ -15,13 +15,11 @@ class Fallo extends Phaser.Scene {
     var ResS = Phaser.Math.RND.pick(Idioma.juego.resultados.s);
     var ResNs = Phaser.Math.RND.pick(Idioma.juego.resultados.ns);
 
-    
     var cambiopac = this.sound.add("CambioPac");
 
-
-   var cambiopacConfig = {
-    volume: 0.1
-   };
+    var cambiopacConfig = {
+      volume: 0.1,
+    };
 
     selloPE = 0;
     selloPS = 0;
@@ -117,7 +115,7 @@ class Fallo extends Phaser.Scene {
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
       this.scene.start("clock");
-      if (scoreFS == 2) {
+      if (pacientes == 4) {
         this.scene.sleep("juego3");
         this.scene.sleep("juego4");
         this.scene.sleep("sintomasPick");
@@ -244,6 +242,7 @@ class Fallo extends Phaser.Scene {
       NS.setAlpha(1);
       noSatisfactorio.setAlpha(1);
     }
+    finalScore += score;
 
     if (salv == 2) {
       s2.setAlpha(1);

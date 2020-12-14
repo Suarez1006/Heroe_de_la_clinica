@@ -15,6 +15,12 @@ class SintScene extends Phaser.Scene {
     var msgCans = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgCans);
 
     pacientes += 1;
+    rub = 0;
+    vari = 0;
+    pap = 0;
+    rubEnf = 0;
+    variEnf = 0;
+    papEnf = 0;
 
     var sintomasData = this.game.cache.json.get("sintomas");
 
@@ -65,7 +71,7 @@ class SintScene extends Phaser.Scene {
     perApetSint = 0;
     cansSint = 0;
 
-    var enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
+    enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
     temperatura = Phaser.Math.FloatBetween(36, 40);
     let enfermedad;
     var enf = 0;
@@ -223,9 +229,9 @@ class SintScene extends Phaser.Scene {
     ChatTuto = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
     var msgPaciente = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgPaciente);
 
-    console.log("rubeola= " + rub);
-    console.log("varicela= " + vari);
-    console.log("paperas= " + pap);
+    console.log("rubeola= " + rubEnf);
+    console.log("varicela= " + variEnf);
+    console.log("paperas= " + papEnf);
     console.log(sintPickeados);
 
     ChatTuto +=

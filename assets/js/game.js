@@ -186,15 +186,18 @@ var musicConfig = {
   delay: 0,
 };
 var musicConfig2 = {
-  volume : 0.15,
+  volume: 0.15,
 };
 var music2;
 var music3;
 var musicaS = 0;
 var muteado = 0;
 var musicaReproducida = 0;
-var sonidoPlay=0;
+var sonidoPlay = 0;
 
 var fichaVolver = 0;
 var tutoFinish = 0;
 var creado = 0;
+var promedio = 0;
+
+var enfermedadPatron;

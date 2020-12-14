@@ -4,27 +4,69 @@ class scoreScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(551, 310, "final");
+    var Calif = Phaser.Math.RND.pick(Idioma.juego.score.calificaciones);
+    var Salv = Phaser.Math.RND.pick(Idioma.juego.score.salvacion);
 
-    var promedio = finalScore / pacientes;
+    this.add.image(960, 540, "final");
+
+    promedio = finalScore / 4;
 
     this.add
-      .text(551, 412, finalSalv, {
-        fontFamily: "font2",
-        fontSize: "80px",
+      .text(1100, 700, finalSalv + "/8", {
+        fontFamily: "font1",
+        fontSize: "200px",
+        align: "center",
       })
       .setOrigin(0.5)
-      .setScale(0.7);
+      .setScale(0.7)
+      .setTint(0x454545);
 
-    var E = this.add.image(550, 230, "E").setAlpha(0).setScale(1.2);
+    this.add
+      .text(300, 450, Calif, {
+        fontFamily: "font1",
+        fontSize: "75px",
+        align: "left",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
+    this.add
+      .text(300, 700, Salv, {
+        fontFamily: "font1",
+        fontSize: "75px",
+        align: "left",
+      })
+      .setTint(0x454545)
+      .setOrigin(0, 0.5);
 
-    var MB = this.add.image(550, 230, "MB").setAlpha(0).setScale(1.2);
+    var E = this.add
+      .image(1100, 450, "E")
+      .setAlpha(0)
+      .setScale(1.2)
+      .setTint(0x454545);
 
-    var B = this.add.image(550, 230, "B").setAlpha(0).setScale(1.2);
+    var MB = this.add
+      .image(E.x, E.y, "MB")
+      .setAlpha(0)
+      .setScale(1.2)
+      .setTint(0x454545);
 
-    var S = this.add.image(550, 230, "S").setAlpha(0).setScale(1.2);
+    var B = this.add
+      .image(E.x, E.y, "B")
+      .setAlpha(0)
+      .setScale(1.2)
+      .setTint(0x454545);
 
-    var NS = this.add.image(550, 230, "NS").setAlpha(0).setScale(1.2);
+    var S = this.add
+      .image(E.x, E.y, "S")
+      .setAlpha(0)
+      .setScale(1.2)
+      .setTint(0x454545);
+
+    var NS = this.add
+      .image(E.x, E.y, "NS")
+      .setAlpha(0)
+      .setScale(1.2)
+      .setTint(0x454545);
 
     if (promedio >= 1000) {
       E.setAlpha(1);

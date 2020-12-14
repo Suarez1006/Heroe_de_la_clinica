@@ -32,16 +32,16 @@ class varMenu extends Phaser.Scene {
     var sellosound = this.sound.add("Sellar");
 
     var selloConfig = {
-      volume: 0.15
-    }
+      volume: 0.15,
+    };
 
     var escribirSonido = this.sound.add("escribir");
 
     var hojasound = this.sound.add("Cambiarhoja");
 
     var hojaConfig = {
-      volume:0.25
-    } 
+      volume: 0.25,
+    };
 
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
@@ -315,7 +315,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 1) {
         escribirSonido.play();
-        sonidoPlay = 1
+        sonidoPlay = 1;
       }
     });
     //-------------------------------------
@@ -329,7 +329,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 2) {
         escribirSonido.play();
-        sonidoPlay = 2
+        sonidoPlay = 2;
       }
     });
     //-------------------------------------
@@ -343,7 +343,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 3) {
         escribirSonido.play();
-        sonidoPlay = 3
+        sonidoPlay = 3;
       }
     });
     //-------------------------------------
@@ -357,7 +357,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 4) {
         escribirSonido.play();
-        sonidoPlay = 4
+        sonidoPlay = 4;
       }
     });
     //-------------------------------------
@@ -371,7 +371,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 5) {
         escribirSonido.play();
-        sonidoPlay = 5
+        sonidoPlay = 5;
       }
     });
     //-------------------------------------
@@ -385,7 +385,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 6) {
         escribirSonido.play();
-        sonidoPlay = 6
+        sonidoPlay = 6;
       }
     });
     //-------------------------------------
@@ -399,7 +399,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 7) {
         escribirSonido.play();
-        sonidoPlay = 7
+        sonidoPlay = 7;
       }
     });
     //-------------------------------------
@@ -413,7 +413,7 @@ class varMenu extends Phaser.Scene {
       }
       if (sonidoPlay != 8) {
         escribirSonido.play();
-        sonidoPlay = 8
+        sonidoPlay = 8;
       }
     });
     //-------------------------------------
@@ -539,8 +539,6 @@ class varMenu extends Phaser.Scene {
           sanoSello.setAlpha(0.01);
           enfermoSello.setAlpha(1);
           finish = 2;
-          salv += 1;
-          score += 600;
           selloPuesto.setText(Enfermo).setTint(0xff0000);
           varPuesto = 2;
         }

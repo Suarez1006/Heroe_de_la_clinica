@@ -18,9 +18,9 @@ class menuTuto extends Phaser.Scene {
     var hojasound = this.sound.add("Cambiarhoja");
 
     var hojaConfig = {
-      volume:0.25
-    } 
-    
+      volume: 0.25,
+    };
+
     selloPS = 0;
     selloPE = 0;
     var negro = this.add
@@ -209,11 +209,6 @@ class menuTuto extends Phaser.Scene {
       .setTint(0x454545)
       .setOrigin(0.5)
       .setDepth(1);
-
-    flecha.on("pointerdown", () => {
-      chat = 0;
-      this.scene.sleep("clock");
-    });
 
     flecha.on("pointerover", () => {
       flechaS.setAlpha(1);

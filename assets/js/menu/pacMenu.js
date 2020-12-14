@@ -17,8 +17,8 @@ class pacMenu extends Phaser.Scene {
     var hojasound = this.sound.add("Cambiarhoja");
 
     var hojaConfig = {
-      volume:0.25
-    } 
+      volume: 0.25,
+    };
 
     var Nombre = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.nombre);
     var Edad = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.edad);
@@ -332,13 +332,6 @@ class pacMenu extends Phaser.Scene {
       .setOrigin(0.5)
       .setDepth(1);
 
-    flecha.on("pointerdown", () => {
-      score = 240;
-      salv = 0;
-      chat = 0;
-      this.scene.sleep("clock");
-    });
-
     flecha.on("pointerover", () => {
       flechaS.setAlpha(1);
       flechaT.setTint(0xffffff);
@@ -485,7 +478,7 @@ class pacMenu extends Phaser.Scene {
       // --------------------------
       // --------------------------
 
-      if (rub == 1) {
+      if (rubEnf == 1) {
         if (rubPuesto == 2) {
           score += 200;
           salv += 1;
@@ -501,7 +494,7 @@ class pacMenu extends Phaser.Scene {
         }
       }
       // --------------------------
-      else if (vari == 1) {
+      else if (variEnf == 1) {
         if (rubPuesto == 1) {
           score += 200;
         }
@@ -517,7 +510,7 @@ class pacMenu extends Phaser.Scene {
         }
       }
       // --------------------------
-      else if (pap == 1) {
+      else if (papEnf == 1) {
         if (rubPuesto == 1) {
           score += 200;
         }

@@ -482,8 +482,6 @@ class varTuto extends Phaser.Scene {
           sanoSello.setAlpha(0.01);
           enfermoSello.setAlpha(1);
           finish = 2;
-          salv += 1;
-          score += 600;
           selloPuesto.setText(Enfermo).setTint(0xff0000);
           varPuesto = 2;
         }

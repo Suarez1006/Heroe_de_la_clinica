@@ -115,7 +115,7 @@ class Exito extends Phaser.Scene {
       this.scene.sleep("juego");
       this.scene.sleep("juego2");
       this.scene.start("clock");
-      if (scoreFS == 2) {
+      if (pacientes == 4) {
         this.scene.sleep("juego3");
         this.scene.sleep("juego4");
         this.scene.sleep("sintomasPick");
@@ -234,6 +234,10 @@ class Exito extends Phaser.Scene {
     } else {
       NS.setAlpha(1);
       noSatisfactorio.setAlpha(1);
+    }
+    if (pacientes >= 1) {
+      finalScore += score;
+      score = 0;
     }
 
     if (salv == 2) {
