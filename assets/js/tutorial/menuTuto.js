@@ -15,6 +15,12 @@ class menuTuto extends Phaser.Scene {
 
     var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
 
+    var hojasound = this.sound.add("Cambiarhoja");
+
+    var hojaConfig = {
+      volume:0.25
+    } 
+    
     selloPS = 0;
     selloPE = 0;
     var negro = this.add
@@ -46,6 +52,7 @@ class menuTuto extends Phaser.Scene {
 
     sep2.on("pointerdown", () => {
       this.scene.stop();
+      hojasound.play(hojaConfig);
       this.scene.start("var_Tuto");
       fichaVolver = 1;
     });

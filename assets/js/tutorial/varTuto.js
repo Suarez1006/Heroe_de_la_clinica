@@ -18,6 +18,24 @@ class varTuto extends Phaser.Scene {
     var sep1;
     var sep2;
 
+    var sellopuestoPS = 0;
+    var sellopuestoPE = 0;
+
+    var sellosound = this.sound.add("Sellar");
+
+    var selloConfig = {
+      volume: 0.15
+    }
+
+    var hojasound = this.sound.add("Cambiarhoja");
+
+    var hojaConfig = {
+      volume:0.25
+    } 
+
+    var escribirSonido = this.sound.add("escribir");
+
+
     selloPS = 0;
     selloPE = 0;
     var negro = this.add
@@ -57,6 +75,7 @@ class varTuto extends Phaser.Scene {
       sep1.setAlpha(0.001);
     });
     sep1.on("pointerdown", () => {
+      hojasound.play(hojaConfig);
       sep1.setAlpha(0.001);
       this.scene.stop();
       this.scene.start("Menu3");
@@ -246,6 +265,10 @@ class varTuto extends Phaser.Scene {
         finish = 1;
         fiebrePuesto = 1;
       }
+      if (sonidoPlay != 1) {
+        escribirSonido.play();
+        sonidoPlay = 1
+      }
     });
     noP.on("pointerdown", () => {
       circuloA = 2;
@@ -254,6 +277,10 @@ class varTuto extends Phaser.Scene {
         circulo.setAlpha(0.01);
         finish = 1;
         fiebrePuesto = 2;
+      }
+      if (sonidoPlay != 2) {
+        escribirSonido.play();
+        sonidoPlay = 2
       }
     });
     siP2.on("pointerdown", () => {
@@ -264,6 +291,10 @@ class varTuto extends Phaser.Scene {
         finish = 1;
         dolCabPuesto = 1;
       }
+      if (sonidoPlay != 3) {
+        escribirSonido.play();
+        sonidoPlay = 3
+      }
     });
     noP2.on("pointerdown", () => {
       circuloA2 = 2;
@@ -272,6 +303,10 @@ class varTuto extends Phaser.Scene {
         circulo3.setAlpha(0.01);
         finish = 1;
         dolCabPuesto = 2;
+      }
+      if (sonidoPlay != 4) {
+        escribirSonido.play();
+        sonidoPlay = 4
       }
     });
     siP3.on("pointerdown", () => {
@@ -282,6 +317,10 @@ class varTuto extends Phaser.Scene {
         finish = 1;
         perApetPuesto = 1;
       }
+      if (sonidoPlay != 5) {
+        escribirSonido.play();
+        sonidoPlay = 5
+      }
     });
     noP3.on("pointerdown", () => {
       circuloA3 = 2;
@@ -290,6 +329,10 @@ class varTuto extends Phaser.Scene {
         circulo5.setAlpha(0.01);
         finish = 1;
         perApetPuesto = 2;
+      }
+      if (sonidoPlay != 6) {
+        escribirSonido.play();
+        sonidoPlay = 6
       }
     });
     siP4.on("pointerdown", () => {
@@ -300,6 +343,10 @@ class varTuto extends Phaser.Scene {
         finish = 1;
         cansPuesto = 1;
       }
+      if (sonidoPlay != 7) {
+        escribirSonido.play();
+        sonidoPlay = 7
+      }
     });
     noP4.on("pointerdown", () => {
       circuloA4 = 2;
@@ -308,6 +355,10 @@ class varTuto extends Phaser.Scene {
         circulo7.setAlpha(0.01);
         finish = 1;
         cansPuesto = 2;
+      }
+      if (sonidoPlay != 8) {
+        escribirSonido.play();
+        sonidoPlay = 8
       }
     });
 
@@ -408,7 +459,13 @@ class varTuto extends Phaser.Scene {
     });
 
     ficha.on("pointerdown", () => {
+      //sellosound.play(selloConfig);
       if (selloPS === 1) {
+        if (sellopuestoPS === 0) {
+          sellopuestoPS = 1;
+          sellopuestoPE = 0;
+          sellosound.play(selloConfig);
+        }
         if (finish == 1) {
           selloPS = 2;
           sanoSello.setAlpha(1);
@@ -418,6 +475,11 @@ class varTuto extends Phaser.Scene {
           varPuesto = 1;
         }
       } else if (selloPE == 1) {
+        if (sellopuestoPE === 0) {
+          sellopuestoPE = 1;
+          sellopuestoPS = 0;
+          sellosound.play(selloConfig);
+        }
         if (finish == 1) {
           selloPE = 2;
           sanoSello.setAlpha(0.01);

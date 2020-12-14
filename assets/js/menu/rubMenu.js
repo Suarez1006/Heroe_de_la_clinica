@@ -29,6 +29,23 @@ class rubMenu extends Phaser.Scene {
     selloPS = 0;
     selloPE = 0;
 
+    var sellopuestoPS = 0;
+    var sellopuestoPE = 0;
+
+    var sellosound = this.sound.add("Sellar");
+
+    var selloConfig = {
+      volume: 0.15
+    }
+
+    var escribirSonido = this.sound.add("escribir");
+
+    var hojasound = this.sound.add("Cambiarhoja");
+
+    var hojaConfig = {
+      volume:0.25
+    } 
+
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
     var negro = this.add
@@ -62,6 +79,7 @@ class rubMenu extends Phaser.Scene {
     });
     sep1.on("pointerdown", () => {
       this.scene.stop();
+      hojasound.play(hojaConfig);
       conectar = "pac";
       this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
@@ -89,6 +107,7 @@ class rubMenu extends Phaser.Scene {
     });
     sep3.on("pointerdown", () => {
       this.scene.stop();
+      hojasound.play(hojaConfig);
       conectar = "var";
       this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
@@ -110,6 +129,7 @@ class rubMenu extends Phaser.Scene {
     });
     sep4.on("pointerdown", () => {
       this.scene.stop();
+       hojasound.play(hojaConfig);
       conectar = "pap";
       this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
@@ -404,6 +424,7 @@ class rubMenu extends Phaser.Scene {
     var circuloA7;
     var circuloA8;
 
+    //------------------------------------
     siP.on("pointerdown", () => {
       circuloA = 1;
       if (circuloA === 1) {
@@ -412,7 +433,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         fiebrePuesto = 1;
       }
+       if (sonidoPlay != 1) {
+        escribirSonido.play();
+        sonidoPlay = 1
+      }
     });
+    //-----------------------------------
     noP.on("pointerdown", () => {
       circuloA = 2;
       if (circuloA === 2) {
@@ -421,7 +447,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         fiebrePuesto = 2;
       }
+       if (sonidoPlay != 2) {
+        escribirSonido.play();
+        sonidoPlay = 2
+      }
     });
+    //-----------------------------------
     siP2.on("pointerdown", () => {
       circuloA2 = 1;
       if (circuloA2 === 1) {
@@ -430,7 +461,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         dolCabPuesto = 1;
       }
+       if (sonidoPlay != 3) {
+        escribirSonido.play();
+        sonidoPlay = 3
+      }
     });
+    //-----------------------------------
     noP2.on("pointerdown", () => {
       circuloA2 = 2;
       if (circuloA2 === 2) {
@@ -439,7 +475,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         dolCabPuesto = 2;
       }
+       if (sonidoPlay != 4) {
+        escribirSonido.play();
+        sonidoPlay = 4
+      }
     });
+    //-----------------------------------
     siP3.on("pointerdown", () => {
       circuloA3 = 1;
       if (circuloA3 === 1) {
@@ -448,7 +489,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         congPuesto = 1;
       }
+       if (sonidoPlay != 5) {
+        escribirSonido.play();
+        sonidoPlay = 5
+      }
     });
+    //-----------------------------------
     noP3.on("pointerdown", () => {
       circuloA3 = 2;
       if (circuloA3 === 2) {
@@ -457,7 +503,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         congPuesto = 2;
       }
+       if (sonidoPlay != 6) {
+        escribirSonido.play();
+        sonidoPlay = 6
+      }
     });
+    //-----------------------------------
     siP4.on("pointerdown", () => {
       circuloA4 = 1;
       if (circuloA4 === 1) {
@@ -466,7 +517,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         infPuesto = 1;
       }
+       if (sonidoPlay != 7) {
+        escribirSonido.play();
+        sonidoPlay = 7
+      }
     });
+    //-----------------------------------
     noP4.on("pointerdown", () => {
       circuloA4 = 2;
       if (circuloA4 === 2) {
@@ -475,8 +531,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         infPuesto = 2;
       }
+       if (sonidoPlay != 8) {
+        escribirSonido.play();
+        sonidoPlay = 8
+      }
     });
-
+    //-----------------------------------
     siP5.on("pointerdown", () => {
       circuloA5 = 1;
       if (circuloA5 === 1) {
@@ -485,7 +545,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         gangPuesto = 1;
       }
+       if (sonidoPlay != 9) {
+        escribirSonido.play();
+        sonidoPlay = 9
+      }
     });
+    //-----------------------------------
     noP5.on("pointerdown", () => {
       circuloA5 = 2;
       if (circuloA5 === 2) {
@@ -494,7 +559,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         gangPuesto = 2;
       }
+       if (sonidoPlay != 10) {
+        escribirSonido.play();
+        sonidoPlay = 10
+      }
     });
+    //-----------------------------------
     siP6.on("pointerdown", () => {
       circuloA6 = 1;
       if (circuloA6 === 1) {
@@ -503,7 +573,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         erupPuesto = 1;
       }
+       if (sonidoPlay != 11) {
+        escribirSonido.play();
+        sonidoPlay = 11
+      }
     });
+    //-----------------------------------
     noP6.on("pointerdown", () => {
       circuloA6 = 2;
       if (circuloA6 === 2) {
@@ -512,7 +587,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         erupPuesto = 2;
       }
+       if (sonidoPlay != 12) {
+        escribirSonido.play();
+        sonidoPlay = 12
+      }
     });
+    //-----------------------------------
     siP7.on("pointerdown", () => {
       circuloA7 = 1;
       if (circuloA7 === 1) {
@@ -521,7 +601,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         artPuesto = 1;
       }
+       if (sonidoPlay != 13) {
+        escribirSonido.play();
+        sonidoPlay = 13
+      }
     });
+    //-----------------------------------
     noP7.on("pointerdown", () => {
       circuloA7 = 2;
       if (circuloA7 === 2) {
@@ -530,7 +615,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         artPuesto = 2;
       }
+       if (sonidoPlay != 14) {
+        escribirSonido.play();
+        sonidoPlay = 14
+      }
     });
+    //-----------------------------------
     siP8.on("pointerdown", () => {
       circuloA8 = 1;
       if (circuloA8 === 1) {
@@ -539,7 +629,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         farPuesto = 1;
       }
+       if (sonidoPlay != 15) {
+        escribirSonido.play();
+        sonidoPlay = 15
+      }
     });
+    //-----------------------------------
     noP8.on("pointerdown", () => {
       circuloA8 = 2;
       if (circuloA8 === 2) {
@@ -548,8 +643,12 @@ class rubMenu extends Phaser.Scene {
         finish = 1;
         farPuesto = 2;
       }
+       if (sonidoPlay != 16) {
+        escribirSonido.play();
+        sonidoPlay = 16
+      }
     });
-
+    //-----------------------------------
     var enfermoSello = this.add
       .image(750, 870, "enfermo")
       .setAlpha(0.001)
@@ -649,6 +748,11 @@ class rubMenu extends Phaser.Scene {
 
     ficha.on("pointerdown", () => {
       if (selloPS === 1) {
+        if (sellopuestoPS === 0) {
+          sellopuestoPS = 1;
+          sellopuestoPE = 0;
+          sellosound.play(selloConfig);
+        }
         if (finish == 1) {
           selloPS = 2;
           sanoSello.setAlpha(1);
@@ -658,6 +762,11 @@ class rubMenu extends Phaser.Scene {
           rubPuesto = 1;
         }
       } else if (selloPE == 1) {
+        if (sellopuestoPE === 0) {
+          sellopuestoPE = 1;
+          sellopuestoPS = 0;
+          sellosound.play(selloConfig);
+        }
         if (finish == 1) {
           selloPE = 2;
           sanoSello.setAlpha(0.01);

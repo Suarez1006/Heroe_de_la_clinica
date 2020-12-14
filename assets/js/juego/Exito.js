@@ -15,6 +15,12 @@ class Exito extends Phaser.Scene {
     var ResS = Phaser.Math.RND.pick(Idioma.juego.resultados.s);
     var ResNs = Phaser.Math.RND.pick(Idioma.juego.resultados.ns);
 
+    var cambiopac = this.sound.add("CambioPac");
+
+    var cambiopacConfig = {
+      volume: 0.1,
+    };
+
     selloPE = 0;
     selloPS = 0;
     this.add.image(960, 540, "consultorio");
@@ -97,6 +103,7 @@ class Exito extends Phaser.Scene {
     });
 
     siguente.on("pointerdown", () => {
+      cambiopac.play(cambiopacConfig);
       score = 240;
       salv = 0;
       tiempo = 10000;

@@ -14,6 +14,12 @@ class pacMenu extends Phaser.Scene {
     var sep3;
     var sep4;
 
+    var hojasound = this.sound.add("Cambiarhoja");
+
+    var hojaConfig = {
+      volume:0.25
+    } 
+
     var Nombre = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.nombre);
     var Edad = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.edad);
     var GSanguineo = Phaser.Math.RND.pick(Idioma.menu.pacMenu.pac1.gSanguineo);
@@ -102,6 +108,7 @@ class pacMenu extends Phaser.Scene {
     });
     sep2.on("pointerdown", () => {
       this.scene.stop();
+      hojasound.play(hojaConfig);
       conectar = "rub";
       this.scene.run("conectorScene");
       sep2.setAlpha(0.01);
@@ -123,6 +130,7 @@ class pacMenu extends Phaser.Scene {
     });
     sep3.on("pointerdown", () => {
       this.scene.stop();
+      hojasound.play(hojaConfig);
       conectar = "var";
       this.scene.run("conectorScene");
       sep2.setAlpha(0.01);
@@ -144,6 +152,7 @@ class pacMenu extends Phaser.Scene {
     });
     sep4.on("pointerdown", () => {
       this.scene.stop();
+      hojasound.play(hojaConfig);
       conectar = "pap";
       this.scene.run("conectorScene");
       sep2.setAlpha(0.01);

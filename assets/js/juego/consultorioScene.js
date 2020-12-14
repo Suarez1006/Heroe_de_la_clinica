@@ -13,23 +13,29 @@ class consultorioScene extends Phaser.Scene {
     var Varicela = Phaser.Math.RND.pick(Idioma.menu.infoPoster.varicela);
     var Paperas = Phaser.Math.RND.pick(Idioma.menu.infoPoster.paperas);
 
+   
+    var fichasound = this.sound.add("Ficha");
+    
+    var fichaConfig = {
+         volume : 0.25
+       }
+
+    var puertasound = this.sound.add("Puerta");
+
+      var puertaConfig = {
+      volume : 0.05
+     }
+    
+   
     music3 = this.sound.add("menu_Game1");
 
     if (pacientes == 1) {
       finalSalv = 0;
     }
-    var musicConfig = {
-      mute: false,
-      volume: 1,
-      rate: 1,
-      detune: 0,
-      seek: 0,
-      loop: true,
-      delay: 0,
-    };
+  
     if (musicaReproducida == 0) {
       if (musica === 0) {
-        music3.play(musicConfig);
+        music3.play(musicConfig2);
       }
     }
 
@@ -82,6 +88,7 @@ class consultorioScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
+      fichasound.play(fichaConfig);
       musicaReproducida = 1;
       conectar = "pac";
       this.scene.run("conectorScene");
@@ -211,6 +218,7 @@ class consultorioScene extends Phaser.Scene {
     puerta.on("pointerdown", () => {
       pausa = 8;
       this.scene.sleep();
+      puertasound.play(puertaConfig);
       this.scene.start("juego4");
     });
 

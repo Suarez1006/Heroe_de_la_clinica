@@ -103,6 +103,71 @@ class loader extends Phaser.Scene {
       "assets/musicFX/music_game.ogg",
     ]);
 
+    this.load.audio("escribir", [
+      "assets/musicFX/FX_Escribir.mp3",
+      "assets/musicFX/FX_Escribir.ogg",
+    ]);
+
+    this.load.audio("pickEsteto", [
+      "assets/musicFX/FX_AgarrarEsteto.ogg",
+      "assets/musicFX/FX_AgarrarEsteto.mp3",
+    ]);
+
+    this.load.audio("pickLinter", [
+      "assets/musicFX/FX_AgarrarLinter.ogg",
+      "assets/musicFX/FX_AgarrarLinter.mp3",
+    ]);
+
+    this.load.audio("pickTermos", [
+      "assets/musicFX/FX_AgarrarTermos.ogg",
+      "assets/musicFX/FX_AgarrarTermos.mp3",
+    ]);
+
+    this.load.audio("pickGuante", [
+      "assets/musicFX/FX_AgarrarGuante.ogg",
+      "assets/musicFX/FX_AgarrarGuante.mp3",
+    ]);
+
+    this.load.audio("Soltar", [
+      "assets/musicFX/FX_Soltar.ogg",
+      "assets/musicFX/FX_Soltar.mp3",
+    ]);
+
+    this.load.audio("Alerta", [
+      "assets/musicFX/FX_Alerta.ogg",
+      "assets/musicFX/FX_Alerta.mp3",
+    ]);
+
+    this.load.audio("CambioPac", [
+      "assets/musicFX/FX_CambioPac.ogg",
+      "assets/musicFX/FX_CambioPac.mp3",
+    ]);
+
+    this.load.audio("Sellar", [
+      "assets/musicFX/FX_Sellar.ogg",
+      "assets/musicFX/FX_Sellar.mp3",
+    ]);
+
+    this.load.audio("Cambiarhoja", [
+      "assets/musicFX/FX_Cambiarhoja.ogg",
+      "assets/musicFX/FX_Cambiarhoja.mp3",
+    ]);
+
+    this.load.audio("Puerta", [
+      "assets/musicFX/FX_Puerta.ogg",
+      "assets/musicFX/FX_Puerta.mp3",
+    ]);
+
+    this.load.audio("Letra", [
+      "assets/musicFX/FX_Letra.ogg",
+      "assets/musicFX/FX_Letra.mp3",
+    ]);
+
+    this.load.audio("Ficha", [
+      "assets/musicFX/FX_Ficha.ogg",
+      "assets/musicFX/FX_Ficha.mp3",
+    ]);
+
     this.load.image("ayuda", "assets/imagenes/flotantes/ayuda.png");
     this.load.image("cartelAyuda", "assets/imagenes/flotantes/cartelAyuda.png");
     this.load.image("chatPNG", "assets/imagenes/complementos/chat.png");
