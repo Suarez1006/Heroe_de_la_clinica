@@ -46,8 +46,6 @@ class papMenu extends Phaser.Scene {
       volume: 0.25,
     };
 
-    this.add.image(960, 540, "consultorio").setScale(1.0);
-
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.4)
