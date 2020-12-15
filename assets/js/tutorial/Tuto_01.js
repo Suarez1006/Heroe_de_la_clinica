@@ -47,7 +47,9 @@ class Tuto_01 extends Phaser.Scene {
 
           if (time10s == 10) {
             this.scene.pause();
-            alertasound.play(alertaConfig);
+            if(muteado === 0) {
+              alertasound.play(alertaConfig);
+            }
             this.scene.run("help10s");
             ayu10 = 1;
           }
@@ -89,7 +91,9 @@ class Tuto_01 extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      fichasound.play(fichaConfig);
+      if(muteado === 0) {
+        fichasound.play(fichaConfig);
+      }
       if (fichaVolver === 0) {
         this.scene.run("Menu3");
       } else if (fichaVolver === 1) {
@@ -170,7 +174,9 @@ class Tuto_01 extends Phaser.Scene {
 
     puerta.on("pointerdown", () => {
       this.scene.sleep();
-      puertasound.play(puertaConfig);
+      if(muteado === 0) {
+        puertasound.play(puertaConfig);
+      }
       this.scene.start("juego2");
     });
 

@@ -15,6 +15,7 @@ class menuTuto extends Phaser.Scene {
 
     var Terminar = Phaser.Math.RND.pick(Idioma.fichas.terminar);
 
+    
     var hojasound = this.sound.add("Cambiarhoja");
 
     var hojaConfig = {
@@ -52,7 +53,9 @@ class menuTuto extends Phaser.Scene {
 
     sep2.on("pointerdown", () => {
       this.scene.stop();
+    if (muteado === 0) {
       hojasound.play(hojaConfig);
+    }
       this.scene.start("var_Tuto");
       fichaVolver = 1;
     });
@@ -237,10 +240,12 @@ class menuTuto extends Phaser.Scene {
       }
 
       if (varPuesto == 2) {
+        tutoFinish =1;
         this.scene.start("score_E");
         score += 600;
         salv += 1;
       } else if (varPuesto == 1) {
+        tutoFinish =1;
         this.scene.start("score_F");
       }
     });

@@ -34,6 +34,7 @@ class helpScene extends Phaser.Scene {
       if (help == 5) {
         this.scene.start("Menu2");
       } else {
+        musicaReproducida = 1;
         this.scene.start("Menu");
       }
     });

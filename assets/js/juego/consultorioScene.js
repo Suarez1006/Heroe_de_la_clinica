@@ -13,31 +13,77 @@ class consultorioScene extends Phaser.Scene {
     var Varicela = Phaser.Math.RND.pick(Idioma.menu.infoPoster.varicela);
     var Paperas = Phaser.Math.RND.pick(Idioma.menu.infoPoster.paperas);
 
-   
     var fichasound = this.sound.add("Ficha");
-    
+
     var fichaConfig = {
-         volume : 0.25
-       }
+      volume: 0.25,
+    };
 
     var puertasound = this.sound.add("Puerta");
 
-      var puertaConfig = {
-      volume : 0.05
-     }
-    
-   
-    music3 = this.sound.add("menu_Game1");
+    var puertaConfig = {
+      volume: 0.05,
+    };
+
+    if (pacientesMusic === 1) {
+      music3 = this.sound.add("menu_Game1");
+
+      if (muteado === 0) {
+        if (musicaReproducida == 0) {
+          if (musica === 0) {
+            music3.play(musicConfig2);
+          }
+        }
+      }
+    }
+
+    if (pacientesMusic === 2) {
+      music4 = this.sound.add("menu_Game1");
+      console.log("demente");
+      
+    if (muteado === 0) {
+      if (musicaReproducida == 0) {
+        if (musica === 0) {
+          music4.play(musicConfig2);
+        }
+      }
+    }
+    }
+
+    if (pacientesMusic === 3) {
+      music5 = this.sound.add("menu_Game1");
+
+      
+
+    if (muteado === 0) {
+      if (musicaReproducida == 0) {
+        if (musica === 0) {
+          music5.play(musicConfig2);
+        }
+      }
+    }
+
+    }
+
+    if (pacientesMusic === 4) {
+      music6 = this.sound.add("menu_Game1");
+
+        
+
+    if (muteado === 0) {
+      if (musicaReproducida == 0) {
+        if (musica === 0) {
+          music6.play(musicConfig2);
+        }
+      }
+    }
+    }
 
     if (pacientes == 1) {
       finalSalv = 0;
     }
+
   
-    if (musicaReproducida == 0) {
-      if (musica === 0) {
-        music3.play(musicConfig2);
-      }
-    }
 
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
@@ -88,7 +134,9 @@ class consultorioScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     ficha_c.on("pointerdown", () => {
-      fichasound.play(fichaConfig);
+      if (muteado === 0) {
+        fichasound.play(fichaConfig);
+      }
       musicaReproducida = 1;
       conectar = "pac";
       this.scene.run("conectorScene");
@@ -218,7 +266,9 @@ class consultorioScene extends Phaser.Scene {
     puerta.on("pointerdown", () => {
       pausa = 8;
       this.scene.sleep();
-      puertasound.play(puertaConfig);
+      if (muteado === 0) {
+        puertasound.play(puertaConfig);
+      }
       this.scene.start("juego4");
     });
 

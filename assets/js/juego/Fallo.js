@@ -103,7 +103,9 @@ class Fallo extends Phaser.Scene {
     });
 
     siguente.on("pointerdown", () => {
-      cambiopac.play(cambiopacConfig);
+      if (muteado == 0) {
+        cambiopac.play(cambiopacConfig);
+      }
       score = 240;
       salv = 0;
       tiempo = 10000;

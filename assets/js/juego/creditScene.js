@@ -51,6 +51,7 @@ class creditScene extends Phaser.Scene {
       .setOrigin(0);
 
     volver.on("pointerdown", () => {
+      musicaReproducida = 1;
       this.scene.start("Menu");
     });
     volver.on("pointerover", () => {

@@ -190,10 +190,15 @@ var musicConfig2 = {
 };
 var music2;
 var music3;
+var music4;
+var music5;
+var music6;
 var musicaS = 0;
 var muteado = 0;
 var musicaReproducida = 0;
 var sonidoPlay = 0;
+var pacientesMusic=0;
+
 
 var fichaVolver = 0;
 var tutoFinish = 0;

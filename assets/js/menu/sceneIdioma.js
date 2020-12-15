@@ -54,7 +54,7 @@ class sceneIdioma extends Phaser.Scene {
       selecIdioma = "es";
       Idioma = this.game.cache.json.get("es_ES");
       this.scene.start("Menu");
-      //this.scale.startFullscreen();
+      this.scale.startFullscreen();
       muteado = 0;
     });
     Idioma1.on("pointerover", () => {
@@ -78,7 +78,7 @@ class sceneIdioma extends Phaser.Scene {
       selecIdioma = "en";
       Idioma = this.game.cache.json.get("en_EN");
       this.scene.start("Menu");
-      //this.scale.startFullscreen();
+      this.scale.startFullscreen();
       muteado = 0;
     });
     Idioma2.on("pointerover", () => {
@@ -102,7 +102,7 @@ class sceneIdioma extends Phaser.Scene {
       selecIdioma = "pt";
       Idioma = this.game.cache.json.get("pt_PT");
       this.scene.start("Menu");
-      //this.scale.startFullscreen();
+      this.scale.startFullscreen();
       muteado = 0;
     });
     Idioma3.on("pointerover", () => {

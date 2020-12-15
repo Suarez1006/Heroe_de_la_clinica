@@ -23,10 +23,10 @@ class mainMenu extends Phaser.Scene {
 
     music = this.sound.add("menu_Musica");
 
-    if (muteado == 0) {
-      if (musicaS == 0) {
-        music.play(musicConfig);
-      }
+    music.play(musicConfig);
+
+    if (muteado == 1) {
+      music.setMute(true);
     }
 
     var Jugar = Phaser.Math.RND.pick(Idioma.menu.mainMenu.jugar);
@@ -112,6 +112,7 @@ class mainMenu extends Phaser.Scene {
     });
 
     credits.on("pointerdown", () => {
+      music.stop();
       this.scene.start("creditos");
     });
     credits.on("pointerover", () => {
@@ -126,6 +127,7 @@ class mainMenu extends Phaser.Scene {
     ayuda.on("pointerdown", () => {
       pausa = 1;
       this.scene.start("ayuda_1");
+      music.stop();
       ayuda.setAlpha(0.01);
       ayudaT.setTint(0x454545);
     });
@@ -149,11 +151,11 @@ class mainMenu extends Phaser.Scene {
 
     botonMusic.on("pointerdown", () => {
       if (muteado == 0) {
-        music.stop();
+        music.setMute(true);
         muteado = 1;
         muteMusic.setAlpha(1);
       } else {
-        music.play();
+        music.setMute(false);
         muteado = 0;
         muteMusic.setAlpha(0.01);
       }
@@ -164,5 +166,9 @@ class mainMenu extends Phaser.Scene {
     botonMusic.on("pointerout", () => {
       botonMusic.setAlpha(0.01);
     });
+
+    if (muteado == 1) {
+      muteMusic.setAlpha(1);
+    }
   }
 }

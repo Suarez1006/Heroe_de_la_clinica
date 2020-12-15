@@ -108,7 +108,9 @@ class pacMenu extends Phaser.Scene {
     });
     sep2.on("pointerdown", () => {
       this.scene.stop();
-      hojasound.play(hojaConfig);
+      if (muteado == 0) {
+        hojasound.play(hojaConfig);
+      }
       conectar = "rub";
       this.scene.run("conectorScene");
       sep2.setAlpha(0.01);
@@ -130,7 +132,9 @@ class pacMenu extends Phaser.Scene {
     });
     sep3.on("pointerdown", () => {
       this.scene.stop();
-      hojasound.play(hojaConfig);
+      if (muteado == 0) {
+        hojasound.play(hojaConfig);
+      }
       conectar = "var";
       this.scene.run("conectorScene");
       sep2.setAlpha(0.01);
@@ -152,7 +156,9 @@ class pacMenu extends Phaser.Scene {
     });
     sep4.on("pointerdown", () => {
       this.scene.stop();
-      hojasound.play(hojaConfig);
+      if (muteado == 0) {
+        hojasound.play(hojaConfig);
+      }
       conectar = "pap";
       this.scene.run("conectorScene");
       sep2.setAlpha(0.01);
@@ -482,6 +488,7 @@ class pacMenu extends Phaser.Scene {
         if (rubPuesto == 2) {
           score += 200;
           salv += 1;
+
           this.scene.start("score_E");
         } else {
           this.scene.start("score_F");

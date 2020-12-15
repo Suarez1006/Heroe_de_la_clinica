@@ -30,32 +30,32 @@ class camillaScene extends Phaser.Scene {
     var DiagTemp = Phaser.Math.RND.pick(Idioma.juego.diagnostico.diagTemp);
 
     var fichasound = this.sound.add("Ficha");
-    
+
     var fichaConfig = {
-         volume : 0.25
-       }  
-    
+      volume: 0.25,
+    };
+
     var puertasound = this.sound.add("Puerta");
 
     var puertaConfig = {
-    volume : 0.05
-   }
+      volume: 0.05,
+    };
 
     var estetosound = this.sound.add("pickEsteto");
 
-      var termossound = this.sound.add("pickTermos");
+    var termossound = this.sound.add("pickTermos");
 
-      var lintersound = this.sound.add("pickLinter");
+    var lintersound = this.sound.add("pickLinter");
 
-      var guantesound = this.sound.add("pickGuante");
+    var guantesound = this.sound.add("pickGuante");
 
-      var soltar = 0;
-     
-      var soltarsound = this.sound.add("Soltar");
+    var soltar = 0;
 
-      var GuanteConfig = {
-        volume: 0.4
-      };
+    var soltarsound = this.sound.add("Soltar");
+
+    var GuanteConfig = {
+      volume: 0.4,
+    };
 
     var gvar = 0;
     var evar = 0;
@@ -92,7 +92,9 @@ class camillaScene extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      fichasound.play(fichaConfig);
+      if (muteado === 0) {
+        fichasound.play(fichaConfig);
+      }
       conectar = "pac";
       this.scene.run("conectorScene");
       pausa = 8;
@@ -166,7 +168,9 @@ class camillaScene extends Phaser.Scene {
     puerta.on("pointerdown", () => {
       pausa = 7;
       this.scene.sleep();
-      puertasound.play(puertaConfig);
+      if (muteado === 0) {
+        puertasound.play(puertaConfig);
+      }
       this.scene.start("juego3");
     });
 
@@ -207,13 +211,15 @@ class camillaScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     guantes_s.on("pointerdown", () => {
-      if (soltar != 1) {
-        guantesound.play(GuanteConfig);
-        soltar = 1
-      } else if (soltar === 1) {
-        soltarsound.play(GuanteConfig);
-        soltar = 0;
-      } 
+      if (muteado === 0) {
+        if (soltar != 1) {
+          guantesound.play(GuanteConfig);
+          soltar = 1;
+        } else if (soltar === 1) {
+          soltarsound.play(GuanteConfig);
+          soltar = 0;
+        }
+      }
       if (gvar == 0) {
         guantes_s.setTint(0xffff00);
         gvar = 1;
@@ -265,13 +271,15 @@ class camillaScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     esteto_s.on("pointerdown", () => {
-      if (soltar != 1) {
-        estetosound.play();
-        soltar = 1
-      } else if (soltar === 1) {
-        soltarsound.play(GuanteConfig);
-        soltar = 0;
-      } 
+      if (muteado === 0) {
+        if (soltar != 1) {
+          estetosound.play();
+          soltar = 1;
+        } else if (soltar === 1) {
+          soltarsound.play(GuanteConfig);
+          soltar = 0;
+        }
+      }
       if (evar == 0) {
         esteto_s.setTint(0xffff00);
         gvar = 0;
@@ -323,13 +331,15 @@ class camillaScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     linterna_s.on("pointerdown", () => {
-      if (soltar != 1) {
-        lintersound.play();
-        soltar = 1
-      } else if (soltar === 1) {
-        soltarsound.play(GuanteConfig);
-        soltar = 0;
-      } 
+      if (muteado === 0) {
+        if (soltar != 1) {
+          lintersound.play();
+          soltar = 1;
+        } else if (soltar === 1) {
+          soltarsound.play(GuanteConfig);
+          soltar = 0;
+        }
+      }
       if (lvar == 0) {
         linterna_s.setTint(0xffff00);
         gvar = 0;
@@ -381,13 +391,15 @@ class camillaScene extends Phaser.Scene {
       .setInteractive({ cursor: "pointer", pixelPerfect: "true" });
 
     termometro_s.on("pointerdown", () => {
-      if (soltar != 1) {
-        termossound.play();
-        soltar = 1
-      } else if (soltar === 1) {
-        soltarsound.play(GuanteConfig);
-        soltar = 0;
-      } 
+      if (muteado === 0) {
+        if (soltar != 1) {
+          termossound.play();
+          soltar = 1;
+        } else if (soltar === 1) {
+          soltarsound.play(GuanteConfig);
+          soltar = 0;
+        }
+      }
       if (tvar == 0) {
         termometro_s.setTint(0xffff00);
         gvar = 0;

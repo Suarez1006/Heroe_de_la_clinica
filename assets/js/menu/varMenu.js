@@ -76,7 +76,9 @@ class varMenu extends Phaser.Scene {
     });
     sep1.on("pointerdown", () => {
       this.scene.stop();
-      hojasound.play(hojaConfig);
+      if (muteado == 0) {
+        hojasound.play(hojaConfig);
+      }
       conectar = "pac";
       this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
@@ -98,7 +100,9 @@ class varMenu extends Phaser.Scene {
     });
     sep2.on("pointerdown", () => {
       this.scene.stop();
-      hojasound.play(hojaConfig);
+      if (muteado == 0) {
+        hojasound.play(hojaConfig);
+      }
       conectar = "rub";
       this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
@@ -126,7 +130,9 @@ class varMenu extends Phaser.Scene {
     });
     sep4.on("pointerdown", () => {
       this.scene.stop();
-      hojasound.play(hojaConfig);
+      if (muteado == 0) {
+        hojasound.play(hojaConfig);
+      }
       conectar = "pap";
       this.scene.run("conectorScene");
       sep1.setAlpha(0.01);
@@ -313,9 +319,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         fiebrePuesto = 1;
       }
-      if (sonidoPlay != 1) {
-        escribirSonido.play();
-        sonidoPlay = 1;
+      if (muteado == 0) {
+        if (sonidoPlay != 1) {
+          escribirSonido.play();
+          sonidoPlay = 1;
+        }
       }
     });
     //-------------------------------------
@@ -327,9 +335,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         fiebrePuesto = 2;
       }
-      if (sonidoPlay != 2) {
-        escribirSonido.play();
-        sonidoPlay = 2;
+      if (muteado == 0) {
+        if (sonidoPlay != 2) {
+          escribirSonido.play();
+          sonidoPlay = 2;
+        }
       }
     });
     //-------------------------------------
@@ -341,9 +351,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         dolCabPuesto = 1;
       }
-      if (sonidoPlay != 3) {
-        escribirSonido.play();
-        sonidoPlay = 3;
+      if (muteado == 0) {
+        if (sonidoPlay != 3) {
+          escribirSonido.play();
+          sonidoPlay = 3;
+        }
       }
     });
     //-------------------------------------
@@ -355,9 +367,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         dolCabPuesto = 2;
       }
-      if (sonidoPlay != 4) {
-        escribirSonido.play();
-        sonidoPlay = 4;
+      if (muteado == 0) {
+        if (sonidoPlay != 4) {
+          escribirSonido.play();
+          sonidoPlay = 4;
+        }
       }
     });
     //-------------------------------------
@@ -369,9 +383,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         perApetPuesto = 1;
       }
-      if (sonidoPlay != 5) {
-        escribirSonido.play();
-        sonidoPlay = 5;
+      if (muteado == 0) {
+        if (sonidoPlay != 5) {
+          escribirSonido.play();
+          sonidoPlay = 5;
+        }
       }
     });
     //-------------------------------------
@@ -383,9 +399,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         perApetPuesto = 2;
       }
-      if (sonidoPlay != 6) {
-        escribirSonido.play();
-        sonidoPlay = 6;
+      if (muteado == 0) {
+        if (sonidoPlay != 6) {
+          escribirSonido.play();
+          sonidoPlay = 6;
+        }
       }
     });
     //-------------------------------------
@@ -397,9 +415,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         cansPuesto = 1;
       }
-      if (sonidoPlay != 7) {
-        escribirSonido.play();
-        sonidoPlay = 7;
+      if (muteado == 0) {
+        if (sonidoPlay != 7) {
+          escribirSonido.play();
+          sonidoPlay = 7;
+        }
       }
     });
     //-------------------------------------
@@ -411,9 +431,11 @@ class varMenu extends Phaser.Scene {
         finish = 1;
         cansPuesto = 2;
       }
-      if (sonidoPlay != 8) {
-        escribirSonido.play();
-        sonidoPlay = 8;
+      if (muteado == 0) {
+        if (sonidoPlay != 8) {
+          escribirSonido.play();
+          sonidoPlay = 8;
+        }
       }
     });
     //-------------------------------------
@@ -518,7 +540,9 @@ class varMenu extends Phaser.Scene {
         if (sellopuestoPS === 0) {
           sellopuestoPS = 1;
           sellopuestoPE = 0;
-          sellosound.play(selloConfig);
+          if (muteado == 0) {
+            sellosound.play(selloConfig);
+          }
         }
         if (finish == 1) {
           selloPS = 2;
@@ -532,7 +556,9 @@ class varMenu extends Phaser.Scene {
         if (sellopuestoPE === 0) {
           sellopuestoPE = 1;
           sellopuestoPS = 0;
-          sellosound.play(selloConfig);
+          if (muteado == 0) {
+            sellosound.play(selloConfig);
+          }
         }
         if (finish == 1) {
           selloPE = 2;

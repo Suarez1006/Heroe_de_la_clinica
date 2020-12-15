@@ -246,14 +246,29 @@ class SintScene extends Phaser.Scene {
       chatInfo.chat_perApet +
       chatInfo.chat_cans;
 
+    pacientesMusic ++;
+    musicaReproducida = 0;
+
+      music2.stop();
+      creado = 0;
+      if (pacientesMusic == 2) {
+        music3.stop();
+      }
+      if (pacientesMusic == 3) {
+        music4.stop();
+      }
+      if (pacientesMusic == 4) {
+        music5.stop(); 
+      }
+      if (pacientesMusic == 5) {
+        music6.stop();
+      }
+     
+        
+     
     this.scene.start("juego3");
     this.scene.run("clock");
 
-    music2.stop();
-    creado = 0;
-
-    if (musicaS === 1) {
-      music3.stop();
-    }
+   
   }
 }
