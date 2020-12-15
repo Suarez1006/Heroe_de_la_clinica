@@ -5,15 +5,37 @@ class helpScene2 extends Phaser.Scene {
 
   create() {
     var Ayuda2 = Phaser.Math.RND.pick(Idioma.juego.ayuda2);
+    var Ayuda = Phaser.Math.RND.pick(Idioma.menu.mainMenu.ayuda);
+    var Creditos = Phaser.Math.RND.pick(Idioma.menu.mainMenu.creditos);
+
+    if (help != 5) {
+      this.add.image(960, 540, "inicio");
+      this.add
+        .text(396, 989, Ayuda, {
+          fontFamily: "font1",
+          fontSize: "60px",
+        })
+        .setTint(0x454545)
+        .setOrigin(0.5);
+      this.add
+        .text(1524, 989, Creditos, {
+          fontFamily: "font1",
+          fontSize: "60px",
+        })
+        .setTint(0x454545)
+        .setOrigin(0.5);
+    }
+
     var negro = this.add
       .image(960, 540, "negro")
       .setAlpha(0.5)
       .setInteractive({ cursor: "pointer" });
 
     negro.on("pointerdown", () => {
-      this.scene.stop();
       if (help == 5) {
         this.scene.start("Menu2");
+      } else {
+        this.scene.start("Menu");
       }
     });
     this.add.image(960, 540, "ayuda").setInteractive().setScale(1).setFlip(1);

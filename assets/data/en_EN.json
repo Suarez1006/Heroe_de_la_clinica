@@ -105,10 +105,10 @@
       "msgPaciente": ["Patient: Hello. "]
     },
     "ayuda1": [
-      "Symptoms:\nSome symptoms need you to talk to the patient to discover them,\nthis can only happen when you're in the Doctor's Office.\nPatient Information:\nContains information about the patient \nand 3 extra tabs utilized to check the symptoms that you discover.\n\nDoor:\nAllows the entrance to the Examination Room \nor back to the Doctors Office.\n\nExamination Room:\nFrom here you can perform a \nphysical check to the patient with the \nprovided examination tools."
+      "Symptoms:\nSome symptoms need you to talk to the patient to discover\nthem, this can only happen when you're in the Doctor's\nOffice.\n\nPatient Information:\nContains information about the patient and 3 extra tabs\nutilized to check the symptoms that you discover.\n\nDoor:\nAllows the entrance to the Examination Room or back to\nthe Doctors Office.\n\nExamination Room:\nFrom here you can perform a physical check to the\npatient with the provided examination tools."
     ],
     "ayuda2": [
-      "Examination Tools:\nThey reveal useful information of the patient's symptoms.\n\nStamps:\nThey allow you to give the final diagnostic \nof the patient, Green = Healthy, Red = Ill.\n\nNotebook:\nFrom here you can access the pause menu, \nhere you'll find this help page and you can \nalso exit the game."
+      "Examination Tools:\nThey reveal useful information of the patient's symptoms.\n\nStamps:\nThey allow you to give the final diagnostic of the patient,\nGreen = Healthy, Red = Ill.\n\nNotebook:\nFrom here you can access the pause menu, here you'll\nfind this help page and you can also exit the game."
     ],
     "infoEnfermedad": {
       "rubeola": [
@@ -120,6 +120,10 @@
       "paperas": [
         "Mumps symptoms\n-They can cause inflammation of one or both salivary glands\n close to the ears\n-Pain when chewing or swallowing\n-May cause mild fevers between 38-39 ° C\n-Weakness or fatigue\n-Loss of appetite\n-Muscle pains"
       ]
+    },
+    "score": {
+      "calificaciones": ["Final score: "],
+      "salvacion": ["Your salvation points: "]
     }
   },
   "tutorial": {
@@ -182,7 +186,7 @@
     "estado": ["Status"],
     "si": ["Yes"],
     "no": ["No"],
-    "sano": ["HEALTY"],
+    "sano": ["HEALTHY"],
     "enfermo": ["ILL"],
     "terminar": ["Finish"]
   }

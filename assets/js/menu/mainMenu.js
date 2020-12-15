@@ -125,7 +125,7 @@ class mainMenu extends Phaser.Scene {
 
     ayuda.on("pointerdown", () => {
       pausa = 1;
-      this.scene.run("ayuda_1");
+      this.scene.start("ayuda_1");
       ayuda.setAlpha(0.01);
       ayudaT.setTint(0x454545);
     });

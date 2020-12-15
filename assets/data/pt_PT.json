@@ -105,10 +105,10 @@
       "msgPaciente": ["Paciente: Bom dia. "]
     },
     "ayuda1": [
-      "Síntomas:\nPara descobrir alguns sintomas, você precisa falar com o paciente clicando SOMENTE no consultório.\n\nArquivo do paciente:\nEle contém informações sobre o paciente e 3 guias extras usadas para marcar os sintomas que você detecta.\n\nPorta: permite que você vá para a sala de exame ou volte para o escritório.\n\nSala de exames: A partir daqui, são realizados exames físicos no paciente usando as ferramentas disponíveis."
+      "Síntomas:\nPara descobrir alguns sintomas, você precisa falar com\no paciente clicando SOMENTE no consultório.\n\nArquivo do paciente:\nEle contém informações sobre o paciente e 3 guias extras\nusadas para marcar os sintomas que você detecta.\n\nPorta:\nPermite que você vá para a sala de exame ou volte\npara o escritório.\n\nSala de exames:\nA partir daqui, são realizados exames\nfísicos no paciente usando as ferramentas disponíveis."
     ],
     "ayuda2": [
-      "Ferramentas:\nEles revelam informações sobre os sintomas.\n\nSelos: permitem dar um diagnóstico definitivo ao paciente, saudável ou infectado.\n\n Caderno: A partir daqui, você pode acessar o menu de pausa, onde encontrará esta página de ajuda e poderá sair do jogo."
+      "Ferramentas:\nEles revelam informações sobre os sintomas.\n\nSelos:\nPermitem dar um diagnóstico definitivo ao\npaciente, saudável ou infectado.\n\n Caderno:\nA partir daqui, você pode acessar o menu de\npausa, onde encontrará esta página de ajuda e poderá\nsair do jogo."
     ],
     "infoEnfermedad": {
       "rubeola": [
@@ -119,7 +119,11 @@
       ],
       "paperas": [
         "Sintomas de Caxumba\n-Eles podem causar inflamação de uma ou ambas as glândulas salivares\n perto das orelhas\n-Dor ao mastigar ou engolir\n-Pode causar febres leves entre 38-39 ° C\n-Fraqueza ou fadiga\n-Perda de apetite\n-Dores musculares"
-      ]
+      ],
+      "score": {
+        "calificaciones": ["Pontuação final: "],
+        "salvacion": ["Seus pontos salvos:"]
+      }
     }
   },
   "tutorial": {

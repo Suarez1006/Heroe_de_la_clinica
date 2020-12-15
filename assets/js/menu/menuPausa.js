@@ -82,7 +82,7 @@ class menuPausa extends Phaser.Scene {
 
     ayuda.on("pointerdown", () => {
       help = 5;
-      this.scene.sleep();
+      this.scene.stop();
       this.scene.run("ayuda_1");
     });
 
