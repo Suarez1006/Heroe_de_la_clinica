@@ -3,7 +3,7 @@
 
   "enfermedad": {
     "rubeola": {
-      "congestion": ["true ", "false"],
+      "congestion": ["true", "false"],
       "inflamacion": ["true", "false"],
       "ganglios": ["true", "false"],
       "erupcion": ["true", "false"],

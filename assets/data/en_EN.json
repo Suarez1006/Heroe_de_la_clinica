@@ -83,24 +83,24 @@
       "msgCab1": [
         "Last night I measured my temperature and today I woke up with a slight headache. \n"
       ],
-      "msgCab2": ["I have a headache. "],
-      "msgCong": ["I have some congestion.\n"],
-      "msgErup": ["I've got a slight rash all over the body.\n"],
-      "msgArt": ["My joints hurts when I move. "],
-      "msgDolMast": ["My throat hurts when i chew.\n"],
-      "msgDolMusc": ["I feel some muscle discomfort.\n"],
+      "msgCab2": ["I have a headache."],
+      "msgCong": ["I have some congestion."],
+      "msgErup": ["I've got a slight rash all over the body."],
+      "msgArt": ["My joints hurts when I move."],
+      "msgDolMast": ["My throat hurts when I chew."],
+      "msgDolMusc": ["I feel some muscle discomfort."],
       "msgFat": [
-        "Im feeling really tired lately, I don't feel like doing anything.\n"
+        "Im feeling really tired lately, I don't feel like\ndoing anything."
       ],
-      "msgApet": ["I haven't feeling like eating these days. "],
+      "msgApet": ["I haven't feeling like eating these days."],
       "msgCans": [
-        "Lately it's been harder to get out of bed, I get tired really fast."
+        "Lately it's been harder to get out of bed,\nI get tired really fast."
       ],
       "msgSaludos": [
-        "Doctor: Good afternoon, how you've been feeling lately?\n\n",
-        "Doctor: Hello, how are you feeling?\n\n",
-        "Doctor: Morning, so tell me, what's going on?\n\n",
-        "Doctor: G'day, what's the matter?\n\n"
+        "Doctor: Hello, how are you feeling?",
+        "Doctor: Good afternoon, how you've been\nfeeling lately?",
+        "Doctor: Morning, so tell me, what's going on?",
+        "Doctor: G'day, what's the matter?"
       ],
       "msgPaciente": ["Patient: Hello. "]
     },
@@ -127,9 +127,20 @@
     }
   },
   "tutorial": {
-    "chatTuto": [
-      "Doctor: Good Morning, it's a pleasure.\n\nPatient: Good morning, nice to meet you.\n\nDoctor: So, tell me, how are you feeling?\n\nPatient: I've been having some headache lately and I don't feel like eating either.\nPatient: Oh, and also I've been feeling kinda feverish.\nDoctor: Hmm, is there anything else?.\n\nPatient: I think that's all. \nWait, im getting tired easily lately.\nDoctor: Okay, let's go to the Examination Room please."
+    "chatTuto1": ["Doctor: Good morning, I'ts a pleasure."],
+    "chatTuto2": ["Paciente: Morning', a pleasure to meet you\ntoo."],
+    "chatTuto3": ["Doctor: So tell me, how are you feeling?"],
+    "chatTuto4": [
+      "Paciente: I'm with a slight headache and I'm\nwith a lack appetite lately."
     ],
+    "chatTuto5": [
+      "Paciente: Also, since all of that started I'm\nfeeling kinda feverish."
+    ],
+    "chatTuto6": ["Doctor: Hmm, Is there anything else?"],
+    "chatTuto7": [
+      "Paciente: Let me think. Oh, I get tired easily."
+    ],
+    "chatTuto8": ["Doctor: Ok, please go to the Examining Room."],
     "tuto_01": {
       "info": {
         "ficha": ["Patient Information"],

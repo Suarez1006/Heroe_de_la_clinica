@@ -40,50 +40,43 @@ class consultorioScene extends Phaser.Scene {
     if (pacientesMusic === 2) {
       music4 = this.sound.add("menu_Game1");
       console.log("demente");
-      
-    if (muteado === 0) {
-      if (musicaReproducida == 0) {
-        if (musica === 0) {
-          music4.play(musicConfig2);
+
+      if (muteado === 0) {
+        if (musicaReproducida == 0) {
+          if (musica === 0) {
+            music4.play(musicConfig2);
+          }
         }
       }
-    }
     }
 
     if (pacientesMusic === 3) {
       music5 = this.sound.add("menu_Game1");
 
-      
-
-    if (muteado === 0) {
-      if (musicaReproducida == 0) {
-        if (musica === 0) {
-          music5.play(musicConfig2);
+      if (muteado === 0) {
+        if (musicaReproducida == 0) {
+          if (musica === 0) {
+            music5.play(musicConfig2);
+          }
         }
       }
-    }
-
     }
 
     if (pacientesMusic === 4) {
       music6 = this.sound.add("menu_Game1");
 
-        
-
-    if (muteado === 0) {
-      if (musicaReproducida == 0) {
-        if (musica === 0) {
-          music6.play(musicConfig2);
+      if (muteado === 0) {
+        if (musicaReproducida == 0) {
+          if (musica === 0) {
+            music6.play(musicConfig2);
+          }
         }
       }
-    }
     }
 
     if (pacientes == 1) {
       finalSalv = 0;
     }
-
-  
 
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
@@ -326,7 +319,7 @@ class consultorioScene extends Phaser.Scene {
       back.setAlpha(0.01);
       pausa = 7;
       this.scene.pause();
-      this.scene.run("charla_01");
+      this.scene.start("charla_01");
     });
 
     pac_gen.on("pointerover", () => {

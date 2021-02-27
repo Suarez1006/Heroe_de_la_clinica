@@ -25,6 +25,7 @@ var config = {
     rubMenu, //Ficha de paciente (rubeola)
     papMenu, //Ficha de paciente (paperas)
     varMenu, //Ficha de paciente (varicela)
+    chatScene, //Charlas
     reloj, //Reloj pacientes
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
@@ -33,7 +34,6 @@ var config = {
     helpScene2, //Segunda pagina ayuda
     Exito, //Diagnostico Exitoso
     Fallo, //Diagnostico Fallido
-    chatScene, //Charlas
     infoEnfer,
   ],
 };
@@ -74,6 +74,7 @@ var finish = 0;
 var ChatTuto = "error";
 
 let tiempo = 10000;
+var tuto = 1;
 
 let rubEnf;
 let papEnf;
@@ -104,6 +105,7 @@ let chatInfo = {
   chat_cans: "",
 };
 var charla;
+var chatMostrar = 0;
 
 var Idioma;
 var selecIdioma = "es";
@@ -159,6 +161,19 @@ var fatigaSint = 0;
 var perApetSint = 0;
 var cansSint = 0;
 
+var chat_1;
+var chat_2;
+var chat_3;
+var chat_4;
+var chat_5;
+var chat_6;
+var chat_7;
+var chat_8;
+var chat_9;
+var chat_10;
+var chat_11;
+var charlando = 0;
+
 var temperatura;
 var reseteo = 0;
 var pestaña = 0;
@@ -197,8 +212,7 @@ var musicaS = 0;
 var muteado = 0;
 var musicaReproducida = 0;
 var sonidoPlay = 0;
-var pacientesMusic=0;
-
+var pacientesMusic = 0;
 
 var fichaVolver = 0;
 var tutoFinish = 0;

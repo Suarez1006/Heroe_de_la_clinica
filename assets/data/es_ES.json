@@ -83,24 +83,22 @@
       "msgCab1": [
         "Me medi alta temperatura anoche y hoy me levanté con dolor de cabeza.\n"
       ],
-      "msgCab2": ["Me siento con dolor de cabeza. "],
-      "msgCong": ["Tengo algo de congestión ultimamente.\n"],
-      "msgErup": ["Tengo un sarpullido leve en todo el cuerpo.\n"],
-      "msgArt": ["Las articulaciones me duelen constantemente al moverme."],
-      "msgDolMast": ["Al masticar me duele la garganta.\n"],
-      "msgDolMusc": ["Siento una molestia en los musculos.\n"],
-      "msgFat": [
-        "Estoy con fatiga ultimamente, no tengo ganas de hacer nada.\n"
-      ],
+      "msgCab2": ["Me siento con\ndolor de cabeza. "],
+      "msgCong": ["Tengo algo de congestión ultimamente."],
+      "msgErup": ["Tengo un sarpullido leve en todo el cuerpo."],
+      "msgArt": ["Las articulaciones me duelen constantemente\nal moverme."],
+      "msgDolMast": ["Al masticar me duele la garganta."],
+      "msgDolMusc": ["Siento una molestia en los musculos."],
+      "msgFat": ["Estoy con fatiga ultimamente, no tengo\nganas de hacer nada."],
       "msgApet": ["Ando sin ganas de comer hace algunos días."],
-      "msgCans": ["Ultimamente me cuesta salir de la cama, me canso rapido."],
+      "msgCans": ["Ultimamente me cuesta salir de la cama,\nme canso rapido."],
       "msgSaludos": [
-        "Doctor: Hola, buenas tardes ¿Qué te anda sucediendo?\n",
-        "Doctor: Mucho gusto, ¿Qué tal se encuentra?\n\n",
-        "Doctor: Buen día, cuénteme ¿Qué le sucede?\n\n",
-        "Doctor: Un gusto, ¿Cuál es el motivo de su visita?\n\n"
+        "Doctor: Hola, buenas tardes ¿Qué te\nanda sucediendo?",
+        "Doctor: Mucho gusto, ¿Qué tal se encuentra?",
+        "Doctor: Buen día, cuénteme ¿Qué le sucede?",
+        "Doctor: Un gusto, ¿Cuál es el motivo\nde su visita?"
       ],
-      "msgPaciente": ["Paciente: Buenas. ", "Paciente: Hola Doctor, "]
+      "msgPaciente": ["Paciente: Buenas. ", "Paciente: Hola Doctor. "]
     },
     "ayuda1": [
       "Síntomas:\nPara descubrir ciertos sintomas\nse necesita hablar con el paciente haciendole\nclick SOLO en el consultorio.\n\nFicha del Paciente:\nContiene datos sobre el paciente\ny 3 pestañas extras utilizadas para marcarlos\nsintomas que usted detecte.\n\nPuerta:\nPermite ir hacia la sala de\nexaminaciones o volver al consultorio.\n\nSala de examinaciones:\nDesde aca se realizan chequeos\nfisicos al paciente utilizando las\nherramientas disponibles."
@@ -125,9 +123,21 @@
     }
   },
   "tutorial": {
-    "chatTuto": [
-      "Doctor: Buenos días, mucho gusto.\n\nPaciente: Buenas, igualmente.\n\nDoctor: Digame, que le anda pasando? \n\nPaciente: Ando con dolores de cabeza y no tengo mucha hambre.\nPaciente: Además desde que empezaron me siento con algo de fiebre.\nDoctor: Hmm, algo mas?.\n\nPaciente: Creo que eso es todo. \nPaciente: Ah no, tambien me canso rapido.\nDoctor: Bien, pase a la camilla."
+    "chatTuto1": ["Doctor: Buenos días, mucho gusto."],
+    "chatTuto2": ["Paciente: Buenas, igualmente."],
+    "chatTuto3": ["Doctor: Digame, que le anda pasando?"],
+    "chatTuto4": [
+      "Paciente: Ando con dolores de cabeza y\nno tengo mucha hambre."
     ],
+    "chatTuto5": [
+      "Paciente: Además desde que empezaron\nme siento con algo de fiebre."
+    ],
+    "chatTuto6": ["Doctor: Hmm, ¿Algo mas?"],
+    "chatTuto7": [
+      "Paciente: Creo que eso es todo.\nAh no, tambien me canso rapido."
+    ],
+    "chatTuto8": ["Doctor: Bien, pase a la camilla."],
+
     "tuto_01": {
       "info": {
         "ficha": ["Ficha de paciente"],

@@ -10,26 +10,23 @@ class Tuto_01 extends Phaser.Scene {
 
     music2 = this.sound.add("menu_Game1");
 
-    
     var fichasound = this.sound.add("Ficha");
-    
+
     var alertasound = this.sound.add("Alerta");
 
     var puertasound = this.sound.add("Puerta");
 
-    
     var fichaConfig = {
-      volume : 0.25
-    }
-    
+      volume: 0.25,
+    };
+
     var puertaConfig = {
-      volume : 0.05
-    }
+      volume: 0.05,
+    };
 
     var alertaConfig = {
-      volume : 0.05
-    }
-
+      volume: 0.05,
+    };
 
     if (muteado == 0) {
       if (musica === 0) {
@@ -47,7 +44,7 @@ class Tuto_01 extends Phaser.Scene {
 
           if (time10s == 10) {
             this.scene.pause();
-            if(muteado === 0) {
+            if (muteado === 0) {
               alertasound.play(alertaConfig);
             }
             this.scene.run("help10s");
@@ -91,7 +88,7 @@ class Tuto_01 extends Phaser.Scene {
 
     ficha_c.on("pointerdown", () => {
       this.scene.pause();
-      if(muteado === 0) {
+      if (muteado === 0) {
         fichasound.play(fichaConfig);
       }
       if (fichaVolver === 0) {
@@ -174,7 +171,7 @@ class Tuto_01 extends Phaser.Scene {
 
     puerta.on("pointerdown", () => {
       this.scene.sleep();
-      if(muteado === 0) {
+      if (muteado === 0) {
         puertasound.play(puertaConfig);
       }
       this.scene.start("juego2");

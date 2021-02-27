@@ -83,24 +83,24 @@
       "msgCab1": [
         "Medi minha alta temperatura ontem à noite e hoje acordei com dor de cabeça.\n"
       ],
-      "msgCab2": ["Estou com dor de cabeça. "],
-      "msgCong": ["Tenho algum congestionamento ultimamente.\n"],
-      "msgErup": ["Tenho uma erupção leve em todo o corpo. \n"],
-      "msgArt": ["Minhas juntas doem constantemente quando me movo. "],
-      "msgDolMast": ["Quando mastigo, minha garganta dói.\n"],
-      "msgDolMusc": ["Sinto um desconforto nos músculos.\n"],
+      "msgCab2": ["Estou com dor de cabeça."],
+      "msgCong": ["Tenho algum congestionamento ultimamente."],
+      "msgErup": ["Tenho uma erupção leve em todo o corpo."],
+      "msgArt": ["Minhas juntas doem constantemente quando\nme movo."],
+      "msgDolMast": ["Quando mastigo, minha garganta dói."],
+      "msgDolMusc": ["Sinto um desconforto nos músculos."],
       "msgFat": [
-        "Ultimamente estou cansado, não tenho vontade de fazer nada\n"
+        "Ultimamente estou cansado, não tenho\nvontade de fazer nada."
       ],
-      "msgApet": ["Faz alguns dias que não quero comer. "],
+      "msgApet": ["Faz alguns dias que não quero comer."],
       "msgCans": [
-        "Ultimamente tenho tido dificuldade em sair da cama, canso-me rápido. "
+        "Ultimamente tenho tido dificuldade em sair\nda cama, canso-me rápido."
       ],
       "msgSaludos": [
-        "Médico: Olá, boa tarde, o que está acontecendo com você?\n",
-        "Médico: Prazer em conhecê-lo, como você está?\n\n",
-        "Médico: Bom dia, me diga o que há de errado com você?\n",
-        "Médico: Prazer em conhecê-lo, qual o motivo da sua visita?\n"
+        "Médico: Olá, boa tarde, o que está\nacontecendo com você?",
+        "Médico: Prazer em conhecê-lo, como você\nestá?",
+        "Médico: Bom dia, me diga o que há de errado\ncom você?",
+        "Médico: Prazer em conhecê-lo, qual o motivo\nda sua visita?"
       ],
       "msgPaciente": ["Paciente: Bom dia. "]
     },
@@ -127,9 +127,20 @@
     }
   },
   "tutorial": {
-    "chatTuto": [
-      "Médico: Bom dia, prazer em conhecê-lo.\n\nPaciente: Bom dia.\n\nMédico: Diga-me, o que está acontecendo com você?\nPaciente: Tenho dores de cabeça e não estou com muita fome.\nPaciente: Além disso, desde que começaram, estou com febre.\nMédico: Hmm, mais alguma coisa?.\n\nPaciente: Acho que é isso. \nOh não, eu também me canso rápido.\nMédico: Bem, vá para a maca."
+    "chatTuto1": ["Doctor: Bom Dia, prazer em conhece-lo."],
+    "chatTuto2": ["Paciente: Oi, um prazer tambem."],
+    "chatTuto3": ["Doctor: Diga-me, o que está acontecendo\ncom você?"],
+    "chatTuto4": [
+      "Paciente: Tenho dores de cabeça e não estou\ncom muita fome."
     ],
+    "chatTuto5": [
+      "Paciente: Também desde que começaram eu\nme sinto com febre."
+    ],
+    "chatTuto6": ["Doctor: Ok, algo mais?"],
+    "chatTuto7": [
+      "Paciente: Eu acho que isso é tudo. Ah não, eu\ntambém me canso rápido."
+    ],
+    "chatTuto8": ["Doctor: Ok, vá para a maca."],
     "tuto_01": {
       "info": {
         "ficha": ["Arquivo do paciente"],

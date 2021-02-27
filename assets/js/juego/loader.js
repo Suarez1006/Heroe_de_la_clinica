@@ -70,6 +70,7 @@ class loader extends Phaser.Scene {
       "boton_fscreen_s",
       "assets/imagenes/botones/boton_fscreen_s.png"
     );
+    this.load.image("boton_cerrar", "assets/imagenes/botones/boton_cerrar.png");
 
     this.load.image("boton_s", "assets/imagenes/botones/boton_s.png");
     this.load.image("boton_ayuda", "assets/imagenes/botones/boton_ayuda.png");

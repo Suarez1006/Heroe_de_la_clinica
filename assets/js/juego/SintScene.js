@@ -71,6 +71,18 @@ class SintScene extends Phaser.Scene {
     perApetSint = 0;
     cansSint = 0;
 
+    chat_1 = "";
+    chat_2 = "";
+    chat_3 = "";
+    chat_4 = "";
+    chat_5 = "";
+    chat_6 = "";
+    chat_7 = "";
+    chat_8 = "";
+    chat_9 = "";
+    chat_10 = "";
+    chat_11 = "";
+
     enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
     temperatura = Phaser.Math.FloatBetween(36, 40);
     let enfermedad;
@@ -226,49 +238,34 @@ class SintScene extends Phaser.Scene {
         variEnf = 0;
       }
     }
-    ChatTuto = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
-    var msgPaciente = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgPaciente);
 
     console.log("rubeola= " + rubEnf);
     console.log("varicela= " + variEnf);
     console.log("paperas= " + papEnf);
     console.log(sintPickeados);
 
-    ChatTuto +=
-      msgPaciente +
-      chatInfo.chat_dolCab +
-      chatInfo.chat_cong +
-      chatInfo.chat_erup +
-      chatInfo.chat_art +
-      chatInfo.chat_dolMast +
-      chatInfo.chat_dolMusc +
-      chatInfo.chat_fatiga +
-      chatInfo.chat_perApet +
-      chatInfo.chat_cans;
+    chat_1 = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgSaludos);
+    chat_2 = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgPaciente);
 
-    pacientesMusic ++;
+    pacientesMusic++;
     musicaReproducida = 0;
 
-      music2.stop();
-      creado = 0;
-      if (pacientesMusic == 2) {
-        music3.stop();
-      }
-      if (pacientesMusic == 3) {
-        music4.stop();
-      }
-      if (pacientesMusic == 4) {
-        music5.stop(); 
-      }
-      if (pacientesMusic == 5) {
-        music6.stop();
-      }
-     
-        
-     
+    music2.stop();
+    creado = 0;
+    if (pacientesMusic == 2) {
+      music3.stop();
+    }
+    if (pacientesMusic == 3) {
+      music4.stop();
+    }
+    if (pacientesMusic == 4) {
+      music5.stop();
+    }
+    if (pacientesMusic == 5) {
+      music6.stop();
+    }
+
     this.scene.start("juego3");
     this.scene.run("clock");
-
-   
   }
 }
