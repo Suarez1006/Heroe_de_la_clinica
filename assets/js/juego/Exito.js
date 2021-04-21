@@ -121,7 +121,8 @@ class Exito extends Phaser.Scene {
         this.scene.sleep("juego3");
         this.scene.sleep("juego4");
         this.scene.sleep("sintomasPick");
-        this.scene.restart("clock");
+        this.scene.stop("clock");
+        music6.stop();
         this.scene.start("FinalScore");
       } else {
         this.scene.sleep("juego3");

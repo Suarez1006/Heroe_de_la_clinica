@@ -62,8 +62,8 @@
       "diagGangFalse": ["Sin ganglios inflamados."],
       "diagFarTrue": ["Detecto faringitis."],
       "diagFarFalse": ["No detecto faringitis."],
-      "diagInfTrue": ["Sus ojos estan inflamados."],
-      "diagInfFalse": ["Sus ojos no estan inflamados."],
+      "diagInfTrue": ["Sus ojos están inflamados."],
+      "diagInfFalse": ["Sus ojos no están inflamados."],
       "diagTemp": ["Su temperatura es de "]
     },
     "resultados": {
@@ -81,17 +81,17 @@
     },
     "mensajes": {
       "msgCab1": [
-        "Me medi alta temperatura anoche y hoy me levanté con dolor de cabeza.\n"
+        "Me medí alta temperatura anoche y hoy me levanté con dolor de cabeza.\n"
       ],
       "msgCab2": ["Me siento con\ndolor de cabeza. "],
       "msgCong": ["Tengo algo de congestión ultimamente."],
       "msgErup": ["Tengo un sarpullido leve en todo el cuerpo."],
       "msgArt": ["Las articulaciones me duelen constantemente\nal moverme."],
       "msgDolMast": ["Al masticar me duele la garganta."],
-      "msgDolMusc": ["Siento una molestia en los musculos."],
-      "msgFat": ["Estoy con fatiga ultimamente, no tengo\nganas de hacer nada."],
+      "msgDolMusc": ["Siento una molestia en los músculos."],
+      "msgFat": ["Estoy con fatiga últimamente, no tengo\nganas de hacer nada."],
       "msgApet": ["Ando sin ganas de comer hace algunos días."],
-      "msgCans": ["Ultimamente me cuesta salir de la cama,\nme canso rapido."],
+      "msgCans": ["Últimamente me cuesta salir de la cama,\nme canso rapido."],
       "msgSaludos": [
         "Doctor: Hola, buenas tardes ¿Qué te\nanda sucediendo?",
         "Doctor: Mucho gusto, ¿Qué tal se encuentra?",
@@ -101,20 +101,20 @@
       "msgPaciente": ["Paciente: Buenas. ", "Paciente: Hola Doctor. "]
     },
     "ayuda1": [
-      "Síntomas:\nPara descubrir ciertos sintomas\nse necesita hablar con el paciente haciendole\nclick SOLO en el consultorio.\n\nFicha del Paciente:\nContiene datos sobre el paciente\ny 3 pestañas extras utilizadas para marcarlos\nsintomas que usted detecte.\n\nPuerta:\nPermite ir hacia la sala de\nexaminaciones o volver al consultorio.\n\nSala de examinaciones:\nDesde aca se realizan chequeos\nfisicos al paciente utilizando las\nherramientas disponibles."
+      "Síntomas:\nPara descubrir ciertos sintomas\nse necesita hablar con el paciente haciéndole\nclick SOLO en el consultorio.\n\nFicha del Paciente:\nContiene datos sobre el paciente\ny 3 pestañas extra utilizadas para marcar los\nsintomas que usted detecte.\n\nPuerta:\nPermite ir hacia la sala de\nexaminaciones o volver al consultorio.\n\nSala de examinaciones:\nDesde ahí se realizan chequeos\nfísicos al paciente utilizando las\nherramientas disponibles."
     ],
     "ayuda2": [
-      "Herramientas:\nRevelan informacion sobre los sintomas.\n\nSellos:\nPermiten dar un diagnostico definitivo\nal paciente, ya sea Sano o Infectado.\n\nLibreta:\nDesde aca se puede acceder al menú\nde pausa donde encontrarás esta\npágina de ayuda y podras salir del juego."
+      "Herramientas:\nRevelan información sobre los sintomas.\n\nSellos:\nPermiten dar un diagnostico definitivo\nal paciente, ya sea Sano o Enfermo.\n\nLibreta:\nDesde ahí se puede acceder al menú\nde pausa donde encontrarás esta\npágina de ayuda y podras salir del juego."
     ],
     "infoEnfermedad": {
       "rubeola": [
-        "Sintomas de Rubéola\n-Fiebre leve de 38,9 °C\n-Dolores de cabeza\n-Congestión nasal o con secreciones liquidas\n-Inflamacion y enrojecimiento de los ojos\n-Dolores en las articulaciones, especialmente en mujeres jovenes\n-Sarpullido fino y rosado, comienza en la cara y se disemina rapidamente\n hacia el torso y los brazos y las piernas, para despues desaparecer\n de la misma manera"
+        "Sintomas de Rubéola\n-Fiebre leve de 38,9 °C\n-Dolores de cabeza\n-Congestión nasal o con secreciones líquidas\n-Inflamación y enrojecimiento de los ojos\n-Dolores en las articulaciones, especialmente en mujeres jovenes\n-Sarpullido fino y rosado, comienza en la cara y se disemina rapidamente\n hacia el torso, brazos y piernas, para después desaparecer\n de la misma manera"
       ],
       "varicela": [
         "Sintomas de Varicela\n-Fiebre\n-Pérdida del apetito\n-Cansancio y sensación de malestar general\n-Erupción cutanea, o sarpullido, característico en todo el cuerpo"
       ],
       "paperas": [
-        "Sintomas de Paperas\n-Pueden provocar inflamacion de una o ambas glandulas salivales\n cerca de los oidos\n-Dolor al masticar o tragar\n-Puede provocar fiebres leves entre 38-39 °C\n-Debilidad o Fatiga\n-Pérdida del Apetito\n-Dolores Musculares"
+        "Sintomas de Paperas\n-Pueden provocar inflamación de una o ambas glandulas salivales\n cerca de los oídos\n-Dolor al masticar o tragar\n-Puede provocar fiebre leve entre 38-39 °C\n-Debilidad o Fatiga\n-Pérdida del Apetito\n-Dolores Musculares"
       ]
     },
     "score": {
@@ -132,9 +132,9 @@
     "chatTuto5": [
       "Paciente: Además desde que empezaron\nme siento con algo de fiebre."
     ],
-    "chatTuto6": ["Doctor: Hmm, ¿Algo mas?"],
+    "chatTuto6": ["Doctor: Hmm, ¿Algo más?"],
     "chatTuto7": [
-      "Paciente: Creo que eso es todo.\nAh no, tambien me canso rapido."
+      "Paciente: Creo que eso es todo.\nAh no, tambien me canso rápido."
     ],
     "chatTuto8": ["Doctor: Bien, pase a la camilla."],
 

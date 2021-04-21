@@ -1,5 +1,10 @@
 var chatB;
 var fotoFicha;
+var fotoFichaTuto;
+var fotoFicha1;
+var fotoFicha2;
+var fotoFicha3;
+var fotoFicha4;
 var fotoFichaGen;
 var cambioFicha;
 var repetido = 0;
@@ -9,12 +14,6 @@ class chatScene extends Phaser.Scene {
   }
 
   create() {
-    if (chat == 0) {
-      this.scene.restart("charla_01");
-      chat = 1;
-    }
-
-    doc = 0;
     if (pacientes == 0) {
       chat_1 = Phaser.Math.RND.pick(Idioma.tutorial.chatTuto1);
       chat_2 = Phaser.Math.RND.pick(Idioma.tutorial.chatTuto2);
@@ -53,6 +52,19 @@ class chatScene extends Phaser.Scene {
         chat_11 = Phaser.Math.RND.pick(Idioma.juego.mensajes.msgCans);
       }
     }
+    this.scene.run("fotos");
+
+    if (chat == 0) {
+      chat = 1;
+      console.log("Se supone que restarteo");
+      msg = 0;
+      charlando = 0;
+      chatMostrar = chat_1;
+      this.scene.restart("charla_01");
+      this.scene.restart("mensajes");
+    }
+
+    doc = 0;
 
     this.add.image(960, 540, "consultorio").setScale(1.0);
 
@@ -125,24 +137,26 @@ class chatScene extends Phaser.Scene {
     chatB = this.add.image(960, 150, "chatPNG");
 
     fotoFicha = this.add.image(550, 150, "hugo").setAlpha(1).setScale(0.5);
-    fotoFichaGen = fotoFicha;
-
-    if (pacientes == 0) {
-      if (doc == 1 || doc == 4 || doc >= 6) {
-        fotoFichaGen.setTexture("hugo");
-      } else {
-        fotoFichaGen.setTexture("fichaFotoTuto");
-      }
-    } else if (pacientes == 1) {
-      fotoFichaGen.setTexture("fichaFoto1");
-    } else if (pacientes == 2) {
-      fotoFichaGen.setTexture("fichaFoto2");
-    } else if (pacientes == 3) {
-      fotoFichaGen.setTexture("fichaFoto3");
-    } else if (pacientes == 4) {
-      fotoFichaGen.setTexture("fichaFoto4");
-    }
-    doc++;
+    fotoFichaTuto = this.add
+      .image(550, 150, "fichaFotoTuto")
+      .setAlpha(0.001)
+      .setScale(0.5);
+    fotoFicha1 = this.add
+      .image(550, 150, "fichaFoto1")
+      .setAlpha(0.001)
+      .setScale(0.5);
+    fotoFicha2 = this.add
+      .image(550, 150, "fichaFoto2")
+      .setAlpha(0.001)
+      .setScale(0.5);
+    fotoFicha3 = this.add
+      .image(550, 150, "fichaFoto3")
+      .setAlpha(0.001)
+      .setScale(0.5);
+    fotoFicha4 = this.add
+      .image(550, 150, "fichaFoto4")
+      .setAlpha(0.001)
+      .setScale(0.5);
 
     if (chatMostrar == 0) {
       chatMostrar = chat_1;
@@ -165,6 +179,9 @@ class chatScene extends Phaser.Scene {
     boton.on("pointerdown", () => {
       chatMostrar = chat_1;
       this.scene.restart("charla_01");
+      this.scene.restart("fotos");
+      this.scene.restart("mensajes");
+      msg = 0;
       charlando = 0;
     });
 
@@ -175,6 +192,8 @@ class chatScene extends Phaser.Scene {
 
     cerrar.on("pointerdown", () => {
       this.scene.stop();
+      this.scene.stop("fotos");
+      this.scene.stop("mensajes");
       chat = 0;
       if (pausa == 2) {
         this.scene.start("juego");
@@ -183,178 +202,10 @@ class chatScene extends Phaser.Scene {
         this.scene.start("juego3");
       }
     });
-
     negro.on("pointerdown", () => {
-      if (pacientes != 0) {
-        if (charlando == 0) {
-          if (dolCabSint == 1) {
-            chatMostrar = chat_2 + chat_3;
-            repetido = 1;
-            console.log("dolCab");
-          } else if (congSint == 1) {
-            chatMostrar = chat_2 + chat_4;
-            repetido = 2;
-          } else if (erupSint == 1) {
-            chatMostrar = chat_2 + chat_5;
-            repetido = 3;
-          } else if (artSint == 1) {
-            chatMostrar = chat_2 + chat_6;
-            repetido = 4;
-          } else if (dolMastSint == 1) {
-            chatMostrar = chat_2 + chat_7;
-            repetido = 5;
-          } else if (dolMuscSint == 1) {
-            chatMostrar = chat_2 + chat_8;
-            repetido = 6;
-          } else if (fatigaSint == 1) {
-            chatMostrar = chat_2 + chat_9;
-            repetido = 7;
-          } else if (perApetSint == 1) {
-            chatMostrar = chat_2 + chat_10;
-            repetido = 8;
-          } else if (cansSint == 1) {
-            chatMostrar = chat_2 + chat_11;
-            repetido = 9;
-          }
-          charlando = 1;
-          console.log(charlando);
-          this.scene.restart();
-          //Rubeola-------------------------------------------------
-        } else if (rub == 1) {
-          if (charlando == 1) {
-            if (repetido != 2) {
-              if (congSint == 1) {
-                chatMostrar = chat_4;
-                console.log("congestion");
-                this.scene.restart();
-              }
-            }
-            if (erupSint == 1) {
-              if (repetido != 3) {
-                charlando = 2;
-                console.log(charlando);
-                //this.scene.restart();
-              }
-            } else if (artSint == 1) {
-              charlando = 3;
-              console.log(charlando);
-              this.scene.restart();
-            }
-          } else if (charlando == 2) {
-            if (artSint == 1) {
-              charlando = 3;
-            }
-            console.log("erupcion");
-            chatMostrar = chat_5;
-            console.log(charlando);
-            this.scene.restart();
-          } else if (charlando == 3) {
-            console.log("articul");
-            chatMostrar = chat_6;
-            console.log(charlando);
-            this.scene.restart();
-          }
-          //Paperas------------------------------------------------
-        } else if (pap == 1) {
-          if (charlando == 1) {
-            if (repetido != 5) {
-              if (dolMastSint == 1) {
-                chatMostrar = chat_7;
-                console.log("dolmast");
-                this.scene.restart();
-              }
-            }
-            if (dolMuscSint == 1) {
-              if (repetido != 6) {
-                charlando = 2;
-              }
-            } else if (fatigaSint == 1) {
-              if (repetido != 7) {
-                charlando = 3;
-              }
-            } else if (perApetSint == 1) {
-              if (repetido != 8) {
-                charlando = 4;
-              }
-            }
-            console.log(charlando);
-            this.scene.restart();
-          } else if (charlando == 2) {
-            if (fatigaSint == 1) {
-              charlando = 3;
-            } else if (perApetSint == 1) {
-              charlando = 4;
-            }
-            console.log("dolmuscular");
-            chatMostrar = chat_8;
-            console.log(charlando);
-            this.scene.restart();
-          } else if (charlando == 3) {
-            if (perApetSint == 1) {
-              charlando = 4;
-            }
-            console.log("fatiga");
-            chatMostrar = chat_9;
-            console.log(charlando);
-            this.scene.restart();
-          } else if (charlando == 4) {
-            console.log("perdiapet");
-            chatMostrar = chat_10;
-            console.log(charlando);
-            this.scene.restart();
-          }
-          //Varicela----------------------------------------------
-        } else if (vari == 1) {
-          if (charlando == 1) {
-            if (repetido != 8) {
-              if (perApetSint == 1) {
-                chatMostrar = chat_10;
-                console.log("perdiapet");
-                this.scene.restart();
-              }
-            }
-            if (cansSint == 1) {
-              if (repetido != 9) {
-                charlando = 2;
-                this.scene.restart();
-              }
-            }
-          } else if (charlando == 2) {
-            console.log("cansancio");
-            chatMostrar = chat_11;
-            this.scene.restart();
-          }
-        }
-      } else {
-        if (charlando == 0) {
-          charlando = 1;
-          chatMostrar = chat_2;
-          this.scene.restart();
-        } else if (charlando == 1) {
-          charlando = 2;
-          chatMostrar = chat_3;
-          this.scene.restart();
-        } else if (charlando == 2) {
-          charlando = 3;
-          chatMostrar = chat_4;
-          this.scene.restart();
-        } else if (charlando == 3) {
-          charlando = 4;
-          chatMostrar = chat_5;
-          this.scene.restart();
-        } else if (charlando == 4) {
-          charlando = 5;
-          chatMostrar = chat_6;
-          this.scene.restart();
-        } else if (charlando == 5) {
-          charlando = 6;
-          chatMostrar = chat_7;
-          this.scene.restart();
-        } else if (charlando == 6) {
-          chatMostrar = chat_8;
-          this.scene.restart();
-        }
-      }
+      msg++;
+      this.scene.run("mensajes");
+      this.scene.restart("mensajes");
     });
   }
 }

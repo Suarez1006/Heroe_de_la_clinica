@@ -27,7 +27,7 @@ class consultorioScene extends Phaser.Scene {
 
     if (pacientesMusic === 1) {
       music3 = this.sound.add("menu_Game1");
-
+      music2.stop();
       if (muteado === 0) {
         if (musicaReproducida == 0) {
           if (musica === 0) {
@@ -39,8 +39,7 @@ class consultorioScene extends Phaser.Scene {
 
     if (pacientesMusic === 2) {
       music4 = this.sound.add("menu_Game1");
-      console.log("demente");
-
+      music3.stop();
       if (muteado === 0) {
         if (musicaReproducida == 0) {
           if (musica === 0) {
@@ -52,7 +51,7 @@ class consultorioScene extends Phaser.Scene {
 
     if (pacientesMusic === 3) {
       music5 = this.sound.add("menu_Game1");
-
+      music4.stop();
       if (muteado === 0) {
         if (musicaReproducida == 0) {
           if (musica === 0) {
@@ -64,7 +63,7 @@ class consultorioScene extends Phaser.Scene {
 
     if (pacientesMusic === 4) {
       music6 = this.sound.add("menu_Game1");
-
+      music5.stop();
       if (muteado === 0) {
         if (musicaReproducida == 0) {
           if (musica === 0) {
@@ -318,6 +317,7 @@ class consultorioScene extends Phaser.Scene {
       info.setText("");
       back.setAlpha(0.01);
       pausa = 7;
+      chat = 0;
       this.scene.pause();
       this.scene.start("charla_01");
     });

@@ -182,6 +182,11 @@ class loader extends Phaser.Scene {
     this.load.image("fichaTuto", "assets/imagenes/personajes/fichaTuto.png");
 
     this.load.image(
+      "separador_pac_r",
+      "assets/imagenes/elementos/separador_pac_r.png"
+    );
+
+    this.load.image(
       "separador_pac_s",
       "assets/imagenes/elementos/separador_pac_s.png"
     );

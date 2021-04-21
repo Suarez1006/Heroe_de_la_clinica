@@ -26,6 +26,8 @@ var config = {
     papMenu, //Ficha de paciente (paperas)
     varMenu, //Ficha de paciente (varicela)
     chatScene, //Charlas
+    mensajes, //Mensajes de las charlas
+    fotos, //Fotos de los pacientes
     reloj, //Reloj pacientes
     diagnostico, //Diagnosticos
     infoPoster, //Poster sintomas
@@ -106,6 +108,7 @@ let chatInfo = {
 };
 var charla;
 var chatMostrar = 0;
+var msg = 0;
 
 var Idioma;
 var selecIdioma = "es";

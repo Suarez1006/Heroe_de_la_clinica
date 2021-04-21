@@ -30,7 +30,9 @@ class Tuto_01 extends Phaser.Scene {
 
     if (muteado == 0) {
       if (musica === 0) {
-        music2.play(musicConfig);
+        if (musicaReproducida === 0) { 
+          music2.play(musicConfig); 
+        }
       }
     }
 
@@ -194,6 +196,7 @@ class Tuto_01 extends Phaser.Scene {
       ayu10 = 1;
       this.scene.pause();
       pausa = 2;
+      musicaReproducida = 1;
       this.scene.run("charla_01");
     });
 

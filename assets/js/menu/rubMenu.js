@@ -63,6 +63,11 @@ class rubMenu extends Phaser.Scene {
     });
     var ficha = this.add.image(750, 540, "ficha").setInteractive();
 
+    var sepR = this.add
+      .image(1145, 659, "separador_pac_r")
+      .setScale(0.45)
+      .setAlpha(0.001);
+
     var sep1 = this.add
       .image(1123, 661, "separador_pac_s")
       .setScale(0.45)
@@ -434,7 +439,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA === 1) {
         circulo.setAlpha(0.6);
         circulo2.setAlpha(0.01);
-        finish = 1;
         fiebrePuesto = 1;
       }
       if (muteado == 0) {
@@ -450,7 +454,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA === 2) {
         circulo2.setAlpha(0.6);
         circulo.setAlpha(0.01);
-        finish = 1;
         fiebrePuesto = 2;
       }
       if (muteado == 0) {
@@ -466,7 +469,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA2 === 1) {
         circulo3.setAlpha(0.6);
         circulo4.setAlpha(0.01);
-        finish = 1;
         dolCabPuesto = 1;
       }
       if (muteado == 0) {
@@ -482,7 +484,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA2 === 2) {
         circulo4.setAlpha(0.6);
         circulo3.setAlpha(0.01);
-        finish = 1;
         dolCabPuesto = 2;
       }
       if (muteado == 0) {
@@ -498,7 +499,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA3 === 1) {
         circulo5.setAlpha(0.6);
         circulo6.setAlpha(0.01);
-        finish = 1;
         congPuesto = 1;
       }
       if (muteado == 0) {
@@ -514,7 +514,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA3 === 2) {
         circulo6.setAlpha(0.6);
         circulo5.setAlpha(0.01);
-        finish = 1;
         congPuesto = 2;
       }
       if (muteado == 0) {
@@ -530,7 +529,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA4 === 1) {
         circulo7.setAlpha(0.6);
         circulo8.setAlpha(0.01);
-        finish = 1;
         infPuesto = 1;
       }
       if (muteado == 0) {
@@ -546,7 +544,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA4 === 2) {
         circulo8.setAlpha(0.6);
         circulo7.setAlpha(0.01);
-        finish = 1;
         infPuesto = 2;
       }
       if (muteado == 0) {
@@ -562,7 +559,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA5 === 1) {
         circulo9.setAlpha(0.6);
         circulo10.setAlpha(0.01);
-        finish = 1;
         gangPuesto = 1;
       }
       if (muteado == 0) {
@@ -578,7 +574,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA5 === 2) {
         circulo10.setAlpha(0.6);
         circulo9.setAlpha(0.01);
-        finish = 1;
         gangPuesto = 2;
       }
       if (muteado == 0) {
@@ -594,7 +589,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA6 === 1) {
         circulo11.setAlpha(0.6);
         circulo12.setAlpha(0.01);
-        finish = 1;
         erupPuesto = 1;
       }
       if (muteado == 0) {
@@ -610,7 +604,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA6 === 2) {
         circulo12.setAlpha(0.6);
         circulo11.setAlpha(0.01);
-        finish = 1;
         erupPuesto = 2;
       }
       if (muteado == 0) {
@@ -626,7 +619,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA7 === 1) {
         circulo13.setAlpha(0.6);
         circulo14.setAlpha(0.01);
-        finish = 1;
         artPuesto = 1;
       }
       if (muteado == 0) {
@@ -642,7 +634,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA7 === 2) {
         circulo14.setAlpha(0.6);
         circulo13.setAlpha(0.01);
-        finish = 1;
         artPuesto = 2;
       }
       if (muteado == 0) {
@@ -658,7 +649,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA8 === 1) {
         circulo15.setAlpha(0.6);
         circulo16.setAlpha(0.01);
-        finish = 1;
         farPuesto = 1;
       }
       if (muteado == 0) {
@@ -674,7 +664,6 @@ class rubMenu extends Phaser.Scene {
       if (circuloA8 === 2) {
         circulo16.setAlpha(0.6);
         circulo15.setAlpha(0.01);
-        finish = 1;
         farPuesto = 2;
       }
       if (muteado == 0) {
@@ -791,14 +780,11 @@ class rubMenu extends Phaser.Scene {
             sellosound.play(selloConfig);
           }
         }
-        if (finish == 1) {
-          selloPS = 2;
-          sanoSello.setAlpha(1);
-          enfermoSello.setAlpha(0.01);
-          finish = 2;
-          selloPuesto.setText(Sano).setTint(0x42bd41);
-          rubPuesto = 1;
-        }
+        selloPS = 2;
+        sanoSello.setAlpha(1);
+        enfermoSello.setAlpha(0.01);
+        selloPuesto.setText(Sano).setTint(0x42bd41);
+        rubPuesto = 1;
       } else if (selloPE == 1) {
         if (sellopuestoPE === 0) {
           sellopuestoPE = 1;
@@ -807,15 +793,13 @@ class rubMenu extends Phaser.Scene {
             sellosound.play(selloConfig);
           }
         }
-        if (finish == 1) {
-          selloPE = 2;
-          sanoSello.setAlpha(0.01);
-          enfermoSello.setAlpha(1);
-          finish = 2;
-          selloPuesto.setText(Enfermo).setTint(0xff0000);
-          rubPuesto = 2;
-        }
+        selloPE = 2;
+        sanoSello.setAlpha(0.01);
+        enfermoSello.setAlpha(1);
+        selloPuesto.setText(Enfermo).setTint(0xff0000);
+        rubPuesto = 2;
       }
+      sepR.setAlpha(1);
     });
   }
 }
