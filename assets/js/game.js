@@ -8,7 +8,7 @@ var config = {
   },
   scene: [
     loader, //Pantalla de carga
-    sceneIdioma, //Eleccion de idioma
+    sceneIdioma, //Seleccion de idioma
     mainMenu, //Menu principal
     SintScene, //Pick de sintomas
     Tuto_01, //Consultorio primer paciente

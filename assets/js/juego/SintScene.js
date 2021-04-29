@@ -83,8 +83,7 @@ class SintScene extends Phaser.Scene {
     chat_10 = "";
     chat_11 = "";
 
-    //enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
-    enfermedadPatron = 0.4;
+    enfermedadPatron = Phaser.Math.FloatBetween(0, 1);
     temperatura = Phaser.Math.FloatBetween(36, 40);
     let enfermedad;
     var enf = 0;
